@@ -4,3 +4,4 @@ org.eclipse.debug.ui.consoleBackground=25,25,25
 org.eclipse.debug.ui.errorColor=128,0,128
 org.eclipse.debug.ui.inColor=255,255,255
 org.eclipse.debug.ui.outColor=255,255,255
+preferredTargets=default\:default|
