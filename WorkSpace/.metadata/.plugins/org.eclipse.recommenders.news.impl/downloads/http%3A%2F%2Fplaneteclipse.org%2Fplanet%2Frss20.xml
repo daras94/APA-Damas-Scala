@@ -1,0 +1,579 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+
+<channel>
+	<title>Planet Eclipse</title>
+	<link>http://planeteclipse.org/planet/</link>
+	<language>en</language>
+	<description>Planet Eclipse - http://planeteclipse.org/planet/</description>
+
+<item>
+	<title>Mike Milinkovich: On Complexity and Good Intentions</title>
+	<guid isPermaLink="false">http://mmilinkov.wordpress.com/?p=1444</guid>
+	<link>https://mmilinkov.wordpress.com/2018/03/23/on-complexity-and-good-intentions/</link>
+	<description>&lt;p&gt;We are now about six months into the process of migrating Java EE to the Eclipse Foundation, and I think we’re all learning a lot as we go. I wanted to take a moment and take stock of the scale of this project, its complexity, and where we are.&lt;/p&gt;
+&lt;p&gt;Java EE is a (roughly) twenty year old technology that is one of the world’s most successful software platforms. It powers the business critical applications that run our modern world. Millions of developers work with Java EE technologies every day. Billions of users use these systems every day. Throughout Java EE’s twenty year history it has been developed and marketed in a pretty particular way.&lt;/p&gt;
+&lt;p&gt;At the core of Java EE’s success has been an approach that enabled a multi-vendor ecosystem where enterprises had a choice of compatible implementations from a number of companies.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Java EE specifications were developed at the Java Community Process, using that JCP process where all intellectual property flowed to the Spec Lead, which was usually Sun (later Oracle). All participants in the specification process are signatories of the Java Specification Participation Agreement, which is a fairly complex legal document.&lt;/li&gt;
+&lt;li&gt;Progress and innovation in Java EE was largely governed by and driven within the constraints of this specification process.&lt;/li&gt;
+&lt;li&gt;Java EE reference implementations were, for the most part, developed by Oracle as part of the Glassfish (and related) project and made available under the CDDL and GPLv2+Classpath Exception licenses. Most of the developers were from Oracle, and the architectural vision and project management roles were performed by them. Contributors to the projects signed the Oracle Contributor Agreement that gave Oracle joint ownership of all contributions.&lt;/li&gt;
+&lt;li&gt;TCKs were developed entirely by Oracle and were highly confidential and tightly controlled. You had to sign an NDA just to get a copy of the TCK agreement if you were interested in getting access to the TCKs. The agreements were pretty dense and complex legal documents.&lt;/li&gt;
+&lt;li&gt;It was called Java EE. It had a logo that looked like a coffee cup. These trademarks were owned by Oracle and tightly controlled.&lt;/li&gt;
+&lt;li&gt;Generally speaking the big enterprises that used the technology were not involved in its evolution. For the most part, the contributors to the specs and implementations were from the Java EE platform vendors.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Together we are changing every single one of those items above. All at once. While retaining the core value of enabling compatible independent implementations in a multi-vendor ecosystem.&lt;/p&gt;
+&lt;p&gt;This is big and it is complicated.&lt;/p&gt;
+&lt;p&gt;I honestly believe that no institution other than the Eclipse Foundation could handle this task. We have the people, the skills, the history, and the knowledge of how the Java ecosystem works. The staff at the Eclipse Foundation are highly skilled and community minded professionals. Similarly, the team at Oracle, along with the folks from IBM, Payara, Red Hat, Tomitribe and the EE4J PMC are working hard to move this along. Collectively they are working their butts off to support this transition and to make Jakarta EE the platform and community of choice for the next twenty years.&lt;/p&gt;
+&lt;p&gt;Overall, I believe we’ve been pretty successful at managing the complexity, and working hard to communicate our progress and plans. We haven’t always been perfect, as case in point this past week where we had a bit of a kerfuffle on our Jakarta community mailing list. Without going into the details, I would say that the root cause of that was poor communication on my part. I didn’t do a good enough job in communicating the plans and dates for selecting the new logo. My bad.&lt;/p&gt;
+&lt;p&gt;Chris Anisczcyk, a good friend and open source community colleague of mine tweeted some months back that “Open source would be a lot more fun if everyone assumed good intentions.” With his wise words in mind, I want to say is this: what we are collectively undertaking here is a massive and complex task. Mistakes and miscommunications are going to happen. But let’s all assume good intentions, and build a community based on trust, honesty, and respect.&lt;/p&gt;</description>
+	<pubDate>Fri, 23 Mar 2018 14:18:36 +0000</pubDate>
+</item>
+<item>
+	<title>Webtools News: WTP 3.9.3 Released!</title>
+	<guid isPermaLink="false">http://www.eclipse.org/webtools/news.php#permalink180</guid>
+	<link>http://eclipse.org/webtools/releases/3.9.3</link>
+	<description>&lt;div&gt;
+      Web Tools Platform 3.9.3 has been released!  &lt;a href=&quot;https://wiki.eclipse.org/WTP_FAQ#How_do_I_install_WTP.3F&quot;&gt;Installation&lt;/a&gt; and update can be performed using the 
+      &lt;a href=&quot;http://download.eclipse.org/releases/oxygen/&quot;&gt;Oxygen Update Site&lt;/a&gt; or through the &lt;a href=&quot;https://marketplace.eclipse.org/user/nitind/listings&quot;&gt;Eclipse Marketplace&lt;/a&gt;.
+      Release 3.9.3 &lt;a href=&quot;https://www.eclipse.org/webtools/releases/3.9.3/&quot;&gt;fixes&lt;/a&gt; issues that occur in prior releases or have been reported since 3.9's release. WTP 3.9.3 is featured in the Oxygen.3
+          &lt;a href=&quot;https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/oxygen3&quot;&gt;Eclipse IDE for Java EE Developers&lt;/a&gt;, with selected portions also included in &lt;a href=&quot;http://www.eclipse.org/downloads/compare.php&quot;&gt;other packages&lt;/a&gt;.  Adopters can download &lt;a href=&quot;http://download.eclipse.org/webtools/downloads/&quot;&gt;the R3.9.3 build itself&lt;/a&gt; directly.
+       WTP 3.9.3a is planned for mid-April, as part of Oxygen.3a and its support for this week's GA release of Java 10.&lt;/div&gt;&lt;p&gt;&lt;a href=&quot;http://www.eclipse.org/webtools/news.php#permalink180&quot;&gt;More news&lt;/a&gt;&lt;/p&gt;</description>
+	<pubDate>Thu, 22 Mar 2018 23:27:00 +0000</pubDate>
+</item>
+<item>
+	<title>Eclipse Announcements: Eclipse Newsletter | Code in Different Languages</title>
+	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/MghcIiwTBdY/</guid>
+	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/MghcIiwTBdY/</link>
+	<description>Read what's new in the Eclipse JDT Language Server and Eclipse PDT (PHP), then learn about Eclipse Xtext and Eclipse Mita (IoT).&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/MghcIiwTBdY&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Thu, 22 Mar 2018 09:13:00 +0000</pubDate>
+</item>
+<item>
+	<title>Fabio Zadrozny: LiClipse 4.5.2 released</title>
+	<guid isPermaLink="false">tag:blogger.com,1999:blog-7855001383687474475.post-621765860818079846</guid>
+	<link>http://liclipse.blogspot.com/2018/03/liclipse-452-released.html</link>
+	<description>&lt;a href=&quot;http://www.liclipse.com/&quot;&gt;LiClipse&lt;/a&gt; 4.5.2 is now out.&lt;br /&gt;&lt;br /&gt;The major updates are related  to the upgrade of dependencies (such as &lt;a href=&quot;http://www.pydev.org/&quot;&gt;PyDev&lt;/a&gt; and &lt;a href=&quot;https://www.eclipse.org/egit/&quot;&gt;EGit&lt;/a&gt;).&lt;br /&gt;&lt;br /&gt;On the PyDev front, the major change is initial support for getting type information from .pyi files and a critical fix for the creation of the preferences page.&lt;br /&gt;&lt;br /&gt;For EGit, &lt;a href=&quot;https://wiki.eclipse.org/EGit/New_and_Noteworthy/4.11&quot;&gt;https://wiki.eclipse.org/EGit/New_and_Noteworthy/4.11&lt;/a&gt; has more details!&lt;br /&gt;&lt;br /&gt;Enjoy!</description>
+	<pubDate>Wed, 21 Mar 2018 19:03:04 +0000</pubDate>
+	<author>noreply@blogger.com (Fabio Zadrozny)</author>
+</item>
+<item>
+	<title>Holger Voormann: Eclipse Oxygen.3 IDE Improvements: Java, Gradle and PHP</title>
+	<guid isPermaLink="false">http://eclipsehowl.wordpress.com/?p=1390</guid>
+	<link>https://eclipsehowl.wordpress.com/2018/03/21/eclipse-oxygen-3-ide-improvements-java-gradle-and-php/</link>
+	<description>&lt;p&gt;Eclipse Oxygen.3 is the last quarterly update of &lt;a href=&quot;http://www.eclipse.org/oxygen/&quot;&gt;Oxygen&lt;/a&gt;. Thanks to everyone who has contributed in any way! Even if the main focus is already on Photon, which will be released on June 27, it is worth updating your Eclipse IDE (unless you want to test a &lt;a href=&quot;https://www.eclipse.org/downloads/index-developer.php?photon&quot;&gt;pre-version of Photon&lt;/a&gt; instead).&lt;/p&gt;
+&lt;p&gt;As usual, I have made a short video that shows the IDE improvements that I find most noteworthy in action:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;aligncenter size-full wp-image-1391&quot; height=&quot;253&quot; src=&quot;https://eclipsehowl.files.wordpress.com/2018/03/eclipse_oxygen_3_ide_improvements.png?w=450&amp;amp;h=253&quot; width=&quot;450&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=24s&quot; rel=&quot;noopener&quot;&gt;Java:&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=28s&quot; rel=&quot;noopener&quot;&gt;Pasting of “module-info.java” snippets into source folder&lt;/a&gt; (&lt;a href=&quot;https://bugs.eclipse.org/522022&quot; rel=&quot;noopener&quot;&gt;bug 522022&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=42s&quot; rel=&quot;noopener&quot;&gt;JUnit tests now also work in a module project&lt;/a&gt; (&lt;a href=&quot;https://bugs.eclipse.org/525948&quot; rel=&quot;noopener&quot;&gt;bug 525948&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=51s&quot; rel=&quot;noopener&quot;&gt;Minor improvements, e. g. deprecate warning messages with “since” and “forRemoval”&lt;/a&gt; (&lt;a href=&quot;https://bugs.eclipse.org/526335&quot; rel=&quot;noopener&quot;&gt;bug 526335&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=1m06s&quot; rel=&quot;noopener&quot;&gt;Performance improvements, e. g. when compiling code that contains a lot of generic types&lt;/a&gt; (&lt;a href=&quot;https://bugs.eclipse.org/521438&quot; rel=&quot;noopener&quot;&gt;bug 521438&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=1m42s&quot; rel=&quot;noopener&quot;&gt;Java 10 support not built-in, but available via Eclipse Marketplace: http://marketplace.eclipse.org/content/java-10-support-oxygen&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=2m&quot; rel=&quot;noopener&quot;&gt;Gradle&lt;/a&gt; (see also &lt;a href=&quot;http://projects.eclipse.org/projects/tools.buildship/reviews/2.2.0-release-review&quot; rel=&quot;noopener&quot;&gt;Buildship 2.2&lt;/a&gt;):&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=2m10s&quot; rel=&quot;noopener&quot;&gt;Support of Java 9&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=2m16s&quot; rel=&quot;noopener&quot;&gt;Gradle editor with basic syntax highlighting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=2m28s&quot; rel=&quot;noopener&quot;&gt;Automatic project synchronization (disabled by default)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=2m45s&quot; rel=&quot;noopener&quot;&gt;PHP&lt;/a&gt; (see also &lt;a href=&quot;https://wiki.eclipse.org/PDT/NewIn53&quot; rel=&quot;noopener&quot;&gt;PDT 5.3&lt;/a&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=2m45s&quot; rel=&quot;noopener&quot;&gt;):&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=2m51s&quot; rel=&quot;noopener&quot;&gt;PHP 7.2 and PHPUnit 7 support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=3m18s&quot; rel=&quot;noopener&quot;&gt;Configurable problem severities on project and workspace level&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=3m28s&quot; rel=&quot;noopener&quot;&gt;Formatter improvements, e. g. exclude unknown tags in comments from being formatted&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=3m51s&quot; rel=&quot;noopener&quot;&gt;Content assist appears much quicker, especially in large files.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;a href=&quot;https://youtu.be/Y0-cO9wZj6w&quot;&gt;&lt;img alt=&quot;Eclipse Oxygen IDE Improvements: General, Java and Git&quot; class=&quot;alignnone&quot; height=&quot;82&quot; src=&quot;https://eclipsehowl.files.wordpress.com/2017/06/eclipse_oxygen_0_ide_improvements2.png?w=144&amp;amp;h=82&quot; width=&quot;144&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://youtu.be/wI3VC1lhbK8&quot;&gt;&lt;img alt=&quot;Eclipse Oxygen.1a IDE Improvements: Java 9, JUnit 5, General, Gradle and PHP&quot; class=&quot;alignnone&quot; height=&quot;82&quot; src=&quot;https://eclipsehowl.files.wordpress.com/2017/11/eclipse_oxygen_1_ide_improvements.png?w=144&amp;amp;h=82&quot; width=&quot;144&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://youtu.be/_EY1eeQtY_U&quot;&gt;&lt;img alt=&quot;Eclipse Oxygen.2 IDE Improvements: Java IDE, Git, C/C++&quot; class=&quot;alignnone&quot; height=&quot;82&quot; src=&quot;https://eclipsehowl.files.wordpress.com/2017/12/eclipse_oxygen_2_ide_improvements.png?w=144&amp;amp;h=82&quot; width=&quot;144&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;p&gt;Together with the previous Oxygen videos, you can view 72 improvements in action, in total about half an hour. Here are the direct chapter links (number of improvements in brackets):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;General IDE (14)&lt;/strong&gt;: &lt;a href=&quot;https://youtu.be/Y0-cO9wZj6w?t=11s&quot;&gt;Oxygen.0 (11)&lt;/a&gt;, &lt;a href=&quot;https://youtu.be/wI3VC1lhbK8?t=6m26s&quot;&gt;Oxygen.1a (3)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Java and JUnit (33)&lt;/strong&gt;: &lt;a href=&quot;https://youtu.be/Y0-cO9wZj6w?t=4m4s&quot;&gt;Oxygen.0 (10)&lt;/a&gt;, &lt;a href=&quot;https://youtu.be/wI3VC1lhbK8?t=37s&quot;&gt;Oxygen.1a (13)&lt;/a&gt;, &lt;a href=&quot;https://youtu.be/_EY1eeQtY_U?t=26s&quot;&gt;Oxygen.2 (5)&lt;/a&gt;, &lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=24s&quot;&gt;Oxygen.3 (5)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Git (9)&lt;/strong&gt;: &lt;a href=&quot;https://youtu.be/Y0-cO9wZj6w?t=8m22s&quot;&gt;Oxygen.0 (5)&lt;/a&gt;, &lt;a href=&quot;https://youtu.be/_EY1eeQtY_U?t=1m36s&quot;&gt;Oxygen.2 (4)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gradle (5)&lt;/strong&gt;: &lt;a href=&quot;https://youtu.be/wI3VC1lhbK8?t=7m54s&quot;&gt;Oxygen.1a (2)&lt;/a&gt;, &lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=2m&quot;&gt;Oxygen.3 (3)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;C/C++ (4)&lt;/strong&gt;: &lt;a href=&quot;https://youtu.be/_EY1eeQtY_U?t=2m40s&quot;&gt;Oxygen.2 (4)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PHP (7)&lt;/strong&gt;: &lt;a href=&quot;https://youtu.be/wI3VC1lhbK8?t=7m54s&quot;&gt;Oxygen.1a (3)&lt;/a&gt;, &lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=2m45s&quot;&gt;Oxygen.3 (4)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thank you for watching and happy coding!&lt;/p&gt;</description>
+	<pubDate>Wed, 21 Mar 2018 14:00:02 +0000</pubDate>
+</item>
+<item>
+	<title>Donald Raab: EC by Example: Partitioning</title>
+	<guid isPermaLink="false">https://medium.com/p/d2704f826e66</guid>
+	<link>https://medium.com/@donraab/ec-by-example-partitioning-d2704f826e66?source=rss-df39b86e9f04------2</link>
+	<description>&lt;p&gt;Learn how to partition a collection using &lt;a href=&quot;https://www.eclipse.org/collections/&quot;&gt;Eclipse Collections&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;What is partitioning?&lt;/h3&gt;&lt;p&gt;Partitioning is a kind of &lt;a href=&quot;https://medium.com/@donraab/ec-by-example-filtering-4f14b906f718&quot;&gt;filtering&lt;/a&gt;, except that all elements of a collection are retained. Instead of being included (like Select) or excluded (like Reject), the elements of the collection are split into two collections based on whether they return true or false when passed to a predicate.&lt;/p&gt;&lt;figure&gt;&lt;img alt=&quot;&quot; src=&quot;https://cdn-images-1.medium.com/max/543/1*84sn7rmxQNW6xP_9V0XQ0g.png&quot; /&gt;A partition contains both selected and rejected elements&lt;/figure&gt;&lt;h3&gt;Partitioning a List (Java 8)&lt;/h3&gt;&lt;pre&gt;@Test&lt;br /&gt;public void partitioningLists()&lt;br /&gt;{&lt;br /&gt;    MutableList&amp;lt;Integer&amp;gt; mList = &lt;em&gt;mList&lt;/em&gt;(1, 2, 3, 4, 5);&lt;br /&gt;    ImmutableList&amp;lt;Integer&amp;gt; iList = &lt;em&gt;iList&lt;/em&gt;(1, 2, 3, 4, 5);&lt;br /&gt;&lt;br /&gt;    Predicate&amp;lt;Integer&amp;gt; evens = i -&amp;gt; i % 2 == 0;&lt;br /&gt;&lt;br /&gt;    PartitionMutableList&amp;lt;Integer&amp;gt; mutable = &lt;br /&gt;            mList.&lt;strong&gt;partition&lt;/strong&gt;(evens);&lt;br /&gt;    &lt;br /&gt;    PartitionImmutableList&amp;lt;Integer&amp;gt; immutable = &lt;br /&gt;            iList.&lt;strong&gt;partition&lt;/strong&gt;(evens);&lt;br /&gt;&lt;br /&gt;    PartitionIterable&amp;lt;Integer&amp;gt; lazy = &lt;br /&gt;            mList.asLazy().&lt;strong&gt;partition&lt;/strong&gt;(evens);&lt;br /&gt;&lt;br /&gt;    ImmutableList&amp;lt;Integer&amp;gt; expectedEvens = &lt;em&gt;iList&lt;/em&gt;(2, 4);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedEvens, mutable.getSelected());&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedEvens, immutable.getSelected());&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedEvens, lazy.getSelected().toList());&lt;br /&gt;&lt;br /&gt;    ImmutableList&amp;lt;Integer&amp;gt; expectedOdds = &lt;em&gt;iList&lt;/em&gt;(1, 3, 5);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedOdds, mutable.getRejected());&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedOdds, immutable.getRejected());&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedOdds, lazy.getRejected().toList());&lt;br /&gt;}&lt;/pre&gt;&lt;h3&gt;Partitioning a List (Java 10)&lt;/h3&gt;&lt;p&gt;Here I will take advantage of local variable type inference using the var keyword in Java 10. With a type like PartitionMutableList, using var can significantly reduce the amount of noise in the code.&lt;/p&gt;&lt;pre&gt;@Test&lt;br /&gt;public void partitioningListsJava10()&lt;br /&gt;{&lt;br /&gt;    var mutableList = &lt;em&gt;mList&lt;/em&gt;(1, 2, 3, 4, 5);&lt;br /&gt;    var immutableList = &lt;em&gt;iList&lt;/em&gt;(1, 2, 3, 4, 5);&lt;br /&gt;&lt;br /&gt;    Predicate&amp;lt;Integer&amp;gt; evens = i -&amp;gt; i % 2 == 0;&lt;br /&gt;&lt;br /&gt;    var mutable = mutableList.&lt;strong&gt;partition&lt;/strong&gt;(evens);&lt;br /&gt;&lt;br /&gt;    var immutable = immutableList.&lt;strong&gt;partition&lt;/strong&gt;(evens);&lt;br /&gt;&lt;br /&gt;    var lazy = mutableList.asLazy().&lt;strong&gt;partition&lt;/strong&gt;(evens);&lt;br /&gt;&lt;br /&gt;    var expectedEvens = &lt;em&gt;iList&lt;/em&gt;(2, 4);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedEvens, mutable.getSelected());&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedEvens, immutable.getSelected());&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedEvens, lazy.getSelected().toList());&lt;br /&gt;&lt;br /&gt;    var expectedOdds = &lt;em&gt;iList&lt;/em&gt;(1, 3, 5);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedOdds, mutable.getRejected());&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedOdds, immutable.getRejected());&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedOdds, lazy.getRejected().toList());&lt;br /&gt;}&lt;/pre&gt;&lt;h3&gt;Covariance at play&lt;/h3&gt;&lt;p&gt;The return type for partition is determined by the source type. In the case of a MutableList as seen above, the method partition will return a PartitionMutableList. The following is a partial hierarchy of types that exist for partitioning a List. The full hierarchy includes similar relationships for Bag, Set, SortedSet, SortedBag and Stack.&lt;/p&gt;&lt;figure&gt;&lt;img alt=&quot;&quot; src=&quot;https://cdn-images-1.medium.com/max/1024/1*d38QbVF9-M5aP5cLCUmKhA.png&quot; /&gt;A partial partition hierarchy for Lists&lt;/figure&gt;&lt;h3&gt;Partitioning a Set (Java 8)&lt;/h3&gt;&lt;pre&gt;@Test&lt;br /&gt;public void partitioningSets()&lt;br /&gt;{&lt;br /&gt;    MutableSet&amp;lt;Integer&amp;gt; mSet = &lt;em&gt;mSet&lt;/em&gt;(1, 2, 3, 4, 5);&lt;br /&gt;    ImmutableSet&amp;lt;Integer&amp;gt; iSet = &lt;em&gt;iSet&lt;/em&gt;(1, 2, 3, 4, 5);&lt;br /&gt;&lt;br /&gt;    Predicate&amp;lt;Integer&amp;gt; evens = i -&amp;gt; i % 2 == 0;&lt;br /&gt;&lt;br /&gt;    PartitionMutableSet&amp;lt;Integer&amp;gt; mutable =&lt;br /&gt;            mSet.&lt;strong&gt;partition&lt;/strong&gt;(evens);&lt;br /&gt;&lt;br /&gt;    PartitionImmutableSet&amp;lt;Integer&amp;gt; immutable =&lt;br /&gt;            iSet.&lt;strong&gt;partition&lt;/strong&gt;(evens);&lt;br /&gt;&lt;br /&gt;    PartitionIterable&amp;lt;Integer&amp;gt; lazy =&lt;br /&gt;            mSet.asLazy().&lt;strong&gt;partition&lt;/strong&gt;(evens);&lt;br /&gt;&lt;br /&gt;    ImmutableSet&amp;lt;Integer&amp;gt; expectedEvens = &lt;em&gt;iSet&lt;/em&gt;(2, 4);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedEvens, mutable.getSelected());&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedEvens, immutable.getSelected());&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedEvens, lazy.getSelected().toSet());&lt;br /&gt;&lt;br /&gt;    ImmutableSet&amp;lt;Integer&amp;gt; expectedOdds = &lt;em&gt;iSet&lt;/em&gt;(1, 3, 5);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedOdds, mutable.getRejected());&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedOdds, immutable.getRejected());&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedOdds, lazy.getRejected().toSet());&lt;br /&gt;}&lt;/pre&gt;&lt;h3&gt;Partitioning a Set (Java 10)&lt;/h3&gt;&lt;pre&gt;@Test&lt;br /&gt;public void partitioningSetsJava10()&lt;br /&gt;{&lt;br /&gt;    var mutableSet = &lt;em&gt;mSet&lt;/em&gt;(1, 2, 3, 4, 5);&lt;br /&gt;    var immutableSet = &lt;em&gt;iSet&lt;/em&gt;(1, 2, 3, 4, 5);&lt;br /&gt;&lt;br /&gt;    Predicate&amp;lt;Integer&amp;gt; evens = i -&amp;gt; i % 2 == 0;&lt;br /&gt;&lt;br /&gt;    var mutable = mutableSet.&lt;strong&gt;partition&lt;/strong&gt;(evens);&lt;br /&gt;&lt;br /&gt;    var immutable = immutableSet.&lt;strong&gt;partition&lt;/strong&gt;(evens);&lt;br /&gt;&lt;br /&gt;    var lazy = mutableSet.asLazy().&lt;strong&gt;partition&lt;/strong&gt;(evens);&lt;br /&gt;&lt;br /&gt;    var expectedEvens = &lt;em&gt;iSet&lt;/em&gt;(2, 4);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedEvens, mutable.getSelected());&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedEvens, immutable.getSelected());&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedEvens, lazy.getSelected().toSet());&lt;br /&gt;&lt;br /&gt;    var expectedOdds = &lt;em&gt;iSet&lt;/em&gt;(1, 3, 5);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedOdds, mutable.getRejected());&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedOdds, immutable.getRejected());&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedOdds, lazy.getRejected().toSet());&lt;br /&gt;}&lt;/pre&gt;&lt;h3&gt;APIs and features covered in the examples&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/api/RichIterable.html#partition-org.eclipse.collections.api.block.predicate.Predicate-&quot;&gt;Partition&lt;/a&gt; (&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/api/list/MutableList.html#partition-org.eclipse.collections.api.block.predicate.Predicate-&quot;&gt;Eager&lt;/a&gt; and Lazy) — filters &lt;strong&gt;&lt;em&gt;selecting&lt;/em&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;em&gt;rejecting &lt;/em&gt;&lt;/strong&gt;elements that based on a given condition. Partition is a terminal operation on LazyIterables, which forces execution to happen.&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/impl/factory/Iterables.html#mList-T...-&quot;&gt;mList&lt;/a&gt; — Creates a MutableList&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/impl/factory/Iterables.html#iList-T-T-T-T-T-&quot;&gt;iList&lt;/a&gt; — Creates an ImmutableList&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/impl/factory/Iterables.html#mSet--&quot;&gt;mSet&lt;/a&gt; — Creates a MutableSet&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/impl/factory/Iterables.html#iSet--&quot;&gt;iSet&lt;/a&gt; — Creates an ImmutableSet&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/api/RichIterable.html#asLazy--&quot;&gt;asLazy&lt;/a&gt; — Returns a LazyIterable or LazyIntIterable&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/api/RichIterable.html#toList--&quot;&gt;toList&lt;/a&gt; — Converts the target Iterable into a MutableList&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/api/RichIterable.html#toSet--&quot;&gt;toSet&lt;/a&gt; — Converts the target Iterable into a MutableSet&lt;/li&gt;&lt;li&gt;var — Local variable Type Inference included in Java 10 (&lt;a href=&quot;http://openjdk.java.net/jeps/286&quot;&gt;JEP 286&lt;/a&gt;)&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/eclipse/eclipse-collections&quot;&gt;&lt;em&gt;Eclipse Collections&lt;/em&gt;&lt;/a&gt;&lt;em&gt; is open for &lt;/em&gt;&lt;a href=&quot;https://github.com/eclipse/eclipse-collections/blob/master/CONTRIBUTING.md&quot;&gt;&lt;em&gt;contributions&lt;/em&gt;&lt;/a&gt;&lt;em&gt;. If you like the library, you can let us know by starring it on GitHub.&lt;/em&gt;&lt;/p&gt;&lt;img height=&quot;1&quot; src=&quot;https://medium.com/_/stat?event=post.clientViewed&amp;amp;referrerSource=full_rss&amp;amp;postId=d2704f826e66&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Wed, 21 Mar 2018 05:53:54 +0000</pubDate>
+</item>
+<item>
+	<title>Eclipse Announcements: Complete the Jakarta EE Developer Survey</title>
+	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/Nw4e_8orxX0/jakartaec</guid>
+	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/Nw4e_8orxX0/jakartaec</link>
+	<description>Share your insights on Java EE and help shape the future of Jakarta EE.&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/Nw4e_8orxX0&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Fri, 16 Mar 2018 11:45:00 +0000</pubDate>
+</item>
+<item>
+	<title>itemis: Building Domain-specific Languages with Xtext and Xtend</title>
+	<guid isPermaLink="true">https://blogs.itemis.com/en/building-domain-specific-languages-with-xtext-and-xtend</guid>
+	<link>https://blogs.itemis.com/en/building-domain-specific-languages-with-xtext-and-xtend</link>
+	<description>&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Specifying the requirements of a software system and converting such a specification into executable source code is difficult and error-prone. Requirements specifications written in prose are often ambiguous and hard to understand for developers. Therefore, the process of turning this documents into software is slow and prone to error. Domain-specific languages (DSL) challenge this problem by defining a semantically rich notation to describe domain concepts clear and concise. From the DSL models the boilerplate code can be deduced, thereby increasing the software development process efficiency as well as the overall quality. After giving an overview of the key concepts of a domain-specific language, the domain-specific language framework &lt;/span&gt;&lt;a href=&quot;https://www.itemis.com/en/xtext/&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Eclipse Xtext&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; will be introduced. In addition, it will be illustrated how DSL models can be processed efficiently using Eclipse Xtend.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;img alt=&quot;code-colours&quot; height=&quot;764&quot; src=&quot;https://blogs.itemis.com/hs-fs/hubfs/Blog/Xtext/code-colours.jpg?t=1521119359831&amp;amp;width=1604&amp;amp;height=764&amp;amp;name=code-colours.jpg&quot; style=&quot;width: 1604px;&quot; width=&quot;1604&quot; /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;h2&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;Domain-specific Languages&lt;/span&gt;&lt;/h2&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Domain-specific languages are an integral part of our daily business. For example, when developers and business experts talk about requirements they will use terms like &lt;/span&gt;&lt;i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Client&lt;/span&gt;&lt;/i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;, &lt;/span&gt;&lt;i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Contract&lt;/span&gt;&lt;/i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;, or &lt;/span&gt;&lt;i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Payment&lt;/span&gt;&lt;/i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; to describe the expected behavior. However, as soon as executable source code is required developers start translating these concepts into classes, data structures, and algorithms. At this point, some of the domain-specific information might get lost in translation. Thereby, business analysts have a hard time ensuring that all their business rules have been translated correctly. In addition, developers struggle with implementing changes, because they first have to understand the changes within the domain model before they can estimate and implement the subsequent changes to the source code.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;A domain-specific language is built to describe the concepts of a certain domain concisely with a semantically rich notation. Thereby, terms like &lt;/span&gt;&lt;i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Client&lt;/span&gt;&lt;/i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; or &lt;/span&gt;&lt;i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Contract&lt;/span&gt;&lt;/i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; are used in a language that is the foundation for domain model enhancements as well as for automated translation into executable software. In contrast to general purpose programming languages, concepts of a certain domain are described on a higher level of abstraction, so that they are understandable for business experts and developers.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Domain-specific languages are likely to be used in the context of model-driven development, however, there are many more usage scenarios. For example, they might be part of a larger software system used to express calculations or configurations. Further, they might be used as a thin layer on top of an existing language to provide feature-rich editor support.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Domain-driven design is an approach to describe the domain concepts in a language shared by business experts and developers. One central concept of this ubiquitous language are 'Entities'. The following example shows a simplistic textual DSL created with Xtext. The Entity DSL allows the specification of real-world entities with their relevant properties in a concise and clear notation.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;pre class=&quot;prettyprint&quot;&gt;entity Client{
+   id:Number
+   name:String
+   surname:String
+}
+entity Contract{
+   id:Number
+   title:String
+   client:Client
+}&lt;/pre&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;The simple example above shows two entities from the insurance domain that have a relation between each other. By describing the domain concepts on a rather high-level of abstraction (notice that there are no programming language specific data-types or notations) DSLs can be used by non-programmers. The technology independent language can close the gap between business experts and developers by becoming the common ground to discuss domain concepts benefiting both sides. On the one hand, the use of a formal language enables business analysts to specify domain concepts in a precise and unambiguous language. A task that is particularly hard using tools such as Word or Excel. On the other hand, the boilerplate code can be deduced from the DSL accelerating the development process. Moreover, the general code quality is increased, because the boilerplate code that is often the main spot for copy and paste errors is automatically created. Further, the source code structure is consistent benefiting maintenance and future development.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;In addition to being the center of the development process, domain-specific languages might be integrated into larger software systems. There are for example statechart tools embedding a domain-specific language to describe the input types and the internal variables of a state. By using a formal language with a given set of keywords and language constructs mature editor support can be provided. Further, the expressions can be interpreted automatically to simulate the model behavior. Thereby, business experts can get immediate feedback without the necessity of a running application. In addition, it is also possible to generate source code e.g. in Java or C++ from the statechart model.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;By providing a concise and semantically rich notation of the domain, DSLs increase efficiency and the overall quality of the product or process. Yet, in order to be successfully introduced a mature editor that integrates well with existing processes is required.&lt;/span&gt;&lt;/p&gt; 
+&lt;h2&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;Introducing Xtext&lt;/span&gt;&lt;/h2&gt; 
+&lt;p&gt;&lt;a href=&quot;https://www.eclipse.org/Xtext/&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Eclipse Xtext&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; was built to quickly create domain-specific languages including an integrated, feature-rich editor. To be more precise: Xtext is a framework for building language workbenches for textual domain-specific languages.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Let's first have a look at the small but important word &quot;textual&quot;. When talking about modeling most of us instinctively remember creating large graphical class diagrams. Instead of modeling lines and boxes on a canvas, textual modeling changes the user interface to a simple, yet feature-rich text editor. Not only creating and maintaining but also sharing - or should I say merging - text files is easier and often well supported by the IDE.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;The text files created using the Xtext editor are analyzed by a parser, that instantiates an &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Eclipse_Modeling_Framework&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Ecore&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; model representing the abstract syntax tree (AST). The AST is not only the basis for the Eclipse integration but also allows frameworks such as &lt;/span&gt;&lt;a href=&quot;https://www.eclipse.org/gef/&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;GEF&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; to automatically create a graphical representation. Although it is easier to create and maintain models via text files, it is often beneficial to have a graphical representation to discuss the broader domain concepts and their relations.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;The next thing mentioned by the definition above is the &quot;language workbench&quot;. The term aggregates some of the concepts already mentioned. First, a feature-rich editor that offers code-completion, syntax-highlighting, formatting, error detection and so on. Second, a sophisticated language workbench offers different views on the same model as well as navigation and refactoring support. Finally, a language workbench should integrate with existing tools and frameworks to embed the DSL in existing processes. Xtext languages can be integrated into different IDEs such as the Eclipse IDE, IntelliJ IDEA, VSCode, and all editors that support the &lt;/span&gt;&lt;a href=&quot;https://microsoft.github.io/language-server-protocol/&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Language Server Protocol&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;. A feature-rich, well-integrated workbench is a key factor to success for a domain-specific language.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;After having spent some time on the benefits of a textual domain-specific language and the corresponding workbench, we will examine how Xtext and Xtend enable you to reach these goals.&lt;/span&gt;&lt;/p&gt; 
+&lt;h2&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;Getting Started with Xtext&lt;/span&gt;&lt;/h2&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Xtext is a mature framework that was build to quickly create domain-specific languages with a sophisticated workbench. Boiling it down to the very minimum, a Xtext DSL only requires a grammar file. The powerful grammar defines the language and is input for a generation process that creates the full infrastructure including the parser, linker, type checker as well as editor support for the Eclipse IDE, any editor that supports the L&lt;/span&gt;&lt;a href=&quot;https://hosting.itemis.de/en/integrating-xtext-language-support-in-visual-studio-code&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;anguage Server Protocol&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;, and your favorite web browser.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Yet, the generated default often has to be customized in order to achieve company- or project-specific behavior. Therefore, the generated parts of the workbench can be customized by providing domain-specific implementations. Typical customizations include custom validations, narrowed proposals during code completion, or code formatting. A good default that is highly customizable, enables a fast proof of concept that can evolve over time becoming a highly specific DSL.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Having talked a lot about Xtext, let's get involved and create our first DSL. First of all, as you may have guessed already you need an Eclipse workspace with the Xtext framework included. You find a pre-bundled Eclipse version &lt;/span&gt;&lt;a href=&quot;https://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/oxygen2&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;here&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; or you can download the required plugins in your existing Eclipse IDE right &lt;/span&gt;&lt;a href=&quot;http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;here&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;. After your Eclipse workspace is all setup, you can start creating your first DSL. &lt;br /&gt;Since I don't want to go to much into the details, I recommend you to try the &lt;/span&gt;&lt;a href=&quot;https://www.eclipse.org/Xtext/documentation/102_domainmodelwalkthrough.html&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Xtext 15-minute tutorial&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;. The tutorial shows how to create the Entity DSL we used in the example above. Further, there is a Domain-Model example that comes with the Xtext plugins including more than 800 JUnit test cases. The example project provides a good overview of the potential use of test-driven development when creating a DSL. The test cases not only cover parsing and validating the text files, but also demonstrate how the user interface functionality such as code completion or the outline view can be tested automatically.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Having finished the tutorial, the &lt;/span&gt;&lt;a href=&quot;https://www.eclipse.org/Xtext/documentation/index.html&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;documentation&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; offers a great overview of the different concepts embodied in Xtext. Further, you should keep an eye on the &lt;/span&gt;&lt;a href=&quot;https://eclipse.org/forums/index.php?t=thread&amp;amp;frm_id=27&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Eclipse TMF forum&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; where you find answers to many questions. Finally, if you want to contribute to Xtext itself you are kindly invited to provide pull requests to the Xtext &lt;/span&gt;&lt;a href=&quot;https://github.com/eclipse/xtext&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;GitHub repositories&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;.&lt;/span&gt;&lt;/p&gt; 
+&lt;h2&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;Leverage the domain model with Xtend&lt;/span&gt;&lt;/h2&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;As shown above, Xtext enables you to create and evolve DSLs quickly. However, at the end of the day domain-specific model regardless if it is a domain model, an expression, or a configuration is created to be further processed. At this point, Xtend comes into play. Xtend is a statically-typed-programming language built with Xtext and compiled to Java. Since it compiles to Java it integrates seamlessly with existing Java programs and vice versa. Xtend offers powerful features such as template strings, extension methods, and built-in functions such as filter, map, and reduce. Since Xtend is a domain-specific language it enables developers to write concepts available in Java, in a concise and semantically rich notation.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Xtend include many language concepts that are especially beneficial when processing models. First, it offers template strings which are ideal to generate executable code from a given model.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;pre class=&quot;prettyprint&quot;&gt;def generateEntity(Entity entity){'''
+    &lt;span style=&quot;color: #000000;&quot;&gt;public class&lt;/span&gt; «entity.name»{
+       «entity.properties.forEach[generate]»
+    }
+''' 
+}
+
+def generate(Property property){'''
+private «property.type» «property.name»
+''' 
+}&lt;/pre&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;Xtend enables the specification of multi-line strings that contain fixed text parts as well as dynamic parts computed from the given model. The example above shows a very basic multi-line String. Starting with triple quotes the String contains the static part &lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;public class&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; followed by a dynamic part in guillemets, aka « and ». When the string is interpreted at runtime the dynamic part is replaced by the name of the entity currently in focus. In the class body the template String contains another guillemets expression that calls the built-in &lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;forEach&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; function on the properties of the current entity. Thereby, the generate method is called that returns a string representing the property type and name. In addition, the Xtend editor also highlights the whitespaces as they will appear in the generated file. In contrast to other templating engines functions to evaluate dynamic values can be included directly in the templates.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Second, another important ingredient of Xtend is the support for lambda expressions. Besides lambda expressions, there are also higher-order functions such as &lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;filter&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;map&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;reduce&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; etc. already shipped with the Xtend language library. The example above shows how the built-in function &lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;forEach&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; is used to get the textual representation for all properties modeled in the current entity. The combination of built-in and custom lambda functions enables concise statements, e.g. for dealing with model-to-model transformations or model simulation.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Finally, there are many more features included in Xtend, such as extension methods, operator overloading, powerful switch expression, polymorphic method invocation, and so on, that make Xtend a conclusive add-on to the Java language.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Besides being a powerful programming language, Xtend provides a compact and semantically rich language for processing domain-specific models. To get a better feeling for the language and its features have a look at this &lt;/span&gt;&lt;a href=&quot;https://www.eclipse.org/xtend/documentation/101_gettingstarted.html&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;tutorial&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;.&lt;/span&gt;&lt;/p&gt; 
+&lt;h2&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;Conclusion&lt;/span&gt;&lt;/h2&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Domain-specific languages are used to express concepts of a certain domain in a concise and semantically rich notation. Employing DSLs enables model simulation, source code generation, and increases the overall quality. As shown above, Xtext is a framework built to quickly create domain-specific languages including a sophisticated and well-integrated editor. Since Xtext is highly customizable it supports the evolution of a DSL from an early prototype version to an individualized mature solution. Finally, the statically typed programming language Xtend provides mature features for model-to-model or model-to-text transformations. All in all, the combination of Xtext and Xtend will enable you to rapidly create your first domain-specific language workbench perfectly tailored for your domain.&lt;/span&gt;&lt;/p&gt;  
+&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;https://track.hubspot.com/__ptq.gif?a=761475&amp;amp;k=14&amp;amp;r=https%3A%2F%2Fblogs.itemis.com%2Fen%2Fbuilding-domain-specific-languages-with-xtext-and-xtend&amp;amp;bu=https%253A%252F%252Fblogs.itemis.com&amp;amp;bvt=rss&quot; style=&quot;width: 1px!important;&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Thu, 15 Mar 2018 14:31:49 +0000</pubDate>
+	<author>buender@itemis.de (Hendrik Bünder)</author>
+</item>
+<item>
+	<title>PapyrusUML: Some love for Toolsmiths</title>
+	<guid isPermaLink="false">http://papyrusuml.wordpress.com/?p=1080</guid>
+	<link>https://papyrusuml.wordpress.com/2018/03/15/some-love-for-toolsmiths/</link>
+	<description>&lt;p&gt;Today, my minions added a new page to the the unsung heroes of me: The Toolsmiths!&lt;/p&gt;
+&lt;p&gt;They are those who are brave enough to add capabilities to Papyrus and even to build new modeling tools on top of the Papyrus platform!&lt;/p&gt;
+&lt;p&gt;They are, of course, all the main developers of the Papyrus modeling platform and the various products in the Papyrus product line, but also those who provide fixes through bugzilla, those who build add-ons to Papyrus, and those who use Papyrus as the base for their own domain/company-specific modeling tools.&lt;/p&gt;
+&lt;p&gt;Interested in joining this fearless bunch? The &lt;a href=&quot;https://papyrusuml.wordpress.com/toolsmiths-tips-and-tricks/&quot;&gt;Toolsmith page&lt;/a&gt; is for you!&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;Are you interested in writing for this blog? Please &lt;a href=&quot;https://papyrusuml.wordpress.com/contact-us/&quot;&gt;let us know&lt;/a&gt;!&lt;/p&gt;</description>
+	<pubDate>Thu, 15 Mar 2018 13:30:26 +0000</pubDate>
+</item>
+<item>
+	<title>Eclipse Announcements: Eclipse IoT Day Santa Clara | Speakers Announced</title>
+	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/m-u4xUFGRYE/</guid>
+	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/m-u4xUFGRYE/</link>
+	<description>We're pleased to announce the speakers for the Eclipse IoT Day Santa Clara, co-located with IoT World 2018 on May 14.&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/m-u4xUFGRYE&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Thu, 15 Mar 2018 12:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>Donald Raab: EC by Example: Filtering</title>
+	<guid isPermaLink="false">https://medium.com/p/4f14b906f718</guid>
+	<link>https://medium.com/@donraab/ec-by-example-filtering-4f14b906f718?source=rss-df39b86e9f04------2</link>
+	<description>&lt;p&gt;Learn how to filter a collection using &lt;a href=&quot;https://www.eclipse.org/collections/&quot;&gt;Eclipse Collections&lt;/a&gt;.&lt;/p&gt;&lt;figure&gt;&lt;img alt=&quot;&quot; src=&quot;https://cdn-images-1.medium.com/max/715/1*7C5g4RO3BSiqF-sYmUkyMA.png&quot; /&gt;&lt;/figure&gt;&lt;h3&gt;Filtering: Include or Exclude?&lt;/h3&gt;&lt;p&gt;If you have a singe method named filter, how do you know if it is supposed to be an inclusive or exclusive filter? In &lt;a href=&quot;https://github.com/eclipse/eclipse-collections&quot;&gt;Eclipse Collections&lt;/a&gt;, there are two filtering methods named &lt;em&gt;select&lt;/em&gt; and &lt;em&gt;reject&lt;/em&gt;.&lt;/p&gt;&lt;figure&gt;&lt;img alt=&quot;&quot; src=&quot;https://cdn-images-1.medium.com/max/620/1*fvYTX5UYIjrRwx4Ptf48VQ.png&quot; /&gt;&lt;/figure&gt;&lt;h3&gt;Filtering an Object List&lt;/h3&gt;&lt;pre&gt;@Test&lt;br /&gt;public void filteringUsingSelectAndReject()&lt;br /&gt;{&lt;br /&gt;    ExecutorService executor = Executors.&lt;em&gt;newWorkStealingPool&lt;/em&gt;();&lt;/pre&gt;&lt;pre&gt;    MutableList&amp;lt;Integer&amp;gt; mList = &lt;em&gt;mList&lt;/em&gt;(1, 2, 3, 4, 5);&lt;br /&gt;    ImmutableList&amp;lt;Integer&amp;gt; iList = &lt;em&gt;iList&lt;/em&gt;(1, 2, 3, 4, 5);&lt;br /&gt;&lt;br /&gt;    Predicate&amp;lt;Integer&amp;gt; evens = i -&amp;gt; i % 2 == 0;&lt;/pre&gt;&lt;pre&gt;    MutableList&amp;lt;Integer&amp;gt; evensMutable = mList.select(evens);&lt;br /&gt;    ImmutableList&amp;lt;Integer&amp;gt; evensImmutable = iList.select(evens);&lt;/pre&gt;&lt;pre&gt;    LazyIterable&amp;lt;Integer&amp;gt; evensLazy = mList.asLazy().select(evens);&lt;/pre&gt;&lt;pre&gt;    ParallelListIterable&amp;lt;Integer&amp;gt; evensParallel =&lt;br /&gt;            mList.asParallel(executor, 2).select(evens);&lt;br /&gt;&lt;br /&gt;    ImmutableList&amp;lt;Integer&amp;gt; expectedEvens = &lt;em&gt;iList&lt;/em&gt;(2, 4);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedEvens, evensMutable);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedEvens, evensImmutable);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedEvens, evensLazy.toList());&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedEvens, evensParallel.toList());&lt;br /&gt;&lt;br /&gt;    MutableList&amp;lt;Integer&amp;gt; oddsMutable = mList.reject(evens);&lt;br /&gt;    ImmutableList&amp;lt;Integer&amp;gt; oddsImmutable = iList.reject(evens);&lt;/pre&gt;&lt;pre&gt;    LazyIterable&amp;lt;Integer&amp;gt; oddsLazy = mList.asLazy().reject(evens);&lt;/pre&gt;&lt;pre&gt;    ParallelListIterable&amp;lt;Integer&amp;gt; oddsParallel =&lt;br /&gt;            mList.asParallel(executor, 2).reject(evens);&lt;br /&gt;&lt;br /&gt;    ImmutableList&amp;lt;Integer&amp;gt; expectedOdds = &lt;em&gt;iList&lt;/em&gt;(1, 3, 5);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedOdds, oddsMutable);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedOdds, oddsImmutable);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedOdds, oddsLazy.toList());&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedOdds, oddsParallel.toList());&lt;br /&gt;}&lt;/pre&gt;&lt;h3&gt;Filtering a primitive List&lt;/h3&gt;&lt;pre&gt;@Test&lt;br /&gt;public void filteringPrimitivesUsingSelectAndReject()&lt;br /&gt;{&lt;br /&gt;    MutableIntList mList = IntLists.&lt;strong&gt;&lt;em&gt;mutable&lt;/em&gt;&lt;/strong&gt;.with(1, 2, 3, 4, 5);&lt;br /&gt;    ImmutableIntList iList = IntLists.&lt;strong&gt;&lt;em&gt;immutable&lt;/em&gt;&lt;/strong&gt;.with(1, 2, 3, 4, 5);&lt;/pre&gt;&lt;pre&gt;    IntPredicate evens = i -&amp;gt; i % 2 == 0;&lt;br /&gt;&lt;br /&gt;    MutableIntList evensMutable = mList.select(evens);&lt;br /&gt;    ImmutableIntList evensImmutable = iList.select(evens);&lt;/pre&gt;&lt;pre&gt;    LazyIntIterable evensLazy = mList.asLazy().select(evens);&lt;br /&gt;&lt;br /&gt;    MutableIntList expectedEvens = IntLists.&lt;strong&gt;&lt;em&gt;mutable&lt;/em&gt;&lt;/strong&gt;.with(2, 4);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedEvens, evensMutable);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedEvens,  evensImmutable);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedEvens,  evensLazy.toList());&lt;br /&gt;&lt;br /&gt;    MutableIntList oddsMutable = mList.reject(evens);&lt;br /&gt;    ImmutableIntList oddsImmutable = iList.reject(evens);&lt;/pre&gt;&lt;pre&gt;    LazyIntIterable oddsLazy = mList.asLazy().reject(evens);&lt;br /&gt;&lt;br /&gt;    MutableIntList expectedOdds = IntLists.&lt;strong&gt;&lt;em&gt;mutable&lt;/em&gt;&lt;/strong&gt;.with(1, 3, 5);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedOdds, oddsMutable);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedOdds,  oddsImmutable);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(expectedOdds,  oddsLazy.toList());&lt;br /&gt;}&lt;/pre&gt;&lt;h3&gt;What other types support Select and Reject?&lt;/h3&gt;&lt;p&gt;The &lt;a href=&quot;https://medium.com/@donraab/symmetric-sympathy-2c59d4541d60&quot;&gt;Symmetric Sympathy&lt;/a&gt; is strong with &lt;em&gt;select&lt;/em&gt; and &lt;em&gt;reject&lt;/em&gt;.&lt;/p&gt;&lt;figure&gt;&lt;img alt=&quot;&quot; src=&quot;https://cdn-images-1.medium.com/max/1024/1*IiWKcjSQPI_7ErSFbKuoOQ.png&quot; /&gt;Select and Reject is available across many types and concerns&lt;/figure&gt;&lt;h3&gt;Possible to filter both inclusively and exclusively in one iteration?&lt;/h3&gt;&lt;p&gt;Yes. There is a method called &lt;em&gt;partition&lt;/em&gt;. I will show &lt;em&gt;partition&lt;/em&gt; in the next blog in this series.&lt;/p&gt;&lt;h3&gt;APIs covered in the examples&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/api/RichIterable.html#select-org.eclipse.collections.api.block.predicate.Predicate-&quot;&gt;Select&lt;/a&gt; (&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/api/list/MutableList.html#select-org.eclipse.collections.api.block.predicate.Predicate-&quot;&gt;Eager&lt;/a&gt;, &lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/api/LazyIterable.html#select-org.eclipse.collections.api.block.predicate.Predicate-&quot;&gt;Lazy&lt;/a&gt; and &lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/api/list/ParallelListIterable.html#select-org.eclipse.collections.api.block.predicate.Predicate-&quot;&gt;Parallel&lt;/a&gt;) — filters &lt;strong&gt;&lt;em&gt;including&lt;/em&gt;&lt;/strong&gt; elements that match a condition&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/api/RichIterable.html#reject-org.eclipse.collections.api.block.predicate.Predicate-&quot;&gt;Reject&lt;/a&gt; (&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/api/list/MutableList.html#reject-org.eclipse.collections.api.block.predicate.Predicate-&quot;&gt;Eager&lt;/a&gt;, &lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/api/LazyIterable.html#reject-org.eclipse.collections.api.block.predicate.Predicate-&quot;&gt;Lazy&lt;/a&gt; and &lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/api/list/ParallelListIterable.html#reject-org.eclipse.collections.api.block.predicate.Predicate-&quot;&gt;Parallel&lt;/a&gt;) — filters &lt;strong&gt;&lt;em&gt;excluding&lt;/em&gt;&lt;/strong&gt; elements that match a condition&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/impl/factory/Iterables.html#mList-T...-&quot;&gt;mList&lt;/a&gt; — Creates a MutableList&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/impl/factory/Iterables.html#iList-T-T-T-T-T-&quot;&gt;iList&lt;/a&gt; — Creates an ImmutableList&lt;/li&gt;&lt;li&gt;IntLists.mutable.&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/api/factory/list/primitive/MutableIntListFactory.html#with-int...-&quot;&gt;with&lt;/a&gt; — Creates a MutableIntList&lt;/li&gt;&lt;li&gt;IntLists.immutable.&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/api/factory/list/primitive/ImmutableIntListFactory.html#with-int...-&quot;&gt;with&lt;/a&gt; — Creates an ImmutableIntList&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/api/RichIterable.html#asLazy--&quot;&gt;asLazy&lt;/a&gt; — Returns a LazyIterable or LazyIntIterable&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/api/list/ListIterable.html#asParallel-java.util.concurrent.ExecutorService-int-&quot;&gt;asParallel&lt;/a&gt; — Returns a ParallelIterable&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.1.0/org/eclipse/collections/api/RichIterable.html#toList--&quot;&gt;toList&lt;/a&gt; — Converts the target Iterable into a MutableList&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/eclipse/eclipse-collections&quot;&gt;&lt;em&gt;Eclipse Collections&lt;/em&gt;&lt;/a&gt;&lt;em&gt; is open for &lt;/em&gt;&lt;a href=&quot;https://github.com/eclipse/eclipse-collections/blob/master/CONTRIBUTING.md&quot;&gt;&lt;em&gt;contributions&lt;/em&gt;&lt;/a&gt;&lt;em&gt;. If you like the library, you can let us know by starring it on GitHub.&lt;/em&gt;&lt;/p&gt;&lt;img height=&quot;1&quot; src=&quot;https://medium.com/_/stat?event=post.clientViewed&amp;amp;referrerSource=full_rss&amp;amp;postId=4f14b906f718&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Thu, 15 Mar 2018 00:26:54 +0000</pubDate>
+</item>
+<item>
+	<title>PapyrusUML: Taking a (Tu)Leap!</title>
+	<guid isPermaLink="false">http://papyrusuml.wordpress.com/?p=1071</guid>
+	<link>https://papyrusuml.wordpress.com/2018/03/14/taking-a-tuleap/</link>
+	<description>&lt;p&gt;&lt;img align=&quot;right&quot; alt=&quot;TuleapIcon&quot; height=&quot;25%&quot; src=&quot;https://www.tuleap.org/assets/img/logo-tuleap-flat-orange-white.svg&quot; width=&quot;25%&quot; /&gt; Thanks to &lt;a href=&quot;https://www.eclipse.org/&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;Eclipse&lt;/a&gt;, my &lt;a href=&quot;https://www.polarsys.org/papyrus-ic&quot;&gt;industry consortium&lt;/a&gt; is taking a leap into &lt;a href=&quot;https://www.enalean.com/&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;Enalean’s&lt;/a&gt; &lt;a href=&quot;https://www.tuleap.org/what-is-tuleap&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;Tuleap&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;Here are the three projects (communities) that have been created along with their descriptions, taken from each project:&lt;/p&gt;
+&lt;table border=&quot;1&quot; cellpadding=&quot;2&quot; style=&quot;width: 100%;&quot;&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;&lt;a href=&quot;https://tuleap.eclipse.org/projects/papyrus-ic&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;Papyrus-IC&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;&lt;a href=&quot;https://tuleap.eclipse.org/projects/papyrus-ic-product&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;Papyrus-IC-Product&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;&lt;a href=&quot;https://tuleap.eclipse.org/projects/papyrus-ic-steering&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;Papyrus-IC Steering&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td valign=&quot;top&quot;&gt;This project is the Papyrus IC’s way of openly managing the Papyrus projects and products This is our way of informing the Papyrus community about what we are doing and, in return, to get feedback from the Papyrus community. This is a source of information for the community and by the community — this is your community!&lt;/td&gt;
+&lt;td valign=&quot;top&quot;&gt; This project is where the Papyrus product line management lives. This is where we do the nitty-gritty work so that you can enjoy our fabulous Papyrus-based products. Unfortunately, most of what we do here can be boring, day-to-day stuff, and we want our developers, designers, and managers to keep their focus, so we keep them in a quiet, private area.&lt;br /&gt;
+But don’t worry, any significant news, decision, development, etc. Will be made available in the &lt;a href=&quot;https://tuleap.eclipse.org/projects/papyrus-ic&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;Papyrus IC project&lt;/a&gt;!&lt;/td&gt;
+&lt;td valign=&quot;top&quot;&gt;This project is to help the Papyrus Industry Consortium’s Steering community to manage the consortium projects, products, and assets. This project is private to protect confidential information (e.g., user and supplier confidential information, financial information)&lt;br /&gt;
+But don’t worry, Steering committee information for public consumption will be provided in the &lt;a href=&quot;https://tuleap.eclipse.org/projects/papyrus-ic&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;Papyrus-IC project&lt;/a&gt;!&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;My minions are still working at the governance of the projects and at transferring information from the Papyrus IC Steering into the other projects (especially to &lt;strong&gt;&lt;a href=&quot;https://tuleap.eclipse.org/projects/papyrus-ic&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;Papyrus-IC&lt;/a&gt;)&lt;/strong&gt;, so please be patient with them!&lt;/p&gt;</description>
+	<pubDate>Wed, 14 Mar 2018 13:09:19 +0000</pubDate>
+</item>
+<item>
+	<title>Vincent Zurczak: Testing Eclipse’s User Workflows: from OOMPH to Subversive, m2e and WTP</title>
+	<guid isPermaLink="false">http://vzurczak.wordpress.com/?p=722</guid>
+	<link>https://vzurczak.wordpress.com/2018/03/13/testing-eclipses-user-workflows-from-oomph-to-subversive-m2e-and-wtp/</link>
+	<description>&lt;h2&gt;Goals&lt;/h2&gt;
+&lt;p&gt;Few months ago, I worked on automating the tests of user workflows that involve Eclipse tooling. The client organization has more than a hundred of developers and they all use common frameworks based on JEE. They all use the same tools, from source version control to m2e and WTP. Eclipse being their IDE since quite a long time, they decided, some years ago, to automate the installation of Eclipse with preconfigured tools and predefined preferences. They did create their own solution. When OOMPH was released and became Eclipse’s official installer, they quickly dropped their project and adopted OOMPH.&lt;/p&gt;
+&lt;p&gt;From an OOMPH’s point of view, this organization has its own catalog and custom setup tasks. Unlike what the installer usually shows, there is only one distribution. Everything works behind a proxy. Non-composite p2 repositories are proxyfied by Nexus. All the composite p2 repositories (such as official Eclips’s ones) are mirrored by using &lt;a href=&quot;https://blog.philipphauer.de/offline-copy-mirror-eclipse-p2-repository&quot;&gt;Eclipse in command-line&lt;/a&gt;. The installer shows a single product, but in different versions (e.g. Neon, Oxygen…). It also provides several projects: several JDKs, several versions of Tomcat, several versions of Maven, several Eclipse tools, etc. We can really say this organization uses all the features OOMPH provides.&lt;/p&gt;
+&lt;p&gt;Here is a global overview of what is shown to users.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://vzurczak.files.wordpress.com/2018/03/dev1.png&quot;&gt;&lt;img alt=&quot;First screen in Eclipse's installer&quot; class=&quot;aligncenter size-medium wp-image-727&quot; height=&quot;207&quot; src=&quot;https://vzurczak.files.wordpress.com/2018/03/dev1.png?w=300&amp;amp;h=207&quot; width=&quot;300&quot; /&gt;&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://vzurczak.files.wordpress.com/2018/03/dev2.png&quot;&gt;&lt;img alt=&quot;Second screen in Eclipse's installer&quot; class=&quot;aligncenter size-medium wp-image-726&quot; height=&quot;226&quot; src=&quot;https://vzurczak.files.wordpress.com/2018/03/dev2.png?w=300&amp;amp;h=226&quot; width=&quot;300&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;So, this organization is mostly a group of Eclipse users. Their developments are quite limited. Their focus is about delivering valid Eclipse distributions to their members and verify everything work correctly in their environment. Given this context, my job was to automate things: update sites creation (easy with Tycho), prepare the installer for the internal environement and automate tests that launch the installer, make a real installation, start the newly installed Eclipse, make it execute several actions a real developer would do and verify everything works correctly inside this (restrained / controlled) environment.&lt;/p&gt;
+&lt;p&gt;Let’s take a look at the various parts.&lt;/p&gt;
+&lt;h2&gt;Automating the creation of Custom Installers&lt;/h2&gt;
+&lt;p&gt;This part is not very complicated.&lt;br /&gt;
+I created &lt;a href=&quot;https://github.com/vincent-zurczak/customized-oomph-installer&quot;&gt;a project on GitHub&lt;/a&gt; that shows how it works. Basically, we have a Maven module that invokes ANT. The ANT script downloads the official installer binaries from &lt;a href=&quot;http://www.eclipse.org/&quot;&gt;Eclipse.org&lt;/a&gt;. It verifies the checksum, unwrap their content, update the &lt;strong&gt;eclipse-inst.ini&lt;/strong&gt; file, adds predefined preferences (related to the proxy) and rebuilds a package for users. To prevent downloading binaries everytime, we use a local cache (as a directory). If a binary already exists, we verify its checksum against the value provided by &lt;a href=&quot;http://www.eclipse.org/&quot;&gt;Eclipse.org&lt;/a&gt;. If it succeeds, it means our cache is valid against Eclipse repositories. Otherwise, it may indicate the cache is invalid and that a newer version was released. In such a situation, we indicate the user he (or she) should retry and/or delete the cache before giving it another try.&lt;/p&gt;
+&lt;p&gt;Since all of this a Maven project, it is possible to deploy these installers on a Maven repository.&lt;/p&gt;
+&lt;h2&gt;Automating OOMPH tests with SWT Bot&lt;/h2&gt;
+&lt;p&gt;OOMPH is a SWT application.&lt;br /&gt;
+So, testing it automatically immediately made sense thanks to SWT Bot. Testing with SWT Bot implies deploying it in the tested application. Fortunately, OOMPH is also a RCP application. It means we can install things with p2. That was the first thing to do. And since I enjoy the Maven + ANT combo, I wrote &lt;a href=&quot;https://github.com/vincent-zurczak/integration-tests-with-swt-bot/blob/master/tests-execution/tests-execution-installer/ant/library.xml&quot;&gt;an ANT script&lt;/a&gt; for this (inspired from the one available on Eclipse’s wiki – but much more simple). I also made the tasks reusable so that it can also deploy the bundle with the tests to run.&lt;/p&gt;
+&lt;p&gt;The next step was writing a SWT Bot test and run it against the installer.&lt;br /&gt;
+The first test was very basic. The real job was launching it. When one wants to run SWT Bot tests, it launches a custom application that itself launches Eclipse. Unfortunately, the usual &lt;strong&gt;org.eclipse.swtbot.eclipse.junit.headless.swtbottestapplication&lt;/strong&gt; application did not work. There are checks in it about the workbench. And even if OOMPH is a RCP and has SWT widgets, it does not have any workbench. This is why I created &lt;a href=&quot;https://github.com/vincent-zurczak/integration-tests-with-swt-bot/blob/master/test-plugins/net.vzurczak.eclipse.tests.installer/src/net/vzurczak/eclipse/tests/installer/setup/CustomSwtBotApplication.java&quot;&gt;a custom application&lt;/a&gt; I embedded with my SWT Bot test. Once there, everything was ready.&lt;/p&gt;
+&lt;p&gt;1 – I have a bundle with SWT Bots tests. With a feature. With an update site (that can remain local, no need to deploy it anywhere).&lt;br /&gt;
+2 – I have an ANT script that can install SWT Bot and my test bundle in OOMPH.&lt;br /&gt;
+3 – I have &lt;a href=&quot;https://github.com/vincent-zurczak/integration-tests-with-swt-bot/blob/master/tests-execution/tests-execution-installer/ant/build.test.installer.xml&quot;&gt;an ANT script&lt;/a&gt; that can launch my custom SWT Bot application and executes my tests in OOMPH.&lt;/p&gt;
+&lt;p&gt;It works. The skeleton for &lt;a href=&quot;https://github.com/vincent-zurczak/integration-tests-with-swt-bot&quot;&gt;the project is available on Github&lt;/a&gt;.&lt;br /&gt;
+Otherwise, the shape and the Maven and ANT settings are the same. I only simplified the tests executed for OOMPH (they would not be meaningful for this article). The main test we wrote deploys Eclipse, but also downloads and unzip specific versions of Maven and Tomcat. Obviously, the catalog is made in such a way that installing these components also updates the preferences so that m2e and WTP can use them.&lt;/p&gt;
+&lt;p&gt;Notice there are settings in the ANT script that delete user directories (OOMPH puts some resources and information in cache). To make tests reliable, it is better to delete them. This can be annoying if you have other Eclipse installations on your machine. In the end, such tests aim at being executed on a separate infrastructure, e.g. in continuous integration.&lt;/p&gt;
+&lt;h2&gt;Configuring Eclipse for SWT Bot&lt;/h2&gt;
+&lt;p&gt;Once the tests for the installer have run, we have a new Eclipse installation.&lt;br /&gt;
+And we have other tests to run in it. Just like what we did for OOMPH, we have to install SWT Bot in it. The p2 director will help us once again.&lt;/p&gt;
+&lt;p&gt;Notice we make this step separated from the execution of the tests themselves.&lt;br /&gt;
+Testing OOMPH is quite easy. But the tests written for the IDE are much more complicated and we need to be able to re-run them. So, the configuration of the new Eclipse installation is apart from the tests execution.&lt;/p&gt;
+&lt;h2&gt;Writing and Running Tests for Eclipse&lt;/h2&gt;
+&lt;p&gt;In the same manner than for OOMPH, we have a custom plug-in that contains our tests for Eclipse. There is also a feature. and the (same) local update site. This plug-in is deployed along with SWT Bot. Launching the test is almost the same thing than for OOMPH, except there is a workbench here. We can rely on the usual SWT Bot application for Eclipse.&lt;/p&gt;
+&lt;p&gt;What is more unusual is the kind of test we run here.&lt;br /&gt;
+I will give you an example. We have a test that…&lt;/p&gt;
+&lt;p&gt;1. … waits for OOMPH to intialize the workspace (based on the projects selected during the setup – this step is common to all our tests).&lt;br /&gt;
+2. … opens the SVN perspective&lt;br /&gt;
+3. … declares a new repository&lt;br /&gt;
+4. … checks out the last revision&lt;br /&gt;
+5. … lets m2eclipse import the projects (it is a multi-module project and m2e uses a custom settings.xml)&lt;br /&gt;
+6. … applies a Maven profile on it&lt;br /&gt;
+7. … waits for m2eclipse to download (many) artifacts from the organization’s Nexus&lt;br /&gt;
+8. … waits for the compilation to complete&lt;br /&gt;
+9. … verifies there is no error on the project&lt;br /&gt;
+10. … deploys it on the Tomcat server that was installed by OOMPH (through WTP – &lt;strong&gt;Run as &amp;gt; Run on Server&lt;/strong&gt; )&lt;br /&gt;
+11. … waits for it to be deployed&lt;br /&gt;
+12. … connects to the new web application (using a POST request)&lt;br /&gt;
+13. … verifies the content of the page is valid.&lt;/p&gt;
+&lt;p&gt;This test takes about 5 minutes to run. It implies Eclipse tools, pre-packaged ones too, but also environment solutions (Nexus, SVN server, etc). Unlike what SWT Bot tests usually do, we make integration tests with an environment that is hardly reproductable. It is not just more complex, it must also acknowledge some situations like timeouts or slowlyness. And as usual, there may be glitches in the user interface. As an example, projects resources that are managed by SVN have revision numbers and commit’s author names as a suffix. So, you cannot search resources by full label (hence the &lt;em&gt;TestUtils.findPartialLabel&lt;/em&gt; methods). Another example is that when one expands nodes in the SVN hierarchy, it may take some time for the child resources to by retrieved. Etc.&lt;/p&gt;
+&lt;p&gt;But what was the most complicated was developing these tests.&lt;/p&gt;
+&lt;h2&gt;Iterative Development of these Tests&lt;/h2&gt;
+&lt;p&gt;Usually, SWT Bot tests are developed and tested from the developer’s workspace: right click on the test class, &lt;strong&gt;Run as &amp;gt; SWT Bot test&lt;/strong&gt;. It opens a new workbench and the test runs. That was not possible here. The Eclipse into which the tests must run is supposed to have been configured by OOMPH. You cannot compile the Maven project if you do not have the right settings.xml. You cannot deploy on Tomcat if it has not been declared in the server preferences. And you cannot set these preferences in the test itself because it is part of its job to verify OOMPH did it correctly! Again, it is not unit testing but integration testing. You cannot break the chain.&lt;/p&gt;
+&lt;p&gt;This is why each test is defined in its own Maven profile.&lt;br /&gt;
+To run scenario 1, we execute…&lt;/p&gt;
+&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;mvn clean verify -P scenario1&lt;/pre&gt;
+&lt;p&gt;We also added a profile that recompiles the SWT Bot tests and upgrade the plug-in in the Eclipse installation (the p2 directory can install and uninstall units at once). Therefore, if I modified a test, I can recompile, redeploy and run it by typing in…&lt;/p&gt;
+&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;mvn clean verify -P recompile-ide-tests -P scenario1&lt;/pre&gt;
+&lt;p&gt;This is far from being perfect, but it made the developement much less painful than going through the full chain on every change.&lt;br /&gt;
+I wished I could have duplicated preferences from the current workspace when I run tests from Eclipse (even if it is clear other problems would have arisen). We had 4 important scenarios, and each one is managed separately, in the code and in the Maven configuration.&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Let’s start with the personal feedback.&lt;br /&gt;
+I must confess this project was challenging, despite a solid experience with Maven, Tycho and SWT Bot. The OOMPH part was not that hard (I only had to dig in SWT Bot and platform’s code). Testing the IDE itself, with all the involved components and the environment, was more complicated.&lt;/p&gt;
+&lt;p&gt;Now, the real question is: what is worth the effort?&lt;br /&gt;
+The answer is globally yes. The good parts are these tests can be run in a continuous integration workflow. That was the idea at the beginning. Even if it is not done (yet), that could (should) be a next step. I have spent quite some time to make these tests robust. I must have run them about a thousand times, if not more. And still sometimes, one can fail due to an environment glitch. This is also why we adopted the profile-per-scenario approach, to ease the construction of a build matrix and be able to validate scenarios separately and/or in parallel. It is also obvious that these tests run faster than by hand. An experienced tester spends about two hours to verify these scenarios manually. A novice will spend a day. Running the automated tests takes at most 30 minutes, provided you can read the docs and execute 5 succeeding Maven commands. And these tests can be declined over several user environments. So, this is globally positive.&lt;/p&gt;
+&lt;p&gt;Now, there are few drawbacks. We did not go to the continuous integration. For the moment, releases will keep on being managed on-demand / on-schedule (so few times a year). In addition, everything that was done was for Linux systems. There would be minor adaptations to test the process on Windows (mainly, do not launch the same installer). We also found out minor differences between Eclipse versions. SWT Bot intensively uses labels. However, there are labels and buttons that have changed, as an example, between Neon and Oxygen. So, our tests do not work on every Eclipse version. The problem would remain if we tested by hand. Eventually, and unlike what it seems when you read them, the written tests remain complex to maintain. So, short and mid-term benefits might be counter-balanced by a new degree of complexity (easy to use, not so easy to upgrade). Tests by hand take time but remain understandable and manageable by many persons. Writting or updating SWT Bot tests require people to be well-trained and patient (did I mention I run IDE tests at least a thousand times?). Besides, having automated tests does not prevent from tracking tests on &lt;a&gt;TestLink&lt;/a&gt;. So, manual tests remain documented and maintained. In fact, not all the tests have been automated, only the main and most painful ones.&lt;/p&gt;
+&lt;p&gt;Anyway, as usual, progress is made up of several steps. This work was one of them. I hope those facing the same issues will find help in this article and in the associated code samples.&lt;/p&gt;</description>
+	<pubDate>Tue, 13 Mar 2018 18:23:36 +0000</pubDate>
+</item>
+<item>
+	<title>vert.x project: Google Summer of Code 2018</title>
+	<guid isPermaLink="true">https://vertx.io/blog/google-summer-of-code-2018</guid>
+	<link>https://vertx.io/blog/google-summer-of-code-2018</link>
+	<description>&lt;article&gt;&lt;p&gt;It’s this time of year again!
+&lt;a href=&quot;https://summerofcode.withgoogle.com/&quot;&gt;Google Summer of Code&lt;/a&gt; 2018 submission period has just started!&lt;/p&gt;
+&lt;h2 id=&quot;submit-through-the-eclipse-organization&quot;&gt;Submit through the Eclipse organization&lt;/h2&gt;
+&lt;p&gt;This year, the Eclipse Vert.x project participates through the &lt;a href=&quot;https://summerofcode.withgoogle.com/organizations/6364590460370944/&quot;&gt;Eclipse organization&lt;/a&gt;.
+Make sure to review our &lt;a href=&quot;https://wiki.eclipse.org/Google_Summer_of_Code_2018_Ideas#Eclipse_Vert.x&quot;&gt;GSoC 2018 ideas&lt;/a&gt; and to submit before March, 27!&lt;/p&gt;
+&lt;h2 id=&quot;assessment-application&quot;&gt;Assessment application&lt;/h2&gt;
+&lt;p&gt;As we did before, we ask candidates to &lt;a href=&quot;https://github.com/tsegismont/vertx-gsoc-2018-qotd&quot;&gt;implement a simple Vert.x application&lt;/a&gt;.
+This helps us make sure candidates have a basic understanding of asynchronous programming and the Vert.x toolkit.
+&lt;strong&gt;But submit your proposal even if not done with the assessment application!&lt;/strong&gt;
+Google will not extend the submission period but we can continue reviewing assessments while evaluating the submitted proposals.&lt;/p&gt;
+&lt;h2 id=&quot;questions-&quot;&gt;Questions?&lt;/h2&gt;
+&lt;p&gt;If you have questions, feel free to ask possible mentors via email or on our &lt;a href=&quot;http://vertx.io/community&quot;&gt;community channels&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;All the details for this year (and ideas from past years) can be found on the &lt;a href=&quot;http://vertx.io/gsoc&quot;&gt;Vert.x GSoC page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Looking forward to your proposals!&lt;/p&gt;
+&lt;/article&gt;</description>
+	<pubDate>Tue, 13 Mar 2018 00:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>Eclipse Announcements: Last call for EclipseCon France submissions</title>
+	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/cm9GR8xNOvQ/cfp</guid>
+	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/cm9GR8xNOvQ/cfp</link>
+	<description>Deadline to propose a talk is Monday, March 19. Get your talk in now for your chance to be part of a great program!&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/cm9GR8xNOvQ&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Mon, 12 Mar 2018 21:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>Eclipse Announcements: Eclipse Foundation supports EU funded Brain-IoT Project</title>
+	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/R3tcGxMA3Ak/20180312-brainiot.php</guid>
+	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/R3tcGxMA3Ak/20180312-brainiot.php</link>
+	<description>Eclipse Foundation Europe Selected to Provide Open Source Community Building Expertise for EU funded IoT Research Project&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/R3tcGxMA3Ak&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Mon, 12 Mar 2018 14:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>Holger Voormann: Hello OpenJ9 on Windows, I didn’t expect you so soon!</title>
+	<guid isPermaLink="false">http://eclipsehowl.wordpress.com/?p=1376</guid>
+	<link>https://eclipsehowl.wordpress.com/2018/03/09/hello-openj9-on-windows-i-didnt-expect-you-so-soon/</link>
+	<description>&lt;p&gt;Faster startup time, lower memory footprint and higher application throughput only by replacing the Java virtual machine (VM)? That sounds too good to be true. So far there has been no real alternative to &lt;a href=&quot;http://openjdk.java.net/groups/hotspot/&quot;&gt;Oracle’s Java HotSpot VM&lt;/a&gt; on Windows. With &lt;a href=&quot;http://www.eclipse.org/openj9/&quot;&gt;Eclipse OpenJ9&lt;/a&gt;, which emerged from open-sourcing IBM’s J9 VM, there is now the alternative that promises exactly this.&lt;/p&gt;
+&lt;p&gt;At the end of January the first OpenJDK 9 with Eclipse OpenJ9 nightly builds for Windows were published, but they &lt;a href=&quot;https://twitter.com/howlger/status/955471550140026880&quot;&gt;were not very stable at that time&lt;/a&gt;. This week I tested the &lt;a href=&quot;https://adoptopenjdk.net/nightly.html?variant=openjdk9-openj9&quot;&gt;nightly builds&lt;/a&gt; again to run the Eclipse IDE and I was pleasantly surprised: OpenJ9 ran without crashing. Here are my results: the &lt;strong&gt;start time&lt;/strong&gt; of the &lt;a href=&quot;http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/oxygen2&quot;&gt;Eclipse Oxygen.2 Java IDE&lt;/a&gt; &lt;strong&gt;improves with OpenJ9 from 20&lt;/strong&gt; to 17 seconds, with some tuning (see below) even &lt;strong&gt;to 12 seconds&lt;/strong&gt; compared to the Java 9 JDK with Oracle’s HotSpot VM on my more than six-year-old laptop. Also the Windows Task Manager shows &lt;strong&gt;less memory&lt;/strong&gt; used by the Eclipse IDE and tasks like compiling a large project are a &lt;strong&gt;bit faster&lt;/strong&gt; with OpenJ9.&lt;/p&gt;
+&lt;p&gt;To start the Eclipse IDE with OpenJ9, in &lt;code&gt;eclipse.ini&lt;/code&gt; add the following two lines above &lt;code&gt;-vmargs&lt;/code&gt;:&lt;/p&gt;
+&lt;p style=&quot;padding-left: 30px;&quot;&gt;&lt;code&gt;-vm&lt;br /&gt;
+C:\path\to\jdk-9+181\bin\javaw.exe&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Embedding the JDK into an Eclipse installation directory as &lt;code&gt;jre&lt;/code&gt; subdirectory does not yet work, but as long as you do not start the Eclipse IDE from the command line from another directory you can use &lt;code&gt;-vm&lt;/code&gt; with &lt;code&gt;jre\bin\javaw.exe&lt;/code&gt;. To further improve the startup time, add the following two lines below &lt;code&gt;-vmargs&lt;/code&gt;:&lt;/p&gt;
+&lt;p style=&quot;padding-left: 30px;&quot;&gt;&lt;code&gt;-Xtune:virtualized&lt;br /&gt;
+-Xshareclasses:cacheDir=C:\path\to\shareclasses&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://eclipsehowl.files.wordpress.com/2018/03/openj9_config.png&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;aligncenter wp-image-1380 size-full&quot; height=&quot;353&quot; src=&quot;https://eclipsehowl.files.wordpress.com/2018/03/openj9_config.png?w=450&amp;amp;h=353&quot; width=&quot;450&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The cloning of a GitHub repository fails due to missing certificate authority (CA) certificates. You can fix this OpenJDK 9 issue by replacing the &lt;code&gt;lib\security&lt;/code&gt; directory (which contains the &lt;code&gt;cacerts&lt;/code&gt; file) with the same directory of an &lt;a href=&quot;http://jdk.java.net/10/&quot;&gt;OpenJDK 10 early access build&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://eclipsehowl.files.wordpress.com/2018/03/openj9_git_clone_fail.png&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;aligncenter wp-image-1381 size-full&quot; src=&quot;https://eclipsehowl.files.wordpress.com/2018/03/openj9_git_clone_fail.png?w=450&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In the Eclipse IDE that is running on OpenJDK the standard basic text font defaults (for reasons I don’t know) to &lt;em&gt;Courier New&lt;/em&gt; 10 instead of &lt;em&gt;Consolas&lt;/em&gt; 10. You can change this in &lt;em&gt;Window &amp;gt; Preferences: General &amp;gt; Appearance &amp;gt; Colors and Fonts&lt;/em&gt; by selecting &lt;em&gt;Basic &amp;gt; Text Font&lt;/em&gt; and pressing &lt;em&gt;Edit…&lt;/em&gt; (if you like, you can also use &lt;em&gt;&lt;a href=&quot;https://github.com/adobe-fonts/source-code-pro&quot;&gt;Source Code Pro&lt;/a&gt;&lt;/em&gt; 9 like the &lt;a href=&quot;https://marketplace.eclipse.org/content/clean-sheet&quot;&gt;Clean Sheet&lt;/a&gt; theme does).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://eclipsehowl.files.wordpress.com/2018/03/openj9_default_text_font.png&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;aligncenter wp-image-1382 size-full&quot; src=&quot;https://eclipsehowl.files.wordpress.com/2018/03/openj9_default_text_font.png?w=450&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I have not noticed so far any further differences between the Eclipse IDE running on Oracle’s JDK 9 and the Eclipse IDE running on the current OpenJDK 9 with OpenJ9 nightly build. Debugging and hot code replace works as expected.&lt;/p&gt;
+&lt;p&gt;Many thanks to the &lt;a href=&quot;https://github.com/eclipse/openj9/graphs/contributors&quot;&gt;OpenJ9 team&lt;/a&gt;! I look forward to the final release. It’s great to have two good open source Java virtual machines for Windows. Who knows, but with only one of the two, neither of the two might be open source today.&lt;/p&gt;
+&lt;p&gt;PS: If the Eclipse IDE still starts too slowly for you, have a look at a &lt;a href=&quot;http://www.eclipse.org/downloads/index-developer.php?photon&quot;&gt;developer build of the upcoming Eclipse Photon IDE&lt;/a&gt;. &lt;img alt=&quot;😉&quot; class=&quot;wp-smiley&quot; src=&quot;https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f609.png&quot; style=&quot;height: 1em;&quot; /&gt;&lt;/p&gt;</description>
+	<pubDate>Fri, 09 Mar 2018 14:30:42 +0000</pubDate>
+</item>
+<item>
+	<title>Eclipse Announcements: Eclipse Foundation Announces 2018 Board Member Election Results</title>
+	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/yj4XVjcSRCM/20180307-boardelectionresults2018.php</guid>
+	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/yj4XVjcSRCM/20180307-boardelectionresults2018.php</link>
+	<description>Today we are please to announce the results of the Eclipse Foundation Sustaining Member and Committer Member elections.&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/yj4XVjcSRCM&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Wed, 07 Mar 2018 23:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>Chris Aniszczyk: CNCF Annual Report for 2017 and Kubernetes Graduation</title>
+	<guid isPermaLink="false">http://aniszczyk.org/?p=4208</guid>
+	<link>http://aniszczyk.org/2018/03/07/cncf-annual-report-for-2017-and-kubernetes-graduation/</link>
+	<description>&lt;p&gt;We recently published the &lt;a href=&quot;https://www.cncf.io/wp-content/uploads/2018/03/CNCF-Annual-Report-2017.pdf&quot;&gt;first annual report&lt;/a&gt; for the &lt;a href=&quot;https://cncf.io&quot;&gt;Cloud Native Computing Foundation (CNCF)&lt;/a&gt; which encompassed our community’s work in 2017:&lt;/p&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;
+&lt;p dir=&quot;ltr&quot; lang=&quot;en&quot;&gt;&lt;img alt=&quot;⚡&quot; class=&quot;wp-smiley&quot; src=&quot;https://s.w.org/images/core/emoji/2.4/72x72/26a1.png&quot; style=&quot;height: 1em;&quot; /&gt; happy to have us publish our first annual report for &lt;a href=&quot;https://twitter.com/CloudNativeFdn?ref_src=twsrc%5Etfw&quot;&gt;@CloudNativeFdn&lt;/a&gt;, we will continue to do this annually from now on! &lt;a href=&quot;https://t.co/9nwvBMoN10&quot;&gt;https://t.co/9nwvBMoN10&lt;/a&gt; &lt;a href=&quot;https://t.co/n3La6Y55Jz&quot;&gt;pic.twitter.com/n3La6Y55Jz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;— Chris Aniszczyk (@cra) &lt;a href=&quot;https://twitter.com/cra/status/970824589646364674?ref_src=twsrc%5Etfw&quot;&gt;March 6, 2018&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;The CNCF is technically a little over two years old and it was about time we start publishing annual reports based on our progress. This is a well treaded path by other open source foundations out there like the &lt;a href=&quot;https://www.eclipse.org/org/foundation/reports/annual_report.php&quot;&gt;Eclipse Foundation&lt;/a&gt; and &lt;a href=&quot;https://www.mozilla.org/en-US/foundation/annualreport/2016/&quot;&gt;Mozilla&lt;/a&gt; so we thank them for inspiration to be more transparent.&lt;/p&gt;
+&lt;p&gt;Another thing that we launched this week was the &lt;a href=&quot;https://landscape.cncf.io/&quot;&gt;Cloud Native Landscape&lt;/a&gt; (interactive edition) and more importantly, the &lt;a href=&quot;https://github.com/cncf/landscape#trail-map&quot;&gt;Cloud Native Trailmap&lt;/a&gt; which guides you through the journey of becoming cloud native by adopting different projects in the foundation.&lt;/p&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;
+&lt;p dir=&quot;ltr&quot; lang=&quot;en&quot;&gt;… oh also forgot to mention we launched the Cloud Native Trail Map today which provides an overview for enterprises starting their cloud native journey &lt;a href=&quot;https://t.co/clwcqeay86&quot;&gt;https://t.co/clwcqeay86&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/lfosls?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#lfosls&lt;/a&gt; &lt;a href=&quot;https://t.co/2S1nQ7chqG&quot;&gt;pic.twitter.com/2S1nQ7chqG&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;— Chris Aniszczyk (@cra) &lt;a href=&quot;https://twitter.com/cra/status/971087176304795648?ref_src=twsrc%5Etfw&quot;&gt;March 6, 2018&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Finally, it was fantastic for&lt;a href=&quot;https://www.forbes.com/sites/janakirammsv/2018/03/07/kubernetes-becomes-the-first-project-to-graduate-from-the-cloud-native-computing-foundation/#4c7a5c884b8f&quot;&gt; Kubernetes to be the first project to graduate from the CNCF&lt;/a&gt;.  What does this exactly mean? This is very akin to graduation in other open source foundations such as the ASF. Graduation here is really about confidence in CNCF development processes and really a stamp from the CNCF Technical Oversight Committee (TOC) on what is a sustainable, production ready and mature open source project  you can bet your business on. As projects mature in the CNCF in terms of following solid open source governance processes and become widely adopted, expect to see more projects graduating in the future.&lt;/p&gt;</description>
+	<pubDate>Wed, 07 Mar 2018 20:03:18 +0000</pubDate>
+</item>
+<item>
+	<title>JBoss Tools Team: JBoss Tools 4.5.3.AM2 for Eclipse Oxygen.3</title>
+	<guid isPermaLink="true">https://tools.jboss.org/blog/4.5.3.am2-for-oxygen.3.html</guid>
+	<link>https://tools.jboss.org/blog/4.5.3.am2-for-oxygen.3.html</link>
+	<description>&lt;div&gt;&lt;div id=&quot;preamble&quot;&gt;
+      &lt;div class=&quot;sectionbody&quot;&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Happy to announce 4.5.3.AM2 (Developer Milestone 2) build for Eclipse Oxygen.3.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Downloads available at &lt;a href=&quot;https://tools.jboss.org/downloads/jbosstools/oxygen/4.5.3.AM2.html&quot;&gt;JBoss Tools 4.5.3 AM2&lt;/a&gt;.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect1&quot;&gt;
+      &lt;h2 id=&quot;what-is-new&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#what-is-new&quot;&gt;&lt;/a&gt;What is New?&lt;/h2&gt;
+      &lt;div class=&quot;sectionbody&quot;&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Full info is at &lt;a href=&quot;https://tools.jboss.org/documentation/whatsnew/jbosstools/4.5.3.AM2.html&quot;&gt;this page&lt;/a&gt;. Some highlights are below.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect2&quot;&gt;
+      &lt;h3 id=&quot;openshift&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#openshift&quot;&gt;&lt;/a&gt;OpenShift&lt;/h3&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;cdk-and-minishift-server-adapter-better-developer-experience&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#cdk-and-minishift-server-adapter-better-developer-experience&quot;&gt;&lt;/a&gt;CDK and Minishift Server Adapter better developer experience&lt;/h4&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;When working with both CDK and upstream Minishift, it is recommanded to distinguish environments through the MINISHIFT_HOME variable.
+      It was possible before to use this parameter but it requires a two steps process:&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;ulist&quot;&gt;
+      &lt;ul&gt;
+      &lt;li&gt;
+      &lt;p&gt;first create the server adapter (through the wizard)&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+      &lt;p&gt;then change the MINISHIFT_HOME in the server adapter editor&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;It is now possible to set this parameter from the server adapter wizard. So now, everything is correctly setup when you create the
+      server adapter.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Let’s see an example with the CDK server adapter.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;From the &lt;strong&gt;Servers&lt;/strong&gt; view, select the new Server menu item and enter cdk in the filter:&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;imageblock&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+      &lt;img alt=&quot;cdk server adapter wizard&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard.png&quot; width=&quot;600&quot; /&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Select Red Hat Container Development Kit 3.2+&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;imageblock&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+      &lt;img alt=&quot;cdk server adapter wizard1&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard1.png&quot; width=&quot;600&quot; /&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Click the &lt;strong&gt;Next&lt;/strong&gt; button:&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;imageblock&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+      &lt;img alt=&quot;cdk server adapter wizard2&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard2.png&quot; width=&quot;600&quot; /&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;The MINISHIFT_HOME parameter can be set here and is defaulted.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect2&quot;&gt;
+      &lt;h3 id=&quot;fuse-tooling&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#fuse-tooling&quot;&gt;&lt;/a&gt;Fuse Tooling&lt;/h3&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;display-fuse-version-corresponding-to-camel-version-proposed&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#display-fuse-version-corresponding-to-camel-version-proposed&quot;&gt;&lt;/a&gt;Display Fuse version corresponding to Camel version proposed&lt;/h4&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;When you create a new project, you select the Camel version from a list. Now, the list of Camel versions includes the Fuse version to help you choose the version that corresponds to your production version.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;imageblock&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+      &lt;img alt=&quot;Fuse Version also displayed in drop-down list close to Camel version&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/fusetools/images/listOfFuseVersion.png&quot; /&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;update-validation-for-similar-ids-between-a-component-and-its-definition&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#update-validation-for-similar-ids-between-a-component-and-its-definition&quot;&gt;&lt;/a&gt;Update validation for similar IDs between a component and its definition&lt;/h4&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Starting with Camel 2.20, you can use similar IDs for the component name and its definition unless the specific property &quot;registerEndpointIdsFromRoute&quot; is provided.
+      The validation process checks the Camel version and the value of the &quot;registerEndpointIdsFromRoute&quot; property.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;For example:&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;listingblock&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+      &lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code class=&quot;language-xml&quot;&gt;&amp;lt;from id=&quot;timer&quot; uri=&quot;timer:timerName&quot;/&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;improved-guidance-in-method-selection-for-factory-methods-on-global-bean&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#improved-guidance-in-method-selection-for-factory-methods-on-global-bean&quot;&gt;&lt;/a&gt;Improved guidance in method selection for factory methods on Global Bean&lt;/h4&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;When selecting factory method on a Global bean, a lot of possibilities were proposed in the user interface. The list of factory methods for a global bean is now limited to only those methods that match the constraints of the bean’s global definition type (bean or bean factory).&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;customize-eip-labels-in-the-diagram&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#customize-eip-labels-in-the-diagram&quot;&gt;&lt;/a&gt;Customize EIP labels in the diagram&lt;/h4&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;The Fuse Tooling preferences page for the Editor view includes a new &quot;Preferred Labels&quot; option.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;imageblock&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+      &lt;img alt=&quot;Fuse Tooling editor preference page&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/fusetools/images/prefEIPLabels.png&quot; /&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Use this option to define the label of EIP components (except endpoints) shown in the Editor’s Design view.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;imageblock&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+      &lt;img alt=&quot;Dialog for defining the display text for an EIP&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/fusetools/images/prefEIPLabelsResult.png&quot; /&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect2&quot;&gt;
+      &lt;h3 id=&quot;general&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#general&quot;&gt;&lt;/a&gt;General&lt;/h3&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;credentials-framework&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#credentials-framework&quot;&gt;&lt;/a&gt;Credentials Framework&lt;/h4&gt;
+      &lt;div class=&quot;sect4&quot;&gt;
+      &lt;h5 id=&quot;sunsetting-jboss-org-credentials&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#sunsetting-jboss-org-credentials&quot;&gt;&lt;/a&gt;Sunsetting jboss.org credentials&lt;/h5&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;&lt;code&gt;Download Runtimes&lt;/code&gt; and &lt;code&gt;CDK Server Adapter&lt;/code&gt; used the credentials framework to manage credentials. However, the JBoss.org credentials cannot be used any more
+      as the underlying service used by these components does not support these credentials.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;The credentials framework still supports the JBoss.org credentials in case other services / components require or use this credentials domain.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect2&quot;&gt;
+      &lt;h3 id=&quot;aerogear&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#aerogear&quot;&gt;&lt;/a&gt;Aerogear&lt;/h3&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;aerogear-component-deprecation&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#aerogear-component-deprecation&quot;&gt;&lt;/a&gt;Aerogear component deprecation&lt;/h4&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;The Aerogear component has been marked deprecated as there is no more maintenance on the source code. It is still available in Red Hat Central
+      and may be removed in the future.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect2&quot;&gt;
+      &lt;h3 id=&quot;arquillian&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#arquillian&quot;&gt;&lt;/a&gt;Arquillian&lt;/h3&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;arquillian-component-removal&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#arquillian-component-removal&quot;&gt;&lt;/a&gt;Arquillian component removal&lt;/h4&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;The Arquillian component has been removed from Red Hat Central as it has been deprecated a while ago.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect2&quot;&gt;
+      &lt;h3 id=&quot;browsersim&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#browsersim&quot;&gt;&lt;/a&gt;BrowserSim&lt;/h3&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;browsersim-component-deprecation&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#browsersim-component-deprecation&quot;&gt;&lt;/a&gt;BrowserSim component deprecation&lt;/h4&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;The BrowserSim component has been marked deprecated as there is no more maintenance on the source code. It is still available in Red Hat Central
+      and may be removed in the future.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect2&quot;&gt;
+      &lt;h3 id=&quot;freemarker&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#freemarker&quot;&gt;&lt;/a&gt;Freemarker&lt;/h3&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;freemarker-component-removal&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#freemarker-component-removal&quot;&gt;&lt;/a&gt;Freemarker component removal&lt;/h4&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;The Freemarker component has been removed from Red Hat Central as it has been deprecated a while ago.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect2&quot;&gt;
+      &lt;h3 id=&quot;livereload&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#livereload&quot;&gt;&lt;/a&gt;LiveReload&lt;/h3&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;livereload-component-deprecation&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#livereload-component-deprecation&quot;&gt;&lt;/a&gt;LiveReload component deprecation&lt;/h4&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;The LiveReload component has been marked deprecated as there is no more maintenance on the source code. It is still available in Red Hat Central
+      and may be removed in the future.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Enjoy!&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Jeff Maury&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;&lt;/div&gt;</description>
+	<pubDate>Wed, 07 Mar 2018 09:39:23 +0000</pubDate>
+</item>
+
+</channel>
+</rss>
