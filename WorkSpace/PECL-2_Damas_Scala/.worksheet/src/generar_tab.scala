@@ -9,6 +9,5 @@ object generar_tab {;import org.scalaide.worksheet.runtime.library.WorksheetSupp
   };System.out.println("""create_tab: (n: Int)List[Int]""");$skip(31); 
   
   val tab = create_tab(81);;System.out.println("""tab  : List[Int] = """ + $show(tab ))}
-                                                  
   
 }
