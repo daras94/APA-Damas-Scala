@@ -1,6 +1,6 @@
-package juego
+package juego;
 
-object tablero {;import org.scalaide.worksheet.runtime.library.WorksheetSupport._; def main(args: Array[String])=$execute{;$skip(67); 
+object Tablero {;import org.scalaide.worksheet.runtime.library.WorksheetSupport._; def main(args: Array[String])=$execute{;$skip(68); 
 
      val POS_TAB_JUEGO_EMPTY = 10;System.out.println("""POS_TAB_JUEGO_EMPTY  : Int = """ + $show(POS_TAB_JUEGO_EMPTY ));$skip(605); ;
 
@@ -38,8 +38,8 @@ object tablero {;import org.scalaide.worksheet.runtime.library.WorksheetSupport.
             * salimos de las dimensiones conbecionales de un tablero de damas.
             */
           return (if ((column + (if ((row - 1) % 2 == 0) 1 else 0)) % 2 == 0) (if (row > (tam_tablero - numRowFicha)) 21 + bom else POS_TAB_JUEGO_EMPTY) else (if (row < numRowFicha) 32 + bom else POS_TAB_JUEGO_EMPTY));
-     };System.out.println("""generarFicha: (column: Int, row: Int, cont: Int, dificultad: Int)Int""");$skip(49); 
+     };System.out.println("""generarFicha: (column: Int, row: Int, cont: Int, dificultad: Int)Int""");$skip(36); val res$0 = 
 
-     val tablero = generarTablero(16, 16, 0, 5);System.out.println("""tablero  : List[Int] = """ + $show(tablero ))}
-
+     generarTablero(16, 16, 0, 5);;System.out.println("""res0: List[Int] = """ + $show(res$0))}
+                                                  
 }
