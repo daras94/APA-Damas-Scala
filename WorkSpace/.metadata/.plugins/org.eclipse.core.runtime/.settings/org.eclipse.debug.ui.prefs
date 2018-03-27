@@ -1,6 +1,7 @@
 Console.highWaterMark=88000
 eclipse.preferences.version=1
 org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<launchPerspectives>\n<launchPerspective configurationType\="scala.application" delegate\="scala.application" mode\="run" perspective\="org.scala-ide.sdt.core.perspective"/>\n<launchPerspective configurationType\="scala.application" mode\="run" perspective\="org.scala-ide.sdt.core.perspective"/>\n</launchPerspectives>\n
+org.eclipse.debug.ui.RelaunchAndTerminateLaunchAction=true
 org.eclipse.debug.ui.consoleBackground=0,0,0
 org.eclipse.debug.ui.errorColor=164,0,0
 org.eclipse.debug.ui.switch_to_perspective=prompt
