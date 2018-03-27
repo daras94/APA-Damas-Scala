@@ -1,4 +1,14 @@
 eclipse.preferences.version=1
+org.eclipse.jdt.core.classpathVariable.CUP_JAR=/opt/IDEs/eclipse/configuration/org.eclipse.osgi/575/0/.cp/lib/java-cup-0.11a-beta-20060608.jar
+org.eclipse.jdt.core.classpathVariable.CUP_RUNTIME_JAR=/opt/IDEs/eclipse/configuration/org.eclipse.osgi/575/0/.cp/lib/java-cup-0.11a-beta-20060608-runtime.jar
+org.eclipse.jdt.core.classpathVariable.ECLIPSE_HOME=/opt/IDEs/eclipse/
+org.eclipse.jdt.core.classpathVariable.JRE_LIB=/usr/lib/jvm/jdk1.8.0_162/jre/lib/rt.jar
+org.eclipse.jdt.core.classpathVariable.JRE_SRC=/usr/lib/jvm/jdk1.8.0_162/src.zip
+org.eclipse.jdt.core.classpathVariable.JRE_SRCROOT=
+org.eclipse.jdt.core.classpathVariable.JUNIT_HOME=/opt/IDEs/eclipse/plugins/org.junit_4.12.0.v201504281640/
+org.eclipse.jdt.core.classpathVariable.JUNIT_SRC_HOME=/opt/IDEs/eclipse/plugins/org.junit.source_4.12.0.v201504281640.jar
+org.eclipse.jdt.core.classpathVariable.LEX_JAR=/opt/IDEs/eclipse/configuration/org.eclipse.osgi/575/0/.cp/lib/jflex-1.4.3.jar
+org.eclipse.jdt.core.classpathVariable.M2_REPO=/home/david/.m2/repository
 org.eclipse.jdt.core.codeComplete.visibilityCheck=enabled
 org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
 org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8

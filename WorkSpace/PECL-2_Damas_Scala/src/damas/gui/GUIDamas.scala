@@ -22,7 +22,5 @@ object GUIDamas extends MainFrame {
           val ui = this;
           ui.visible = true
           println("End of main function");
-     }
+     };
 }
-
-class GUIDamas()
