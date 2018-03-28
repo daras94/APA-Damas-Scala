@@ -8,6 +8,89 @@
 	<description>Planet Eclipse - http://planeteclipse.org/planet/</description>
 
 <item>
+	<title>Leo Ufimtsev: Eclipse + Flatpak Quick-start guide</title>
+	<guid isPermaLink="false">http://coffeeorientedprogramming.wordpress.com/?p=538</guid>
+	<link>https://coffeeorientedprogramming.wordpress.com/2018/03/26/eclipse-flatpak-quick-start-guide/</link>
+	<description>&lt;p&gt;Today I’m experimenting with the Eclipse to Flatpak port that our team has been working on.&lt;/p&gt;
+&lt;p&gt;To do so, I had to learn Flatpak.  It only took 10 minutes to learn the basics needed to survive. I.e adding/listing Flapack repos, installing &amp;amp; removing packages.&lt;/p&gt;
+&lt;h3&gt;Flatpack basics:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Flatpak is basically a package management system like yum/dnf/apk-get + version defined container for running gui apps.&lt;/li&gt;
+&lt;li&gt;Flatpak word does not contain a ‘c’. &lt;em&gt;(I was wondering why flatpack could not be found on my system).&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;(Most?) of flatpak can be used via Software Center GUI, but I prefer the command line version as I need to manage repos.&lt;/li&gt;
+&lt;li&gt;The command line has very good &lt;strong&gt;tab-completion &lt;/strong&gt;I’ve litereley figured things out by pressing tab when ever I wonder what argument to type next.&lt;/li&gt;
+&lt;li&gt;Flatpak is already installed on recent Fedora builds, but by default it has no repositories to feed from. You can add the flathub by opening it from here:&lt;br /&gt;
+&lt;a href=&quot;https://flatpak.org/setup/Fedora/&quot;&gt;https://flatpak.org/setup/Fedora/&lt;/a&gt;&lt;br /&gt;
+To verify that you’ve added the repo, you can list repos via:&lt;p&gt;&lt;/p&gt;
+&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;flatpak remote-list
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;To list available packages:
+&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;flatpak remote-ls
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;To install these: (e.g I tested with Zotero)
+&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;flatpak install org.zotero.Zotero
+flatpak install flathub org.zotero.Zotero  #if you want to specify which repo to install from
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;To remove a package:
+&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;flatpak uninstall org.zotero.Zotero
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h3&gt;Eclipse in flatpak&lt;/h3&gt;
+&lt;p&gt;Now I went a head and fidlded around with using Eclipse from Flatpak.&lt;br /&gt;
+Eclipse comes in it’s own repository, &lt;a href=&quot;https://fedorapeople.org/~mbooth/flatpak/index.html&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;as document by Mat Booth&lt;/a&gt;.&lt;br /&gt;
+To set things up:&lt;/p&gt;
+&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;# Add the 'eclipse' repo. 
+flatpak remote-add --if-not-exists eclipse https://fedorapeople.org/~mbooth/flatpak/eclipse.flatpakrepo
+
+# Btw, if you want to delete a repo in the future, it's easy:
+flatpak remote-delete eclipse     #again, tab completion is your friend.
+
+# To see what's in Mat's eclipse repo, you can list it's content:
+flatpak remote-ls eclipse
+  org.eclipse.Committers   # I'm a committer, so I'm gonna go with this version.
+  org.eclipse.Cpp 
+  org.eclipse.Java 
+
+flatpak install eclipse org.eclipse.Committers  #this asks if you want to install gnome 3.24 run time. Say yes.
+
+&lt;/pre&gt;
+&lt;p&gt;Now you can run eclipse either via overviews or via command:&lt;/p&gt;
+&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;flatpak run org.eclipse.Committers
+
+# or with environment variable:
+YOUR_ENV_VAR=VALUE flatpak run org.eclipse.Committers
+&lt;/pre&gt;
+&lt;p&gt;And voila, Eclipse is up and running:&lt;br /&gt;
+&lt;img alt=&quot;Eclipse in a flatpak&quot; class=&quot;alignnone size-full wp-image-539&quot; src=&quot;https://coffeeorientedprogramming.files.wordpress.com/2018/03/eclipse-in-a-flatpak.png?w=680&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Also useful:&lt;/h3&gt;
+&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;# look for stuff in your flatpak
+flatpak search vlc
+
+# Update packages in the future:
+flatpack update
+
+# list what's installed
+flatpak list
+flatpak list --app #only list apps.
+
+&lt;/pre&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2&gt;References:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Good quick start: &lt;a href=&quot;http://docs.flatpak.org/en/latest/using-flatpak.html&quot;&gt;http://docs.flatpak.org/en/latest/using-flatpak.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Fedora mag:&lt;br /&gt;
+&lt;a href=&quot;https://fedoramagazine.org/getting-started-flatpak/&quot;&gt;https://fedoramagazine.org/getting-started-flatpak/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://fedoramagazine.org/install-flathub-apps-fedora/&quot;&gt;https://fedoramagazine.org/install-flathub-apps-fedora/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://fedoramagazine.org/explore-flatpak-fedora-24/&quot; rel=&quot;nofollow&quot;&gt;https://fedoramagazine.org/explore-flatpak-fedora-24/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+	<pubDate>Mon, 26 Mar 2018 19:22:56 +0000</pubDate>
+</item>
+<item>
 	<title>Mike Milinkovich: On Complexity and Good Intentions</title>
 	<guid isPermaLink="false">http://mmilinkov.wordpress.com/?p=1444</guid>
 	<link>https://mmilinkov.wordpress.com/2018/03/23/on-complexity-and-good-intentions/</link>
@@ -371,208 +454,6 @@ C:\path\to\jdk-9+181\bin\javaw.exe&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;Finally, it was fantastic for&lt;a href=&quot;https://www.forbes.com/sites/janakirammsv/2018/03/07/kubernetes-becomes-the-first-project-to-graduate-from-the-cloud-native-computing-foundation/#4c7a5c884b8f&quot;&gt; Kubernetes to be the first project to graduate from the CNCF&lt;/a&gt;.  What does this exactly mean? This is very akin to graduation in other open source foundations such as the ASF. Graduation here is really about confidence in CNCF development processes and really a stamp from the CNCF Technical Oversight Committee (TOC) on what is a sustainable, production ready and mature open source project  you can bet your business on. As projects mature in the CNCF in terms of following solid open source governance processes and become widely adopted, expect to see more projects graduating in the future.&lt;/p&gt;</description>
 	<pubDate>Wed, 07 Mar 2018 20:03:18 +0000</pubDate>
-</item>
-<item>
-	<title>JBoss Tools Team: JBoss Tools 4.5.3.AM2 for Eclipse Oxygen.3</title>
-	<guid isPermaLink="true">https://tools.jboss.org/blog/4.5.3.am2-for-oxygen.3.html</guid>
-	<link>https://tools.jboss.org/blog/4.5.3.am2-for-oxygen.3.html</link>
-	<description>&lt;div&gt;&lt;div id=&quot;preamble&quot;&gt;
-      &lt;div class=&quot;sectionbody&quot;&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Happy to announce 4.5.3.AM2 (Developer Milestone 2) build for Eclipse Oxygen.3.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Downloads available at &lt;a href=&quot;https://tools.jboss.org/downloads/jbosstools/oxygen/4.5.3.AM2.html&quot;&gt;JBoss Tools 4.5.3 AM2&lt;/a&gt;.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sect1&quot;&gt;
-      &lt;h2 id=&quot;what-is-new&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#what-is-new&quot;&gt;&lt;/a&gt;What is New?&lt;/h2&gt;
-      &lt;div class=&quot;sectionbody&quot;&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Full info is at &lt;a href=&quot;https://tools.jboss.org/documentation/whatsnew/jbosstools/4.5.3.AM2.html&quot;&gt;this page&lt;/a&gt;. Some highlights are below.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sect2&quot;&gt;
-      &lt;h3 id=&quot;openshift&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#openshift&quot;&gt;&lt;/a&gt;OpenShift&lt;/h3&gt;
-      &lt;div class=&quot;sect3&quot;&gt;
-      &lt;h4 id=&quot;cdk-and-minishift-server-adapter-better-developer-experience&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#cdk-and-minishift-server-adapter-better-developer-experience&quot;&gt;&lt;/a&gt;CDK and Minishift Server Adapter better developer experience&lt;/h4&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;When working with both CDK and upstream Minishift, it is recommanded to distinguish environments through the MINISHIFT_HOME variable.
-      It was possible before to use this parameter but it requires a two steps process:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;ulist&quot;&gt;
-      &lt;ul&gt;
-      &lt;li&gt;
-      &lt;p&gt;first create the server adapter (through the wizard)&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-      &lt;p&gt;then change the MINISHIFT_HOME in the server adapter editor&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;It is now possible to set this parameter from the server adapter wizard. So now, everything is correctly setup when you create the
-      server adapter.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Let’s see an example with the CDK server adapter.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;From the &lt;strong&gt;Servers&lt;/strong&gt; view, select the new Server menu item and enter cdk in the filter:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;cdk server adapter wizard&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard.png&quot; width=&quot;600&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Select Red Hat Container Development Kit 3.2+&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;cdk server adapter wizard1&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard1.png&quot; width=&quot;600&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Click the &lt;strong&gt;Next&lt;/strong&gt; button:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;cdk server adapter wizard2&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard2.png&quot; width=&quot;600&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;The MINISHIFT_HOME parameter can be set here and is defaulted.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sect2&quot;&gt;
-      &lt;h3 id=&quot;fuse-tooling&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#fuse-tooling&quot;&gt;&lt;/a&gt;Fuse Tooling&lt;/h3&gt;
-      &lt;div class=&quot;sect3&quot;&gt;
-      &lt;h4 id=&quot;display-fuse-version-corresponding-to-camel-version-proposed&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#display-fuse-version-corresponding-to-camel-version-proposed&quot;&gt;&lt;/a&gt;Display Fuse version corresponding to Camel version proposed&lt;/h4&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;When you create a new project, you select the Camel version from a list. Now, the list of Camel versions includes the Fuse version to help you choose the version that corresponds to your production version.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;Fuse Version also displayed in drop-down list close to Camel version&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/fusetools/images/listOfFuseVersion.png&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sect3&quot;&gt;
-      &lt;h4 id=&quot;update-validation-for-similar-ids-between-a-component-and-its-definition&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#update-validation-for-similar-ids-between-a-component-and-its-definition&quot;&gt;&lt;/a&gt;Update validation for similar IDs between a component and its definition&lt;/h4&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Starting with Camel 2.20, you can use similar IDs for the component name and its definition unless the specific property &quot;registerEndpointIdsFromRoute&quot; is provided.
-      The validation process checks the Camel version and the value of the &quot;registerEndpointIdsFromRoute&quot; property.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;For example:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;listingblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code class=&quot;language-xml&quot;&gt;&amp;lt;from id=&quot;timer&quot; uri=&quot;timer:timerName&quot;/&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sect3&quot;&gt;
-      &lt;h4 id=&quot;improved-guidance-in-method-selection-for-factory-methods-on-global-bean&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#improved-guidance-in-method-selection-for-factory-methods-on-global-bean&quot;&gt;&lt;/a&gt;Improved guidance in method selection for factory methods on Global Bean&lt;/h4&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;When selecting factory method on a Global bean, a lot of possibilities were proposed in the user interface. The list of factory methods for a global bean is now limited to only those methods that match the constraints of the bean’s global definition type (bean or bean factory).&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sect3&quot;&gt;
-      &lt;h4 id=&quot;customize-eip-labels-in-the-diagram&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#customize-eip-labels-in-the-diagram&quot;&gt;&lt;/a&gt;Customize EIP labels in the diagram&lt;/h4&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;The Fuse Tooling preferences page for the Editor view includes a new &quot;Preferred Labels&quot; option.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;Fuse Tooling editor preference page&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/fusetools/images/prefEIPLabels.png&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Use this option to define the label of EIP components (except endpoints) shown in the Editor’s Design view.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;Dialog for defining the display text for an EIP&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/fusetools/images/prefEIPLabelsResult.png&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sect2&quot;&gt;
-      &lt;h3 id=&quot;general&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#general&quot;&gt;&lt;/a&gt;General&lt;/h3&gt;
-      &lt;div class=&quot;sect3&quot;&gt;
-      &lt;h4 id=&quot;credentials-framework&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#credentials-framework&quot;&gt;&lt;/a&gt;Credentials Framework&lt;/h4&gt;
-      &lt;div class=&quot;sect4&quot;&gt;
-      &lt;h5 id=&quot;sunsetting-jboss-org-credentials&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#sunsetting-jboss-org-credentials&quot;&gt;&lt;/a&gt;Sunsetting jboss.org credentials&lt;/h5&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;&lt;code&gt;Download Runtimes&lt;/code&gt; and &lt;code&gt;CDK Server Adapter&lt;/code&gt; used the credentials framework to manage credentials. However, the JBoss.org credentials cannot be used any more
-      as the underlying service used by these components does not support these credentials.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;The credentials framework still supports the JBoss.org credentials in case other services / components require or use this credentials domain.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sect2&quot;&gt;
-      &lt;h3 id=&quot;aerogear&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#aerogear&quot;&gt;&lt;/a&gt;Aerogear&lt;/h3&gt;
-      &lt;div class=&quot;sect3&quot;&gt;
-      &lt;h4 id=&quot;aerogear-component-deprecation&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#aerogear-component-deprecation&quot;&gt;&lt;/a&gt;Aerogear component deprecation&lt;/h4&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;The Aerogear component has been marked deprecated as there is no more maintenance on the source code. It is still available in Red Hat Central
-      and may be removed in the future.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sect2&quot;&gt;
-      &lt;h3 id=&quot;arquillian&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#arquillian&quot;&gt;&lt;/a&gt;Arquillian&lt;/h3&gt;
-      &lt;div class=&quot;sect3&quot;&gt;
-      &lt;h4 id=&quot;arquillian-component-removal&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#arquillian-component-removal&quot;&gt;&lt;/a&gt;Arquillian component removal&lt;/h4&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;The Arquillian component has been removed from Red Hat Central as it has been deprecated a while ago.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sect2&quot;&gt;
-      &lt;h3 id=&quot;browsersim&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#browsersim&quot;&gt;&lt;/a&gt;BrowserSim&lt;/h3&gt;
-      &lt;div class=&quot;sect3&quot;&gt;
-      &lt;h4 id=&quot;browsersim-component-deprecation&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#browsersim-component-deprecation&quot;&gt;&lt;/a&gt;BrowserSim component deprecation&lt;/h4&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;The BrowserSim component has been marked deprecated as there is no more maintenance on the source code. It is still available in Red Hat Central
-      and may be removed in the future.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sect2&quot;&gt;
-      &lt;h3 id=&quot;freemarker&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#freemarker&quot;&gt;&lt;/a&gt;Freemarker&lt;/h3&gt;
-      &lt;div class=&quot;sect3&quot;&gt;
-      &lt;h4 id=&quot;freemarker-component-removal&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#freemarker-component-removal&quot;&gt;&lt;/a&gt;Freemarker component removal&lt;/h4&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;The Freemarker component has been removed from Red Hat Central as it has been deprecated a while ago.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sect2&quot;&gt;
-      &lt;h3 id=&quot;livereload&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#livereload&quot;&gt;&lt;/a&gt;LiveReload&lt;/h3&gt;
-      &lt;div class=&quot;sect3&quot;&gt;
-      &lt;h4 id=&quot;livereload-component-deprecation&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#livereload-component-deprecation&quot;&gt;&lt;/a&gt;LiveReload component deprecation&lt;/h4&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;The LiveReload component has been marked deprecated as there is no more maintenance on the source code. It is still available in Red Hat Central
-      and may be removed in the future.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Enjoy!&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Jeff Maury&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;&lt;/div&gt;</description>
-	<pubDate>Wed, 07 Mar 2018 09:39:23 +0000</pubDate>
 </item>
 
 </channel>

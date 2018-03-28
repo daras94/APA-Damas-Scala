@@ -18,8 +18,8 @@ object TestMainDamas {
           print(" - Selecione una opcion de juego (" + Console.GREEN + "Pulse 0 para salir" + Console.RESET + "): ")
           val i = Console.in.readLine();
           val x = (i: String) match {
-               case "1" => Gui.InitGUI();                                    // Inicializa La interfaces Grafica.
-               case "2" => Nil;
+               case "1" => Gui.InitGUI();                                    // Inicializa la interfaces Grafica.
+               case "2" => Nil;                                              // Inicializa la interfaces Shell.
                case _ =>
                     if (i != "0") {
                          println(" - " + Console.RED + "ERROR: " + Console.RESET + "Opcion de juego selecionda no es Valida.")
