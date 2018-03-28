@@ -1,5 +1,7 @@
 package damas.juego
-
+/**
+ * @author david
+ */
 object Tablero {
 
      val POS_TAB_JUEGO_EMPTY = 10

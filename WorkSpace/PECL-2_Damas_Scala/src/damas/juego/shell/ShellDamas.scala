@@ -1,6 +1,8 @@
 package damas.juego.shell
 import scala.sys.process._
-
+/**
+ * @author david
+ */
 object ShellDamas {
      
      /**
