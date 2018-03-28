@@ -11,10 +11,5 @@ package object damas {
       * Declaracion de constantes para todo el apquete.
       */
      val Cmd = ShellDamas;
-     val Gui = GUIDamas; 
-     
-     /**
-      * Declaraciones de funciones del tipo Util
-      */
-     
+     val Gui = GUIDamas;      
 }
