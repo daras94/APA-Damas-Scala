@@ -16,5 +16,5 @@ package object damas {
      /**
       * Declaracion de funciones del TIPO UTIL
       */
-     def clear(): Unit = (if (System.getProperty("os.name").contains("Windows")) "cls" else "clear").!;
+     def clear(): Unit = (if (System.getProperty("os.name").contains("Windows")) "cls" else "clear"). !!;
 }
