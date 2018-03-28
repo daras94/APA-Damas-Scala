@@ -19,9 +19,9 @@ object ShellDamas {
           println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
           println("┃\t\t\t ===> {" + Console.CYAN + " \t MENU Damas BOM \t " + Console.RESET + "} <=== \t\t ┃");
           println("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
-          println("┃\t" + Console.MAGENTA + "1" + Console.RESET + ") - Inciar partida Damas BOM 2 Jugadores.    \t\t\t\t\t ┃");
-          println("┃\t" + Console.MAGENTA + "2" + Console.RESET + ") - Inciar partida Damas BOM 1 Jugador VS IA.\t\t\t\t\t ┃");
-          println("┃\t" + Console.MAGENTA + "3" + Console.RESET + ") - Ver y Cargar Partida Guardadas.	       \t\t\t\t\t ┃");
+          println("┃ " + Console.MAGENTA + "1" + Console.RESET + ") - Inciar partida Damas BOM 2 Jugadores.    \t\t\t\t\t ┃");
+          println("┃ " + Console.MAGENTA + "2" + Console.RESET + ") - Inciar partida Damas BOM 1 Jugador VS IA.\t\t\t\t\t ┃");
+          println("┃ " + Console.MAGENTA + "3" + Console.RESET + ") - Ver y Cargar Partida Guardadas.	      \t\t\t\t\t\t ┃");
           println("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
           println("┃ - " + Console.RED + "NOTA" + Console.RESET + ": Pulsa 0 para volver al menu de selecion de interface de ejecucion. \t\t ┃");
           println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
@@ -51,11 +51,11 @@ object ShellDamas {
           println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
           println("┃ \t\t ===> { " + Console.CYAN + " \t Nivel de dificulta de partida: \t " + Console.RESET + "} <=== \t ┃");
           println("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
-          println("┃\t" + Console.MAGENTA + "1" + Console.RESET + ") - Muy Facil (" + Console.YELLOW + "Escasas fichas trucadas" + Console.RESET + ").  \t\t\t\t\t ┃");
-          println("┃\t" + Console.MAGENTA + "2" + Console.RESET + ") - Facil     (" + Console.YELLOW + "Pocas fichas trucadas" + Console.RESET + ").    \t\t\t\t\t ┃");
-          println("┃\t" + Console.MAGENTA + "3" + Console.RESET + ") - Mendio    (" + Console.YELLOW + "Mitad de fichas trucadas" + Console.RESET + "). \t\t\t\t\t ┃");
-          println("┃\t" + Console.MAGENTA + "4" + Console.RESET + ") - Avanzado  (" + Console.YELLOW + "Muchas fichas Trucadas y alguna BOM" + Console.RESET + ").\t\t\t\t ┃");
-          println("┃\t" + Console.MAGENTA + "5" + Console.RESET + ") - Experto   (" + Console.YELLOW + "Top fichas trucadas y BOM" + Console.RESET + ").\t\t\t\t\t ┃");
+          println("┃ " + Console.MAGENTA + "1" + Console.RESET + ") - Muy Facil (" + Console.YELLOW + "Escasas fichas trucadas" + Console.RESET + ").  \t\t\t\t\t\t ┃");
+          println("┃ " + Console.MAGENTA + "2" + Console.RESET + ") - Facil     (" + Console.YELLOW + "Pocas fichas trucadas" + Console.RESET + ").    \t\t\t\t\t\t ┃");
+          println("┃ " + Console.MAGENTA + "3" + Console.RESET + ") - Mendio    (" + Console.YELLOW + "Mitad de fichas trucadas" + Console.RESET + "). \t\t\t\t\t\t ┃");
+          println("┃ " + Console.MAGENTA + "4" + Console.RESET + ") - Avanzado  (" + Console.YELLOW + "Muchas fichas Trucadas y alguna BOM" + Console.RESET + ").\t\t\t\t\t ┃");
+          println("┃ " + Console.MAGENTA + "5" + Console.RESET + ") - Experto   (" + Console.YELLOW + "Top fichas trucadas y BOM" + Console.RESET + ").\t\t\t\t\t\t ┃");
           println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
           print(" ❈ Selecione el nivel de dificultad de la partida :")
           val nivel: String = Console.in.readLine();
