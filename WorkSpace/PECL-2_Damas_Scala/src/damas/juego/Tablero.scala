@@ -39,4 +39,13 @@ object Tablero {
             */
           return (if ((column + (if ((row - 1) % 2 == 0) 1 else 0)) % 2 == 0) (if (row > (tam_tablero - numRowFicha)) 21 + bom else POS_TAB_JUEGO_EMPTY) else (if (row < numRowFicha) 32 + bom else POS_TAB_JUEGO_EMPTY));
      } 
+     
+     /**
+      * 
+      */
+     def imprimirTablero(tablero: List[Int]): Unit = {
+       /**
+        * En Construcion
+        */
+     }    
 }
