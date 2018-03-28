@@ -1,3 +1,4 @@
+Ypresentation-verbose=true
 eclipse.preferences.version=1
 formatter.alignArguments=true
 formatter.alignSingleLineCaseStatements=true
@@ -17,6 +18,7 @@ org.scalaide.ui.config.scalaHoverCss=/* It is also possible to change the font c
 scala.tools.eclipse.editor.autoBreakingComments=true
 scala.tools.eclipse.editor.autoEscapeSign=true
 scala.tools.eclipse.editor.completionAlwaysLambdas=true
+scala.tools.eclipse.editor.indentGuideEnable=true
 scala.tools.eclipse.logging.ui.properties.ConsoleAppenderEnabled=true
 scala.tools.eclipse.ui.preferences.implicit.text.bold=true
 syntaxColoring.bracket.color=255,85,85

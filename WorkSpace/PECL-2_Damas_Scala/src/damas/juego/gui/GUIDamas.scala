@@ -1,4 +1,4 @@
-package damas.gui
+package damas.juego.gui
 /**
  * @import
  */

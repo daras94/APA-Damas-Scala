@@ -1,6 +1,6 @@
 import damas.juego._
-import damas.gui._
-import scala.sys.process._
+import damas.juego.gui._
+import damas.juego.shell._
 /**
  * @author david
  * 
@@ -10,11 +10,11 @@ package object damas {
      /**
       * Declaracion de constantes para todo el apquete.
       */
-     val Tab = Tablero;     //Inicializacion del Tablero.
-     val Gui = GUIDamas;      
+     val Cmd = ShellDamas;
+     val Gui = GUIDamas; 
      
      /**
-      * Declaracion de funciones del TIPO UTIL
+      * Declaraciones de funciones del tipo Util
       */
-     def clear(): Unit = (if (System.getProperty("os.name").contains("Windows")) "cls" else "clear"). !!;
+     
 }
