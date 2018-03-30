@@ -13,10 +13,10 @@ object TestMainDamas {
           println("/****************************************************************************************/");
           println("/*\t\t\t ===> { " + Console.CYAN + " MENU Start UP, Damas BOM " + Console.RESET + "} <=== \t\t\t*/");
           println("/****************************************************************************************/");
-          println("/*\t" + Console.MAGENTA + "1" + Console.RESET + ") - Inciar paratida GUI Damas BOM.  \t\t\t\t\t\t*/");
-          println("/*\t" + Console.MAGENTA + "2" + Console.RESET + ") - Inciar paratida Shell Damas BOM.\t\t\t\t\t\t*/");
+          println("/*\t" + Console.MAGENTA + "1" + Console.RESET + ") - Iniciar partida GUI Damas BOM.  \t\t\t\t\t\t*/");
+          println("/*\t" + Console.MAGENTA + "2" + Console.RESET + ") - Iniciar partida Shell Damas BOM.\t\t\t\t\t\t*/");
           println("/****************************************************************************************/");
-          print(" - Selecione una opcion de juego (" + Console.GREEN + "Pulse 0 para salir" + Console.RESET + "): ")
+          print(" - Seleccione una opcion de juego (" + Console.GREEN + "Pulse 0 para salir" + Console.RESET + "): ")
           val i = Console.in.readLine();
           (i: String) match {
                case "1" => Gui.InitGUI();                                    // Inicializa la interfaces Grafica.
@@ -27,7 +27,7 @@ object TestMainDamas {
                          Thread.sleep(1000);
                          System.exit(0); 
                     } else {
-                         println(" - " + Console.RED + "ERROR: " + Console.RESET + "Opcion de juego selecionda no es Valida.")    
+                         println(" - " + Console.RED + "ERROR: " + Console.RESET + "Opcion de juego seleccionda no es valida.")    
                     }
           }
           Cmd.clear();                                                       // Limpia el pront en la consola de eclipse puede fallar. 
