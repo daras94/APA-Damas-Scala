@@ -10,7 +10,6 @@ object TestMainDamas {
        *  Declaracion del MAIN.
        */
      def main(args: Array[ String ]): Unit = {
-<<<<<<< HEAD
           println("/****************************************************************************************/");
           println("/*\t\t\t ===> { " + Console.CYAN + " MENU Start UP, Damas BOM " + Console.RESET + "} <=== \t\t\t*/");
           println("/****************************************************************************************/");
@@ -29,7 +28,8 @@ object TestMainDamas {
                          System.exit(0); 
                     } else {
                          println(" - " + Console.RED + "ERROR: " + Console.RESET + "Opcion de juego seleccionda no es valida.")    
-=======
+                    }
+          }
           Cmd.clear();                                                       // Limpia el pront en la consola de eclipse puede fallar. 
           println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
           println("┃\t\t\t ===> { " + Console.CYAN + " MENU Start UP, Damas BOM " + Console.RESET + "} <=== \t\t\t ┃");
@@ -52,7 +52,6 @@ object TestMainDamas {
                     if (opc != "0") {
                          println("\n - " + Console.RED + "ERROR: " + Console.RESET + "Opcion de juego selecionda no es Valida.");
                          Thread.sleep(1000);
->>>>>>> b0889cfc3d50e4b46b53affbfc037d5d10636201
                     }
           }
           if (opc != "0") this.main(args);                                  // Nos llamamos de nuevo de forma recursiba.

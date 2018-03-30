@@ -1,6 +1,5 @@
 package damas.juego.gui
 package damas.juego
-
 /**
  * @import
  */
@@ -11,28 +10,42 @@ import javax.swing.WindowConstants
 /**
  * @author Daniel
  */
-
-case class dibujarTableroEvento(x: Int, y: Int) extends Event //creamos un evento para obtener las coordenadas de la jugada a realizar
-
+//clase para dibujar el tablero
+class dibujarTablero(val tablero: List[Int]) extends Component {
+  
+  
+}
+//creamos un evento para obtener las coordenadas de la jugada a realizar
+case class dibujarTableroEvento(x: Int, y: Int) extends Event 
+//Ventana para mostrar el tablero de juego
 class mostrarTablero(val turno: String,val tablero: List[Int]) extends Frame { 
    
-   title = "Damas BOM for Scala - "; //Titulo de la ventana
-   preferredSize = new Dimension(300, 300); //Tamaño de la ventana
-   
-   val newGameButton = Button("Nueva Partida") { 
+   title = "Damas BOM for Scala - "; //titulo de la ventana
+   preferredSize = new Dimension(300, 300); //tamaño de la ventana
+   val boton = Button("Nueva Partida") { 
      nuevoJuego()
    }
-   
    val labelTurno = new Label
    labelTurno.text = "Turno del %s".format(turno)
-   
    val canvas = new dibujarTablero(tablero)
    
+   //configuración del contenido de la ventana 
+   contents = new BoxPanel(Orientation.Vertical) {
+    contents += labelTurno
+    contents += canvas
+    contents += Swing.VStrut(10)
+    contents += boton
+    border = Swing.EmptyBorder(10, 10, 10, 10)
+   }
    
+   peer.setLocationRelativeTo(null) //centrar la ventana
+   peer.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE) //seleccionar la operación de cierre de ventana
+   
+   //escuchar eventos 
    listenTo(canvas)
    reactions += {
     case dibujarTableroEvento(x,y) => 
-      board.play(x,y)
+      //Tablero.realizarJugada(x,y)
       actualizarTablero()
     }
   
@@ -42,12 +55,11 @@ class mostrarTablero(val turno: String,val tablero: List[Int]) extends Frame {
   }
   
   def nuevoJuego() {
-    board.restart()
+    //Tablero.restart()
     actualizarTablero()
   }
-  
-  
 }
+//Ventana para realizar la configuracion de juego
 class configuracionJuego(val turno: String) extends Frame { 
   
     title = "Configuración de la partida"; //título de la ventana
@@ -98,11 +110,10 @@ class configuracionJuego(val turno: String) extends Frame {
      //reacciones a esos eventos 
      reactions += {
      case ButtonClicked(`boton`) => {
-         var tablero = generarTablero(columnas,filas,dificultad)
-         val mostrarTablero = new mostrarTablero(turno,tablero)
-         mostrarTablero.visible = true
-         this.visible = false
-        
+         //var tablero = generarTablero(columnas,filas,dificultad)
+         //val mostrarTablero = new mostrarTablero(turno,tablero)
+         //mostrarTablero.visible = true
+         //this.visible = false  
       }
      case SelectionChanged(`dificultad`) => {
         val d = dificultad.selection.item match{
@@ -125,7 +136,6 @@ class configuracionJuego(val turno: String) extends Frame {
        GUIDamas.open()
      }
     }
-
 }
 //Ventana para mostrar las estadísticas del jugador (victorias, derrotas y empates). Opción para reseterarlas
 class estadisticasJuego extends Frame {  
@@ -134,14 +144,13 @@ class estadisticasJuego extends Frame {
     
    
 }
-
 //Ventana principal
 object GUIDamas extends Frame {   
      /**
       * Propiedades de la interface.
       */
-     title = "Damas BOM for Scala"; //Titulo de la ventana
-     preferredSize= new Dimension(240, 160); //Tamaño de la ventana
+     title = "Damas BOM for Scala"; //titulo de la ventana
+     preferredSize= new Dimension(240, 160); //tamaño de la ventana
      
      //boton opcion1 
      val boton1 = new Button {
@@ -196,7 +205,6 @@ object GUIDamas extends Frame {
          }
       }
    }
-  
   /**
     * Metodo que se encarga de inicializar la interface grafica,    
   */
