@@ -11,10 +11,11 @@ object UtilDamas {
       * 
       * 	- pathClipAudio = String a la ruta del recuso de audio.
       */
-     def clipSoundEfect(pathClipAudio: String): Unit = {
-          val audioIn = AudioSystem.getAudioInputStream(new URL(pathClipAudio));
+     def clipSoundEfect(pathClipAudio: String): Clip = {
+          val path: URL = getClass().getResource("/sound/" + pathClipAudio);
+          val audioIn = AudioSystem.getAudioInputStream(path);
           val clip = AudioSystem.getClip;
           clip.open(audioIn);
-          clip.start;
+          return clip;
      }
 }

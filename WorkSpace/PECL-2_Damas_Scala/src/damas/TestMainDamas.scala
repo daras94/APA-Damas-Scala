@@ -22,8 +22,12 @@ object TestMainDamas {
           print(" ❈ Selecione una opcion(" + Console.GREEN + "Pulse 0 para salir" + Console.RESET + "): ")
           var opc:String = Console.in.readLine();
           opc match {
-               case "1" ⇒ Gui.InitGUI();                                    // Inicializa la interfaces Grafica.
-               case "2" ⇒ Cmd.initShell();                                  // Inicializa la interfaces Shell.
+               case "1" ⇒ 
+                    Util.clipSoundEfect("arcade_echo.wav").start();   // Efecto de sonido del Inicio.
+                    Gui.InitGUI();                                    // Inicializa la interfaces Grafica.
+               case "2" ⇒ 
+                    Util.clipSoundEfect("arcade_echo.wav").start();   // Efecto de sonido del Inicio.
+                    Cmd.initShell();                                  // Inicializa la interfaces Shell.
                case _ ⇒
                     if (opc != "0") {
                          println("\n - " + Console.RED + "ERROR: " + Console.RESET + "Opcion de juego selecionda no es Valida.");
