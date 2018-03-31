@@ -94,7 +94,7 @@ class dibujarTablero(val tablero: TableroGUI, val tamaño: Int) extends Componen
       g.setStroke(new BasicStroke(3f))
     for (x <- 0 until tamaño) {
       for (y <- 0 until tamaño) {
-	      tablero(x, y) match {
+	      tablero(x,y) match {
 	        case 1 =>
 	          g.setColor(colores(0))
 	          g.draw(new Ellipse2D.Double(x0 + x * wid + 10, y0 + y * wid + 10, wid - 20, wid - 20))
