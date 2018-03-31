@@ -9,13 +9,19 @@ import javax.swing.WindowConstants
 /**
   * @author Daniel
   */
-//clase para dibujar el tablero
+/**
+ * clase para dibujar el tablero
+ */
 class dibujarTablero(val tablero: List[ Int ]) extends Component {
 
 }
-//creamos un evento para obtener las coordenadas de la jugada a realizar
+/**
+ * creamos un evento para obtener las coordenadas de la jugada a realizar
+ */
 case class dibujarTableroEvento(x: Int, y: Int) extends Event
-//Ventana para mostrar el tablero de juego
+/**
+ * Ventana para mostrar el tablero de juego
+ */
 class mostrarTablero(val turno: String, val tablero: List[ Int ]) extends Frame {
 
      title = "Damas BOM for Scala - "; //titulo de la ventana
@@ -27,7 +33,9 @@ class mostrarTablero(val turno: String, val tablero: List[ Int ]) extends Frame 
      labelTurno.text = "Turno del %s".format(turno)
      val canvas = new dibujarTablero(tablero)
 
-     //configuración del contenido de la ventana
+     /**
+      * configuración del contenido de la ventana
+      */
      contents = new BoxPanel(Orientation.Vertical) {
           contents += labelTurno
           contents += canvas
@@ -141,6 +149,7 @@ class estadisticasJuego extends Frame {
      preferredSize = new Dimension(240, 180); //Tamaño de la ventana
 
 }
+
 //Ventana principal
 object GUIDamas extends Frame {
      /**
