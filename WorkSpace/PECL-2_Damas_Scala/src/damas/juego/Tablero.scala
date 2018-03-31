@@ -1,5 +1,7 @@
 package damas.juego
 import scala.util.Random;
+
+
 /**
   * @author david
   */
@@ -32,49 +34,87 @@ object Tablero {
        *                    disponibles.
        */
      private def generarFicha(column: Int, row: Int, cont: Int, dificultad: Int): Int = {
-          val numRowFicha = (Math.log10(cont) / Math.log10(2)).toInt + (if (cont > 8) 2 else 0);   // Determinamos el numero def fichas a colocar.
-          val bom = Random.nextInt(dificultad + 2);                                                // Generamos bombas y fichas especiales en funcion de la dificultad selecionada.
+          val numRowFicha = (Math.log10(cont) / Math.log10(2)).toInt + (if (cont > 8) 2 else 0);      // Determinamos el numero def fichas a colocar.
+          val bom = Random.nextInt(dificultad + 2);                                                   // Generamos bombas y fichas especiales en funcion de la dificultad selecionada.
           /**
             * Calculamos el pociconamiento de piezas y bombas y piezas especiales en el tablero en
             * funcion de las dimenciones del tablero lo multiplicamos por el doble para cuando nos
             * salimos de las dimensiones conbecionales de un tablero de damas.
             */
-          return (if ((column + (if (row % 2 == 0) 0 else 1)) % 2 == 0) (if (row > (cont - numRowFicha)) 21 + bom else if (row <= numRowFicha) 32 + bom else POS_TAB_EMPTY) else POS_TAB_EMPTY);
+          return (if ((column + (if (row % 2 == 0) 1 else 0)) % 2 == 0) (if (row > (cont - numRowFicha)) 21 + bom else if (row <= numRowFicha) 32 + bom else POS_TAB_EMPTY) else POS_TAB_EMPTY);
      }
-     
+
      /**
-      * 
-      */
-     def echoTablero(tablero: List[Int], dim: Int): Unit = {
-          this.imprimirColumnas(Math.sqrt(tablero.length).toInt, 0);
-          this.imprimirTablero(tablero, dim, dim)
-          println("\n");
-     }
-     
-     /**
-       *
+       * Medo Privado Que se encarga de Imprimir la fichas del Tablero en la
+       * posiciones que estan ocupan.
        */
      private def imprimirTablero(tablero: List[ Int ], row: Int, col: Int): Unit = {
-          val dim = (Math.sqrt(tablero.length)).toInt;                                          // Calculamos el tamño de las filas y columnass sera el mismo ya que es una matriz cudrada.
-          if (row < dim ) {
-               val pos:Int = (row * dim + col)                                                  // Calaculamos la posicion del tablero
-               if ((col < dim) && ( pos < tablero.length)) {
-                    val bloque: Int = tablero(pos);
-                    val (out: String) = col match {
-                         case 0 ⇒ String.format("\n %4s ━━┫", (row + 1).toString());
-                         case _ ⇒ " ";
+          val dim = (Math.sqrt(tablero.length)).toInt;                                    // Calculamos el tamño de las filas y columnass sera el mismo ya que es una matriz cudrada.
+          if (row < dim) {
+               val pos: Int = (row * dim + col)                                           // Calaculamos la posicion del tablero
+               if (pos < tablero.length) {
+                    val bloque: Int = tablero(pos);  
+                    val (out: String) = (col match {
+                         case 0 ⇒ String.format("\n %s%4s%s ━┫", Console.CYAN + Console.BOLD, ((row + 65).toChar).toString(), Console.RESET); 
+                         case _ ⇒ 
+                              if (col == dim) {
+                                   String.format("┣━ %s%-4s%s", Console.CYAN + Console.BOLD, ((row + 65).toChar).toString(), Console.RESET);
+                              } else {
+                                   String.format("%s", "");
+                              }
+                    }).concat(if (((row + col) % 2 == 0)) Console.BLUE_B else Console.BLACK_B); // Dibujamos el tablero de damas.
+                    if (col == dim) {
+                         print(out + Console.RESET);
+                    } else {
+                         val foreground = Array(Console.INVISIBLE, Console.RED, Console.WHITE, Console.CYAN, Console.GREEN, Console.MAGENTA, Console.YELLOW, Console.MAGENTA);
+                         val ficha = String.format(" %s ", if (bloque != POS_TAB_EMPTY) (if ((bloque - (bloque % 10)) > POS_TAB_EMPTY * 2) "■" else "●") else "‌ ").toLowerCase();
+                         print(out + Console.BOLD + foreground(bloque % 10) + ficha + Console.RESET);    
                     }
-                    print(out + String.format("%3s", if (bloque != POS_TAB_EMPTY) (if ((bloque - (bloque % 10)) > POS_TAB_EMPTY * 2) "#" else "O") else " "));
                }
                imprimirTablero(tablero, (row + (if (col == dim) 1 else 0)), (if (col < dim) (col + 1) else 0));
           }
+          //print(Console.RESET)
      }
-     
+
      /**
-      * 
-      */
-     private def imprimirColumnas(dim: Int, cont: Int): Unit = {
-          
+       * Metodo Que se encaraga de mostrar el tablero de Juego de forma
+       * Recursiva.
+       * 
+       * 	tablero =  Recibe la lista que constitulle el tablero de juego.
+       * 	dim	   =  Es un contador utilizado para almacenra la dimension del
+       * 			 tablero a medida que este se va construllendo.
+       *  cont    =  Contador que controla que parte del algoritmo se ejecuta en
+       * 			 cada ineteracion recursiva.
+       * 
+       */
+     def echoTablero(tablero: List[Int], dim: Int, cont: Int): Unit = {
+          if (dim != Math.sqrt(tablero.length).toInt + 1) {
+               if (cont == 0 || cont == 4 ) {
+                    print(Console.MAGENTA + Console.BOLD + String.format(if (dim == 1) "\n %9s" else if (dim < 9) "%3s" else "%3.95s", ((dim + 64).toChar).toString()) + Console.RESET);
+               } else {
+                    if (cont != 2) {
+                         print(String.format(if (dim == 1) "\n %10s" else "%3s", dim match {
+                              case 1 ⇒  (if (cont == 1) "┏━┻━" else "┗━┳━"); 
+                              case _ ⇒
+                                   if (dim == Math.sqrt(tablero.length).toInt) {
+                                        (if (cont == 1) "━┻━┓" else "━┳━┛");
+                                   } else {
+                                        (if (cont == 1) "━┻━"  else "━┳━");
+                                   }
+                         }));    
+                    }
+               }
+               this.echoTablero(tablero, (if (cont != 2) dim + 1 else Math.sqrt(tablero.length).toInt + 1), cont);
+          } else {
+               if (cont < 4 ) {
+                    if (cont == 2) {
+                         this.imprimirTablero(tablero, 0, 0);
+                    }
+                    this.echoTablero(tablero, 1, cont + 1) 
+               } else {
+                    println("\n");    
+               }
+          }
      }
 
 }
