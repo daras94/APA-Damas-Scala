@@ -13,12 +13,12 @@ object TestMainDamas {
           println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
           println("┃\t\t\t ===> { " + Console.CYAN + " MENU Start UP, Damas BOM " + Console.RESET + "} <=== \t\t\t ┃");
           println("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
-          println("┃ " + Console.MAGENTA + "1" + Console.RESET + ") - Inciar paratida GUI Damas BOM.  \t\t\t\t\t\t\t ┃");
-          println("┃ " + Console.MAGENTA + "2" + Console.RESET + ") - Inciar paratida Shell Damas BOM.\t\t\t\t\t\t\t ┃");
+          println("┃ " + Console.MAGENTA + "1" + Console.RESET + ") - Iniciar partida GUI Damas BOM.  \t\t\t\t\t\t\t ┃");
+          println("┃ " + Console.MAGENTA + "2" + Console.RESET + ") - Iniciar partida Shell Damas BOM.\t\t\t\t\t\t\t ┃");
           println("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
-          println("┃ - " + Console.RED + "NOTA" + Console.RESET + ": Selecione la forma grafica de ejecucion del juego. \t\t\t\t ┃");
+          println("┃ - " + Console.RED + "NOTA" + Console.RESET + ": Seleccione la forma grafica de ejecucion del juego. \t\t\t\t ┃");
           println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
-          print(" ❈ Selecione una opcion(" + Console.GREEN + "Pulse 0 para salir" + Console.RESET + "): ")
+          print(" ❈ Seleccione una opcion(" + Console.GREEN + "Pulse 0 para salir" + Console.RESET + "): ")
           var opc:String = Console.in.readLine();
           opc match {
                case "1" ⇒ 

@@ -19,8 +19,8 @@ object ShellDamas {
           println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
           println("┃\t\t\t ===> {" + Console.CYAN + " \t MENU Damas BOM \t " + Console.RESET + "} <=== \t\t ┃");
           println("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
-          println("┃ " + Console.MAGENTA + "1" + Console.RESET + ") - Inciar partida Damas BOM 2 Jugadores.    \t\t\t\t\t ┃");
-          println("┃ " + Console.MAGENTA + "2" + Console.RESET + ") - Inciar partida Damas BOM 1 Jugador VS IA.\t\t\t\t\t ┃");
+          println("┃ " + Console.MAGENTA + "1" + Console.RESET + ") - Iniciar partida Damas BOM 2 Jugadores.    \t\t\t\t\t ┃");
+          println("┃ " + Console.MAGENTA + "2" + Console.RESET + ") - Iniciar partida Damas BOM 1 Jugador VS IA.\t\t\t\t\t ┃");
           println("┃ " + Console.MAGENTA + "3" + Console.RESET + ") - Ver y Cargar Partida Guardadas.	      \t\t\t\t\t\t ┃");
           println("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
           println("┃ - " + Console.RED + "NOTA" + Console.RESET + ": Pulsa 0 para volver al menu de selecion de interface de ejecucion. \t\t ┃");
@@ -49,15 +49,15 @@ object ShellDamas {
      def setDificultad(): Int = {
           this.clear();
           println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
-          println("┃ \t\t ===> { " + Console.CYAN + " \t Nivel de dificulta de partida: \t " + Console.RESET + "} <=== \t ┃");
+          println("┃ \t\t ===> { " + Console.CYAN + " \t Nivel de dificultad de partida: \t " + Console.RESET + "} <=== \t ┃");
           println("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
           println("┃ " + Console.MAGENTA + "1" + Console.RESET + ") - Muy Facil (" + Console.YELLOW + "Escasas fichas trucadas" + Console.RESET + ").  \t\t\t\t\t\t ┃");
           println("┃ " + Console.MAGENTA + "2" + Console.RESET + ") - Facil     (" + Console.YELLOW + "Pocas fichas trucadas" + Console.RESET + ").    \t\t\t\t\t\t ┃");
           println("┃ " + Console.MAGENTA + "3" + Console.RESET + ") - Mendio    (" + Console.YELLOW + "Mitad de fichas trucadas" + Console.RESET + "). \t\t\t\t\t\t ┃");
-          println("┃ " + Console.MAGENTA + "4" + Console.RESET + ") - Avanzado  (" + Console.YELLOW + "Muchas fichas Trucadas y alguna BOM" + Console.RESET + ").\t\t\t\t\t ┃");
+          println("┃ " + Console.MAGENTA + "4" + Console.RESET + ") - Avanzado  (" + Console.YELLOW + "Muchas fichas trucadas y alguna BOM" + Console.RESET + ").\t\t\t\t\t ┃");
           println("┃ " + Console.MAGENTA + "5" + Console.RESET + ") - Experto   (" + Console.YELLOW + "Top fichas trucadas y BOM" + Console.RESET + ").\t\t\t\t\t\t ┃");
           println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
-          print(" ❈ Selecione el nivel de dificultad de la partida :")
+          print(" ❈ Seleccione el nivel de dificultad de la partida :")
           val nivel: String = Console.in.readLine();
           if ((nivel < "0") && (nivel > "5")) {
                println("\n - " + Console.RED + "ERROR: " + Console.RESET + "El nivel de dificultada del Juego no es valida.")  
@@ -77,7 +77,7 @@ object ShellDamas {
           println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
           Tab.echoTablero(tablero, 0);               // Imprimimos el Tablero de Juego.
           println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
-          println("┃ - " + Console.RED + "NOTA" + Console.RESET + ": Jugada con el formato X:Y:D (X = column, Y = row y D = (10 = sup-izq, \t ┃");
+          println("┃ - " + Console.RED + "NOTA" + Console.RESET + ": Jugada con el formato X:Y:D (X = column, Y = row y D = (10 = sup-izq, \t  ┃");
           println("┃         20 = inf-izq, 11 = sup-dech, 21 = inf-dech))                                   ┃");
           println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
           print(" ❈ Realice su jugada (" + Console.GREEN + "0 para salir de la partida s para guardar la partida." + Console.RESET + "):")
