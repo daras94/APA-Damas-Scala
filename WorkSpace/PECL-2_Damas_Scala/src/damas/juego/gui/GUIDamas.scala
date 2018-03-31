@@ -46,7 +46,6 @@ class TableroGUI(val tamaño: Int){
     player = 1
   }
   */
-  
 }
 //clase para dibujar el tablero
 class dibujarTablero(val tablero: TableroGUI, val tamaño: Int) extends Component {
@@ -126,13 +125,10 @@ class dibujarTablero(val tablero: TableroGUI, val tamaño: Int) extends Componen
 //creamos un evento para obtener las coordenadas de la jugada a realizar
 case class dibujarTableroEvento(x: Int, y: Int) extends Event
 //Ventana para mostrar el tablero de juego
-class mostrarTablero(val turno: String, val tablero: TableroGUI, val tamaño: Int) extends Frame {
+class mostrarTablero(var turno: String, val tablero: TableroGUI, val tamaño: Int) extends Frame {
 
      title = "Damas BOM for Scala - "; //titulo de la ventana
      preferredSize = new Dimension(700, 700); //tamaño de la ventana
-     val boton = Button("Nueva Partida") {
-          nuevoJuego()
-     }
      val labelTurno = new Label
      labelTurno.text = "Turno del %s".format(turno)
      val canvas = new dibujarTablero(tablero,tamaño)
@@ -142,7 +138,6 @@ class mostrarTablero(val turno: String, val tablero: TableroGUI, val tamaño: In
           contents += labelTurno
           contents += canvas
           contents += Swing.VStrut(10)
-          contents += boton
           border = Swing.EmptyBorder(10, 10, 10, 10)
      }
 
@@ -156,22 +151,28 @@ class mostrarTablero(val turno: String, val tablero: TableroGUI, val tamaño: In
                println("dibujarTableroEvento en " + x + " " + y)
                //Tablero.realizarJugada(x,y)
                actualizarTablero()
-           case ButtonClicked(`boton`) =>
-               nuevoJuego() 
-            case WindowClosing(_) => {
+          case WindowClosing(_) => {
                this.close()
                GUIDamas.open()
           }   
      }
 
      def actualizarTablero() {
+       turno match {
+        case "Jugador" => 
+          turno = "Máquina"
+          labelTurno.text = "Turno de la %s".format(turno)
+        case "Jugador 1" => 
+          turno = "Jugador 2"
           labelTurno.text = "Turno del %s".format(turno)
-          canvas.repaint()
-     }
-
-     def nuevoJuego() {
-          //TableroGUI.restart()
-          actualizarTablero()
+        case "Jugador 2" => 
+          turno = "Jugador 1"
+          labelTurno.text = "Turno del %s".format(turno)
+        case "Máquina" => 
+          turno = "Jugador"
+          labelTurno.text = "Turno del %s".format(turno)
+      }
+        canvas.repaint()
      }
 }
 //Ventana para realizar la configuracion de juego
