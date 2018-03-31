@@ -61,7 +61,7 @@ object Tablero {
                if ((col < dim) && ( pos < tablero.length)) {
                     val bloque: Int = tablero(pos);
                     val (out: String) = col match {
-                         case 0 ⇒ String.format("\n %4s ━━┫", row.toString());
+                         case 0 ⇒ String.format("\n %4s ━━┫", (row + 1).toString());
                          case _ ⇒ " ";
                     }
                     print(out + String.format("%3s", if (bloque != POS_TAB_EMPTY) (if ((bloque - (bloque % 10)) > POS_TAB_EMPTY * 2) "#" else "O") else " "));
