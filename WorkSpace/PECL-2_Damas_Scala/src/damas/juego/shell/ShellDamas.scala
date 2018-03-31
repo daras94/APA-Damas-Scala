@@ -71,8 +71,8 @@ object ShellDamas {
       * 
       */
      def playDamasBom(tablero: List[Int], turno: Int, nivel: Int, dificultad: Int, isWinner: Boolean): Unit = {
-          Tab.imprimirTablero(tablero);               // Imprimimos el Tablero de Juego.
-          this.clear();                               // Borramos el Anterior Tablero de Juego.
+          Tab.imprimirTablero(tablero, 0, 0);         // Imprimimos el Tablero de Juego.
+          /*this.clear();                               // Borramos el Anterior Tablero de Juego.
           /**
            * En Construcion.
            */
@@ -83,6 +83,6 @@ object ShellDamas {
                     val dim: Int = Math.sqrt(tablero.length).toInt * 2;
                     this.playDamasBom(Tab.generarTablero(dim, dim, 0, dificultad), turno, (nivel + 1), dificultad, isWinner);
                }
-          }
+          }*/
      }
 }

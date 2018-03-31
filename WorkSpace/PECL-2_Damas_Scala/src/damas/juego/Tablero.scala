@@ -1,10 +1,11 @@
 package damas.juego
+import scala.util.Random;
 /**
- * @author david
- */
+  * @author david
+  */
 object Tablero {
 
-     val POS_TAB_JUEGO_EMPTY = 10
+     val POS_TAB_EMPTY = 10
 
      /**
        * Funcion Que se encaraga de generra el tablero de juego en funcion de las dimensiones y la dificul-
@@ -31,23 +32,33 @@ object Tablero {
        *                    disponibles.
        */
      def generarFicha(column: Int, row: Int, cont: Int, dificultad: Int): Int = {
-          val tam_tablero = row + cont;                                                                  // Detenimamos el tamaño del tablero de juego que.
-          val numRowFicha = (Math.log10(tam_tablero) / Math.log10(2)) + (if (tam_tablero > 8) 2 else 0); // Determinamos el numero def fichas a colocar.
-          val bom = (new scala.util.Random()).nextInt(dificultad + 2);                                   // Generamos bombas y fichas especiales en funcion de la dificultad selecionada.
+          val numRowFicha = (Math.log10(row + cont) / Math.log10(2)).toInt + (if (row + cont > 8) 2 else 0);   // Determinamos el numero def fichas a colocar.
+          val bom = Random.nextInt(dificultad + 2);                                         // Generamos bombas y fichas especiales en funcion de la dificultad selecionada.
           /**
             * Calacualmos el pociconamiento de piezas y bombas y piezas especiales en el tablero en
             * funcion de las dimenciones del tablero lo multiplicamos por el doble para cuando nos
             * salimos de las dimensiones conbecionales de un tablero de damas.
             */
-          return (if ((column + (if ((row - 1) % 2 == 0) 1 else 0)) % 2 == 0) (if (row > (tam_tablero - numRowFicha)) 21 + bom else POS_TAB_JUEGO_EMPTY) else (if (row < numRowFicha) 32 + bom else POS_TAB_JUEGO_EMPTY));
-     } 
-     
+          return (if ((row * (row + cont) + column) % 2 == 0) (if (row > ((row + cont) - numRowFicha)) 31 + bom else POS_TAB_EMPTY) else (if (row <= numRowFicha) 22 + bom else POS_TAB_EMPTY));
+          //return (if ((column + (if (row - 1  % 2 == 0) 1 else 0)) % 2 == 0) (if (row > (row + cont - numRowFicha)) 31 + bom else POS_TAB_EMPTY) else (if (row < numRowFicha) 22 + bom else POS_TAB_EMPTY));
+     }
      /**
-      * 
-      */
-     def imprimirTablero(tablero: List[Int]): Unit = {
-       /**
-        * En Construcion
-        */
-     }    
+       *
+       */
+     def imprimirTablero(tablero: List[ Int ], row: Int, col: Int): Unit = {
+          val dim = (Math.sqrt(tablero.length)).toInt;                                          // Calculamos el tamño de las filas y columnass sera el mismo ya que es una matriz cudrada.
+          if (row < dim ) {
+               val pos:Int = (row * dim + col)                                                  // Calaculamos la posicion del tablero
+               if ((col < dim) && ( pos < tablero.length)) {
+                    val bloque: Int = tablero(pos);
+                    val (out: String) = col match {
+                         case 0 ⇒ String.format("\n %2s ━━┫", row.toString());
+                         case _ ⇒ " ";
+                    }
+                    print(out + String.format("%3s", if (bloque != POS_TAB_EMPTY) (if ((bloque - (bloque % 10)) > POS_TAB_EMPTY * 2) "#" else "O") else " "));
+               }
+               imprimirTablero(tablero, (row + (if (col == dim) 1 else 0)), (if (col < dim) (col + 1) else 0));
+          }
+     }
+
 }
