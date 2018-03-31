@@ -6,12 +6,26 @@ import scala.swing._
 import scala.swing.event._
 import javax.swing.JOptionPane
 import javax.swing.WindowConstants
+import java.awt.{Graphics2D,Color}
 /**
   * @author Daniel
   */
 //clase para dibujar el tablero
 class dibujarTablero(val tablero: List[ Int ]) extends Component {
+  
 
+  
+  def colores(n: Int): Color = {
+    n match {
+      case 0 => Color.red
+      case 1 => Color.green
+      case 2 => Color.blue
+      case 3 => Color.yellow
+      case 4 => Color.pink
+      case 5 => Color.cyan
+      case _ => Color.white 
+    }
+  }
 }
 //creamos un evento para obtener las coordenadas de la jugada a realizar
 case class dibujarTableroEvento(x: Int, y: Int) extends Event
@@ -108,10 +122,10 @@ class configuracionJuego(val turno: String) extends Frame {
      //reacciones a esos eventos
      reactions += {
           case ButtonClicked(`boton`) => {
-               //var tablero = generarTablero(columnas,filas,dificultad)
-               //val mostrarTablero = new mostrarTablero(turno,tablero)
-               //mostrarTablero.visible = true
-               //this.visible = false
+               val tablero = Tablero.generarTablero(columnas,filas,dificultad)
+               val mostrarTablero = new mostrarTablero(turno,tablero)
+               mostrarTablero.visible = true
+               this.visible = false
           }
           case SelectionChanged(`dificultad`) => {
                val d = dificultad.selection.item match {
