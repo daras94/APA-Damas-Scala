@@ -102,6 +102,7 @@ object ShellDamas {
                     /**
                      * En construcion
                      */
+                    val isWinner = true;
                     if (isWinner) {
                          if (nivel < 3) {                                                 // Si se Gana la partida se sube de nivel y el tablero sera el doble del actul.
                               val dim: Int = Math.sqrt(tablero.length).toInt * 2;
