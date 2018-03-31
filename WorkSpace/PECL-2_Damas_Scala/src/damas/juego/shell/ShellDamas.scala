@@ -30,7 +30,7 @@ object ShellDamas {
           opc.toUpperCase() match {
                case "1" ⇒
                     val dificultad = setDificultad();                                                     // Llamamos a el menu de configuracion del nivel de dificultad.
-                    playDamasBom(Tab.generarTablero(8, 8, 0, dificultad), 0, 0, dificultad, false);       // Comenzamos Con el Nivel 0 y con un Tablero de 8x8.                
+                    playDamasBom(Tab.generarTablero(16, 16, 16, dificultad), 0, 0, dificultad, false);       // Comenzamos Con el Nivel 0 y con un Tablero de 8x8.                
                case "2" ⇒   
                case "3" ⇒
                case "X" ⇒ System.exit(0);
@@ -71,18 +71,27 @@ object ShellDamas {
       * 
       */
      def playDamasBom(tablero: List[Int], turno: Int, nivel: Int, dificultad: Int, isWinner: Boolean): Unit = {
-          Tab.imprimirTablero(tablero, 0, 0);         // Imprimimos el Tablero de Juego.
-          /*this.clear();                               // Borramos el Anterior Tablero de Juego.
+          this.clear();                               // Borramos el Anterior Tablero de Juego.
+          println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+          println("┃ ❈ " + Console.CYAN + "Tablero de Juego " + Console.RESET + ":                          ┃");
+          println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+          Tab.echoTablero(tablero, 0);               // Imprimimos el Tablero de Juego.
+          println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+          println("┃ - " + Console.RED + "NOTA" + Console.RESET + ": Jugada con el formato X:Y:D (X = column, Y = row y D = (10 = sup-izq, \t ┃");
+          println("┃         20 = inf-izq, 11 = sup-dech, 21 = inf-dech))                                   ┃");
+          println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+          print(" ❈ Realice su jugada (" + Console.GREEN + "0 para salir de la partida s para guardar la partida." + Console.RESET + "):")
           /**
            * En Construcion.
            */
+          val jugada: String = Console.in.readLine();
           if (!isWinner) {
                this.playDamasBom(tablero, turno, nivel, dificultad, isWinner); 
           } else {
                if (isWinner && (nivel < 3)) {         // Si se Gana la partida se sube de nivel y el tablero sera el doble del actul.
                     val dim: Int = Math.sqrt(tablero.length).toInt * 2;
-                    this.playDamasBom(Tab.generarTablero(dim, dim, 0, dificultad), turno, (nivel + 1), dificultad, isWinner);
+                    this.playDamasBom(Tab.generarTablero(dim, dim, dim, dificultad), turno, (nivel + 1), dificultad, isWinner);
                }
-          }*/
+          }
      }
 }
