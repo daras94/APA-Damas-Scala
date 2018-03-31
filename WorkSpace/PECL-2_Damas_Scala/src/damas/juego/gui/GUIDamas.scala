@@ -57,6 +57,7 @@ class dibujarTablero(val tablero: TableroGUI, val tamaño: Int) extends Componen
     case MouseClicked(_, p, _, _, _) => mouseClick(p.x, p.y)
   }
 
+
   // returns squareSide, x0, y0, wid
   def squareGeometry: (Int, Int, Int, Int) = {
     val d = size
@@ -122,7 +123,9 @@ class dibujarTablero(val tablero: TableroGUI, val tamaño: Int) extends Componen
     }
   }
 }
-//creamos un evento para obtener las coordenadas de la jugada a realizar
+/**
+ * creamos un evento para obtener las coordenadas de la jugada a realizar
+ */
 case class dibujarTableroEvento(x: Int, y: Int) extends Event
 //Ventana para mostrar el tablero de juego
 class mostrarTablero(var turno: String, val tablero: TableroGUI, val tamaño: Int) extends Frame {
@@ -133,7 +136,9 @@ class mostrarTablero(var turno: String, val tablero: TableroGUI, val tamaño: In
      labelTurno.text = "Turno del %s".format(turno)
      val canvas = new dibujarTablero(tablero,tamaño)
 
-     //configuración del contenido de la ventana
+     /**
+      * configuración del contenido de la ventana
+      */
      contents = new BoxPanel(Orientation.Vertical) {
           contents += labelTurno
           contents += canvas
@@ -306,6 +311,7 @@ class estadisticasJuego extends Frame {
           }   
      }   
 }
+
 //Ventana principal
 object GUIDamas extends Frame {
 
