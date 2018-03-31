@@ -1,10 +1,6 @@
-import damas.juego._
-import damas.juego.gui._
 import damas.juego.shell._
-import damas.juego._;
-import damas.juego.gui._;
-import damas.juego.shell._;
-import damas.util._;
+import damas.util._
+import damas.juego.gui._
 
 /**
  * @author david
