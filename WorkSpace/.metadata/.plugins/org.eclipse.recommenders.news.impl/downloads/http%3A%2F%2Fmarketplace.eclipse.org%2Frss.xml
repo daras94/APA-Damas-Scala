@@ -6,6 +6,51 @@
     <language>en</language>
      <atom:link href="http://marketplace.eclipse.org/rss.xml" rel="self" type="application/rss+xml" />
       <item>
+    <title>Asciidoctor Editor</title>
+    <link>http://marketplace.eclipse.org/content/asciidoctor-editor</link>
+    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img typeof=&quot;foaf:Image&quot; class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/asciidoctor-editor-logo_0.png&quot; width=&quot;110&quot; height=&quot;80&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Thu, 2018-03-15 15:51&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Sat, 2018-03-31 20:11&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22Albert%20Tregnaghi%22&quot;&gt;Albert Tregnaghi&lt;/a&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/atregnaghi/listings&quot; title=&quot;Albert Tregnaghi&quot;&gt;Albert Tregnaghi&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_start --&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;h2&gt;Asciidoctor Editor Plugin&lt;/h2&gt;
+&lt;p&gt;This eclipse plugin is an editor for asciidoc files.&lt;/p&gt;
+&lt;h3&gt;Features&lt;/h3&gt;
+&lt;ul&gt;&lt;li&gt;Vertical or horizontal splitted Text and Preview on same Editor&lt;/li&gt;
+&lt;li&gt;Outline and Quickoutline will show
+&lt;ul&gt;&lt;li&gt;Headlines&lt;/li&gt;
+&lt;li&gt;Includes (double click opens file)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Syntax highlighting in Text Editor&lt;br /&gt;
+	Colors can be customized. Also additional defaults for dark theme exists.&lt;/li&gt;
+&lt;li&gt;Tooltips&lt;/li&gt;
+&lt;li&gt;Hyperlinking of include parts (CTRL+Mouse)&lt;/li&gt;
+&lt;li&gt;Preview panel is same output as generated HTML by asciidoctor&lt;br /&gt;
+	(so WYSIWYG)&lt;/li&gt;
+&lt;li&gt;Preview panel immediately updated on text save&lt;/li&gt;
+&lt;li&gt;Toolbar actions
+&lt;ul&gt;&lt;li&gt;Table wizard&lt;/li&gt;
+&lt;li&gt;Code block templates&lt;/li&gt;
+&lt;li&gt;Possibility to toggle TOC on/off in output view&lt;/li&gt;
+&lt;li&gt;Jump to top of preview&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;Additional links&lt;/h3&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;https://github.com/de-jcup/eclipse-asciidoctor-editor/issues&quot; rel=&quot;nofollow&quot;&gt;Issue Tracker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/de-jcup/eclipse-asciidoctor-editor/releases&quot; rel=&quot;nofollow&quot;&gt;Release history&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/de-jcup/eclipse-asciidoctor-editor/wiki&quot; rel=&quot;nofollow&quot;&gt;Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://asciidoctor.org/docs/asciidoc-syntax-quick-reference&quot; rel=&quot;nofollow&quot;&gt;Asciidoctor Quickreference&lt;/a&gt; for details about syntax&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;Technical details&lt;/h3&gt;
+&lt;p&gt;It uses internally asciidoctorj 1.5.6 and jruby to provide a WYSWYG integration. These dependencies are encapuslated into a library plugin (1.0.0) which is really big, but stable so the editor plugin will only need the big dependencies one time. The editor itself is pretty small and upcoming updates are fast downloaded.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_end --&gt;</description>
+     <pubDate>Thu, 15 Mar 2018 19:51:28 +0000</pubDate>
+ <dc:creator>atregnaghi</dc:creator>
+ <guid isPermaLink="false">3976500 at http://marketplace.eclipse.org</guid>
+ <comments>http://marketplace.eclipse.org/content/asciidoctor-editor#comments</comments>
+  </item>
+  <item>
+    <title>Subclipse</title>
+    <link>http://marketplace.eclipse.org/content/subclipse</link>
+    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img typeof=&quot;foaf:Image&quot; class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/cn_svn.png&quot; width=&quot;52&quot; height=&quot;43&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Wed, 2009-08-05 09:20&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Sat, 2018-03-31 15:38&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22Subclipse%20Project%22&quot;&gt;Subclipse Project&lt;/a&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/mphippard/listings&quot; title=&quot;Mark Phippard&quot;&gt;Mark Phippard&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_start --&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;An Eclipse Team Provider plug-in providing support for Subversion within the Eclipse IDE. Developed and maintained by Subversion core committers, Subclipse is always in synch with the latest Subversion features and releases. Subclipse includes the CollabNet Merge Client originally developed as part of the &lt;a href=&quot;http://marketplace.eclipse.org/content/collabnet-desktop-eclipse-edition&quot; rel=&quot;nofollow&quot;&gt;CollabNet Desktop - Eclipse Edition&lt;/a&gt;. The CollabNet Merge Client provides powerful graphical merge capabilities that leverages the merge tracking functionality that was added as part of the Subversion 1.5 release. Subclipse includes an optional Mylyn connector that enables Mylyn to create automatic changesets based on the tasks you are working on. It also enables links to tasks when viewing history of Subversion commits. Finally, Subclipse includes a powerful revision graph feature that is built with Eclipse GEF/Draw2D. This allows you to visualize commits and merges across Subversion branches. &lt;a href=&quot;http://subclipse.tigris.org/servlets/ProjectProcess?pageID=rr1TIx&quot; rel=&quot;nofollow&quot;&gt;Subclipse Screenshots on tigris.org&lt;/a&gt; Need a Subversion server, too? Checkout &lt;a href=&quot;http://www.open.collab.net/downloads/subversion?cid=empsvn&quot; rel=&quot;nofollow&quot;&gt;CollabNet Subversion Edge&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_end --&gt;</description>
+     <pubDate>Wed, 05 Aug 2009 13:20:32 +0000</pubDate>
+ <dc:creator>mphippard</dc:creator>
+ <guid isPermaLink="false">979 at http://marketplace.eclipse.org</guid>
+ <comments>http://marketplace.eclipse.org/content/subclipse#comments</comments>
+  </item>
+  <item>
     <title>CMake Editor</title>
     <link>http://marketplace.eclipse.org/content/cmake-editor</link>
     <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img typeof=&quot;foaf:Image&quot; class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/default_images/default_2.png&quot; width=&quot;110&quot; height=&quot;80&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Tue, 2016-07-19 15:29&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Sat, 2018-03-31 09:30&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%2215knots%22&quot;&gt;15knots&lt;/a&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/mweber0xe/listings&quot; title=&quot;Martin Weber&quot;&gt;Martin Weber&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_start --&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;CMake Editor adds color coding and syntax completion for CMake files. The plug-in provides:&lt;/p&gt;
@@ -36,41 +81,6 @@
  <dc:creator>dkirkby</dc:creator>
  <guid isPermaLink="false">2806369 at http://marketplace.eclipse.org</guid>
  <comments>http://marketplace.eclipse.org/content/live-coding-python#comments</comments>
-  </item>
-  <item>
-    <title>AsciiDoctor Editor</title>
-    <link>http://marketplace.eclipse.org/content/asciidoctor-editor</link>
-    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img typeof=&quot;foaf:Image&quot; class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/asciidoctor-editor-logo.png&quot; width=&quot;110&quot; height=&quot;80&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Thu, 2018-03-15 15:51&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Thu, 2018-03-29 18:19&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22Albert%20Tregnaghi%22&quot;&gt;Albert Tregnaghi&lt;/a&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/atregnaghi/listings&quot; title=&quot;Albert Tregnaghi&quot;&gt;Albert Tregnaghi&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_start --&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;h2&gt;AsciiDoctor Editor Plugin&lt;/h2&gt;
-&lt;p&gt;The plugin is an editor for convenient editing of AsciiDoctor Files. &lt;/p&gt;
-&lt;p&gt;Features:&lt;/p&gt;
-&lt;ul&gt;&lt;li&gt;Vertical or horizontal splitted Text and Preview on same Editor&lt;/li&gt;
-&lt;li&gt;Outline and Quickoutline will show
-&lt;ul&gt;&lt;li&gt;Headlines&lt;/li&gt;
-&lt;li&gt;Includes (double click opens file)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Syntax highlighting in Text Editor&lt;br /&gt;
-	Colors can be customized. Also additional defaults for dark theme exists.&lt;/li&gt;
-&lt;li&gt;Tooltips&lt;/li&gt;
-&lt;li&gt;Hyperlinking of include parts (CTRL+Mouse)&lt;/li&gt;
-&lt;li&gt;Preview panel is nearly same output as generated HTML by ascii doctor&lt;br /&gt;
-	(so nearly WYSIWYG)&lt;/li&gt;
-&lt;li&gt;Preview panel immediately updated on text save&lt;/li&gt;
-&lt;li&gt;Toolbar actions
-&lt;ul&gt;&lt;li&gt;Table wizard&lt;/li&gt;
-&lt;li&gt;Code block templates&lt;/li&gt;
-&lt;li&gt;Possibility to toggle TOC on/off in output view&lt;/li&gt;
-&lt;li&gt;Jump to top of preview&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;Additional links&lt;/p&gt;
-&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;https://github.com/de-jcup/eclipse-asciidoctor-editor/issues&quot; rel=&quot;nofollow&quot;&gt;Issue Tracker&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/de-jcup/eclipse-asciidoctor-editor/releases&quot; rel=&quot;nofollow&quot;&gt;Release history&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/de-jcup/eclipse-asciidoctor-editor/wiki&quot; rel=&quot;nofollow&quot;&gt;Wiki&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://asciidoctor.org/docs/asciidoc-syntax-quick-reference&quot; rel=&quot;nofollow&quot;&gt;AsciiDoctor Quickreference&lt;/a&gt; for details about syntax&lt;/li&gt;
-&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_end --&gt;</description>
-     <pubDate>Thu, 15 Mar 2018 19:51:28 +0000</pubDate>
- <dc:creator>atregnaghi</dc:creator>
- <guid isPermaLink="false">3976500 at http://marketplace.eclipse.org</guid>
- <comments>http://marketplace.eclipse.org/content/asciidoctor-editor#comments</comments>
   </item>
   <item>
     <title>ABAP Continuous Integration</title>
@@ -190,25 +200,6 @@ Intelligent grid execution management allows you to see executions in the real-t
  <dc:creator>badrient10</dc:creator>
  <guid isPermaLink="false">3923910 at http://marketplace.eclipse.org</guid>
  <comments>http://marketplace.eclipse.org/content/vue-gwt#comments</comments>
-  </item>
-  <item>
-    <title>Sigasi Studio</title>
-    <link>http://marketplace.eclipse.org/content/sigasi-studio</link>
-    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img typeof=&quot;foaf:Image&quot; class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/icon_eclipse_marketplace%20alfa.png&quot; width=&quot;110&quot; height=&quot;68&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Tue, 2009-05-19 09:35&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Wed, 2018-03-28 03:58&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22Sigasi%22&quot;&gt;Sigasi&lt;/a&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/pfaescce/listings&quot; title=&quot;Philippe Faes&quot;&gt;Philippe Faes&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_start --&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;&lt;a href=&quot;http://www.sigasi.com/&quot; rel=&quot;nofollow&quot;&gt;Sigasi&lt;/a&gt; offers the leading plugin for &lt;strong&gt;VHDL&lt;/strong&gt; and &lt;strong&gt;(System)Verilog&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;&lt;li&gt;Makes standard editors obsolete&lt;/li&gt;
-&lt;li&gt;Type-time code analysis&lt;/li&gt;
-&lt;li&gt;Error reporting while you type&lt;/li&gt;
-&lt;li&gt;Smart content assist&lt;/li&gt;
-&lt;li&gt;Code inspection and navigation&lt;/li&gt;
-&lt;li&gt;Design hierarchy view (VHDL only)&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;Watch our &lt;a href=&quot;http://www.sigasi.com/screencast/quick_intro&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt; 1 minute introduction video&lt;/a&gt; and review the &lt;a href=&quot;http://www.sigasi.com/products/&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;feature list&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Sigasi Studio is an Intelligent Development Environment (IDE) for the VHDL and (System)Verilog languages. As other xDT plugins, such as JDT and CDT, it contains an ultra-fast parser and compiler that runs transparently in the background. At any given moment as you make modifications, the tool fully understands the design &lt;em&gt;in terms of HDL concepts&lt;/em&gt;.&lt;/p&gt;
-&lt;h2&gt;Sigasi Studio Starter&lt;/h2&gt;
-&lt;p&gt;This plugin can be used free of charge on single files. If you want to try the full version, please &lt;a href=&quot;http://www.sigasi.com/try-buy/&quot; rel=&quot;nofollow&quot;&gt;request a trial license&lt;/a&gt; or &lt;a href=&quot;http://www.sigasi.com/try-buy/&quot; rel=&quot;nofollow&quot;&gt;buy a license&lt;/a&gt; on the Sigasi website.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_end --&gt;</description>
-     <pubDate>Tue, 19 May 2009 13:35:30 +0000</pubDate>
- <dc:creator>pfaescce</dc:creator>
- <guid isPermaLink="false">936 at http://marketplace.eclipse.org</guid>
- <comments>http://marketplace.eclipse.org/content/sigasi-studio#comments</comments>
   </item>
   </channel>
 </rss>

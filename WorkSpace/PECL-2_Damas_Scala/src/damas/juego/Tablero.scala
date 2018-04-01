@@ -48,11 +48,11 @@ object Tablero {
        * Medo Privado Que se encarga de Imprimir la fichas del Tablero en la
        * posiciones que estan ocupan.
        */
-     private def imprimirTablero(tablero: List[ Int ], row: Int, col: Int): Unit = {
+     private def imprimirTablero(tablero: List[ Int ], row: Int, col: Int): String = {
           val dim = (Math.sqrt(tablero.length)).toInt;                                    // Calculamos el tamño de las filas y columnass sera el mismo ya que es una matriz cudrada.
           if (row < dim) {
                val pos: Int = (row * dim + col)                                           // Calaculamos la posicion del tablero
-               if (pos < tablero.length) {
+               (if (pos < tablero.length) {
                     val bloque: Int = tablero(pos);  
                     val (out: String) = (col match {
                          case 0 ⇒ String.format("\n %s%4s%s ━┫", Console.CYAN + Console.BOLD, ((row + 65).toChar).toString(), Console.RESET); 
@@ -64,16 +64,16 @@ object Tablero {
                               }
                     }).concat(if (((row + col) % 2 == 0)) Console.BLUE_B else Console.BLACK_B); // Dibujamos el tablero de damas.
                     if (col == dim) {
-                         print(out + Console.RESET);
+                         out + Console.RESET
                     } else {
                          val foreground = Array(Console.INVISIBLE, Console.RED, Console.WHITE, Console.CYAN, Console.GREEN, Console.MAGENTA, Console.YELLOW, Console.MAGENTA);
                          val ficha = String.format(" %s ", if (bloque != POS_TAB_EMPTY) (if ((bloque - (bloque % 10)) > POS_TAB_EMPTY * 2) "■" else "●") else "‌ ").toLowerCase();
-                         print(out + Console.BOLD + foreground(bloque % 10) + ficha + Console.RESET);    
+                         out + Console.BOLD + foreground(bloque % 10) + ficha + Console.RESET
                     }
-               }
-               imprimirTablero(tablero, (row + (if (col == dim) 1 else 0)), (if (col < dim) (col + 1) else 0));
+               }) + imprimirTablero(tablero, (row + (if (col == dim) 1 else 0)), (if (col < dim) (col + 1) else 0));
+          } else {
+               return "";
           }
-          //print(Console.RESET)
      }
 
      /**
@@ -87,13 +87,13 @@ object Tablero {
        * 			 cada ineteracion recursiva.
        * 
        */
-     def echoTablero(tablero: List[Int], dim: Int, cont: Int): Unit = {
+     def echoTablero(tablero: List[Int], dim: Int, cont: Int): String = {
           if (dim != Math.sqrt(tablero.length).toInt + 1) {
-               if (cont == 0 || cont == 4 ) {
-                    print(Console.MAGENTA + Console.BOLD + String.format(if (dim == 1) "\n %9s" else if (dim < 9) "%3s" else "%3.95s", ((dim + 64).toChar).toString()) + Console.RESET);
+               (if (cont == 0 || cont == 4 ) {
+                    Console.MAGENTA + Console.BOLD + String.format(if (dim == 1) "\n %9s" else if (dim < 9) "%3s" else "%3.95s", ((dim + 64).toChar).toString()) + Console.RESET
                } else {
-                    if (cont != 2) {
-                         print(String.format(if (dim == 1) "\n %10s" else "%3s", dim match {
+                    (if (cont != 2) {
+                         String.format(if (dim == 1) "\n %10s" else "%3s", dim match {
                               case 1 ⇒  (if (cont == 1) "┏━┻━" else "┗━┳━"); 
                               case _ ⇒
                                    if (dim == Math.sqrt(tablero.length).toInt) {
@@ -101,18 +101,16 @@ object Tablero {
                                    } else {
                                         (if (cont == 1) "━┻━"  else "━┳━");
                                    }
-                         }));    
-                    }
-               }
-               this.echoTablero(tablero, (if (cont != 2) dim + 1 else Math.sqrt(tablero.length).toInt + 1), cont);
+                         })    
+                    } else "");
+               }) + this.echoTablero(tablero, (if (cont != 2) dim + 1 else Math.sqrt(tablero.length).toInt + 1), cont);
           } else {
                if (cont < 4 ) {
-                    if (cont == 2) {
+                    (if (cont == 2) {
                          this.imprimirTablero(tablero, 0, 0);
-                    }
-                    this.echoTablero(tablero, 1, cont + 1) 
+                    } else "") + this.echoTablero(tablero, 1, cont + 1) 
                } else {
-                    println("\n");    
+                    return "\n"    
                }
           }
      }
