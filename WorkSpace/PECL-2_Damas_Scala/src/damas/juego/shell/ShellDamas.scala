@@ -22,7 +22,7 @@ object ShellDamas {
       * 
       */
      def initShell(): Unit = {
-          this.clear(); str.clear();                                                  // Limpiamos el prompt. y Vaciamos el StringBuilder. 
+          this.clear(); str.clear(); str.append("\n");                                                     // Limpiamos el prompt. y Vaciamos el StringBuilder. 
           str.append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓").append("\n");
           str.append(String.format("┃ %25s  ===> {  %s  } <===  %-25s ┃", "", Console.CYAN + " MENU Damas BOM " + Console.RESET, "")).append("\n");
           str.append("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫").append("\n");
@@ -39,7 +39,7 @@ object ShellDamas {
                case "1" ⇒
                     val dificultad = setDificultad();                                                     // Llamamos a el menu de configuracion del nivel de dificultad.
                     UtilDamas.clipSoundEfect("start_up.wav").start();                                     // Efecto de Audio de Start UP.
-                    playDamasBom(Tab.generarTablero(32, 32, 32, dificultad), 0, 0, dificultad, false);       // Comenzamos Con el Nivel 0 y con un Tablero de 8x8.                
+                    playDamasBom(Tab.generarTablero(8, 8, 8, dificultad), 0, 0, dificultad, false);       // Comenzamos Con el Nivel 0 y con un Tablero de 8x8.                
                case "2" ⇒   
                case "3" ⇒
                case "X" ⇒ System.exit(0);
@@ -56,7 +56,7 @@ object ShellDamas {
       * 
       */
      def setDificultad(): Int = {
-          this.clear(); str.clear();                                                  // Limpiamos el prompt. y Vaciamos el StringBuilder.                                                        
+          this.clear(); str.clear(); str.append("\n");                             // Limpiamos el prompt. y Vaciamos el StringBuilder.                                                        
           str.append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓").append("\n");
           str.append(String.format("┃ %17s  ===> {  %s  } <===  %-17s ┃", "", Console.CYAN + " Nivel de dificulta de partida: " + Console.RESET, "")).append("\n");
           str.append("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫").append("\n");
