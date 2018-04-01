@@ -3,7 +3,7 @@ package damas
 /**
   * @author david.
   * 
-  * Declaracion de Objero.
+  * Declaracion de Objeto.
   */
 object TestMainDamas {
      /**
@@ -29,12 +29,12 @@ object TestMainDamas {
                     Cmd.initShell();                                  // Inicializa la interfaces Shell.
                case _ ⇒
                     if (opc != "0") {
-                         println("\n - " + Console.RED + "ERROR: " + Console.RESET + "Opcion de juego selecionda no es Valida.");
+                         println("\n - " + Console.RED + "ERROR: " + Console.RESET + "La opcion de juego seleccionda no es valida.");
                          Thread.sleep(1000);
                     }
           }
-          if (opc != "0") this.main(args);                                  // Nos llamamos de nuevo de forma recursiba.
-          println(Console.GREEN + "\n - Has Salido del juego Amigo espero que te guste Scala ya que este juego lo patrocinan Linux OS y Mac OS orgullosos OS de desarrollo !!" + Console.RESET);
+          if (opc != "0") this.main(args);   // Nos llamamos de nuevo de forma recursiba.
+          println(Console.GREEN + "\n - Has salido del juego amigo espero que te guste Scala ya que este juego lo patrocinan Linux OS y Mac OS orgullosos OS de desarrollo !!" + Console.RESET);
           Thread.sleep(1000);
      }
 }

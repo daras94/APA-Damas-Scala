@@ -9,7 +9,7 @@ import damas.juego.gui._
  */
 package object damas {
      /**
-      * Declaracion de constantes para todo el apquete.
+      * Declaracion de constantes para todo el paquete.
       */
      val Cmd = ShellDamas;
      val Gui = GUIDamas;   

@@ -1,7 +1,6 @@
 package damas.juego
 import scala.util.Random;
 
-
 /**
   * @author david
   */

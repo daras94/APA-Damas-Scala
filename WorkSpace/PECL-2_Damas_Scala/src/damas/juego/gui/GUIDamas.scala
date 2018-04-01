@@ -9,6 +9,9 @@ import javax.swing.WindowConstants
 import java.awt.{Graphics2D,Color}
 import java.awt.{Color,Graphics2D,BasicStroke}
 import java.awt.geom._
+//import scala.util.Random;
+import scala.io.Source
+import java.io._
 /**
   * @author Daniel
   */
@@ -19,20 +22,51 @@ object stats{
     var NUM_EMPATES = 6
 }
 //clase para generar el tablero segun dificultad y tamaño
-class TableroGUI(val tamaño: Int){
+class TableroGUI(){
   
+  var grid = Array[Int]()
+  def generarTablero(tamaño: Int, dificultad: Int): Array[Int] = {
+     tamaño match {
+      case 8 => 
+         dificultad match {
+          case 1 => 
+              val g = 
+        Array(0, 1, 0, 1, 0, 1, 0, 1,
+			        1, 0, 1, 0, 3, 0, 1, 0,
+			        0, 1, 0, 1, 0, 1, 0, 1,
+			        0, 0, 0, 0, 0, 0, 0, 0,
+			        0, 0, 0, 0, 0, 0, 0, 0,
+			        2, 0, 2, 0, 2, 0, 2, 0,
+			        0, 2, 0, 3, 0, 2, 0, 2,
+			        2, 0, 2, 0, 2, 0, 2, 0)   
+			        grid=g
+			        return g
+       //   case 2 => 
+       //   case 3 => 
+       //   case 4 => 
+       //   case 5 => 
+         }
+     /* case 16 => 
+        dificultad match {
+       //   case 1 => 
+       //   case 2 => 
+       //   case 3 => 
+       //   case 4 => 
+       //   case 5 => 
+        }
+      case 32 => 
+        dificultad match {
+           case 1 => 
+           case 2 => 
+           case 3 => 
+           case 4 => 
+           case 5 => 
+        }*/
+    } 
+  }
    //val player = 1
-   val grid = 
-   Array(0, 1, 0, 1, 0, 1, 0, 1,
-			   1, 0, 1, 0, 1, 0, 1, 0,
-			   0, 1, 0, 1, 0, 1, 0, 1,
-			   0, 0, 0, 0, 0, 0, 0, 0,
-			   0, 0, 0, 0, 0, 0, 0, 0,
-			   2, 0, 2, 0, 2, 0, 2, 0,
-			   0, 2, 0, 2, 0, 2, 0, 2,
-			   2, 0, 2, 0, 2, 0, 2, 0)
-
-  def apply(x: Int, y: Int): Int = grid(tamaño * y + x)
+  
+  def apply(x: Int, y: Int, tamaño: Int): Int = grid(tamaño * y + x)
   
  /* def realizarJugada(x: Int, y: Int) {
     if (this(x, y) == 0) {
@@ -40,10 +74,9 @@ class TableroGUI(val tamaño: Int){
       player = 3 - player
     }
   }
-  def restart() {
-    for (i <- 0 until 9)
-      grid(i) = 0
-    player = 1
+  def comprobarGanador{
+  
+  
   }
   */
 }
@@ -95,12 +128,19 @@ class dibujarTablero(val tablero: TableroGUI, val tamaño: Int) extends Componen
       g.setStroke(new BasicStroke(3f))
     for (x <- 0 until tamaño) {
       for (y <- 0 until tamaño) {
-	      tablero(x,y) match {
+	      tablero(x,y,tamaño) match {
 	        case 1 =>
 	          g.setColor(colores(0))
 	          g.draw(new Ellipse2D.Double(x0 + x * wid + 10, y0 + y * wid + 10, wid - 20, wid - 20))
 	        case 2 =>
 	          g.setColor(colores(2))
+	          val x1 = x0 + x * wid + 10
+	          val y1 = y0 + y * wid + 10
+	          g.draw(new Line2D.Double(x1, y1, x1 + wid - 20, y1 + wid - 20))
+	          g.draw(new Line2D.Double(x1, y1 + wid - 20, x1 + wid - 20, y1))
+	        case 3 => //Bomba verde 
+	          g.setColor(colores(1))
+	          g.draw(new Ellipse2D.Double(x0 + x * wid + 10, y0 + y * wid + 10, wid - 20, wid - 20))
 	          val x1 = x0 + x * wid + 10
 	          val y1 = y0 + y * wid + 10
 	          g.draw(new Line2D.Double(x1, y1, x1 + wid - 20, y1 + wid - 20))
@@ -158,6 +198,7 @@ class mostrarTablero(var turno: String, val tablero: TableroGUI, val tamaño: In
                actualizarTablero()
           case WindowClosing(_) => {
                this.close()
+              // GUIDamas.getTablero(tablero)
                GUIDamas.open()
           }   
      }
@@ -232,9 +273,9 @@ class configuracionJuego(val turno: String) extends Frame {
      //reacciones a esos eventos
      reactions += {
           case ButtonClicked(`boton`) => {
-               //val tablero = Tablero.generarTablero(columnas,filas,dificultad)
-               val tableroGUI = new TableroGUI(8)
-               val mostrarTablero = new mostrarTablero(turno,tableroGUI,8)
+               val tableroGUI = new TableroGUI()
+               tableroGUI.generarTablero(filas,dif)
+               val mostrarTablero = new mostrarTablero(turno,tableroGUI,filas)
                mostrarTablero.visible = true
                this.visible = false
           }
@@ -330,7 +371,9 @@ object GUIDamas extends Frame {
      val boton3 = new Button {
           text = "Estadísticas"
      }
-
+     
+     var tablero = Array[String]()//para guardar la partida
+     
      //configuracion del contenido de la ventana
      contents = new BoxPanel(Orientation.Vertical) {
           contents += boton1
@@ -366,16 +409,33 @@ object GUIDamas extends Frame {
           case WindowClosing(`GUIDamas`) => {
                val opcion = JOptionPane.showConfirmDialog(null, "¿Salir del juego y guardar la partida?")
                if (opcion == 0) {
-                    //guardar partida
+                    //guardarPartida(tablero)
                     sys.exit(0)
                }
           }
      }
+     
+   /*  def guardarPartida(t: TableroGUI){
+       val writer = new PrintWriter(new File("partida.txt"))
+       writer.write(t.grid.toString())
+       writer.close()
+     }
+     def cargarPartida() : Array[Int] = {
+        var partidaCargada = Source.fromFile("partida.txt".toString())
+        partidaCargada = partidaCargada.map(_.toInt)
+        return partidaCargada
+     }*/
+     
+  /*   def getTablero(t: TableroGUI){
+        tablero=t.grid.toArray.toString()
+     }
+     * /
+     */
      /**
        * Metodo que se encarga de inicializar la interface grafica,
      */
      def InitGUI(): Unit = {
-          //cargar partida
+          //cargarPartida
           val ui = this;
           ui.visible = true
      }

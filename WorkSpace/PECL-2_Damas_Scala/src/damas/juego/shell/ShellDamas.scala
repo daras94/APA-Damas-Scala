@@ -27,13 +27,13 @@ object ShellDamas {
           str.append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓").append("\n");
           str.append(String.format("┃ %25s  ===> {  %s  } <===  %-25s ┃", "", Console.CYAN + " MENU Damas BOM " + Console.RESET, "")).append("\n");
           str.append("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫").append("\n");
-          str.append(String.format("┃ %-95s ┃", Console.MAGENTA + "1" + Console.RESET + ") - Inciar partida Damas BOM 2 Jugadores.")).append("\n");
-          str.append(String.format("┃ %-95s ┃", Console.MAGENTA + "2" + Console.RESET + ") - Inciar partida Damas BOM 1 Jugador VS IA.")).append("\n");
+          str.append(String.format("┃ %-95s ┃", Console.MAGENTA + "1" + Console.RESET + ") - Iniciar partida Damas BOM 2 Jugadores.")).append("\n");
+          str.append(String.format("┃ %-95s ┃", Console.MAGENTA + "2" + Console.RESET + ") - Iniciar partida Damas BOM 1 Jugador VS IA.")).append("\n");
           str.append(String.format("┃ %-95s ┃", Console.MAGENTA + "3" + Console.RESET + ") - Ver y Cargar Partida Guardadas.")).append("\n");
           str.append("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫").append("\n");
-          str.append(String.format("┃ - %-93s ┃",Console.RED + "NOTA" + Console.RESET + ": Pulsa 0 para volver al menu de selecion de interface de ejecucion.")).append("\n");
+          str.append(String.format("┃ - %-93s ┃",Console.RED + "NOTA" + Console.RESET + ": Pulsa 0 para volver al menu de seleccion de interface de ejecucion.")).append("\n");
           str.append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛").append("\n");
-          str.append(" ❈ Selecione una opcion de juego (" + Console.GREEN + "Pulse X para salir del Juego" + Console.RESET + "): ")
+          str.append(" ❈ Seleccione una opcion de juego (" + Console.GREEN + "Pulse X para salir del Juego" + Console.RESET + "): ")
           print(str);
           var opc: String = Console.in.readLine();
           opc.toUpperCase() match {
@@ -48,7 +48,7 @@ object ShellDamas {
                case "X" ⇒ System.exit(0);
                case _ ⇒ 
                     if (opc != "0") {
-                         str.append("\n - " + Console.RED + "ERROR: " + Console.RESET + "Opcion de juego selecionda no es Valida.")  
+                         str.append("\n - " + Console.RED + "ERROR: " + Console.RESET + "La opcion de juego selecionda no es valida.")  
                          Thread.sleep(500);
                     }
           }
@@ -61,19 +61,19 @@ object ShellDamas {
      def setDificultad(): Int = {
           this.clear(); str.clear(); str.append("\n");                             // Limpiamos el prompt. y Vaciamos el StringBuilder.                                                        
           str.append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓").append("\n");
-          str.append(String.format("┃ %17s  ===> {  %s  } <===  %-17s ┃", "", Console.CYAN + " Nivel de dificulta de partida: " + Console.RESET, "")).append("\n");
+          str.append(String.format("┃ %17s  ===> {  %s  } <===  %-17s ┃", "", Console.CYAN + " Nivel de dificultad de partida: " + Console.RESET, "")).append("\n");
           str.append("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫").append("\n");
           str.append(String.format("┃ %s) - %s (%s). \t %43s ┃", Console.MAGENTA + "1" + Console.RESET, "Muy Facil", Console.YELLOW + "Escasas fichas trucadas",             Console.RESET)).append("\n");
           str.append(String.format("┃ %s) - %s (%s). \t %51s ┃", Console.MAGENTA + "2" + Console.RESET, "Facil",     Console.YELLOW + "Pocas fichas trucadas",               Console.RESET)).append("\n");
           str.append(String.format("┃ %s) - %s (%s). \t %43s ┃", Console.MAGENTA + "3" + Console.RESET, "Mendio",    Console.YELLOW + "Mitad de fichas trucadas",            Console.RESET)).append("\n");
-          str.append(String.format("┃ %s) - %s (%s). \t %35s ┃", Console.MAGENTA + "4" + Console.RESET, "Avanzado",  Console.YELLOW + "Muchas fichas Trucadas y alguna BOM", Console.RESET)).append("\n");
+          str.append(String.format("┃ %s) - %s (%s). \t %35s ┃", Console.MAGENTA + "4" + Console.RESET, "Avanzado",  Console.YELLOW + "Muchas fichas trucadas y alguna BOM", Console.RESET)).append("\n");
           str.append(String.format("┃ %s) - %s (%s). \t %43s ┃", Console.MAGENTA + "5" + Console.RESET, "Experto",   Console.YELLOW + "Top fichas trucadas y BOM",           Console.RESET)).append("\n");
           str.append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛").append("\n");
           str.append(" ❈ Seleccione el nivel de dificultad de la partida :")
           print(str);
           val nivel: String = Console.in.readLine();
           if (!((nivel >= "0") && (nivel <= "5"))) {
-               println("\n - " + Console.RED + "ERROR: " + Console.RESET + "El nivel de dificultada del Juego no es valida.");;  
+               println("\n - " + Console.RED + "ERROR: " + Console.RESET + "El nivel de dificultad del juego no es valida.");;  
                Thread.sleep(500);
                this.setDificultad();
           }
@@ -113,7 +113,7 @@ object ShellDamas {
                          case "H" ⇒ Nil
                          case  _  ⇒
                               if (imput != "0") {
-                                   println("\n - " + Console.RED + "ERROR: " + Console.RESET + "Carrater o movimiento introducido no valido no valida.");;  
+                                   println("\n - " + Console.RED + "ERROR: " + Console.RESET + "Caracter o movimiento introducido no valido.");;  
                                    Thread.sleep(500);
                               }
                     }
