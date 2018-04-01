@@ -76,7 +76,7 @@ object ShellDamas {
      def playDamasBom(tablero: List[Int], turno: Int, nivel: Int, dificultad: Int, isWinner: Boolean): Unit = {
           this.clear();                                 // Borramos el Anterior Tablero de Juego.
           println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓");
-          println(String.format("┃ ❈  %-62s ┃ Nivel: %-14s ┃ Turno de: %-11s ┃", Console.CYAN + "Tablero de Juego " + Console.RESET, Console.GREEN + (nivel + 1) + Console.RESET, Console.GREEN + (if (turno % 2 == 0) "#" else "O") + Console.RESET));
+          println(String.format("┃ ❈  %-62s ┃ Nivel: %-14s ┃ Turno de: %-11s ┃", Console.CYAN + "Tablero de Juego " + Console.RESET, Console.GREEN + (nivel + 1) + Console.RESET, Console.GREEN + (if (turno % 2 == 0) "■" else "●") + Console.RESET));
           println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛");
           Tab.echoTablero(tablero, 1, 0);               // Imprimimos el Tablero de Juego.
           println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
