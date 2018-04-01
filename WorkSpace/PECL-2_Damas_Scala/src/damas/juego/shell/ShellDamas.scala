@@ -39,7 +39,7 @@ object ShellDamas {
                case "1" ⇒
                     val dificultad = setDificultad();                                                     // Llamamos a el menu de configuracion del nivel de dificultad.
                     UtilDamas.clipSoundEfect("start_up.wav").start();                                     // Efecto de Audio de Start UP.
-                    playDamasBom(Tab.generarTablero(8, 8, 8, dificultad), 0, 0, dificultad, false);       // Comenzamos Con el Nivel 0 y con un Tablero de 8x8.                
+                    playDamasBom(Tab.generarTablero(16, 16, 16, dificultad), 0, 0, dificultad, false);       // Comenzamos Con el Nivel 0 y con un Tablero de 8x8.                
                case "2" ⇒   
                case "3" ⇒
                case "X" ⇒ System.exit(0);
@@ -96,14 +96,16 @@ object ShellDamas {
           /**
            * En Construcion.
            */
-          if (!isWinner) {
-               this.playDamasBom(tablero, turno, nivel, dificultad, isWinner); 
-          } else {
-               if (isWinner && (nivel < 3)) {                                   // Si se Gana la partida se sube de nivel y el tablero sera el doble del actul.
-                    val dim: Int = Math.sqrt(tablero.length).toInt * 2;
-                    UtilDamas.clipSoundEfect("level_up.wav").start();           // Efecto de sonido leven UP.
-                    this.playDamasBom(Tab.generarTablero(dim, dim, dim, dificultad), turno, (nivel + 1), dificultad, isWinner);
-               }
+          if (jugada != "0") {
+               if (!isWinner) {
+                    this.playDamasBom(tablero, turno, nivel, dificultad, isWinner); 
+               } else {
+                    if (isWinner && (nivel < 3)) {                                   // Si se Gana la partida se sube de nivel y el tablero sera el doble del actul.
+                         val dim: Int = Math.sqrt(tablero.length).toInt * 2;
+                         UtilDamas.clipSoundEfect("level_up.wav").start();           // Efecto de sonido leven UP.
+                         this.playDamasBom(Tab.generarTablero(dim, dim, dim, dificultad), turno, (nivel + 1), dificultad, isWinner);
+                    }
+               } 
           }
      }
 }

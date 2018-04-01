@@ -6,4 +6,5 @@ import damas.juego._;
   */
 package object shell {
      val Tab = Tablero;     //Inicializacion del Tablero.
+     val Cfg = ShellSetting;
 }
