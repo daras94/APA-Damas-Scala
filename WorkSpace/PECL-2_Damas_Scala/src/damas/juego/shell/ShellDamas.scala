@@ -1,5 +1,6 @@
 package damas.juego.shell
 import scala.sys.process._
+import scala.util.matching._
 import damas.util._
 
 /**
@@ -38,8 +39,10 @@ object ShellDamas {
           opc.toUpperCase() match {
                case "1" ⇒
                     val dificultad = setDificultad();                                                     // Llamamos a el menu de configuracion del nivel de dificultad.
-                    UtilDamas.clipSoundEfect("start_up.wav").start();                                     // Efecto de Audio de Start UP.
-                    playDamasBom(Tab.generarTablero(16, 16, 16, dificultad), 0, 0, dificultad, false);       // Comenzamos Con el Nivel 0 y con un Tablero de 8x8.                
+                    //if (Cfg.sound) {
+                         UtilDamas.clipSoundEfect("start_up.wav").start();                                // Efecto de Audio de Start UP. 
+                    //}
+                    playDamasBom(Tab.generarTablero(16, 16, 16, dificultad), 0, 0, dificultad, false);    // Comenzamos Con el Nivel 0 y con un Tablero de 8x8.                
                case "2" ⇒   
                case "3" ⇒
                case "X" ⇒ System.exit(0);
@@ -92,20 +95,30 @@ object ShellDamas {
           str.append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛").append("\n");
           str.append(" ❈ Realice su jugada (" + Console.GREEN + "0 para salir de la partida s para guardar la partida." + Console.RESET + "):")
           print(str);                                                           // Imprimimos el tinglado menos IO mas Optimo.
-          val jugada: String = Console.in.readLine();
-          /**
-           * En Construcion.
-           */
-          if (jugada != "0") {
-               if (!isWinner) {
-                    this.playDamasBom(tablero, turno, nivel, dificultad, isWinner); 
-               } else {
+          val imput: String   = Console.in.readLine().toUpperCase();
+          val reg_expre: Regex = ("([A-Z]{1}):([A-Z]{1}):((1|2){1}(0|1){1})").r;
+          (reg_expre.findFirstMatchIn(imput)) match {
+               case Some(_) ⇒ 
+                    /**
+                     * En construcion
+                     */
                     if (isWinner && (nivel < 3)) {                                   // Si se Gana la partida se sube de nivel y el tablero sera el doble del actul.
                          val dim: Int = Math.sqrt(tablero.length).toInt * 2;
                          UtilDamas.clipSoundEfect("level_up.wav").start();           // Efecto de sonido leven UP.
                          this.playDamasBom(Tab.generarTablero(dim, dim, dim, dificultad), turno, (nivel + 1), dificultad, isWinner);
                     }
-               } 
+               case None    ⇒
+                    imput match {
+                         case "S" ⇒ Nil
+                         case "H" ⇒ Nil
+                         case  _  ⇒
+                              if (imput != "0") {
+                                   println("\n - " + Console.RED + "ERROR: " + Console.RESET + "Carrater o movimiento introducido no valido no valida.");;  
+                                   Thread.sleep(500);
+                              }
+                    }
           }
+          //print("read -n1 -r -p \"Press any key to continue...\" key".!!);
+          if (!isWinner && imput != "0") this.playDamasBom(tablero, turno, nivel, dificultad, isWinner); 
      }
 }
