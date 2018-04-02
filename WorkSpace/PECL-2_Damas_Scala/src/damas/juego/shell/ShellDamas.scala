@@ -102,10 +102,14 @@ object ShellDamas {
                     /**
                      * En construcion
                      */
-                    if (isWinner && (nivel < 3)) {                                   // Si se Gana la partida se sube de nivel y el tablero sera el doble del actul.
-                         val dim: Int = Math.sqrt(tablero.length).toInt * 2;
-                         UtilDamas.clipSoundEfect("level_up.wav").start();           // Efecto de sonido leven UP.
-                         this.playDamasBom(Tab.generarTablero(dim, dim, dim, dificultad), turno, (nivel + 1), dificultad, isWinner);
+                    if (isWinner) {
+                         if (nivel < 3) {                                                 // Si se Gana la partida se sube de nivel y el tablero sera el doble del actul.
+                              val dim: Int = Math.sqrt(tablero.length).toInt * 2;
+                              UtilDamas.clipSoundEfect("level_up.wav").start();           // Efecto de sonido leven UP.
+                              this.playDamasBom(Tab.generarTablero(dim, dim, dim, dificultad), turno, (nivel + 1), dificultad, false);
+                         } else {
+                              this.playDamasBom(tablero, turno, nivel, dificultad, true);
+                         }
                     }
                case None    ⇒
                     imput match {
@@ -119,6 +123,6 @@ object ShellDamas {
                     }
           }
           //print("read -n1 -r -p \"Press any key to continue...\" key".!!);
-          if (!isWinner && imput != "0") this.playDamasBom(tablero, turno, nivel, dificultad, isWinner); 
+          if (!isWinner && imput != "0") this.playDamasBom(tablero, turno + (if (turno == 0) 1 else -1) , nivel, dificultad, isWinner); 
      }
 }
