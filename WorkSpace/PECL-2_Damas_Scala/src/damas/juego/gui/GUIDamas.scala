@@ -64,8 +64,7 @@ class TableroGUI(){
         }*/
     } 
   }
-   //val player = 1
-  
+
   def apply(x: Int, y: Int, tamaño: Int): Int = grid(tamaño * y + x)
   
  /* def realizarJugada(x: Int, y: Int) {
