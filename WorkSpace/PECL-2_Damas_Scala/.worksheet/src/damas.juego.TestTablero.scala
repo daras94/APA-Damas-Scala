@@ -1,10 +1,9 @@
 package damas.juego
 
-object TestTablero {;import org.scalaide.worksheet.runtime.library.WorksheetSupport._; def main(args: Array[String])=$execute{;$skip(97); 
+object TestTablero {;import org.scalaide.worksheet.runtime.library.WorksheetSupport._; def main(args: Array[String])=$execute{;$skip(100); 
 
-     val tablero1 = Tablero.generarTablero(8, 8, 8, 1);System.out.println("""tablero1  : List[Int] = """ + $show(tablero1 ));$skip(82); 
+     val tablero1 = Tablero.generarTablero(32, 32, 32, 1);System.out.println("""tablero1  : List[Int] = """ + $show(tablero1 ));$skip(89); 
                                  
      
-     Tablero.echoTablero(tablero1, 0, 0);}
-                                                  
+     print(Tablero.echoTablero(tablero1, 0, 0));}
 }
