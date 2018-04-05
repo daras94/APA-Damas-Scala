@@ -9,8 +9,8 @@ object Tablero {
      /**
       * Declaracion de variables globales.
       */
-     val POS_TAB_EMPTY  = 10;
-     val CAR_ROW_COLUMN = "ABCDEFGHIJKLMNŃOPQRSTUVWXYZ1234567890"
+     private val POS_TAB_EMPTY  = 10;
+     val CAR_ROW_COLUMN = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
      
      /**
       * Numero de fichas x jugador en funcion de dimenciones del Tablero.
@@ -121,6 +121,47 @@ object Tablero {
                     return ""    
                }
           }
+     }
+     
+     /**
+      * 
+      */
+     def damasPlayBom(tablero:List[Int], mov:(Int, Int, Int), select_error:Boolean, turno:Int): Boolean = {
+          val dama:Int = tablero((mov._1 * Math.sqrt(tablero.length).toInt) + mov._2);
+          if (!select_error && (dama != POS_TAB_EMPTY) && (if (turno == 1) 20 else 30).equals(dama - (dama % 10))) {
+               val movV:Int = Array(-1, 1).apply((mov._3 % 10));					        // Determinamos el movimiento vertical en funcion de la direcion.
+			val movH:Int = Array(-1, 1).apply(((mov._3 - (mov._3 % 10)) / 10) - 1);       // Determinamos el movimiento horizontal en funcion de la direcion.
+			val isError = isCamarada(tablero, new Tuple2(movV, movH), mov._1, mov._2, 0);
+               if (!isError) {
+                    this.setMovGamen(tablero, new Tuple2(movV, movH), (dama % 10), 0);
+               } else {
+                    this.damasPlayBom(tablero, mov, isError, -1);
+               }
+          } else  {
+               if (turno != -1) {
+                    val ficha = (if (turno == 0) "■" else "●");
+                    println("\n ❈ " + Console.RED + "ERROR" + Console.RESET + ": NO pudee mover la ficha selecionada, las fichas que usted pude tocar son '" + ficha + "' !!!");
+               } else if (select_error) {
+                    println("\n ❈ " + Console.RED + "ERROR" + Console.RESET + ": La jugada realizada nos se puede cosidera una jugada valida !!!");
+               }
+               return select_error;
+          }
+     }
+     
+     private def isCamarada(tablero:List[Int], mov:(Int, Int), row:Int, col:Int, pos:Int): Boolean = {
+          val isFriend = ((col + (pos * mov._2) > -1) && (col + (pos * mov._2) < Math.sqrt(tablero.length).toInt)) &&
+                         ((row + (pos * mov._1) > -1) && (row + (pos * mov._1) < Math.sqrt(tablero.length).toInt));
+          if (isFriend) {
+               val fichInMov = tablero((row + (pos * mov._1)) * (Math.sqrt(tablero.length).toInt) + (col + (pos * mov._2)));
+               val victima   = tablero((row + ((pos - 1) * mov._1)) * (Math.sqrt(tablero.length).toInt) + (col + ((pos - 1) * mov._2)));
+               return isFriend && (victima - ((victima % 10)) != (fichInMov - (fichInMov % 10)));
+          }
+          return isFriend;
+     }
+     
+     private def setMovGamen(tablero:List[Int], mov:(Int, Int), type_bom:Int, cont: Int): Boolean = {
+       
+          return true;
      }
      
 }

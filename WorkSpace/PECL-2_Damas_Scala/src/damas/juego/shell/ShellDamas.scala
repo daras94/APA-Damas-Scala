@@ -1,7 +1,7 @@
-package damas.juego.shell
+package damas.juego.shell;
 
-import scala.util.matching._
-import damas.util._
+import scala.util.matching._;
+import damas.util._;
 
 /**
  * @author david
@@ -81,10 +81,10 @@ object ShellDamas {
       * Ejecucion del modo de juego de la partida.
       */
      def playDamasBom(tablero: List[Int], turno: Int, nivel: Int, dificultad: Int, isError: Boolean, numfichas:(Int, Int)): Unit = {
-          var t_flag:(Boolean, Boolean) = (false, false);                                   // Formato tupla (isWinner, isError).
-          val n_fich:(Int, Int)         = (numfichas._1, numfichas._2);                     // Formato tupla (nº ficha 1º Jug, nº fichas 2º Jug).
-          if (!isError) {                                                                   // Si se a producido un error en la jugada nanterior no se vuelve a imprimir el tablero.
-               UtilDamas.clear(); str.clear(); str.append("\n");                            // Borramos el pront limpiamos el strmenbuilder.o
+          var (isWinner, isSetError) = new Tuple2(false, false);                             // Formato tupla (isWinner, isError).
+          val n_fich:(Int, Int)      = new Tuple2(numfichas._1, numfichas._2);               // Formato tupla (nº ficha 1º Jug, nº fichas 2º Jug).
+          if (!isError) {                                                                    // Si se a producido un error en la jugada nanterior no se vuelve a imprimir el tablero.
+               UtilDamas.clear(); str.clear(); str.append("\n");                             // Borramos el pront limpiamos el strmenbuilder.o
                val info = (Console.GREEN, Console.RESET, (nivel + 1).toString(), (dificultad + 1).toString(), (if (turno == 0) "■" else "●"), n_fich.productElement(0), n_fich.productElement(1), 0);
                str.append("\n").append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓");
                str.append("\n").append(String.format("┃   %s                                                             %-11s ┃ Nº fichas ■  : %-12s ┃ Turno de : %-10s ┃", Console.CYAN, info._2, (info._1 + info._6 + info._2), (info._1 + info._5 + info._2)));
@@ -94,21 +94,25 @@ object ShellDamas {
                str.append("\n").append(Tab.echoTablero(tablero, 1, 0)).append("\n")
                str.append("\n").append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
                str.append("\n").append(String.format("┃ ❈ %sADVERTENCIA %s: %-90s ┃", Console.RED, info._2, "La jugadas se deven de ser introducir con el siguiente formato 'X:Y:D' para poder realizar"));
-               str.append("\n").append(String.format("┃   %-104s ┃", "una jugada siendo (X = column, Y = row y D = (10 = sup-izq, 20 = inf-izq, 11 = sup-dech, 21 = inf-dech)."));
+               str.append("\n").append(String.format("┃   %-104s ┃", "una jugada siendo (X = row, Y = column y D = (10 = sup-izq, 20 = inf-izq, 11 = sup-dech, 21 = inf-dech)."));
                str.append("\n").append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"); 
+          } else {
+               str.clear();                                                                  // Limpiamos el String Builder     
           }
           print(str.append("\n").append(" ❈ Realice su jugada (" + Console.GREEN + "0 para salir de la partida, S para guardar la partida y H ayuda." + Console.RESET + "): "));
-          val imput: String   = Console.in.readLine().toUpperCase();                        // Leemos la entrada estandar del teclado.
-          val reg_expre: Regex = ("([A-Z1-5]{1}):([A-Z1-5]{1}):((1|2){1}(0|1){1})").r;            // Expresion regular que define el formato de la jugadas.
+          val imput: String   = Console.in.readLine().toUpperCase();                         // Leemos la entrada estandar del teclado.
+          val reg_expre: Regex = ("([A-Z1-6]{1}):([A-Z1-6]{1}):((1|2){1}(0|1){1})").r;       // Expresion regular que define el formato de la jugadas.
           (reg_expre.findFirstMatchIn(imput)) match {
                case Some(_) ⇒ 
                     val aux_jug = imput.split(":");
-                    val jugada:(Int, Int, Int) = (Tab.CAR_ROW_COLUMN.indexOf(aux_jug.apply(0)), Tab.CAR_ROW_COLUMN.indexOf(aux_jug.apply(1)), aux_jug.apply(2).toInt);
+                    val jugada:(Int, Int, Int) = (Tab.CAR_ROW_COLUMN.indexOf(aux_jug.apply(0)), Tab.CAR_ROW_COLUMN.indexOf(aux_jug.apply(1)), aux_jug.apply(2).toInt); 
                     /**
-                     * BUILD
+                     * Si se Gana la partida se sube de nivel y el tablero sera el doble del actul
+                     * si la ficha escogida noe na de mis fichas se lanza un error y un mensaje de
+                     * advertencia y el jugador devera repetir la jugada.
                      */
-                    if (t_flag._1) {                                                        // Si se Gana la partida se sube de nivel y el tablero sera el doble del actul.
-                         if (nivel < 3) {                                                   // Si el nivel es inferior a 3 y la partida a sido ganda se incrementa el nivel.
+                    if (Tab.damasPlayBom(tablero, jugada, false, turno)) { 
+                         if (isWinner && nivel < 3) {                                       // Si el nivel es inferior a 3 y la partida a sido ganda se incrementa el nivel.
                               val dim: Int = Math.sqrt(tablero.length).toInt * 2;           // Dimension del nuevo tablero.
                               val fichXJug = Tab.numFichasXjugador(dim);                    // Determinamos el numero def fichas a colocar.
                               if (Cfg.sound) {                                              // Segun configuracion ejecuta o no los efectos de sonido.
@@ -116,19 +120,21 @@ object ShellDamas {
                               }
                               this.playDamasBom(Tab.generarTablero(dim, dim, dim, dificultad), turno, (nivel + 1), dificultad, false, (fichXJug, fichXJug));
                          } 
+                    } else {
+                         isSetError = true;
                     }
                case None    ⇒
                     imput match {
                          case "S" ⇒ Nil
                          case "H" ⇒ Nil
                          case  _  ⇒
-                              if (imput != "0") {                                            // Mostramos los posibles errores de introducion de teclado.
-                                   str.append("\n\n ").append(" - " + Console.RED + "ERROR: " + Console.RESET + "Caracter o movimiento introducido no valido.").append("\n");  
-                                   t_flag = t_flag.copy(t_flag._1, _2 = true);               // Habilitamos la bandera de eerores
+                              if (imput != "0") {                                             // Mostramos los posibles errores de introducion de teclado.
+                                   println("\n\n - " + Console.RED + "ERROR: " + Console.RESET + "Caracter o movimiento introducido no valido.");  
+                                   isSetError = true;                                         // Habilitamos la bandera de eerores
                               }
                     }
           }
           //print("read -n1 -r -p \"Press any key to continue...\" key".!!);
-          if (!t_flag._1 && (imput != "0")) this.playDamasBom(tablero, turno + (if (t_flag._2) 0 else if (turno == 0) 1 else -1) , nivel, dificultad, t_flag._2, n_fich); 
+          if (!isWinner && (imput != "0")) this.playDamasBom(tablero, turno + (if (isSetError) 0 else if (turno == 0) 1 else -1) , nivel, dificultad, isSetError, n_fich); 
      }
 }
