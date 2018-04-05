@@ -6,7 +6,16 @@ import scala.util.Random;
   */
 object Tablero {
 
-     val POS_TAB_EMPTY = 10
+     /**
+      * Declaracion de variables globales.
+      */
+     val POS_TAB_EMPTY  = 10;
+     val CAR_ROW_COLUMN = "ABCDEFGHIJKLMNŃOPQRSTUVWXYZ1234567890"
+     
+     /**
+      * Numero de fichas x jugador en funcion de dimenciones del Tablero.
+      */
+     def numFichasXjugador(dim: Int) = (((Math.log10(dim) / Math.log10(2)).toInt + (if (dim > 8) 2 else 0)) * (dim / 2));
 
      /**
        * Funcion que se encarga de generar el tablero de juego en funcion de las dimensiones y la dificul-
@@ -54,10 +63,10 @@ object Tablero {
                (if (pos < tablero.length) {
                     val bloque: Int = tablero(pos);  
                     val (out: String) = (col match {
-                         case 0 ⇒ String.format("\n %s%4s%s ━┫", Console.CYAN + Console.BOLD, ((row + 65).toChar).toString(), Console.RESET); 
+                         case 0 ⇒ String.format("\n %s%4s%s ━┫", Console.CYAN + Console.BOLD, CAR_ROW_COLUMN.substring(row, row + 1), Console.RESET); 
                          case _ ⇒ 
                               if (col == dim) {
-                                   String.format("┣━ %s%-4s%s", Console.CYAN + Console.BOLD, ((row + 65).toChar).toString(), Console.RESET);
+                                   String.format("┣━ %s%-4s%s", Console.CYAN + Console.BOLD,  CAR_ROW_COLUMN.substring(row, row + 1), Console.RESET);
                               } else {
                                    String.format("%s", "");
                               }
@@ -65,9 +74,9 @@ object Tablero {
                     if (col == dim) {
                          out + Console.RESET
                     } else {
-                         val foreground = Array(Console.INVISIBLE, Console.RED, Console.WHITE, Console.CYAN, Console.GREEN, Console.MAGENTA, Console.YELLOW, Console.MAGENTA);
+                         val foreground = (Console.INVISIBLE, Console.RED, Console.WHITE, Console.CYAN, Console.GREEN, Console.MAGENTA, Console.YELLOW, Console.MAGENTA);
                          val ficha = String.format(" %s ", if (bloque != POS_TAB_EMPTY) (if ((bloque - (bloque % 10)) > POS_TAB_EMPTY * 2) "■" else "●") else "‌ ").toLowerCase();
-                         out + Console.BOLD + foreground(bloque % 10) + ficha + Console.RESET
+                         out + Console.BOLD + foreground.productElement(bloque % 10) + ficha + Console.RESET
                     }
                }) + imprimirTablero(tablero, (row + (if (col == dim) 1 else 0)), (if (col < dim) (col + 1) else 0));
           } else {
@@ -89,7 +98,7 @@ object Tablero {
      def echoTablero(tablero: List[Int], dim: Int, cont: Int): String = {
           if (dim != Math.sqrt(tablero.length).toInt + 1) {
                (if (cont == 0 || cont == 4 ) {
-                    Console.MAGENTA + Console.BOLD + String.format(if (dim == 1) "\n %9s" else if (dim < 9) "%3s" else "%3.95s", ((dim + 64).toChar).toString()) + Console.RESET
+                    Console.MAGENTA + Console.BOLD + String.format(if (dim == 1) "\n %9s" else if (dim < 9) "%3s" else "%3.95s", CAR_ROW_COLUMN.substring(dim - 1, dim)) + Console.RESET
                } else {
                     (if (cont != 2) {
                          String.format(if (dim == 1) "\n %10s" else "%3s", dim match {
@@ -109,9 +118,9 @@ object Tablero {
                          this.imprimirTablero(tablero, 0, 0);
                     } else "") + this.echoTablero(tablero, 1, cont + 1) 
                } else {
-                    return "\n"    
+                    return ""    
                }
           }
      }
-
+     
 }

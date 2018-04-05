@@ -8,6 +8,88 @@
 	<description>Planet Eclipse - http://planeteclipse.org/planet/</description>
 
 <item>
+	<title>EclipseCon France 2018: Check out the program!</title>
+	<guid isPermaLink="false">https://www.eclipsecon.org/france2018/news/3848 at https://www.eclipsecon.org/france2018</guid>
+	<link>https://www.eclipsecon.org/france2018/news/check-out-program</link>
+	<description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;The &lt;a href=&quot;https://www.eclipsecon.org/france2018/program/sessions/accepted&quot; target=&quot;_blank&quot;&gt;list version of the program&lt;/a&gt; is ready. We had a record number of submissions, and we also have a record number of talks with the addition of another room on Wednesday.&lt;/p&gt;
+
+&lt;p&gt;Thanks to the community for submitting, and to &lt;a href=&quot;https://www.eclipsecon.org/france2018/about-pc&quot; target=&quot;_blank&quot;&gt;the program committee&lt;/a&gt; for choosing the best EclipseCon France program ever.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-field-news-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;https://www.eclipsecon.org/france2018/news/check-out-program&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;img-responsive block-center&quot; height=&quot;250&quot; src=&quot;https://www.eclipsecon.org/france2018/sites/default/files/styles/solstice_news_-_default_-_thumbnail/public/news/laptop_stickers.jpg?itok=YXUG_MBO&quot; width=&quot;250&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+	<pubDate>Wed, 04 Apr 2018 14:49:09 +0000</pubDate>
+</item>
+<item>
+	<title>itemis: New Project Wizard: einfach mit Xtext 2.14 generieren</title>
+	<guid isPermaLink="true">https://blogs.itemis.com/en/new-project-wizard-einfach-mit-xtext-2-14-generieren</guid>
+	<link>https://blogs.itemis.com/en/new-project-wizard-einfach-mit-xtext-2-14-generieren</link>
+	<description>&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Wer DSLs mit Eclipse &lt;/span&gt;&lt;a href=&quot;https://github.com/eclipse/xtext&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Xtext&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; umsetzt, profitiert davon, dass die notwendige Infrastruktur automatisiert aus der Grammatik erzeugt wird. Mit minimalem Aufwand entsteht somit eine Umgebung, in der alles gegeben ist, um direkt mit der eigenen DSL durchzustarten. Eine Grammatik und zwei Knöpfe später startet man voller Vorfreude Eclipse und fragt sich zunächst, welche Art von Projekt zu erstellen ist. Diese Frage beantwortet Xtext bisher nicht und der Entwickler hat die Wahl. &lt;/span&gt;&lt;/p&gt;  
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Ist das Projekt erzeugt, stellt sich nun die Frage, wie die brandneue DSL genutzt werden kann... Wie war nochmal die Dateiendung? Ist das jetzt eine Textdatei? Gibt es keinen Wizard? Oh, ein Beispiel wäre super! Aber wo finde ich das? &lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;Wer kennt diese Situation nicht?&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Bisher war das Erstellen eines Wizards Handarbeit – immer wieder. Dabei sind die Anforderungen an Wizards kein Hexenwerk und die Umsetzung auch nicht. Was man sich wünscht, ist ein Wizard der eindeutig zeigt, wie ein spezielles Projekt für unsere DSL zu erzeugen ist, das im besten Fall sogar bereits Beispiele enthält. Das lässt sich doch generieren, oder? Klar! Und in &lt;/span&gt;&lt;a href=&quot;https://projects.eclipse.org/projects/modeling.tmf.xtext&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Xtext 2.14&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; haben wir genau diese Möglichkeit geschaffen.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Auch wenn diese Version erst mit Eclipse Photon im Juni 2018 erscheinen wird, möchten wir hier gerne schon mal einen kleinen Einblick ermöglichen.&lt;/span&gt;&lt;/p&gt; 
+&lt;h2&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Erzeugen des Wizards&lt;/span&gt;&lt;/h2&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Direkt nach dem Anlegen eines neuen Xtext-Projektes enthält das Projekt eine &lt;code&gt;mwe2&lt;/code&gt;-Datei, die definiert, was generiert wird. Diese enthält den folgenden Abschnitt:&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;pre class=&quot;prettyprint&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;language = StandardLanguage {&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    name = &quot;org.xtext.example.mydsl.MyDsl&quot;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    fileExtensions = &quot;mydsl&quot;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    serializer = {&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;        generateStub = false&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    }&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    validator = {&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;        // composedCheck =&lt;/span&gt; &lt;span style=&quot;font-weight: 400;&quot;&gt;&quot;org.eclipse.xtext.validation.NamesAreUniqueValidator&quot;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    }&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; }&lt;/span&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;Um den Wizard zu generieren, ist dieser Abschnitt um ein &lt;a href=&quot;https://github.com/eclipse/xtext-core/blob/master/org.eclipse.xtext.xtext.generator/src/org/eclipse/xtext/xtext/generator/ui/projectWizard/TemplateProjectWizardFragment.xtend&quot;&gt;&lt;code&gt;TemplateProjectWizardFragment&lt;/code&gt;&lt;/a&gt; für den Wizard zu erweitern.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;pre class=&quot;prettyprint&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;language = StandardLanguage {&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    name = &quot;org.xtext.example.mydsl.MyDsl&quot;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    fileExtensions = &quot;mydsl&quot;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    serializer = {&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;        generateStub = false&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    }&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    validator = {&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;        // composedCheck =&lt;/span&gt; &lt;span style=&quot;font-weight: 400;&quot;&gt;&quot;org.eclipse.xtext.validation.NamesAreUniqueValidator&quot;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    }&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    &lt;/span&gt;&lt;strong&gt;newTemplateProjectWizardForEclipse = {&lt;/strong&gt;&lt;strong&gt;&lt;br /&gt;&lt;/strong&gt;&lt;strong&gt;        generate = true&lt;/strong&gt;&lt;strong&gt;&lt;br /&gt;&lt;/strong&gt;&lt;strong&gt;    }&lt;/strong&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;}&lt;/span&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;Wenn nun die Generierung wie üblich über &lt;code&gt;Run As -&amp;gt; MWE2 Workflow&lt;/code&gt; angestoßen wird, dann werden nicht nur der Editor, die Autocompletion usw. generiert, sondern eben auch alle notwendigen Extensions für den Wizard.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Im UI-Projekt der Sprache wird ein Package &lt;/span&gt;&lt;code&gt;wizard&lt;/code&gt; generiert, das vor allem eine Datei &lt;code&gt;MyDslProjectTemplateProvider.xtend&lt;/code&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; enthält (wobei der Name der Datei von dem Namen der Sprache abhängt). In dieser Datei wird der Inhalt des Wizards definiert. Weitere Konfigurationen sind normalerweise nicht nötig.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;Wenn man nach der Generierung direkt den Runtime-Workspace öffnet, ist es möglich, neue Projekte anzulegen, indem der neue Wizard geöffnet wird – zum Beispiel über das Hauptmenü über&lt;code&gt; File -&amp;gt; New -&amp;gt; Project&lt;/code&gt;. Hier gibt es eine Kategorie &lt;code&gt;MyDsl&lt;/code&gt; mit einem &lt;code&gt;MyDsl Project&lt;/code&gt; (wiederum vom Namen der Spache abhängig). &lt;br /&gt;Sollten diese Namen unpassend sein, lässt sich das natürlich mit Standard-Eclipse-Mitteln in der &lt;code&gt;plugin.xml&lt;/code&gt; anpassen. Für diejenigen, die den Wizard in ihre bestehende Sprache einbauen möchten und schon verzweifelt nach den neuen Einträgen in der &lt;code&gt;plugin.xml&lt;/code&gt; suchen noch ein Tipp: Xtext generiert nach dem ersten Generatorlauf nicht mehr direkt in die &lt;code&gt;plugin.xml&lt;/code&gt; sondern in die &lt;code&gt;plugin.xml_gen&lt;/code&gt; und das Zusammenführen ist Handarbeit.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;img alt=&quot;OpenNewProjectWizard&quot; height=&quot;423&quot; src=&quot;https://blogs.itemis.com/hs-fs/hubfs/OpenNewProjectWizard.png?t=1522852283713&amp;amp;width=602&amp;amp;height=423&amp;amp;name=OpenNewProjectWizard.png&quot; style=&quot;width: 602px; margin-top: 0px; margin-bottom: 0px;&quot; width=&quot;602&quot; /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;Auf der ersten Seite lässt sich wie üblich ein Projektname und eine Location festlegen.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;img alt=&quot;NewProjectWizardSeite1&quot; height=&quot;423&quot; src=&quot;https://blogs.itemis.com/hs-fs/hubfs/NewProjectWizardSeite1.png?t=1522852283713&amp;amp;width=597&amp;amp;height=423&amp;amp;name=NewProjectWizardSeite1.png&quot; style=&quot;width: 597px; margin-top: 0px; margin-bottom: 0px;&quot; width=&quot;597&quot; /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;Die zweite Seite bietet eine Auswahl mit allen definierten Templates an, aus der der Benutzer auswählen kann. Per default wird lediglich ein “Hello World”-Template zur Verfügung gestellt.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;img alt=&quot;NewProjectWizardTemplateSelection&quot; height=&quot;423&quot; src=&quot;https://blogs.itemis.com/hs-fs/hubfs/NewProjectWizardTemplateSelection.png?t=1522852283713&amp;amp;width=597&amp;amp;height=423&amp;amp;name=NewProjectWizardTemplateSelection.png&quot; style=&quot;width: 597px; margin-top: 0px; margin-bottom: 0px;&quot; width=&quot;597&quot; /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;Die folgende, optionale Seite bietet Möglichkeiten, das Template zu konfigurieren. Das ist im Falle des “Hello World”-Beispiels natürlich auch nur als solches zu verstehen.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;img alt=&quot;NewProjectWizardTemplateConfiguration&quot; height=&quot;424&quot; src=&quot;https://blogs.itemis.com/hs-fs/hubfs/NewProjectWizardTemplateConfiguration.png?t=1522852283713&amp;amp;width=599&amp;amp;height=424&amp;amp;name=NewProjectWizardTemplateConfiguration.png&quot; style=&quot;width: 599px; margin-top: 0px; margin-bottom: 0px;&quot; width=&quot;599&quot; /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;Wird der Wizard mit “Finish” beendet, wird ein Projekt erzeugt, dem bereits die Xtext-Nature zugewiesen wurde und das ein “Hello World” der erzeugten DSL enthält.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;img alt=&quot;GeneratedProject-1&quot; height=&quot;230&quot; src=&quot;https://blogs.itemis.com/hs-fs/hubfs/GeneratedProject-1.png?t=1522852283713&amp;amp;width=601&amp;amp;height=230&amp;amp;name=GeneratedProject-1.png&quot; style=&quot;width: 601px; margin-top: 0px; margin-bottom: 0px;&quot; width=&quot;601&quot; /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;h2&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;Definieren eigener Templates&lt;/span&gt;&lt;/h2&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Um das “Hello World” an die eigene Sprache anzupassen oder weitere Templates hinzuzufügen, muss der &lt;code&gt;TemplateProvider&lt;/code&gt;, eine Klasse welche &lt;a href=&quot;https://github.com/eclipse/xtext-eclipse/blob/master/org.eclipse.xtext.ui/src/org/eclipse/xtext/ui/wizard/template/IProjectTemplateProvider.java&quot;&gt;&lt;code&gt;IProjectTemplateProvider&lt;/code&gt;&lt;/a&gt; implementiert, angepasst werden. Dieser liefert mit der Methode &lt;/span&gt;&lt;code&gt;getProjectTemplates &lt;/code&gt;eine Liste mit allen verfügbaren Templates für die Sprache zurück. Per default sieht die Implementierung wie folgt aus:&lt;br /&gt;&lt;br /&gt;&lt;/p&gt; 
+&lt;pre class=&quot;prettyprint&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;class MyDslProjectTemplateProvider implements&lt;/span&gt; &lt;span style=&quot;font-weight: 400;&quot;&gt;IProjectTemplateProvider {&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    override getProjectTemplates() {&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;        #[new HelloWorldProject]&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    }&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;}&lt;/span&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;br /&gt;Das Hinzufügen eines weiteren Templates bedeutet also das Hinzufügen einer neuen Instanz zu dieser Liste. Zum Beispiel:&lt;br /&gt;&lt;br /&gt;&lt;/p&gt; 
+&lt;pre class=&quot;prettyprint&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;class MyDslProjectTemplateProvider implements&lt;/span&gt; &lt;span style=&quot;font-weight: 400;&quot;&gt;IProjectTemplateProvider {&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    override getProjectTemplates() {&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;        #[new HelloWorldProject, new TestProject]&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    }&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;}&lt;/span&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;Das neue Projekt muss eine Subklasse von &lt;/span&gt;&lt;a href=&quot;https://github.com/eclipse/xtext-eclipse/blob/master/org.eclipse.xtext.ui/src/org/eclipse/xtext/ui/wizard/template/AbstractProjectTemplate.java&quot;&gt;&lt;code&gt;AbstractProjectTemplate&lt;/code&gt;&lt;/a&gt; sein. Am einfachsten lässt sich eine solche durch die Nutzung der Active Annotation &lt;a href=&quot;https://github.com/eclipse/xtext-eclipse/blob/master/org.eclipse.xtext.ui/src/org/eclipse/xtext/ui/wizard/template/ProjectTemplate.xtend&quot;&gt;&lt;code&gt;ProjectTemplate&lt;/code&gt;&lt;/a&gt; erzeugen. Diese Annotation bietet die Möglichkeit, den Namen, ein Icon sowie einen Beschreibungstext für das Template festzulegen. Diese regeln die Darstellung des Templates in der Liste der verfügbaren Templates im Wizard.&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Man würde also in etwa so beginnen:&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;pre class=&quot;prettyprint&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;@ProjectTemplate(label=&quot;Test&quot;, icon=&quot;project_template.png&quot;,&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    description=&quot;&amp;lt;p&amp;gt;&amp;lt;b&amp;gt;Test&amp;lt;/b&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;This is a test project.&amp;lt;/p&amp;gt;&quot;)&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;final class HelloWorldProject {&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;}&lt;/span&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;Hier ist zumindest die Methode &lt;/span&gt;&lt;code&gt;generateProjects(IProjectGenerator)&lt;/code&gt; zu implementieren. Der übergebene &lt;code&gt;IProjectGenerator&lt;/code&gt; enthält dabei eine einzelne Methode &lt;code&gt;generate(ProjectFactory)&lt;/code&gt;, welche man nun beliebig oft aufrufen kann, um beim Beenden des Wizards Eclipse-Projekte anzulegen. Dabei liefert Xtext bereits verschiedene Implementierungen der &lt;code&gt;ProjectFactory&lt;/code&gt; mit, um &lt;a href=&quot;https://github.com/eclipse/xtext-eclipse/blob/master/org.eclipse.xtext.ui/src/org/eclipse/xtext/ui/util/JavaProjectFactory.java&quot;&gt;Java&lt;/a&gt;-, &lt;a href=&quot;https://github.com/eclipse/xtext-eclipse/blob/master/org.eclipse.xtext.ui/src/org/eclipse/xtext/ui/util/PluginProjectFactory.java&quot;&gt;Plugin&lt;/a&gt;- oder &lt;a href=&quot;https://github.com/eclipse/xtext-eclipse/blob/master/org.eclipse.xtext.ui/src/org/eclipse/xtext/ui/util/FeatureProjectFactory.xtend&quot;&gt;Featureprojekte&lt;/a&gt; zu erzeugen. Eigene Implementierungen sind hier natürlich denkbar.&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Ein Aufruf, um ein einfaches Pluginprojekt mit einer Datei zu erzeugen, kann dann zum Beispiel so aussehen:&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;pre class=&quot;prettyprint&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; generator.generate(new PluginProjectFactory =&amp;gt; [&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    projectName = projectInfo.projectName&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    location = projectInfo.locationPath&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    projectNatures += #[JavaCore.NATURE_ID, &lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;                        &quot;org.eclipse.pde.PluginNature&quot;, &lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;                        XtextProjectHelper.NATURE_ID]&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    builderIds += JavaCore.BUILDER_ID&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    folders += &quot;src&quot;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    addFile('''src/Model.mydsl''', '''&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;        Hello World!&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    ''')&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;])&lt;/span&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;Zusätzliche Aufrufe von &lt;/span&gt;&lt;code&gt;generate &lt;/code&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;erzeugen weitere Projekte, während weitere Aufrufe von &lt;/span&gt;&lt;code&gt;addFile &lt;/code&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;zusätzliche Dateien in den Projekten erzeugen.&lt;br /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;h2&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;UI zur Parametrisierung&lt;/span&gt;&lt;/h2&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Um nicht nur komplett statische Templates zu liefern, ist es möglich, mit der API ein einfaches UI zu definieren. Dieses bekommt der Nutzer präsentiert und kann so Parameter des Templates festlegen.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Die API bietet dabei per default die Möglichkeit, Checkboxen, Textfelder und Comboboxen zu definieren. Um Übersicht zu schaffen, können diese noch mit Group-Elementen gruppiert werden. &lt;/span&gt;&lt;/p&gt; Die Klasse 
+&lt;a href=&quot;https://github.com/eclipse/xtext-eclipse/blob/master/org.eclipse.xtext.ui/src/org/eclipse/xtext/ui/wizard/template/AbstractProjectTemplate.java&quot;&gt;&lt;code&gt;AbstractProjectTemplate&lt;/code&gt;&lt;/a&gt; liefert hierfür entsprechende Methoden, mit denen das Interface definiert werden kann. Eine Checkbox wird durch den Aufruf von 
+&lt;code&gt;check&lt;/code&gt; erzeugt. Wenn diese nun einer Instanzvariablen zugewiesen wird, kann diese in der 
+&lt;code&gt;generateprojects&lt;/code&gt;-Methode genutzt werden, um den vom Benutzer ausgewählten Wert zu ermitteln. Zum Beispiel könnte mit folgendem Code eine Checkbox erzeugt werden, welche die Generierung eine Projektes nach Auswahl des Users unterdrückt:
+&lt;br /&gt;
+&lt;br /&gt; 
+&lt;pre class=&quot;prettyprint&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;@ProjectTemplate(label=&quot;Test&quot;, icon=&quot;project_template.png&quot;,&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    description=&quot;&amp;lt;p&amp;gt;&amp;lt;b&amp;gt;Test&amp;lt;/b&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;This is a test project.&amp;lt;/p&amp;gt;&quot;)&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;final class TestProject {&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    val generateHello = check(&quot;Generate Hello&quot;, true)&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    override generateProjects(IProjectGenerator generator) {&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;        if (generateHello.value) {&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;            generator.generate(new PluginProjectFactory =&amp;gt; [&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;                projectName = projectInfo.projectName&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;                location = projectInfo.locationPath&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;                projectNatures += #[JavaCore.NATURE_ID,&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;                                    &quot;org.eclipse.pde.PluginNature&quot;,&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;                                    XtextProjectHelper.NATURE_ID]&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;                builderIds += JavaCore.BUILDER_ID&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;                folders += &quot;src&quot;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;                addFile('''src/Model.mydsl''', '''&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;                    Hello World!&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;                ''')&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;            ])&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;        }&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;    }&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;}&lt;/span&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;Textfelder und Comboboxen lassen sich mit den Methoden &lt;/span&gt;&lt;code&gt;text&lt;/code&gt;und &lt;code&gt;combo&lt;/code&gt; analog anlegen und verwenden.&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Sollte ein noch ausgefeilterer Wizard benötigt werden, können die Methoden &lt;/span&gt;&lt;code&gt;updateVariables&lt;/code&gt; und &lt;code&gt;validate&lt;/code&gt; wie im &quot;Hello World&quot;-Beispiel überschrieben werden. Diese werden nach jeder User-Interaktion mit dem UI aufgerufen.&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;code&gt;updateVariables&lt;/code&gt; kann verwendet werden, um Widgets zu manipulieren – zum Beispiel um bestimmte Element zu aktivieren oder deaktivieren, wenn der Benutzer einen Wert im Wizard verändert.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;code&gt;validate&lt;/code&gt; hingegen kann einen Status zurückliefern, um Eingabefehler vom User im Wizard als Fehlermeldung zu melden.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;h2&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Templates per Plugin beisteuern&lt;/span&gt;&lt;/h2&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Die Project Templates werden über einen Extension Point registriert. Zunächst einmal bekommt man als DSL-Entwickler davon nichts mit. Interessant wird dies erst, wenn das eigene Plugin durch Dritte erweitert wird. Diese können dann einfach weitere Implementierungen von &lt;a href=&quot;https://github.com/eclipse/xtext-eclipse/blob/master/org.eclipse.xtext.ui/src/org/eclipse/xtext/ui/wizard/template/IProjectTemplateProvider.java&quot;&gt;&lt;code&gt;IProjectTemplateProvider&lt;/code&gt;&lt;/a&gt; beisteuern. Hier ist es nötig, die implementierende Klasse zu referenzieren und den Grammatiknamen, zu dem man contributet, anzugeben. Über diesen Namen wird entschieden, in welchem Wizard die Templates angezeigt werden. Das von Xtext generierte Beispiel sieht in der &lt;code&gt;plugin.xml&lt;/code&gt; dann wie folgt aus.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;pre class=&quot;prettyprint&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&amp;lt;extension point=&quot;org.eclipse.xtext.ui.projectTemplate&quot;&amp;gt;&lt;br /&gt;    &amp;lt;projectTemplateProvider&lt;br /&gt;            class=&quot;org.xtext.example.mydsl.ui.wizard.MyDslProjectTemplateProvider&quot;&lt;br /&gt;            grammarName=&quot;org.xtext.example.mydsl.MyDsl&quot;&amp;gt;&lt;br /&gt;    &amp;lt;/projectTemplateProvider&amp;gt;&lt;br /&gt;&amp;lt;/extension&amp;gt;&lt;br /&gt;&lt;/span&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;Wer jetzt nicht mehr auf Eclipse Photon warten kann, dem sei die nächtliche Update-Site &lt;code&gt;http://download.eclipse.org/modeling/tmf/xtext/updates/composite/latest/&lt;/code&gt; ans Herz gelegt. Einfach das neueste und heißeste Xtext installieren und loslegen!&lt;/span&gt;&lt;/p&gt;  
+&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;https://track.hubspot.com/__ptq.gif?a=761475&amp;amp;k=14&amp;amp;r=https%3A%2F%2Fblogs.itemis.com%2Fen%2Fnew-project-wizard-einfach-mit-xtext-2-14-generieren&amp;amp;bu=https%253A%252F%252Fblogs.itemis.com&amp;amp;bvt=rss&quot; style=&quot;width: 1px!important;&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Wed, 04 Apr 2018 14:20:00 +0000</pubDate>
+	<author>adeutsch@itemis.de (Arne Deutsch)</author>
+</item>
+<item>
+	<title>Eclipse Announcements: Winners of Open IoT Challenge 4.0 Demonstrate How Open Source Accelerates Innovation</title>
+	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/hn6I6OZ6roc/20180404_iotchallenge_winners2018.php</guid>
+	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/hn6I6OZ6roc/20180404_iotchallenge_winners2018.php</link>
+	<description>Eclipse IoT is pleased to announce the winners of the fourth annual Open IoT Challenge!&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/hn6I6OZ6roc&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Wed, 04 Apr 2018 14:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>Eclipse Announcements: EclipseCon France 2018 Program Announced</title>
+	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/MU3P8PQbswc/accepted</guid>
+	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/MU3P8PQbswc/accepted</link>
+	<description>See the list of accepted sessions, and register now for the lowest price. We'll see you June 13 - 14 in Toulouse.&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/MU3P8PQbswc&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Tue, 03 Apr 2018 14:00:00 +0000</pubDate>
+</item>
+<item>
 	<title>Eclipse Announcements: Voting for the Jakarta EE logo is now open!</title>
 	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/c7bkDM79IuE/viewform</guid>
 	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/c7bkDM79IuE/viewform</link>
@@ -456,11 +538,228 @@ flatpak list --app #only list apps.
 	<pubDate>Wed, 21 Mar 2018 05:53:54 +0000</pubDate>
 </item>
 <item>
+	<title>itemis: In five minutes to transitive imports within a DSL with Xtext</title>
+	<guid isPermaLink="true">https://blogs.itemis.com/en/in-five-minutes-to-transitive-imports-within-a-dsl-with-xtext</guid>
+	<link>https://blogs.itemis.com/en/in-five-minutes-to-transitive-imports-within-a-dsl-with-xtext</link>
+	<description>&lt;p&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;Xtext allows elements in DSLs to be referenced in several ways. One is to import elements via namespaces. This is done through the use of &lt;code&gt;ImportedNamespaceAwareLocalScopeProvider&lt;/code&gt;, and allows the import of individual or, using wildcards (. *), all elements of a namespace.&lt;/span&gt;&lt;/p&gt;  
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;However, there may be languages in which this behavior is not desired. In these languages, the user can explicitly import one or more resource files to access their contents.&lt;/span&gt;&lt;/p&gt; 
+&lt;h2&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;A simple DSL with import behavior – thanks to Xtext&lt;/span&gt;&lt;/h2&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;A DSL with such import behavior can easily be created with &lt;a href=&quot;https://www.itemis.com/en/xtext/&quot;&gt;Xtext&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;, by installing a parser rule in the DSL with the special attribute name &lt;code&gt;importURI&lt;/code&gt;. The following example illustrates a simple DSL that allows you to define names in arbitrary resources and use them in greetings.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;pre class=&quot;prettyprint&quot;&gt;grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
+generate myDsl &quot;http://www.xtext.org/example/mydsl/MyDsl&quot;
+Model:
+	includes+=Include*
+	names+=Name*
+	greetings+=Greeting*;
+Include:
+	'import' importURI=STRING
+	;
+Name:
+	'def' name=ID
+	;
+Greeting:
+	'Hallo' name=[Name] '!'
+	;&lt;/pre&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;Suppose we want to send greetings to colleagues in our company. Since the company is large and employs many members of staff who work in different divisions, we need to create a separate file for each division that contains the names of the respective people. This increases overview and maintainability.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;We want to include the name definitions in the scope by explicit import of a resource. This needs to be done in as rapid and resource-light a way as possible.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;The approach here is to use the index, which eliminates the need for unnecessary and (in large models) time-consuming resource loading. First we need to write information about the relevant resources into the index. To do this, we implement a class &lt;code&gt;MyDslResourceDescriptionStrategy&lt;/code&gt;, which derives from &lt;code&gt;DefaultResourceDescriptionStrategy&lt;/code&gt;. The strings containing the URIs of the  resources imported into the parser rule &lt;/span&gt;&lt;i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;model&lt;/span&gt;&lt;/i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;, are merged into a comma-separated string and stored under the key &lt;em&gt;includes&lt;/em&gt; in the &lt;em&gt;userData&lt;/em&gt; map of the object description in the index.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;pre class=&quot;prettyprint&quot;&gt;package org.xtext.example.mydsl
+
+import com.google.inject.Inject
+import java.util.HashMap
+import org.eclipse.xtext.naming.QualifiedName
+import org.eclipse.xtext.resource.EObjectDescription
+import org.eclipse.xtext.resource.IEObjectDescription
+import org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy
+import org.eclipse.xtext.scoping.impl.ImportUriResolver
+import org.eclipse.xtext.util.IAcceptor
+import org.xtext.example.mydsl.myDsl.Model
+import org.eclipse.emf.ecore.EObject
+
+class MyDslResourceDescriptionStrategy extends DefaultResourceDescriptionStrategy {
+	public static final String INCLUDES = &quot;includes&quot;
+	@Inject
+	ImportUriResolver uriResolver
+
+	override createEObjectDescriptions(EObject eObject, IAcceptor acceptor) {
+		if(eObject instanceof Model) {
+			this.createEObjectDescriptionForModel(eObject, acceptor)
+			return true
+		}
+		else {
+			super.createEObjectDescriptions(eObject, acceptor)
+		}
+	}
+
+	def void createEObjectDescriptionForModel(Model model, IAcceptor acceptor) {
+		val uris = newArrayList()
+		model.includes.forEach[uris.add(uriResolver.apply(it))]
+		val userData = new HashMap&amp;lt;string,string&amp;gt;
+		userData.put(INCLUDES, uris.join(&quot;,&quot;))
+		acceptor.accept(EObjectDescription.create(QualifiedName.create(model.eResource.URI.toString), model, userData))
+	}
+}&lt;/pre&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;To use our &lt;code&gt;ResourceDescriptionStrategy&lt;/code&gt;, we need to bind it in the &lt;code&gt;MyDslRuntimeModule&lt;/code&gt;.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;pre class=&quot;prettyprint&quot;&gt;package org.xtext.example.mydsl
+import org.eclipse.xtext.resource.IDefaultResourceDescriptionStrategy
+import org.eclipse.xtext.scoping.IGlobalScopeProvider
+import org.xtext.example.mydsl.scoping.MyDslGlobalScopeProvider
+class MyDslRuntimeModule extends AbstractMyDslRuntimeModule {
+ def Class bindIDefaultResourceDescriptionStrategy() {
+ MyDslResourceDescriptionStrategy
+ }
+}&lt;/pre&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;So far we have only collected information and saved it in the index. To use this data, we also need our own &lt;code&gt;IGlobalScopeProvider&lt;/code&gt;. To do this, we implement a class &lt;code&gt;MyDslGlobalScopeProvider&lt;/code&gt;, which derives from &lt;code&gt;ImportUriGlobalScopeProvider&lt;/code&gt;, and override the &lt;code&gt;getImportedUris (Resource&lt;/code&gt;&lt;/span&gt;&lt;code&gt; &lt;span style=&quot;font-weight: 400;&quot;&gt;resource)&lt;/span&gt;&lt;/code&gt; method. This method returns a &lt;code&gt;LinkedHashSet&lt;/code&gt; that ultimately contains all the URIs to be imported into the resource.&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Reading the imported resources from the index is done by the &lt;code&gt;collectImportUris&lt;/code&gt; method. This method queries the &lt;code&gt;IResourceDescription.Manager&lt;/code&gt; for the resource's &lt;code&gt;IResourceDescription&lt;/code&gt;. F&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;rom this, the strings with the URIs of the imported resources of each &lt;em&gt;model&lt;/em&gt; element, are read from the &lt;em&gt;userData&lt;/em&gt; map, decomposed and the individual URIs are stored in a set.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;pre class=&quot;prettyprint&quot;&gt;package org.xtext.example.mydsl.scoping
+
+import com.google.common.base.Splitter
+import com.google.inject.Inject
+import com.google.inject.Provider
+import java.util.LinkedHashSet
+import org.eclipse.emf.common.util.URI
+import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.xtext.EcoreUtil2
+import org.eclipse.xtext.resource.IResourceDescription
+import org.eclipse.xtext.scoping.impl.ImportUriGlobalScopeProvider
+import org.eclipse.xtext.util.IResourceScopeCache
+import org.xtext.example.mydsl.MyDslResourceDescriptionStrategy
+import org.xtext.example.mydsl.myDsl.MyDslPackage
+
+class MyDslGlobalScopeProvider extends ImportUriGlobalScopeProvider {
+	private static final Splitter SPLITTER = Splitter.on(',');
+
+	@Inject
+	IResourceDescription.Manager descriptionManager;
+
+	@Inject
+	IResourceScopeCache cache;
+
+	override protected getImportedUris(Resource resource) {
+		return cache.get(MyDslGlobalScopeProvider.getSimpleName(), resource, new Provider&amp;lt;linkedhashset&amp;gt;() {
+			override get() {
+				val uniqueImportURIs = collectImportUris(resource, new LinkedHashSet(5))
+
+				val uriIter = uniqueImportURIs.iterator()
+				while(uriIter.hasNext()) {
+					if (!EcoreUtil2.isValidUri(resource, uriIter.next()))
+						uriIter.remove()
+				}
+				return uniqueImportURIs
+			}
+
+			def LinkedHashSet collectImportUris(Resource resource, LinkedHashSet uniqueImportURIs) {
+				val resourceDescription = descriptionManager.getResourceDescription(resource)
+				val models = resourceDescription.getExportedObjectsByType(MyDslPackage.Literals.MODEL)
+				
+				models.forEach[
+					val userData = getUserData(MyDslResourceDescriptionStrategy.INCLUDES)
+					if(userData !== null) {
+						SPLITTER.split(userData).forEach[uri |
+							var includedUri = URI.createURI(uri)
+							includedUri = includedUri.resolve(resource.URI)
+							uniqueImportURIs.add(includedUri)
+						]
+					}
+				]
+				return uniqueImportURIs
+			}
+		});
+	}
+}
+&lt;/pre&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;To use our &lt;code&gt;MyDslGlobalScopeProvider&lt;/code&gt;, we have to bind it again in the &lt;code&gt;MyDslRuntimeModule&lt;/code&gt;.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;pre class=&quot;prettyprint&quot;&gt;package org.xtext.example.mydsl
+
+import org.eclipse.xtext.resource.IDefaultResourceDescriptionStrategy
+import org.eclipse.xtext.scoping.IGlobalScopeProvider
+import org.xtext.example.mydsl.scoping.MyDslGlobalScopeProvider
+
+class MyDslRuntimeModule extends AbstractMyDslRuntimeModule {
+	def Class bindIDefaultResourceDescriptionStrategy() {
+		MyDslResourceDescriptionStrategy
+	}
+	override Class bindIGlobalScopeProvider() {
+		MyDslGlobalScopeProvider;
+	}
+}&lt;/pre&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;We launch the editor for our small language and start creating the model files. We decide not to import the resources of the different company divisions individually, but instead create a resource that contains all imports, then import that. For this we create the following resources:&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img alt=&quot;Ressourcen-Agile&quot; height=&quot;176&quot; src=&quot;https://blogs.itemis.com/hs-fs/hubfs/Blog/Software%20Development/Ressourcen-Agile.png?t=1522852283713&amp;amp;width=1506&amp;amp;height=176&amp;amp;name=Ressourcen-Agile.png&quot; style=&quot;width: 1506px;&quot; width=&quot;1506&quot; /&gt;&lt;br /&gt;&lt;img alt=&quot;Ressourcen-Xtext&quot; height=&quot;175&quot; src=&quot;https://blogs.itemis.com/hs-fs/hubfs/Blog/Software%20Development/Ressourcen-Xtext.png?t=1522852283713&amp;amp;width=1505&amp;amp;height=175&amp;amp;name=Ressourcen-Xtext.png&quot; style=&quot;width: 1505px;&quot; width=&quot;1505&quot; /&gt;&lt;br /&gt;&lt;img alt=&quot;Ressource-Kollegen&quot; height=&quot;180&quot; src=&quot;https://blogs.itemis.com/hs-fs/hubfs/Blog/Software%20Development/Ressource-Kollegen.png?t=1522852283713&amp;amp;width=1505&amp;amp;height=180&amp;amp;name=Ressource-Kollegen.png&quot; style=&quot;width: 1505px;&quot; width=&quot;1505&quot; /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;But when creating the resource with the greetings, we notice that the names cannot be resolved. Why is that? Surely we wrote all imported resources into the index?&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;img alt=&quot;Ressource-Greetings&quot; height=&quot;417&quot; src=&quot;https://blogs.itemis.com/hs-fs/hubfs/Blog/Software%20Development/Ressource-Greetings.png?t=1522852283713&amp;amp;width=1506&amp;amp;height=417&amp;amp;name=Ressource-Greetings.png&quot; style=&quot;width: 1506px;&quot; width=&quot;1506&quot; /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;This is correct: all directly imported resources were written to the index. However, the imports that are themselves contained in an imported resource are ignored. The feature we need is called transitive imports: with this, importing a resource implicitly imports all the resources it itself imports.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;To enable transitive imports in our language, we need to customize our &lt;code&gt;MyDslGlobalScopeProvider&lt;/code&gt;. Instead of only storing the URI of an imported resource in the set, we also call the &lt;code&gt;collectImportUris&lt;/code&gt; method and pass the URI as a parameter, so that its own imported resources are also processed.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;pre class=&quot;prettyprint&quot;&gt;package org.xtext.example.mydsl.scoping
+
+import com.google.common.base.Splitter
+import com.google.inject.Inject
+import com.google.inject.Provider
+import java.util.LinkedHashSet
+import org.eclipse.emf.common.util.URI
+import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.xtext.EcoreUtil2
+import org.eclipse.xtext.resource.IResourceDescription
+import org.eclipse.xtext.scoping.impl.ImportUriGlobalScopeProvider
+import org.eclipse.xtext.util.IResourceScopeCache
+import org.xtext.example.mydsl.MyDslResourceDescriptionStrategy
+import org.xtext.example.mydsl.myDsl.MyDslPackage
+
+class MyDslGlobalScopeProvider extends ImportUriGlobalScopeProvider {
+	private static final Splitter SPLITTER = Splitter.on(',');
+
+	@Inject
+	IResourceDescription.Manager descriptionManager;
+
+	@Inject
+	IResourceScopeCache cache;
+
+	override protected getImportedUris(Resource resource) {
+		return cache.get(MyDslGlobalScopeProvider.getSimpleName(), resource, new Provider&amp;lt;linkedhashset&amp;gt;() {
+			override get() {
+				val uniqueImportURIs = collectImportUris(resource, new LinkedHashSet(5))
+
+				val uriIter = uniqueImportURIs.iterator()
+				while(uriIter.hasNext()) {
+					if (!EcoreUtil2.isValidUri(resource, uriIter.next()))
+						uriIter.remove()
+				}
+				return uniqueImportURIs
+			}
+
+			def LinkedHashSet collectImportUris(Resource resource, LinkedHashSet uniqueImportURIs) {
+				val resourceDescription = descriptionManager.getResourceDescription(resource)
+				val models = resourceDescription.getExportedObjectsByType(MyDslPackage.Literals.MODEL)
+				
+				models.forEach[
+					val userData = getUserData(MyDslResourceDescriptionStrategy.INCLUDES)
+					if(userData !== null) {
+						SPLITTER.split(userData).forEach[uri |
+							var includedUri = URI.createURI(uri)
+							includedUri = includedUri.resolve(resource.URI)
+							if(uniqueImportURIs.add(includedUri)) {
+								collectImportUris(resource.getResourceSet().getResource(includedUri, true), uniqueImportURIs)
+							}
+						]
+					}
+				]
+				
+				return uniqueImportURIs
+			}
+		});
+	}
+}&lt;/pre&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;When we reopen our resource with the greetings after this adaptation, we see that the names are resolved&lt;/span&gt; &lt;span style=&quot;font-weight: 400;&quot;&gt;by the transitive imports.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;The sample project can be downloaded &lt;a href=&quot;https://github.com/itemis/itemis-blog/tree/transitive_imports/sources&quot;&gt;here&lt;/a&gt;.&lt;/span&gt;&lt;/p&gt;  
+&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;https://track.hubspot.com/__ptq.gif?a=761475&amp;amp;k=14&amp;amp;r=https%3A%2F%2Fblogs.itemis.com%2Fen%2Fin-five-minutes-to-transitive-imports-within-a-dsl-with-xtext&amp;amp;bu=https%253A%252F%252Fblogs.itemis.com&amp;amp;bvt=rss&quot; style=&quot;width: 1px!important;&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Tue, 20 Mar 2018 14:45:00 +0000</pubDate>
+	<author>cwehrheim@itemis.de (Christian Wehrheim)</author>
+</item>
+<item>
 	<title>itemis: Building Domain-specific Languages with Xtext and Xtend</title>
 	<guid isPermaLink="true">https://blogs.itemis.com/en/building-domain-specific-languages-with-xtext-and-xtend</guid>
 	<link>https://blogs.itemis.com/en/building-domain-specific-languages-with-xtext-and-xtend</link>
 	<description>&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Specifying the requirements of a software system and converting such a specification into executable source code is difficult and error-prone. Requirements specifications written in prose are often ambiguous and hard to understand for developers. Therefore, the process of turning this documents into software is slow and prone to error. Domain-specific languages (DSL) challenge this problem by defining a semantically rich notation to describe domain concepts clear and concise. From the DSL models the boilerplate code can be deduced, thereby increasing the software development process efficiency as well as the overall quality. After giving an overview of the key concepts of a domain-specific language, the domain-specific language framework &lt;/span&gt;&lt;a href=&quot;https://www.itemis.com/en/xtext/&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Eclipse Xtext&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; will be introduced. In addition, it will be illustrated how DSL models can be processed efficiently using Eclipse Xtend.&lt;/span&gt;&lt;/p&gt; 
-&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;img alt=&quot;code-colours&quot; height=&quot;764&quot; src=&quot;https://blogs.itemis.com/hs-fs/hubfs/Blog/Xtext/code-colours.jpg?t=1521119359831&amp;amp;width=1604&amp;amp;height=764&amp;amp;name=code-colours.jpg&quot; style=&quot;width: 1604px;&quot; width=&quot;1604&quot; /&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;&lt;img alt=&quot;code-colours&quot; height=&quot;764&quot; src=&quot;https://blogs.itemis.com/hs-fs/hubfs/Blog/Xtext/code-colours.jpg?t=1522852283713&amp;amp;width=1604&amp;amp;height=764&amp;amp;name=code-colours.jpg&quot; style=&quot;width: 1604px;&quot; width=&quot;1604&quot; /&gt;&lt;/span&gt;&lt;/p&gt; 
 &lt;h2&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;Domain-specific Languages&lt;/span&gt;&lt;/h2&gt; 
 &lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Domain-specific languages are an integral part of our daily business. For example, when developers and business experts talk about requirements they will use terms like &lt;/span&gt;&lt;i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Client&lt;/span&gt;&lt;/i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;, &lt;/span&gt;&lt;i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Contract&lt;/span&gt;&lt;/i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;, or &lt;/span&gt;&lt;i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Payment&lt;/span&gt;&lt;/i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; to describe the expected behavior. However, as soon as executable source code is required developers start translating these concepts into classes, data structures, and algorithms. At this point, some of the domain-specific information might get lost in translation. Thereby, business analysts have a hard time ensuring that all their business rules have been translated correctly. In addition, developers struggle with implementing changes, because they first have to understand the changes within the domain model before they can estimate and implement the subsequent changes to the source code.&lt;/span&gt;&lt;/p&gt; 
 &lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;A domain-specific language is built to describe the concepts of a certain domain concisely with a semantically rich notation. Thereby, terms like &lt;/span&gt;&lt;i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Client&lt;/span&gt;&lt;/i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; or &lt;/span&gt;&lt;i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Contract&lt;/span&gt;&lt;/i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; are used in a language that is the foundation for domain model enhancements as well as for automated translation into executable software. In contrast to general purpose programming languages, concepts of a certain domain are described on a higher level of abstraction, so that they are understandable for business experts and developers.&lt;/span&gt;&lt;/p&gt; 
@@ -489,7 +788,7 @@ entity Contract{
 &lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Xtext is a mature framework that was build to quickly create domain-specific languages with a sophisticated workbench. Boiling it down to the very minimum, a Xtext DSL only requires a grammar file. The powerful grammar defines the language and is input for a generation process that creates the full infrastructure including the parser, linker, type checker as well as editor support for the Eclipse IDE, any editor that supports the L&lt;/span&gt;&lt;a href=&quot;https://hosting.itemis.de/en/integrating-xtext-language-support-in-visual-studio-code&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;anguage Server Protocol&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;, and your favorite web browser.&lt;/span&gt;&lt;/p&gt; 
 &lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Yet, the generated default often has to be customized in order to achieve company- or project-specific behavior. Therefore, the generated parts of the workbench can be customized by providing domain-specific implementations. Typical customizations include custom validations, narrowed proposals during code completion, or code formatting. A good default that is highly customizable, enables a fast proof of concept that can evolve over time becoming a highly specific DSL.&lt;/span&gt;&lt;/p&gt; 
 &lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Having talked a lot about Xtext, let's get involved and create our first DSL. First of all, as you may have guessed already you need an Eclipse workspace with the Xtext framework included. You find a pre-bundled Eclipse version &lt;/span&gt;&lt;a href=&quot;https://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/oxygen2&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;here&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; or you can download the required plugins in your existing Eclipse IDE right &lt;/span&gt;&lt;a href=&quot;http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;here&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;. After your Eclipse workspace is all setup, you can start creating your first DSL. &lt;br /&gt;Since I don't want to go to much into the details, I recommend you to try the &lt;/span&gt;&lt;a href=&quot;https://www.eclipse.org/Xtext/documentation/102_domainmodelwalkthrough.html&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Xtext 15-minute tutorial&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;. The tutorial shows how to create the Entity DSL we used in the example above. Further, there is a Domain-Model example that comes with the Xtext plugins including more than 800 JUnit test cases. The example project provides a good overview of the potential use of test-driven development when creating a DSL. The test cases not only cover parsing and validating the text files, but also demonstrate how the user interface functionality such as code completion or the outline view can be tested automatically.&lt;/span&gt;&lt;/p&gt; 
-&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Having finished the tutorial, the &lt;/span&gt;&lt;a href=&quot;https://www.eclipse.org/Xtext/documentation/index.html&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;documentation&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; offers a great overview of the different concepts embodied in Xtext. Further, you should keep an eye on the &lt;/span&gt;&lt;a href=&quot;https://eclipse.org/forums/index.php?t=thread&amp;amp;frm_id=27&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Eclipse TMF forum&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; where you find answers to many questions. Finally, if you want to contribute to Xtext itself you are kindly invited to provide pull requests to the Xtext &lt;/span&gt;&lt;a href=&quot;https://github.com/eclipse/xtext&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;GitHub repositories&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Having finished the tutorial, the &lt;/span&gt;&lt;a href=&quot;https://www.eclipse.org/Xtext/documentation/index.html&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;documentation&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; offers a great overview of the different concepts embodied in Xtext. Further, the book &lt;a href=&quot;https://www.packtpub.com/application-development/implementing-domain-specific-languages-xtext-and-xtend-second-edition&quot;&gt;&quot;Implementing Domain-Specific Languages with Xtext and Xtend&quot;&lt;/a&gt; by Lorenzo Bettini explains the concepts with a lot of practical examples and best practices.  In addition, you should keep an eye on the &lt;/span&gt;&lt;a href=&quot;https://eclipse.org/forums/index.php?t=thread&amp;amp;frm_id=27&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Eclipse TMF forum&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; where you find answers to many questions. Finally, if you want to contribute to Xtext itself you are kindly invited to provide pull requests to the Xtext &lt;/span&gt;&lt;a href=&quot;https://github.com/eclipse/xtext&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;GitHub repositories&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;.&lt;/span&gt;&lt;/p&gt; 
 &lt;h2&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br /&gt;Leverage the domain model with Xtend&lt;/span&gt;&lt;/h2&gt; 
 &lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;As shown above, Xtext enables you to create and evolve DSLs quickly. However, at the end of the day domain-specific model regardless if it is a domain model, an expression, or a configuration is created to be further processed. At this point, Xtend comes into play. Xtend is a statically-typed-programming language built with Xtext and compiled to Java. Since it compiles to Java it integrates seamlessly with existing Java programs and vice versa. Xtend offers powerful features such as template strings, extension methods, and built-in functions such as filter, map, and reduce. Since Xtend is a domain-specific language it enables developers to write concepts available in Java, in a concise and semantically rich notation.&lt;/span&gt;&lt;/p&gt; 
 &lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Xtend include many language concepts that are especially beneficial when processing models. First, it offers template strings which are ideal to generate executable code from a given model.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt; 
@@ -564,132 +863,6 @@ But don’t worry, Steering committee information for public consumption will be
 &lt;/table&gt;
 &lt;p&gt;My minions are still working at the governance of the projects and at transferring information from the Papyrus IC Steering into the other projects (especially to &lt;strong&gt;&lt;a href=&quot;https://tuleap.eclipse.org/projects/papyrus-ic&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;Papyrus-IC&lt;/a&gt;)&lt;/strong&gt;, so please be patient with them!&lt;/p&gt;</description>
 	<pubDate>Wed, 14 Mar 2018 13:09:19 +0000</pubDate>
-</item>
-<item>
-	<title>Vincent Zurczak: Testing Eclipse’s User Workflows: from OOMPH to Subversive, m2e and WTP</title>
-	<guid isPermaLink="false">http://vzurczak.wordpress.com/?p=722</guid>
-	<link>https://vzurczak.wordpress.com/2018/03/13/testing-eclipses-user-workflows-from-oomph-to-subversive-m2e-and-wtp/</link>
-	<description>&lt;h2&gt;Goals&lt;/h2&gt;
-&lt;p&gt;Few months ago, I worked on automating the tests of user workflows that involve Eclipse tooling. The client organization has more than a hundred of developers and they all use common frameworks based on JEE. They all use the same tools, from source version control to m2e and WTP. Eclipse being their IDE since quite a long time, they decided, some years ago, to automate the installation of Eclipse with preconfigured tools and predefined preferences. They did create their own solution. When OOMPH was released and became Eclipse’s official installer, they quickly dropped their project and adopted OOMPH.&lt;/p&gt;
-&lt;p&gt;From an OOMPH’s point of view, this organization has its own catalog and custom setup tasks. Unlike what the installer usually shows, there is only one distribution. Everything works behind a proxy. Non-composite p2 repositories are proxyfied by Nexus. All the composite p2 repositories (such as official Eclips’s ones) are mirrored by using &lt;a href=&quot;https://blog.philipphauer.de/offline-copy-mirror-eclipse-p2-repository&quot;&gt;Eclipse in command-line&lt;/a&gt;. The installer shows a single product, but in different versions (e.g. Neon, Oxygen…). It also provides several projects: several JDKs, several versions of Tomcat, several versions of Maven, several Eclipse tools, etc. We can really say this organization uses all the features OOMPH provides.&lt;/p&gt;
-&lt;p&gt;Here is a global overview of what is shown to users.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://vzurczak.files.wordpress.com/2018/03/dev1.png&quot;&gt;&lt;img alt=&quot;First screen in Eclipse's installer&quot; class=&quot;aligncenter size-medium wp-image-727&quot; height=&quot;207&quot; src=&quot;https://vzurczak.files.wordpress.com/2018/03/dev1.png?w=300&amp;amp;h=207&quot; width=&quot;300&quot; /&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;https://vzurczak.files.wordpress.com/2018/03/dev2.png&quot;&gt;&lt;img alt=&quot;Second screen in Eclipse's installer&quot; class=&quot;aligncenter size-medium wp-image-726&quot; height=&quot;226&quot; src=&quot;https://vzurczak.files.wordpress.com/2018/03/dev2.png?w=300&amp;amp;h=226&quot; width=&quot;300&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;So, this organization is mostly a group of Eclipse users. Their developments are quite limited. Their focus is about delivering valid Eclipse distributions to their members and verify everything work correctly in their environment. Given this context, my job was to automate things: update sites creation (easy with Tycho), prepare the installer for the internal environement and automate tests that launch the installer, make a real installation, start the newly installed Eclipse, make it execute several actions a real developer would do and verify everything works correctly inside this (restrained / controlled) environment.&lt;/p&gt;
-&lt;p&gt;Let’s take a look at the various parts.&lt;/p&gt;
-&lt;h2&gt;Automating the creation of Custom Installers&lt;/h2&gt;
-&lt;p&gt;This part is not very complicated.&lt;br /&gt;
-I created &lt;a href=&quot;https://github.com/vincent-zurczak/customized-oomph-installer&quot;&gt;a project on GitHub&lt;/a&gt; that shows how it works. Basically, we have a Maven module that invokes ANT. The ANT script downloads the official installer binaries from &lt;a href=&quot;http://www.eclipse.org/&quot;&gt;Eclipse.org&lt;/a&gt;. It verifies the checksum, unwrap their content, update the &lt;strong&gt;eclipse-inst.ini&lt;/strong&gt; file, adds predefined preferences (related to the proxy) and rebuilds a package for users. To prevent downloading binaries everytime, we use a local cache (as a directory). If a binary already exists, we verify its checksum against the value provided by &lt;a href=&quot;http://www.eclipse.org/&quot;&gt;Eclipse.org&lt;/a&gt;. If it succeeds, it means our cache is valid against Eclipse repositories. Otherwise, it may indicate the cache is invalid and that a newer version was released. In such a situation, we indicate the user he (or she) should retry and/or delete the cache before giving it another try.&lt;/p&gt;
-&lt;p&gt;Since all of this a Maven project, it is possible to deploy these installers on a Maven repository.&lt;/p&gt;
-&lt;h2&gt;Automating OOMPH tests with SWT Bot&lt;/h2&gt;
-&lt;p&gt;OOMPH is a SWT application.&lt;br /&gt;
-So, testing it automatically immediately made sense thanks to SWT Bot. Testing with SWT Bot implies deploying it in the tested application. Fortunately, OOMPH is also a RCP application. It means we can install things with p2. That was the first thing to do. And since I enjoy the Maven + ANT combo, I wrote &lt;a href=&quot;https://github.com/vincent-zurczak/integration-tests-with-swt-bot/blob/master/tests-execution/tests-execution-installer/ant/library.xml&quot;&gt;an ANT script&lt;/a&gt; for this (inspired from the one available on Eclipse’s wiki – but much more simple). I also made the tasks reusable so that it can also deploy the bundle with the tests to run.&lt;/p&gt;
-&lt;p&gt;The next step was writing a SWT Bot test and run it against the installer.&lt;br /&gt;
-The first test was very basic. The real job was launching it. When one wants to run SWT Bot tests, it launches a custom application that itself launches Eclipse. Unfortunately, the usual &lt;strong&gt;org.eclipse.swtbot.eclipse.junit.headless.swtbottestapplication&lt;/strong&gt; application did not work. There are checks in it about the workbench. And even if OOMPH is a RCP and has SWT widgets, it does not have any workbench. This is why I created &lt;a href=&quot;https://github.com/vincent-zurczak/integration-tests-with-swt-bot/blob/master/test-plugins/net.vzurczak.eclipse.tests.installer/src/net/vzurczak/eclipse/tests/installer/setup/CustomSwtBotApplication.java&quot;&gt;a custom application&lt;/a&gt; I embedded with my SWT Bot test. Once there, everything was ready.&lt;/p&gt;
-&lt;p&gt;1 – I have a bundle with SWT Bots tests. With a feature. With an update site (that can remain local, no need to deploy it anywhere).&lt;br /&gt;
-2 – I have an ANT script that can install SWT Bot and my test bundle in OOMPH.&lt;br /&gt;
-3 – I have &lt;a href=&quot;https://github.com/vincent-zurczak/integration-tests-with-swt-bot/blob/master/tests-execution/tests-execution-installer/ant/build.test.installer.xml&quot;&gt;an ANT script&lt;/a&gt; that can launch my custom SWT Bot application and executes my tests in OOMPH.&lt;/p&gt;
-&lt;p&gt;It works. The skeleton for &lt;a href=&quot;https://github.com/vincent-zurczak/integration-tests-with-swt-bot&quot;&gt;the project is available on Github&lt;/a&gt;.&lt;br /&gt;
-Otherwise, the shape and the Maven and ANT settings are the same. I only simplified the tests executed for OOMPH (they would not be meaningful for this article). The main test we wrote deploys Eclipse, but also downloads and unzip specific versions of Maven and Tomcat. Obviously, the catalog is made in such a way that installing these components also updates the preferences so that m2e and WTP can use them.&lt;/p&gt;
-&lt;p&gt;Notice there are settings in the ANT script that delete user directories (OOMPH puts some resources and information in cache). To make tests reliable, it is better to delete them. This can be annoying if you have other Eclipse installations on your machine. In the end, such tests aim at being executed on a separate infrastructure, e.g. in continuous integration.&lt;/p&gt;
-&lt;h2&gt;Configuring Eclipse for SWT Bot&lt;/h2&gt;
-&lt;p&gt;Once the tests for the installer have run, we have a new Eclipse installation.&lt;br /&gt;
-And we have other tests to run in it. Just like what we did for OOMPH, we have to install SWT Bot in it. The p2 director will help us once again.&lt;/p&gt;
-&lt;p&gt;Notice we make this step separated from the execution of the tests themselves.&lt;br /&gt;
-Testing OOMPH is quite easy. But the tests written for the IDE are much more complicated and we need to be able to re-run them. So, the configuration of the new Eclipse installation is apart from the tests execution.&lt;/p&gt;
-&lt;h2&gt;Writing and Running Tests for Eclipse&lt;/h2&gt;
-&lt;p&gt;In the same manner than for OOMPH, we have a custom plug-in that contains our tests for Eclipse. There is also a feature. and the (same) local update site. This plug-in is deployed along with SWT Bot. Launching the test is almost the same thing than for OOMPH, except there is a workbench here. We can rely on the usual SWT Bot application for Eclipse.&lt;/p&gt;
-&lt;p&gt;What is more unusual is the kind of test we run here.&lt;br /&gt;
-I will give you an example. We have a test that…&lt;/p&gt;
-&lt;p&gt;1. … waits for OOMPH to intialize the workspace (based on the projects selected during the setup – this step is common to all our tests).&lt;br /&gt;
-2. … opens the SVN perspective&lt;br /&gt;
-3. … declares a new repository&lt;br /&gt;
-4. … checks out the last revision&lt;br /&gt;
-5. … lets m2eclipse import the projects (it is a multi-module project and m2e uses a custom settings.xml)&lt;br /&gt;
-6. … applies a Maven profile on it&lt;br /&gt;
-7. … waits for m2eclipse to download (many) artifacts from the organization’s Nexus&lt;br /&gt;
-8. … waits for the compilation to complete&lt;br /&gt;
-9. … verifies there is no error on the project&lt;br /&gt;
-10. … deploys it on the Tomcat server that was installed by OOMPH (through WTP – &lt;strong&gt;Run as &amp;gt; Run on Server&lt;/strong&gt; )&lt;br /&gt;
-11. … waits for it to be deployed&lt;br /&gt;
-12. … connects to the new web application (using a POST request)&lt;br /&gt;
-13. … verifies the content of the page is valid.&lt;/p&gt;
-&lt;p&gt;This test takes about 5 minutes to run. It implies Eclipse tools, pre-packaged ones too, but also environment solutions (Nexus, SVN server, etc). Unlike what SWT Bot tests usually do, we make integration tests with an environment that is hardly reproductable. It is not just more complex, it must also acknowledge some situations like timeouts or slowlyness. And as usual, there may be glitches in the user interface. As an example, projects resources that are managed by SVN have revision numbers and commit’s author names as a suffix. So, you cannot search resources by full label (hence the &lt;em&gt;TestUtils.findPartialLabel&lt;/em&gt; methods). Another example is that when one expands nodes in the SVN hierarchy, it may take some time for the child resources to by retrieved. Etc.&lt;/p&gt;
-&lt;p&gt;But what was the most complicated was developing these tests.&lt;/p&gt;
-&lt;h2&gt;Iterative Development of these Tests&lt;/h2&gt;
-&lt;p&gt;Usually, SWT Bot tests are developed and tested from the developer’s workspace: right click on the test class, &lt;strong&gt;Run as &amp;gt; SWT Bot test&lt;/strong&gt;. It opens a new workbench and the test runs. That was not possible here. The Eclipse into which the tests must run is supposed to have been configured by OOMPH. You cannot compile the Maven project if you do not have the right settings.xml. You cannot deploy on Tomcat if it has not been declared in the server preferences. And you cannot set these preferences in the test itself because it is part of its job to verify OOMPH did it correctly! Again, it is not unit testing but integration testing. You cannot break the chain.&lt;/p&gt;
-&lt;p&gt;This is why each test is defined in its own Maven profile.&lt;br /&gt;
-To run scenario 1, we execute…&lt;/p&gt;
-&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;mvn clean verify -P scenario1&lt;/pre&gt;
-&lt;p&gt;We also added a profile that recompiles the SWT Bot tests and upgrade the plug-in in the Eclipse installation (the p2 directory can install and uninstall units at once). Therefore, if I modified a test, I can recompile, redeploy and run it by typing in…&lt;/p&gt;
-&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;mvn clean verify -P recompile-ide-tests -P scenario1&lt;/pre&gt;
-&lt;p&gt;This is far from being perfect, but it made the developement much less painful than going through the full chain on every change.&lt;br /&gt;
-I wished I could have duplicated preferences from the current workspace when I run tests from Eclipse (even if it is clear other problems would have arisen). We had 4 important scenarios, and each one is managed separately, in the code and in the Maven configuration.&lt;/p&gt;
-&lt;h2&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;Let’s start with the personal feedback.&lt;br /&gt;
-I must confess this project was challenging, despite a solid experience with Maven, Tycho and SWT Bot. The OOMPH part was not that hard (I only had to dig in SWT Bot and platform’s code). Testing the IDE itself, with all the involved components and the environment, was more complicated.&lt;/p&gt;
-&lt;p&gt;Now, the real question is: what is worth the effort?&lt;br /&gt;
-The answer is globally yes. The good parts are these tests can be run in a continuous integration workflow. That was the idea at the beginning. Even if it is not done (yet), that could (should) be a next step. I have spent quite some time to make these tests robust. I must have run them about a thousand times, if not more. And still sometimes, one can fail due to an environment glitch. This is also why we adopted the profile-per-scenario approach, to ease the construction of a build matrix and be able to validate scenarios separately and/or in parallel. It is also obvious that these tests run faster than by hand. An experienced tester spends about two hours to verify these scenarios manually. A novice will spend a day. Running the automated tests takes at most 30 minutes, provided you can read the docs and execute 5 succeeding Maven commands. And these tests can be declined over several user environments. So, this is globally positive.&lt;/p&gt;
-&lt;p&gt;Now, there are few drawbacks. We did not go to the continuous integration. For the moment, releases will keep on being managed on-demand / on-schedule (so few times a year). In addition, everything that was done was for Linux systems. There would be minor adaptations to test the process on Windows (mainly, do not launch the same installer). We also found out minor differences between Eclipse versions. SWT Bot intensively uses labels. However, there are labels and buttons that have changed, as an example, between Neon and Oxygen. So, our tests do not work on every Eclipse version. The problem would remain if we tested by hand. Eventually, and unlike what it seems when you read them, the written tests remain complex to maintain. So, short and mid-term benefits might be counter-balanced by a new degree of complexity (easy to use, not so easy to upgrade). Tests by hand take time but remain understandable and manageable by many persons. Writting or updating SWT Bot tests require people to be well-trained and patient (did I mention I run IDE tests at least a thousand times?). Besides, having automated tests does not prevent from tracking tests on &lt;a&gt;TestLink&lt;/a&gt;. So, manual tests remain documented and maintained. In fact, not all the tests have been automated, only the main and most painful ones.&lt;/p&gt;
-&lt;p&gt;Anyway, as usual, progress is made up of several steps. This work was one of them. I hope those facing the same issues will find help in this article and in the associated code samples.&lt;/p&gt;</description>
-	<pubDate>Tue, 13 Mar 2018 18:23:36 +0000</pubDate>
-</item>
-<item>
-	<title>vert.x project: Google Summer of Code 2018</title>
-	<guid isPermaLink="true">https://vertx.io/blog/google-summer-of-code-2018</guid>
-	<link>https://vertx.io/blog/google-summer-of-code-2018</link>
-	<description>&lt;article&gt;&lt;p&gt;It’s this time of year again!
-&lt;a href=&quot;https://summerofcode.withgoogle.com/&quot;&gt;Google Summer of Code&lt;/a&gt; 2018 submission period has just started!&lt;/p&gt;
-&lt;h2 id=&quot;submit-through-the-eclipse-organization&quot;&gt;Submit through the Eclipse organization&lt;/h2&gt;
-&lt;p&gt;This year, the Eclipse Vert.x project participates through the &lt;a href=&quot;https://summerofcode.withgoogle.com/organizations/6364590460370944/&quot;&gt;Eclipse organization&lt;/a&gt;.
-Make sure to review our &lt;a href=&quot;https://wiki.eclipse.org/Google_Summer_of_Code_2018_Ideas#Eclipse_Vert.x&quot;&gt;GSoC 2018 ideas&lt;/a&gt; and to submit before March, 27!&lt;/p&gt;
-&lt;h2 id=&quot;assessment-application&quot;&gt;Assessment application&lt;/h2&gt;
-&lt;p&gt;As we did before, we ask candidates to &lt;a href=&quot;https://github.com/tsegismont/vertx-gsoc-2018-qotd&quot;&gt;implement a simple Vert.x application&lt;/a&gt;.
-This helps us make sure candidates have a basic understanding of asynchronous programming and the Vert.x toolkit.
-&lt;strong&gt;But submit your proposal even if not done with the assessment application!&lt;/strong&gt;
-Google will not extend the submission period but we can continue reviewing assessments while evaluating the submitted proposals.&lt;/p&gt;
-&lt;h2 id=&quot;questions-&quot;&gt;Questions?&lt;/h2&gt;
-&lt;p&gt;If you have questions, feel free to ask possible mentors via email or on our &lt;a href=&quot;http://vertx.io/community&quot;&gt;community channels&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;All the details for this year (and ideas from past years) can be found on the &lt;a href=&quot;http://vertx.io/gsoc&quot;&gt;Vert.x GSoC page&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Looking forward to your proposals!&lt;/p&gt;
-&lt;/article&gt;</description>
-	<pubDate>Tue, 13 Mar 2018 00:00:00 +0000</pubDate>
-</item>
-<item>
-	<title>Eclipse Announcements: Last call for EclipseCon France submissions</title>
-	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/cm9GR8xNOvQ/cfp</guid>
-	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/cm9GR8xNOvQ/cfp</link>
-	<description>Deadline to propose a talk is Monday, March 19. Get your talk in now for your chance to be part of a great program!&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/cm9GR8xNOvQ&quot; width=&quot;1&quot; /&gt;</description>
-	<pubDate>Mon, 12 Mar 2018 21:00:00 +0000</pubDate>
-</item>
-<item>
-	<title>Eclipse Announcements: Eclipse Foundation supports EU funded Brain-IoT Project</title>
-	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/R3tcGxMA3Ak/20180312-brainiot.php</guid>
-	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/R3tcGxMA3Ak/20180312-brainiot.php</link>
-	<description>Eclipse Foundation Europe Selected to Provide Open Source Community Building Expertise for EU funded IoT Research Project&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/R3tcGxMA3Ak&quot; width=&quot;1&quot; /&gt;</description>
-	<pubDate>Mon, 12 Mar 2018 14:00:00 +0000</pubDate>
-</item>
-<item>
-	<title>Holger Voormann: Hello OpenJ9 on Windows, I didn’t expect you so soon!</title>
-	<guid isPermaLink="false">http://eclipsehowl.wordpress.com/?p=1376</guid>
-	<link>https://eclipsehowl.wordpress.com/2018/03/09/hello-openj9-on-windows-i-didnt-expect-you-so-soon/</link>
-	<description>&lt;p&gt;Faster startup time, lower memory footprint and higher application throughput only by replacing the Java virtual machine (VM)? That sounds too good to be true. So far there has been no real alternative to &lt;a href=&quot;http://openjdk.java.net/groups/hotspot/&quot;&gt;Oracle’s Java HotSpot VM&lt;/a&gt; on Windows. With &lt;a href=&quot;http://www.eclipse.org/openj9/&quot;&gt;Eclipse OpenJ9&lt;/a&gt;, which emerged from open-sourcing IBM’s J9 VM, there is now the alternative that promises exactly this.&lt;/p&gt;
-&lt;p&gt;At the end of January the first OpenJDK 9 with Eclipse OpenJ9 nightly builds for Windows were published, but they &lt;a href=&quot;https://twitter.com/howlger/status/955471550140026880&quot;&gt;were not very stable at that time&lt;/a&gt;. This week I tested the &lt;a href=&quot;https://adoptopenjdk.net/nightly.html?variant=openjdk9-openj9&quot;&gt;nightly builds&lt;/a&gt; again to run the Eclipse IDE and I was pleasantly surprised: OpenJ9 ran without crashing. Here are my results: the &lt;strong&gt;start time&lt;/strong&gt; of the &lt;a href=&quot;http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/oxygen2&quot;&gt;Eclipse Oxygen.2 Java IDE&lt;/a&gt; &lt;strong&gt;improves with OpenJ9 from 20&lt;/strong&gt; to 17 seconds, with some tuning (see below) even &lt;strong&gt;to 12 seconds&lt;/strong&gt; compared to the Java 9 JDK with Oracle’s HotSpot VM on my more than six-year-old laptop. Also the Windows Task Manager shows &lt;strong&gt;less memory&lt;/strong&gt; used by the Eclipse IDE and tasks like compiling a large project are a &lt;strong&gt;bit faster&lt;/strong&gt; with OpenJ9.&lt;/p&gt;
-&lt;p&gt;To start the Eclipse IDE with OpenJ9, in &lt;code&gt;eclipse.ini&lt;/code&gt; add the following two lines above &lt;code&gt;-vmargs&lt;/code&gt;:&lt;/p&gt;
-&lt;p style=&quot;padding-left: 30px;&quot;&gt;&lt;code&gt;-vm&lt;br /&gt;
-C:\path\to\jdk-9+181\bin\javaw.exe&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Embedding the JDK into an Eclipse installation directory as &lt;code&gt;jre&lt;/code&gt; subdirectory does not yet work, but as long as you do not start the Eclipse IDE from the command line from another directory you can use &lt;code&gt;-vm&lt;/code&gt; with &lt;code&gt;jre\bin\javaw.exe&lt;/code&gt;. To further improve the startup time, add the following two lines below &lt;code&gt;-vmargs&lt;/code&gt;:&lt;/p&gt;
-&lt;p style=&quot;padding-left: 30px;&quot;&gt;&lt;code&gt;-Xtune:virtualized&lt;br /&gt;
--Xshareclasses:cacheDir=C:\path\to\shareclasses&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://eclipsehowl.files.wordpress.com/2018/03/openj9_config.png&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;aligncenter wp-image-1380 size-full&quot; height=&quot;353&quot; src=&quot;https://eclipsehowl.files.wordpress.com/2018/03/openj9_config.png?w=450&amp;amp;h=353&quot; width=&quot;450&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;The cloning of a GitHub repository fails due to missing certificate authority (CA) certificates. You can fix this OpenJDK 9 issue by replacing the &lt;code&gt;lib\security&lt;/code&gt; directory (which contains the &lt;code&gt;cacerts&lt;/code&gt; file) with the same directory of an &lt;a href=&quot;http://jdk.java.net/10/&quot;&gt;OpenJDK 10 early access build&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://eclipsehowl.files.wordpress.com/2018/03/openj9_git_clone_fail.png&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;aligncenter wp-image-1381 size-full&quot; src=&quot;https://eclipsehowl.files.wordpress.com/2018/03/openj9_git_clone_fail.png?w=450&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;In the Eclipse IDE that is running on OpenJDK the standard basic text font defaults (for reasons I don’t know) to &lt;em&gt;Courier New&lt;/em&gt; 10 instead of &lt;em&gt;Consolas&lt;/em&gt; 10. You can change this in &lt;em&gt;Window &amp;gt; Preferences: General &amp;gt; Appearance &amp;gt; Colors and Fonts&lt;/em&gt; by selecting &lt;em&gt;Basic &amp;gt; Text Font&lt;/em&gt; and pressing &lt;em&gt;Edit…&lt;/em&gt; (if you like, you can also use &lt;em&gt;&lt;a href=&quot;https://github.com/adobe-fonts/source-code-pro&quot;&gt;Source Code Pro&lt;/a&gt;&lt;/em&gt; 9 like the &lt;a href=&quot;https://marketplace.eclipse.org/content/clean-sheet&quot;&gt;Clean Sheet&lt;/a&gt; theme does).&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://eclipsehowl.files.wordpress.com/2018/03/openj9_default_text_font.png&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;aligncenter wp-image-1382 size-full&quot; src=&quot;https://eclipsehowl.files.wordpress.com/2018/03/openj9_default_text_font.png?w=450&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;I have not noticed so far any further differences between the Eclipse IDE running on Oracle’s JDK 9 and the Eclipse IDE running on the current OpenJDK 9 with OpenJ9 nightly build. Debugging and hot code replace works as expected.&lt;/p&gt;
-&lt;p&gt;Many thanks to the &lt;a href=&quot;https://github.com/eclipse/openj9/graphs/contributors&quot;&gt;OpenJ9 team&lt;/a&gt;! I look forward to the final release. It’s great to have two good open source Java virtual machines for Windows. Who knows, but with only one of the two, neither of the two might be open source today.&lt;/p&gt;
-&lt;p&gt;PS: If the Eclipse IDE still starts too slowly for you, have a look at a &lt;a href=&quot;http://www.eclipse.org/downloads/index-developer.php?photon&quot;&gt;developer build of the upcoming Eclipse Photon IDE&lt;/a&gt;. &lt;img alt=&quot;😉&quot; class=&quot;wp-smiley&quot; src=&quot;https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f609.png&quot; style=&quot;height: 1em;&quot; /&gt;&lt;/p&gt;</description>
-	<pubDate>Fri, 09 Mar 2018 14:30:42 +0000</pubDate>
 </item>
 
 </channel>
