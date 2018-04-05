@@ -5,8 +5,8 @@ object ShellSetting {
      /**
       * Declaracion de variables Globales.
       */
-     val sound:Boolean  = true;
-     val dim:Int        = 32;
+     val sound:Boolean  = false;
+     val dim:Int        = 8;
      val dificultad:Int = 3;
      
      
