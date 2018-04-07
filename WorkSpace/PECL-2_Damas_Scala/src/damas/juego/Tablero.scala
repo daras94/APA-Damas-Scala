@@ -164,14 +164,13 @@ object Tablero {
       * 
       */
      private def setMovGamen(tablero:List[Int], movV:Int, movH:Int, row:Int, col:Int, type_bom:Int, cont: Int, isPacMan:Boolean): List[Int] = {
-          print(type_bom)
           if(cont < type_bom){
                if (!isCamarada(tablero, movV, movH, row, col, cont) && !isPacMan) {
                     val posVictima  = (row + ((cont + 1) * movV))* Math.sqrt(tablero.length).toInt + (col + ((cont + 1) * movH));
                     val posActual   = (row + (cont * movV))* Math.sqrt(tablero.length).toInt + (col + (cont * movH));
                     val isSetPacMan = tablero(posVictima) != POS_TAB_EMPTY;				 
                     val tab = this.insertMovimiento(tablero, posActual, posVictima, tablero(posActual), 0);
-                    this.setMovGamen(tab, movV, movH, (row + (cont * movV)), (col + (cont * movH)), type_bom, cont + 1, isSetPacMan);
+                    this.setMovGamen(tab, movV, movH, row, col, type_bom, cont + 1, isSetPacMan);
                } else {
                     if (isPacMan) {
                          val tab_bom = cont match {
