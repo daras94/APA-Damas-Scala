@@ -76,7 +76,7 @@ object Tablero {
                     if (col == dim ) {
                          out + Console.RESET
                     } else {
-                         val foreground = (Console.INVISIBLE, Console.RED, Console.WHITE, Console.CYAN, Console.GREEN, Console.MAGENTA, Console.YELLOW, Console.MAGENTA);
+                         val foreground = (Console.INVISIBLE, Console.RED, Console.WHITE, Console.CYAN, Console.GREEN, Console.YELLOW, Console.MAGENTA, Console.BLINK + Console.BLUE);
                          val ficha = String.format(" %s ", if (bloque != POS_TAB_EMPTY) (if ((bloque - (bloque % 10)) > POS_TAB_EMPTY * 2) "■" else "●") else "‌ ");
                          out + Console.BOLD + foreground.productElement(bloque % 10) + ficha + Console.RESET
                     }
@@ -164,13 +164,14 @@ object Tablero {
       * 
       */
      private def setMovGamen(tablero:List[Int], movV:Int, movH:Int, row:Int, col:Int, type_bom:Int, cont: Int, isPacMan:Boolean): List[Int] = {
+          print(type_bom)
           if(cont < type_bom){
                if (!isCamarada(tablero, movV, movH, row, col, cont) && !isPacMan) {
                     val posVictima  = (row + ((cont + 1) * movV))* Math.sqrt(tablero.length).toInt + (col + ((cont + 1) * movH));
                     val posActual   = (row + (cont * movV))* Math.sqrt(tablero.length).toInt + (col + (cont * movH));
                     val isSetPacMan = tablero(posVictima) != POS_TAB_EMPTY;				 
                     val tab = this.insertMovimiento(tablero, posActual, posVictima, tablero(posActual), 0);
-                    this.setMovGamen(tab, movV, movH, (row + (cont * movV)), (col + (cont * movH)), type_bom,(cont + 1), isSetPacMan);
+                    this.setMovGamen(tab, movV, movH, (row + (cont * movV)), (col + (cont * movH)), type_bom, cont + 1, isSetPacMan);
                } else {
                     if (isPacMan) {
                          val tab_bom = cont match {
@@ -183,8 +184,8 @@ object Tablero {
                          }
                          println(" ❈ " + Console.GREEN + "Evento " + Console.RESET + ":La dama se trasmuto en PacMan y " + Console.RED + "MATO" + Console.RESET + " WAKKA WAKKA !!!");
                          UtilDamas.clipSoundEfect("super-pacman_wakka.wav").start();
-                    } 
-                    this.setMovGamen(tablero, movV, movH, row, col, type_bom, type_bom, isPacMan);
+                    }
+                    this.setMovGamen(tablero, movV, movH, row, col, type_bom, type_bom + 1, isPacMan);
                }
           } else {
                return tablero;
