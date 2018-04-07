@@ -125,7 +125,6 @@ object Tablero {
           }
      }
      
-<<<<<<< HEAD
      /**
       * 
       */
@@ -207,38 +206,5 @@ object Tablero {
           } else {
                return Nil;
           }
-=======
-     def damasPlayBom(tablero:List[Int], mov:(Int, Int, Int), select_error:Boolean, turno:Int, str:StringBuilder): Boolean = {
-          val dama:Int = tablero((mov._1 * Math.sqrt(tablero.length).toInt) + mov._2);
-          if (!select_error && (dama != POS_TAB_EMPTY) && (if (turno == 0) 20 else 30).equals(dama - (dama % 10))) {
-               val movV:Int = Array(-1, 1).apply((mov._3 % 10));					        // Determinamos el movimiento vertical en funcion de la direcion.
-			val movH:Int = Array(-1, 1).apply(((mov._3 - (mov._3 % 10)) / 10) - 1);       // Determinamos el movimiento horizontal en funcion de la direcion.
-			val isError = isCamarada(tablero, new Tuple2(movV, movH));
-               if (!isError) {
-                    this.setMovGamen(tablero, new Tuple2(movV, movH), (dama % 10), 0);
-               } else {
-                    this.damasPlayBom(tablero, mov, isError, -1, str);
-               }
-          } else  {
-               str.append("\n ❈ ").append(Console.RED + "ERROR" + Console.RESET).append(": ").append("La jugada realizada nos se puede cosidera una jugada valida !!!");
-               if (turno != -1) {
-                    str.delete(str.indexOf(":"), str.length);
-                    str.append("NO pudee mover la ficha selecionada, las fichas que usted pude tocar son '").append((if (turno == 0) "■" else "●")).append("' !!!");
-               }
-               str.append("\n")
-               return true;
-          }
      }
-     
-     private def isCamarada(tablero:List[Int], mov:(Int, Int)): Boolean = {
-     
-          return true;
-     }
-     
-     private def setMovGamen(tablero:List[Int], mov:(Int, Int), type_bom:Int, cont: Int): Boolean = {
-       
-          return false;
->>>>>>> master
-     }
-     
 }
