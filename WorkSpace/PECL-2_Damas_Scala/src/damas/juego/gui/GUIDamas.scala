@@ -206,14 +206,9 @@ class mostrarTablero(var turno: String, val tablero: TableroGUI, val tamaño: In
 class configuracionJuego(val turno: String) extends Frame {
 
      title = "Configuración de la partida"; //título de la ventana
-     preferredSize = new Dimension(300, 300); //tamaño de la ventana
+     preferredSize = new Dimension(300,200); //tamaño de la ventana
      val dificultad = new ComboBox(List("Nivel 1", "Nivel 2", "Nivel 3", "Nivel 4", "Nivel 5")) //comboBox para la dificultad
      val label1 = new Label("Dificultad del juego"); //label para la dificultad
-     val filasColumnas = new RadioButton("8x8") //radioButton1
-     val filasColumnas2 = new RadioButton("16x16") //radioButton2
-     val filasColumnas3 = new RadioButton("32x32") //radioButton3
-     filasColumnas.selected = true //por defecto queda seleccionado el primer radio button
-     val filasColumnasGroup = new ButtonGroup(filasColumnas, filasColumnas2, filasColumnas3) //agrupamos los botones en un grupo para que solo
      //pueda seleccionarse uno
      val boton = new Button {
           text = "Comenzar Partida" //botón de comienzo de partida
@@ -223,11 +218,6 @@ class configuracionJuego(val turno: String) extends Frame {
      contents = new BoxPanel(Orientation.Vertical) {
           contents += label1
           contents += dificultad
-          contents += Swing.VStrut(5)
-          contents += new Label("Tamaño del tablero")
-          contents += filasColumnas
-          contents += filasColumnas2
-          contents += filasColumnas3
           contents += Swing.VStrut(5)
           contents += boton
           contents += Swing.VStrut(5)
@@ -243,13 +233,9 @@ class configuracionJuego(val turno: String) extends Frame {
      //escuchar eventos
      listenTo(dificultad)
      listenTo(boton)
-     listenTo(filasColumnas)
-     listenTo(filasColumnas2)
-     listenTo(filasColumnas3)
 
      //obtener valores
      val dificultadSelected = dificultad.selection.item
-     val tamaño = filasColumnasGroup.selected
 
      //reacciones a esos eventos
      reactions += {
@@ -267,14 +253,6 @@ class configuracionJuego(val turno: String) extends Frame {
                     case "Nivel 4" => dif = 4
                     case "Nivel 5" => dif = 5
                }
-          }
-          case ButtonClicked(`filasColumnas2`) => {
-               filas = 16
-               columnas = 16
-          }
-          case ButtonClicked(`filasColumnas3`) => {
-               filas = 32
-               columnas = 32
           }
           case WindowClosing(_) => {
                this.close()
