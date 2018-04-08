@@ -35,7 +35,7 @@ object ShellDamas {
                case "1" ⇒
                     val dificultad = setDificultad();                                                     // Llamamos a el menu de configuracion del nivel de dificultad.
                     val tablero    = Tab.generarTablero(Cfg.dim, Cfg.dim, Cfg.dim, dificultad);           // Generamos el tablero de juego segun las configuraciones.
-                    val fichXJug   = Tab.numFichasXjugador(Math.sqrt(tablero.length).toInt);              // Determinamos el numero def fichas a colocar.
+                    val fichXJug   = Tab.numFichasXjugadorInit(Math.sqrt(tablero.length).toInt);          // Determinamos el numero def fichas a colocar.
                     if (Cfg.sound) {                                                                      // Segun configuracion se abilita odesabilita los efectos de sonido.
                          UtilDamas.clipSoundEfect("start_up.wav").start();                                // Efecto de Audio de Start UP. 
                     }
@@ -81,14 +81,15 @@ object ShellDamas {
       * Ejecucion del modo de juego de la partida.
       */
      def playDamasBom(tablero: List[Int], turno: Int, nivel: Int, dificultad: Int, isError: Boolean, numfichas:(Int, Int)): Unit = { 
-          var TabD:(Boolean, Boolean, List[Int]) = (false, false, tablero);                  // Formato tupla (isWinner, isError, tabñero).
+          var TabD:(Boolean, Boolean, List[Int]) = (false, false, tablero);                  // Formato tupla (isWinner, isError, tabñero) para datos de jugada.
+          var FicN:(Int, Int) = numfichas;                                                   // Formato tupla (NumFichJug1, NumFichJug2) ppara el conteo del numero .
           if (!isError) {                                                                    // Si se a producido un error en la jugada nanterior no se vuelve a imprimir el tablero.
                UtilDamas.clear(); str.clear(); str.append("\n");                             // Borramos el pront limpiamos el strmenbuilder.o
-               val info = (Console.GREEN, Console.RESET, (nivel + 1).toString(), (dificultad + 1).toString(), (if (turno == 0) "■" else "●"), numfichas.productElement(0), numfichas.productElement(1), 0);
+               val info = (Console.GREEN, Console.RESET, (nivel + 1).toString(), (dificultad + 1).toString(), (if (turno == 0) "■" else "●"), 0);
                str.append("\n").append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓");
-               str.append("\n").append(String.format("┃   %s                                                             %-11s ┃ Nº fichas ■  : %-12s ┃ Turno de : %-10s ┃", Console.CYAN, info._2, (info._1 + info._6 + info._2), (info._1 + info._5 + info._2)));
-               str.append("\n").append(String.format("┃ ❈ %s Tablero de Juego                                            %-11s ┃ Nº fichas ●  : %-12s ┃ Dificult : %-10s ┃", Console.CYAN, info._2, (info._1 + info._7 + info._2), (info._1 + info._4 + info._2)));
-               str.append("\n").append(String.format("┃   %s-----------------------------------------------------------  %-11s ┃ Temporizador : %-12s ┃ Nivel    : %-10s ┃", Console.CYAN, info._2, (info._1 + info._8 + info._2), (info._1 + info._3 + info._2)));
+               str.append("\n").append(String.format("┃   %s                                                             %-11s ┃ Nº fichas ■  : %-12s ┃ Turno de : %-10s ┃", Console.CYAN, info._2, (info._1 + FicN._1 + info._2), (info._1 + info._5 + info._2)));
+               str.append("\n").append(String.format("┃ ❈ %s Tablero de Juego                                            %-11s ┃ Nº fichas ●  : %-12s ┃ Dificult : %-10s ┃", Console.CYAN, info._2, (info._1 + FicN._2 + info._2), (info._1 + info._4 + info._2)));
+               str.append("\n").append(String.format("┃   %s-----------------------------------------------------------  %-11s ┃ Temporizador : %-12s ┃ Nivel    : %-10s ┃", Console.CYAN, info._2, (info._1 + info._6 + info._2), (info._1 + info._3 + info._2)));
                str.append("\n").append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛");
                str.append("\n").append(Tab.echoTablero(TabD._3, 1, 0)).append("\n")
                str.append("\n").append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
@@ -107,9 +108,10 @@ object ShellDamas {
                     val jugada:(Int, Int, Int) = (Tab.CAR_ROW_COLUMN.indexOf(aux_jug.apply(0)), Tab.CAR_ROW_COLUMN.indexOf(aux_jug.apply(1)), aux_jug.apply(2).toInt); 
                     TabD = Tab.damasPlayBom(tablero, jugada, turno);                        // Validamos la ficha selecionada y realizamos los movimentos y
                     if (!TabD._2) {
+                         FicN = Tab.numFichasXjugadorInCurse(TabD._3, 0, (0, 0));           // Recalculamos el numero de fichas de cada jugador.
                          if (TabD._1 && nivel < 3) {                                        // Si el nivel es inferior a 3 y la partida a sido ganda se incrementa el nivel.
                               val dim: Int = Math.sqrt(TabD._3.length).toInt * 2;           // Dimension del nuevo tablero.
-                              val fichXJug = Tab.numFichasXjugador(dim);                    // Determinamos el numero def fichas a colocar.
+                              val fichXJug = Tab.numFichasXjugadorInit(dim);                // Determinamos el numero def fichas a colocar.
                               if (Cfg.sound) {                                              // Segun configuracion ejecuta o no los efectos de sonido.
                                    UtilDamas.clipSoundEfect("level_up.wav").start();        // Efecto de sonido leven UP.
                               }
@@ -127,6 +129,6 @@ object ShellDamas {
                               }
                     }
           }
-          if (!TabD._1 && (imput != "0")) this.playDamasBom(TabD._3, turno + (if (TabD._2) 0 else if (turno == 0) 1 else -1) , nivel, dificultad, TabD._2, numfichas); 
+          if (!TabD._1 && (imput != "0")) this.playDamasBom(TabD._3, turno + (if (TabD._2) 0 else if (turno == 0) 1 else -1) , nivel, dificultad, TabD._2, FicN); 
      }
 }

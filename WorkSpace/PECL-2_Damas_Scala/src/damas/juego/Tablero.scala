@@ -13,11 +13,6 @@ object Tablero {
       */
      private val POS_TAB_EMPTY  = 10;
      val CAR_ROW_COLUMN = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
-     
-     /**
-      * Numero de fichas x jugador en funcion de dimenciones del Tablero.
-      */
-     def numFichasXjugador(dim: Int) = (((Math.log10(dim) / Math.log10(2)).toInt + (if (dim > 8) 2 else 0)) * (dim / 2));
 
      /**
        * Funcion que se encarga de generar el tablero de juego en funcion de las dimensiones y la dificul-
@@ -192,7 +187,7 @@ object Tablero {
      }
      
      /**
-      * 
+      * Metodo el cual se encarga de insertar los movimentos de cada jugador 
       */
      private def insertMovimiento(tablero: List[Int], actual:Int, victima:Int, value:Int, cont:Int): List[Int] = {
           if (cont < tablero.length) {
@@ -205,6 +200,31 @@ object Tablero {
                }
           } else {
                return Nil;
+          }
+     }
+     
+     /**
+      * Numero de fichas x jugador en funcion de dimenciones del Tablero es el
+      * calculo incial del numeo de fichas las cuales se generan inicialmente
+      * al geerrar la partida.
+      */
+     def numFichasXjugadorInit(dim: Int) = (((Math.log10(dim) / Math.log10(2)).toInt + (if (dim > 8) 2 else 0)) * (dim / 2));
+     
+     /**
+      * Contabiliza el numero de fichas x jugador en tiempo real a medida que
+      * se van realizando jugadas.
+      */
+     def numFichasXjugadorInCurse(tablero:List[Int], cont:Int, numFichas:(Int, Int)): (Int, Int) = {
+          if (cont < tablero.length) {
+               val dama  = tablero(cont);
+               val numFich:(Int, Int) = (dama - (dama % 10)) match {
+                    case 30 ⇒ (numFichas._1 + 1, numFichas._2);
+                    case 20 ⇒ (numFichas._1, numFichas._2 + 1);
+                    case POS_TAB_EMPTY ⇒ numFichas;
+               }
+               this.numFichasXjugadorInCurse(tablero, (cont + 1), numFich);
+          } else {
+               return numFichas;
           }
      }
      
