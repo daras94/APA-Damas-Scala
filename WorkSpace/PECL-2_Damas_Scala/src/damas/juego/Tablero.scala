@@ -76,7 +76,11 @@ object Tablero {
                     if (col == dim ) {
                          out + Console.RESET
                     } else {
+<<<<<<< HEAD
                          val foreground = (Console.INVISIBLE, Console.RED, Console.WHITE, Console.CYAN, Console.GREEN, Console.YELLOW, Console.MAGENTA, Console.BLINK + Console.BLUE);
+=======
+                         val foreground = (Console.INVISIBLE, Console.RED, Console.WHITE, Console.CYAN, Console.GREEN, Console.MAGENTA, Console.YELLOW, Console.MAGENTA);
+>>>>>>> cc3f73c... Merge branch 'develop-2' of https://github.com/daras94/APA-Damas-Scala into develop-2
                          val ficha = String.format(" %s ", if (bloque != POS_TAB_EMPTY) (if ((bloque - (bloque % 10)) > POS_TAB_EMPTY * 2) "■" else "●") else "‌ ");
                          out + Console.BOLD + foreground.productElement(bloque % 10) + ficha + Console.RESET
                     }
@@ -128,6 +132,49 @@ object Tablero {
      /**
       * 
       */
+<<<<<<< HEAD
+     def damasPlayBom(tablero:List[Int], mov:(Int, Int, Int), turno:Int): (Boolean, Boolean, List[Int]) = {
+=======
+<<<<<<< HEAD
+     def damasPlayBom(tablero:List[Int], mov:(Int, Int, Int), select_error:Boolean, turno:Int): Boolean = {
+>>>>>>> cc3f73c... Merge branch 'develop-2' of https://github.com/daras94/APA-Damas-Scala into develop-2
+          val dama:Int = tablero((mov._1 * Math.sqrt(tablero.length).toInt) + mov._2);
+          if ((dama != POS_TAB_EMPTY) && (if (turno == 0) 30 else 20).equals(dama - (dama % 10))) {
+               val movH    = Array(-1, 1).apply((mov._3 % 10));					        // Determinamos el movimiento vertical en funcion de la direcion.
+			val movV    = Array(-1, 1).apply(((mov._3 - (mov._3 % 10)) / 10) - 1);        // Determinamos el movimiento horizontal en funcion de la direcion.
+               if (!isCamarada(tablero, movV, movH, mov._1, mov._2, 0)) {
+                    val tab = this.setMovGamen(tablero, movV, movH, mov._1, mov._2, (if ((dama % 10) <= 2) 1 else (dama % 10)), 0, false);
+                    return new Tuple3(false, false, tab);
+               } else {
+                    println(" ❈ " + Console.RED + "ERROR" + Console.RESET + ": La jugada realizada nos se puede cosidera una jugada valida !!!");
+                    return new Tuple3(false, true, tablero);
+               }
+          } else {
+               println(" ❈ " + Console.RED + "ERROR" + Console.RESET + ": NO pudee mover la ficha selecionada, las fichas que usted pude tocar son '" + (if (turno == 0) "■" else "●") + "' !!!");
+               return new Tuple3(false, true, tablero);    
+          }
+     }
+     
+     /**
+      * 
+      */
+     private def isCamarada(tablero:List[Int], movV:Int, movH:Int, row:Int, col:Int, pos:Int): Boolean = {
+          val isMovValido = ((col + ((pos + 1) * movH) > -1) && (col + ((pos + 1) * movH) < Math.sqrt(tablero.length).toInt)) &&
+                            ((row + ((pos + 1) * movV) > -1) && (row + ((pos + 1) * movV) < Math.sqrt(tablero.length).toInt));
+          if (isMovValido) {
+               val fichInMov = tablero((row + (pos * movV)) * (Math.sqrt(tablero.length).toInt) + (col + (pos * movH)));
+               val victima   = tablero((row + ((pos + 1) * movV)) * (Math.sqrt(tablero.length).toInt) + (col + ((pos + 1) * movH)));
+               return isMovValido && (victima - ((victima % 10)) == (fichInMov - (fichInMov % 10)));
+          }
+          return isMovValido;
+     }
+     
+<<<<<<< HEAD
+=======
+     private def setMovGamen(tablero:List[Int], mov:(Int, Int), type_bom:Int, cont: Int): Boolean = {
+       
+          return true;
+=======
      def damasPlayBom(tablero:List[Int], mov:(Int, Int, Int), turno:Int): (Boolean, Boolean, List[Int]) = {
           val dama:Int = tablero((mov._1 * Math.sqrt(tablero.length).toInt) + mov._2);
           if ((dama != POS_TAB_EMPTY) && (if (turno == 0) 30 else 20).equals(dama - (dama % 10))) {
@@ -160,6 +207,7 @@ object Tablero {
           return isMovValido;
      }
      
+>>>>>>> cc3f73c... Merge branch 'develop-2' of https://github.com/daras94/APA-Damas-Scala into develop-2
      /**
       * 
       */
@@ -170,7 +218,11 @@ object Tablero {
                     val posActual   = (row + (cont * movV))* Math.sqrt(tablero.length).toInt + (col + (cont * movH));
                     val isSetPacMan = tablero(posVictima) != POS_TAB_EMPTY;				 
                     val tab = this.insertMovimiento(tablero, posActual, posVictima, tablero(posActual), 0);
+<<<<<<< HEAD
                     this.setMovGamen(tab, movV, movH, row, col, type_bom, cont + 1, isSetPacMan);
+=======
+                    this.setMovGamen(tab, movV, movH, (row + (cont * movV)), (col + (cont * movH)), type_bom,(cont + 1), isSetPacMan);
+>>>>>>> cc3f73c... Merge branch 'develop-2' of https://github.com/daras94/APA-Damas-Scala into develop-2
                } else {
                     if (isPacMan) {
                          val tab_bom = cont match {
@@ -183,12 +235,38 @@ object Tablero {
                          }
                          println(" ❈ " + Console.GREEN + "Evento " + Console.RESET + ":La dama se trasmuto en PacMan y " + Console.RED + "MATO" + Console.RESET + " WAKKA WAKKA !!!");
                          UtilDamas.clipSoundEfect("super-pacman_wakka.wav").start();
+<<<<<<< HEAD
                     }
                     this.setMovGamen(tablero, movV, movH, row, col, type_bom, type_bom + 1, isPacMan);
+=======
+                    } 
+                    this.setMovGamen(tablero, movV, movH, row, col, type_bom, type_bom, isPacMan);
+>>>>>>> cc3f73c... Merge branch 'develop-2' of https://github.com/daras94/APA-Damas-Scala into develop-2
                }
           } else {
                return tablero;
           } 
+<<<<<<< HEAD
+=======
+     }
+     
+     /**
+      * 
+      */
+     private def insertMovimiento(tablero: List[Int], actual:Int, victima:Int, value:Int, cont:Int): List[Int] = {
+          if (cont < tablero.length) {
+               val value_aux = (if (cont == actual) POS_TAB_EMPTY else value);
+               if ((actual == cont) || (victima == cont)) {
+                    val (act, vic) = ((if (cont == actual) 0 else actual), (if (cont == victima) 0 else victima));
+                    value_aux :: insertMovimiento(tablero, act, vic, value, (cont + 1));
+               } else {
+                    tablero(cont) :: insertMovimiento(tablero, actual, victima, value, (cont + 1));    
+               }
+          } else {
+               return Nil;
+          }
+>>>>>>> d069b6ad5c46db362f7e9d89b3e725710e232e18
+>>>>>>> cc3f73c... Merge branch 'develop-2' of https://github.com/daras94/APA-Damas-Scala into develop-2
      }
      
      /**
