@@ -147,14 +147,14 @@ object Tablero {
      private def isCamarada(tablero:List[Int], movV:Int, movH:Int, row:Int, col:Int, pos:Int): Boolean = {
           println((row + ((pos + 1) * movV)) + " : " + (col + ((pos + 1) * movH)));
           
-          val isMovValido = ((col + ((pos + 1) * movH) > 0) && (col + ((pos + 1) * movH) < Math.sqrt(tablero.length).toInt)) &&
-                            ((row + ((pos + 1) * movV) > 0) && (row + ((pos + 1) * movV) < Math.sqrt(tablero.length).toInt));
+          val isMovValido = ((col + ((pos + 1) * movH) > -1) && (col + ((pos + 1) * movH) < Math.sqrt(tablero.length).toInt)) &&
+                            ((row + ((pos + 1) * movV) > -1) && (row + ((pos + 1) * movV) < Math.sqrt(tablero.length).toInt));
           if (isMovValido) {
                val fichInMov = tablero((row + (pos * movV)) * (Math.sqrt(tablero.length).toInt) + (col + (pos * movH)));
                val victima   = tablero((row + ((pos + 1) * movV)) * (Math.sqrt(tablero.length).toInt) + (col + ((pos + 1) * movH)));
                return isMovValido && (victima - ((victima % 10)) == (fichInMov - (fichInMov % 10)));
           }
-          return isMovValido;
+          return !isMovValido;
      }
   
      /**

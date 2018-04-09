@@ -1,5 +1,7 @@
 package damas
 
+//import java.awt._;
+
 /**
   * @author david.
   * 
@@ -39,3 +41,5 @@ object TestMainDamas {
           System.exit(0);
      }
 }
+
+case class TestMainDamas();

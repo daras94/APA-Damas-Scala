@@ -1,5 +1,7 @@
 Console.highWaterMark=88000
 Console.width=800
+Console.wrap=true
+StringVariablePreferencePage=120,100,99,170,
 eclipse.preferences.version=1
 org.eclipse.debug.ui.PREF_FILTER_LAUNCH_TYPES=true
 org.eclipse.debug.ui.PREF_FILTER_WORKING_SETS=true
