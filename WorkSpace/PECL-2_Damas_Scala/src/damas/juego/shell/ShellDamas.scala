@@ -81,7 +81,7 @@ object ShellDamas {
       * Ejecucion del modo de juego de la partida.
       */
      def playDamasBom(tablero: List[Int], turno: Int, nivel: Int, dificultad: Int, isError: Boolean, numfichas:(Int, Int)): Unit = { 
-          var TabD:(Boolean, Boolean, List[Int]) = (false, false, tablero);                  // Formato tupla (isWinner, isError, tabñero) para datos de jugada.
+          var TabD:(Boolean, Boolean, List[Int]) = (false, false, tablero);                  // Formato tupla (isWinner, isError, tablero) para datos de jugada.
           var FicN:(Int, Int) = numfichas;                                                   // Formato tupla (NumFichJug1, NumFichJug2) ppara el conteo del numero .
           if (!isError) {                                                                    // Si se a producido un error en la jugada nanterior no se vuelve a imprimir el tablero.
                UtilDamas.clear(); str.clear(); str.append("\n");                             // Borramos el pront limpiamos el strmenbuilder.o

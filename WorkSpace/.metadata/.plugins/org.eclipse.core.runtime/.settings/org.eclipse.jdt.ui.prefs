@@ -5,6 +5,7 @@ content_assist_number_of_computers=24
 content_assist_proposals_background=255,255,255
 content_assist_proposals_foreground=0,0,0
 eclipse.preferences.version=1
+highlightBracketAtCaretLocation=true
 java_bracket=255,85,85
 java_comment_task_tag=85,255,255
 java_default=187,187,187

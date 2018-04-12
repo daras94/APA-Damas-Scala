@@ -145,8 +145,6 @@ object Tablero {
       * 
       */
      private def isCamarada(tablero:List[Int], movV:Int, movH:Int, row:Int, col:Int, pos:Int): Boolean = {
-          println((row + ((pos + 1) * movV)) + " : " + (col + ((pos + 1) * movH)));
-          
           val isMovValido = ((col + ((pos + 1) * movH) > -1) && (col + ((pos + 1) * movH) < Math.sqrt(tablero.length).toInt)) &&
                             ((row + ((pos + 1) * movV) > -1) && (row + ((pos + 1) * movV) < Math.sqrt(tablero.length).toInt));
           if (isMovValido) {
@@ -229,5 +227,12 @@ object Tablero {
                return numFichas;
           }
      }
+     
+     /*def checkGamen(numFich:(Int, Int)): Boolean = {
+          val aux_numfichas = (numFich._1 - numFich._2);
+          aux_numfichas match {
+               case 0 | 1 ⇒ true;
+          }
+     }*/
      
 }
