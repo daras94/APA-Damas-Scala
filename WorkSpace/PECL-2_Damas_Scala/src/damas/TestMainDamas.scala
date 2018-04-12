@@ -1,5 +1,7 @@
 package damas
 
+//import java.awt._;
+
 /**
  * @author david.
  *
@@ -31,6 +33,7 @@ object TestMainDamas {
         if (opc != "0") {
           println("\n - " + Console.RED + "ERROR: " + Console.RESET + "La opcion de juego seleccionda no es valida.");
           Thread.sleep(1000);
+<<<<<<< HEAD
         }
     }
     if (opc != "0") this.main(args); // Nos llamamos de nuevo de forma recursiba.
@@ -39,3 +42,10 @@ object TestMainDamas {
     System.exit(0);
   }
 }
+=======
+          System.exit(0);
+     }
+}
+
+case class TestMainDamas();
+>>>>>>> 284378426960799c1f58a4bed7c4f4c9c115377f
