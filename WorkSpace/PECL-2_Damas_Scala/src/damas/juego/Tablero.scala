@@ -74,11 +74,11 @@ object Tablero {
                          val foreground = (Console.INVISIBLE, Console.RED, Console.WHITE, Console.CYAN, Console.GREEN, Console.YELLOW, Console.MAGENTA, Console.BLINK + Console.BLUE, "", Console.MAGENTA);
                          val ficha = String.format(" %s ", if (bloque != POS_TAB_EMPTY) {
                               if ((bloque - (bloque % 10)) > POS_TAB_EMPTY * 2){
-                                   if ((bloque % 10) == 9) "♖" else "■"; 
+                                   if ((bloque % 10) == 9) "⭕" else "■"; 
                               } else {
-                                   if ((bloque % 10) == 9) "♜" else "●";
+                                   if ((bloque % 10) == 9) "⭕" else "●";
                               }
-                         }else "‌ ");
+                         } else "‌ ");
                          out + Console.BOLD + foreground.productElement(bloque % 10) + ficha + Console.RESET
                     }
                } else "") + imprimirTablero(tablero, (row + (if (col == dim) 1 else 0)), (if (col < dim) (col + 1) else 0));
