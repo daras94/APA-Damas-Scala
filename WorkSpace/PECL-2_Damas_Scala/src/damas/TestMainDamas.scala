@@ -8,19 +8,27 @@ package damas
   * Declaracion de Objeto.
   */
 object TestMainDamas {
+     
+     val str = new StringBuilder
+     
      /**
        *  Declaracion del MAIN.
        */
      def main(args: Array[ String ]): Unit = {
-          println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
-          println("┃\t\t\t ===> { " + Console.CYAN + " MENU Start UP, Damas BOM " + Console.RESET + "} <=== \t\t\t ┃");
-          println("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
-          println("┃ " + Console.MAGENTA + "1" + Console.RESET + ") - Iniciar partida GUI Damas BOM.  \t\t\t\t\t\t\t ┃");
-          println("┃ " + Console.MAGENTA + "2" + Console.RESET + ") - Iniciar partida Shell Damas BOM.\t\t\t\t\t\t\t ┃");
-          println("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
-          println("┃ - " + Console.RED + "NOTA" + Console.RESET + ": Seleccione la forma grafica de ejecucion del juego. \t\t\t\t ┃");
-          println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
-          print(" ❈ Seleccione una opcion(" + Console.GREEN + "Pulse 0 para salir" + Console.RESET + "): ")
+          Util.clear(); str.clear(); str.append("\n");                                                     // Limpiamos el prompt. y Vaciamos el StringBuilder. 
+          Util.printtextArt("💣 Damas BOM !!!", "© 2017 - 2018");
+          str.append("\n ").append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+          str.append("\n ").append(String.format("┃   %s                                                             %-47s ┃", Console.CYAN, Console.RESET));
+          str.append("\n ").append(String.format("┃ ❈ %s MENU Start UP, Damas BOM                                    %-47s ┃", Console.CYAN, Console.RESET));
+          str.append("\n ").append(String.format("┃   %s-----------------------------------------------------------  %-47s ┃", Console.CYAN, Console.RESET));
+          str.append("\n ").append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛").append("\n");
+          str.append("\n ").append(String.format(" %-10s 1%s) - %s", Console.MAGENTA, Console.RESET, "Iniciar partida GUI Damas BOM."));
+          str.append("\n ").append(String.format(" %-10s 2%s) - %s", Console.MAGENTA, Console.RESET, "Iniciar partida Shell Damas BOM.")).append("\n");
+          str.append("\n ").append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+          str.append("\n ").append(String.format("┃ ❈ %s NOTA %s: %-96s ┃", Console.RED, Console.RESET, "Seleccione la forma grafica de ejecucion del juego"));
+          str.append("\n ").append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"); 
+          str.append("\n ").append("  ❈ Seleccione una opcion(" + Console.GREEN + "Pulse 0 para salir" + Console.RESET + "): ");
+          print(str)
           val opc:String = Console.in.readLine();
           opc match {
                case "1" ⇒ 

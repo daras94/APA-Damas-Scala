@@ -18,17 +18,18 @@ object ShellDamas {
       * 
       */
      def initShell(): Unit = {
-          UtilDamas.clear(); str.clear(); str.append("\n");                                                     // Limpiamos el prompt. y Vaciamos el StringBuilder. 
-          str.append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓").append("\n");
-          str.append(String.format("┃ %25s  ===> {  %s  } <===  %-25s ┃", "", Console.CYAN + " MENU Damas BOM " + Console.RESET, "")).append("\n");
-          str.append("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫").append("\n");
-          str.append(String.format("┃ %-95s ┃", Console.MAGENTA + "1" + Console.RESET + ") - Iniciar partida Damas BOM 2 Jugadores.")).append("\n");
-          str.append(String.format("┃ %-95s ┃", Console.MAGENTA + "2" + Console.RESET + ") - Iniciar partida Damas BOM 1 Jugador VS IA.")).append("\n");
-          str.append(String.format("┃ %-95s ┃", Console.MAGENTA + "3" + Console.RESET + ") - Ver y Cargar Partida Guardadas.")).append("\n");
-          str.append("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫").append("\n");
-          str.append(String.format("┃ - %-93s ┃",Console.RED + "NOTA" + Console.RESET + ": Pulsa 0 para volver al menu de seleccion de interface de ejecucion.")).append("\n");
-          str.append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛").append("\n");
-          str.append(" ❈ Seleccione una opcion de juego (" + Console.GREEN + "Pulse X para salir del Juego" + Console.RESET + "): ")
+          str.append("\n ").append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+          str.append("\n ").append(String.format("┃   %s                                                             %-47s ┃", Console.CYAN, Console.RESET));
+          str.append("\n ").append(String.format("┃ ❈ %s MENU de Juego                                               %-47s ┃", Console.CYAN, Console.RESET));
+          str.append("\n ").append(String.format("┃   %s-----------------------------------------------------------  %-47s ┃", Console.CYAN, Console.RESET));
+          str.append("\n ").append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛").append("\n");
+          str.append("\n ").append(String.format(" %-10s 1 %s) - %s", Console.MAGENTA, Console.RESET, "Iniciar partida Damas BOM 2 Jugadores."));
+          str.append("\n ").append(String.format(" %-10s 2 %s) - %s", Console.MAGENTA, Console.RESET, "Iniciar partida Damas BOM 1 Jugador VS IA."));
+          str.append("\n ").append(String.format(" %-10s 3 %s) - %s", Console.MAGENTA, Console.RESET, "Ver y Cargar Partida Guardadas.")).append("\n");
+          str.append("\n ").append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+          str.append("\n ").append(String.format("┃ ❈ %s NOTA %s: %-96s ┃", Console.RED, Console.RESET, "Pulsa 0 para volver al menu de seleccion de interface de ejecucion."));
+          str.append("\n ").append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"); 
+          str.append("\n ").append("  ❈ Seleccione una opcion de juego (" + Console.GREEN + "Pulse X para salir del Juego" + Console.RESET + "): ")
           print(str);
           var opc: String = Console.in.readLine();
           opc.toUpperCase() match {
@@ -86,16 +87,16 @@ object ShellDamas {
           if (!isError) {                                                                    // Si se a producido un error en la jugada nanterior no se vuelve a imprimir el tablero.
                UtilDamas.clear(); str.clear(); str.append("\n");                             // Borramos el pront limpiamos el strmenbuilder.o
                val info = (Console.GREEN, Console.RESET, (nivel + 1).toString(), (dificultad + 1).toString(), (if (turno == 0) "■" else "●"), 0);
-               str.append("\n").append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓");
-               str.append("\n").append(String.format("┃   %s                                                             %-11s ┃ Nº fichas ■  : %-12s ┃ Turno de : %-10s ┃", Console.CYAN, info._2, (info._1 + FicN._1 + info._2), (info._1 + info._5 + info._2)));
-               str.append("\n").append(String.format("┃ ❈ %s Tablero de Juego                                            %-11s ┃ Nº fichas ●  : %-12s ┃ Dificult : %-10s ┃", Console.CYAN, info._2, (info._1 + FicN._2 + info._2), (info._1 + info._4 + info._2)));
-               str.append("\n").append(String.format("┃   %s-----------------------------------------------------------  %-11s ┃ Temporizador : %-12s ┃ Nivel    : %-10s ┃", Console.CYAN, info._2, (info._1 + info._6 + info._2), (info._1 + info._3 + info._2)));
-               str.append("\n").append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛");
-               str.append("\n").append(Tab.echoTablero(TabD._3, 1, 0)).append("\n")
-               str.append("\n").append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
-               str.append("\n").append(String.format("┃ ❈ %sADVERTENCIA %s: %-90s ┃", Console.RED, info._2, "La jugadas se deven de ser introducir con el siguiente formato 'X:Y:D' para poder realizar"));
-               str.append("\n").append(String.format("┃   %-104s ┃", "una jugada siendo (X = row, Y = column y D = (10 = sup-izq, 20 = inf-izq, 11 = sup-dech, 21 = inf-dech)."));
-               str.append("\n").append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"); 
+               str.append("\n ").append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓");
+               str.append("\n ").append(String.format("┃   %s                                                             %-11s ┃ Nº fichas ■  : %-12s ┃ Turno de : %-10s ┃", Console.CYAN, info._2, (info._1 + FicN._1 + info._2), (info._1 + info._5 + info._2)));
+               str.append("\n ").append(String.format("┃ ❈ %s Tablero de Juego                                            %-11s ┃ Nº fichas ●  : %-12s ┃ Dificult : %-10s ┃", Console.CYAN, info._2, (info._1 + FicN._2 + info._2), (info._1 + info._4 + info._2)));
+               str.append("\n ").append(String.format("┃   %s-----------------------------------------------------------  %-11s ┃ Temporizador : %-12s ┃ Nivel    : %-10s ┃", Console.CYAN, info._2, (info._1 + info._6 + info._2), (info._1 + info._3 + info._2)));
+               str.append("\n ").append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛");
+               str.append("\n ").append(Tab.echoTablero(TabD._3, 1, 0)).append("\n")
+               str.append("\n ").append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+               str.append("\n ").append(String.format("┃ ❈ %sADVERTENCIA %s: %-90s ┃", Console.RED, info._2, "La jugadas se deven de ser introducir con el siguiente formato 'X:Y:D' para poder realizar"));
+               str.append("\n ").append(String.format("┃   %-104s ┃", "una jugada siendo (X = row, Y = column y D = (10 = sup-izq, 20 = inf-izq, 11 = sup-dech, 21 = inf-dech)."));
+               str.append("\n ").append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"); 
           } else {
                str.clear();                                                                  // Limpiamos el String Builder     
           }
@@ -110,6 +111,7 @@ object ShellDamas {
                     if (!TabD._2) {
                          FicN = Tab.numFichasXjugadorInCurse(TabD._3, 0, (0, 0));           // Recalculamos el numero de fichas de cada jugador.
                          if (TabD._1 && nivel < 3) {                                        // Si el nivel es inferior a 3 y la partida a sido ganda se incrementa el nivel.
+                              UtilDamas.printtextArt("Nivel " + nivel, "")
                               val dim: Int = Math.sqrt(TabD._3.length).toInt * 2;           // Dimension del nuevo tablero.
                               val fichXJug = Tab.numFichasXjugadorInit(dim);                // Determinamos el numero def fichas a colocar.
                               if (Cfg.sound) {                                              // Segun configuracion ejecuta o no los efectos de sonido.

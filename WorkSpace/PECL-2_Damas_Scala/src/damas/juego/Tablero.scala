@@ -126,8 +126,8 @@ object Tablero {
      def damasPlayBom(tablero:List[Int], mov:(Int, Int, Int), turno:Int): (Boolean, Boolean, List[Int]) = {
           val dama:Int = tablero((mov._1 * Math.sqrt(tablero.length).toInt) + mov._2);
           if ((dama != POS_TAB_EMPTY) && (if (turno == 0) 30 else 20).equals(dama - (dama % 10))) {
-               val movH    = Array(-1, 1).apply((mov._3 % 10));					        // Determinamos el movimiento vertical en funcion de la direcion.
-			val movV    = Array(-1, 1).apply(((mov._3 - (mov._3 % 10)) / 10) - 1);        // Determinamos el movimiento horizontal en funcion de la direcion.
+               val movH    = Array(-1, 1).apply((mov._3 % 10));					        // Determinamos el movimiento horizontal en funcion de la direcion.
+			val movV    = Array(-1, 1).apply(((mov._3 - (mov._3 % 10)) / 10) - 1);        // Determinamos el movimiento vertical en funcion de la direcion.
                if (!isCamarada(tablero, movV, movH, mov._1, mov._2, 0)) {
                     val tab = this.setMovGamen(tablero, movV, movH, mov._1, mov._2, (if ((dama % 10) <= 2) 1 else (dama % 10)), 0, false);
                     return new Tuple3(false, false, tab);
@@ -150,11 +150,20 @@ object Tablero {
           if (isMovValido) {
                val fichInMov = tablero((row + (pos * movV)) * (Math.sqrt(tablero.length).toInt) + (col + (pos * movH)));
                val victima   = tablero((row + ((pos + 1) * movV)) * (Math.sqrt(tablero.length).toInt) + (col + ((pos + 1) * movH)));
-               return isMovValido && (victima - ((victima % 10)) == (fichInMov - (fichInMov % 10)));
+               val isDriValido:Boolean = (fichInMov % 10) match {
+                    case 9 ⇒ true;
+                    case _ ⇒ 
+                         (fichInMov - (fichInMov % 10)) match {
+                              case 30 ⇒ (movV == -1)
+                              case 20 ⇒ (movV ==  1)
+                         }
+                         
+               }
+               return isMovValido && isDriValido && (victima - ((victima % 10)) == (fichInMov - (fichInMov % 10)));
           }
           return !isMovValido;
      }
-  
+
      /**
       * 
       */
