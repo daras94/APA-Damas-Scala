@@ -40,7 +40,7 @@ object ShellDamas {
                     if (Cfg.sound) {                                                                      // Segun configuracion se abilita odesabilita los efectos de sonido.
                          UtilDamas.clipSoundEfect("start_up.wav").start();                                // Efecto de Audio de Start UP. 
                     }
-                    playDamasBom(tablero, 0, 0, dificultad, false, (fichXJug, fichXJug));                 // Comenzamos Con el Nivel 0 y con un Tablero de 8x8.                
+                    playDamasBom(tablero, 0, 0, dificultad, false, (fichXJug, fichXJug), "");             // Comenzamos Con el Nivel 0 y con un Tablero de 8x8.                
                case "2" ⇒   
                case "3" ⇒
                case "X" ⇒ System.exit(0);
@@ -81,8 +81,8 @@ object ShellDamas {
      /**
       * Ejecucion del modo de juego de la partida.
       */
-     def playDamasBom(tablero: List[Int], turno: Int, nivel: Int, dificultad: Int, isError: Boolean, numfichas:(Int, Int)): Unit = { 
-          var TabD:(Boolean, Boolean, List[Int]) = (false, false, tablero);                  // Formato tupla (isWinner, isError, tablero) para datos de jugada.
+     def playDamasBom(tablero: List[Int], turno: Int, nivel: Int, dificultad: Int, isError: Boolean, numfichas:(Int, Int), event:String): Unit = { 
+          var TabD:(Boolean, Boolean, List[Int], String) = (false, false, tablero, event);   // Formato tupla (isWinner, isError, tablero, event) para datos de jugada.
           var FicN:(Int, Int) = numfichas;                                                   // Formato tupla (NumFichJug1, NumFichJug2) ppara el conteo del numero .
           if (!isError) {                                                                    // Si se a producido un error en la jugada nanterior no se vuelve a imprimir el tablero.
                UtilDamas.clear(); str.clear(); str.append("\n");                             // Borramos el pront limpiamos el strmenbuilder.o
@@ -99,8 +99,8 @@ object ShellDamas {
                str.append("\n ").append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"); 
           } else {
                str.clear();                                                                  // Limpiamos el String Builder     
-          }
-          print(str.append("\n").append(" ❈ Realice su jugada (" + Console.GREEN + "0 para salir de la partida, S para guardar la partida y H ayuda." + Console.RESET + "): "));
+          } 
+          print(str.append(if (!event.isEmpty()) "\n" + TabD._4 else "").append("\n").append(" ❈ Realice su jugada (" + Console.GREEN + "0 para salir de la partida, S para guardar la partida y H ayuda." + Console.RESET + "): "));
           val imput: String   = Console.in.readLine().toUpperCase();                         // Leemos la entrada estandar del teclado.
           val reg_expre: Regex = ("([A-Z1-6]{1}):([A-Z1-6]{1}):((1|2){1}(0|1){1})").r;       // Expresion regular que define el formato de la jugadas.
           (reg_expre.findFirstMatchIn(imput)) match {
@@ -117,7 +117,7 @@ object ShellDamas {
                               if (Cfg.sound) {                                              // Segun configuracion ejecuta o no los efectos de sonido.
                                    UtilDamas.clipSoundEfect("level_up.wav").start();        // Efecto de sonido leven UP.
                               }
-                              this.playDamasBom(Tab.generarTablero(dim, dim, dim, dificultad), turno, (nivel + 1), dificultad, false, (fichXJug, fichXJug));
+                              this.playDamasBom(Tab.generarTablero(dim, dim, dim, dificultad), turno, (nivel + 1), dificultad, false, (fichXJug, fichXJug), "");
                          } 
                     } 
                case None    ⇒
@@ -126,11 +126,10 @@ object ShellDamas {
                          case "H" ⇒ Nil
                          case  _  ⇒
                               if (imput != "0") {                                             // Mostramos los posibles errores de introducion de teclado.
-                                   println(" - " + Console.RED + "ERROR: " + Console.RESET + "Caracter o movimiento introducido no valido.");  
-                                   TabD = (false, true, tablero);                             // Habilitamos la bandera de eerores
+                                   TabD = (false, true, tablero, " - " + Console.RED + "ERROR: " + Console.RESET + "Caracter o movimiento introducido no valido.");                         // Habilitamos la bandera de eerores
                               }
                     }
           }
-          if (!TabD._1 && (imput != "0")) this.playDamasBom(TabD._3, turno + (if (TabD._2) 0 else if (turno == 0) 1 else -1) , nivel, dificultad, TabD._2, FicN); 
+          if (!TabD._1 && (imput != "0")) this.playDamasBom(TabD._3, turno + (if (TabD._2) 0 else if (turno == 0) 1 else -1) , nivel, dificultad, TabD._2, FicN, TabD._4); 
      }
 }

@@ -1,6 +1,6 @@
-package damas.juego.shell
+package damas.util
 
-object ShellSetting {
+object Setting {
      
      /**
       * Declaracion de variables Globales.
