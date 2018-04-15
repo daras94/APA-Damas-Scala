@@ -1,12 +1,12 @@
-package damas.juego.shell
+package damas.util
 
-object ShellSetting {
+object Setting {
      
      /**
       * Declaracion de variables Globales.
       */
      val sound:Boolean  = true;
-     val dim:Int        = 16;
+     val dim:Int        = 8;
      val dificultad:Int = 3;
      
      

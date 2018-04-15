@@ -8,6 +8,44 @@
 	<description>Planet Eclipse - http://planeteclipse.org/planet/</description>
 
 <item>
+	<title>vert.x project: New community channels</title>
+	<guid isPermaLink="true">https://vertx.io/blog/new-community-channels</guid>
+	<link>https://vertx.io/blog/new-community-channels</link>
+	<description>&lt;article&gt;&lt;p&gt;If you visited the Eclipse Vert.x website recently, you might have noticed a couple of novelties on the &lt;a href=&quot;https://vertx.io/community&quot;&gt;community&lt;/a&gt; page:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the Stack Overflow &lt;a href=&quot;https://stackoverflow.com/questions/tagged/vert.x?sort=newest&amp;amp;pageSize=15&quot;&gt;vert.x&lt;/a&gt; tag for user questions&lt;/li&gt;
+&lt;li&gt;the &lt;a href=&quot;https://gitter.im/eclipse-vertx/vertx-users&quot;&gt;vertx-users&lt;/a&gt; Gitter channel to chat with other users and module maintainers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Wondering why?&lt;/p&gt;
+&lt;h2 id=&quot;answering-questions-wherever-they-are-asked&quot;&gt;Answering questions wherever they are asked&lt;/h2&gt;
+&lt;p&gt;In order to help us support the community, we (the core team and module maintainers) have tried so far to stick to a few rules:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://groups.google.com/forum/?fromgroups#!forum/vertx&quot;&gt;user group&lt;/a&gt; for questions&lt;/li&gt;
+&lt;li&gt;IRC to chat&lt;/li&gt;
+&lt;li&gt;bugs and issues reported on GitHub&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These rules were documented on the website, but admittedly they are hard (if possible at all) to enforce.
+And let’s face it: many new users like to ask questions on Stackoverflow and GitHub.&lt;/p&gt;
+&lt;p&gt;So we now answer questions wherever they are asked.
+We keep the user group as the main channel though: some conversations just don’t fit the Stack Overflow model, and not everyone in the community watches the GitHub repositories.&lt;/p&gt;
+&lt;h2 id=&quot;moving-from-irc-to-gitter&quot;&gt;Moving from IRC to Gitter&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;#vertx&lt;/code&gt; channel is recorded on &lt;code&gt;echelog&lt;/code&gt; but it’s not convenient to search or browse.
+And sharing code, logs, issues is simply awful compared to modern alternatives like Gitter or Slack.&lt;/p&gt;
+&lt;p&gt;Gitter got our preference because:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;it’s free, without limits&lt;/li&gt;
+&lt;li&gt;it’s not resource hungry (on a browser at least)&lt;/li&gt;
+&lt;li&gt;it’s well integrated with GitHub&lt;/li&gt;
+&lt;li&gt;it supports advanced formatting&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Since the &lt;a href=&quot;https://gitter.im/eclipse-vertx/vertx-users&quot;&gt;channel&lt;/a&gt; was opened, new people are joining every day.
+At the time of writing, there are 74 people registered already.
+We hope you will be the next one!&lt;/p&gt;
+&lt;p&gt;See you soon online.&lt;/p&gt;
+&lt;/article&gt;</description>
+	<pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
+</item>
+<item>
 	<title>Eclipse Announcements: Eclipse Oxygen 3A has been released!</title>
 	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/OWE11o6tdkM/3a</guid>
 	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/OWE11o6tdkM/3a</link>
@@ -804,47 +842,6 @@ flatpak list --app #only list apps.
 	<description>&lt;a href=&quot;http://www.liclipse.com/&quot;&gt;LiClipse&lt;/a&gt; 4.5.2 is now out.&lt;br /&gt;&lt;br /&gt;The major updates are related  to the upgrade of dependencies (such as &lt;a href=&quot;http://www.pydev.org/&quot;&gt;PyDev&lt;/a&gt; and &lt;a href=&quot;https://www.eclipse.org/egit/&quot;&gt;EGit&lt;/a&gt;).&lt;br /&gt;&lt;br /&gt;On the PyDev front, the major change is initial support for getting type information from .pyi files and a critical fix for the creation of the preferences page.&lt;br /&gt;&lt;br /&gt;For EGit, &lt;a href=&quot;https://wiki.eclipse.org/EGit/New_and_Noteworthy/4.11&quot;&gt;https://wiki.eclipse.org/EGit/New_and_Noteworthy/4.11&lt;/a&gt; has more details!&lt;br /&gt;&lt;br /&gt;Enjoy!</description>
 	<pubDate>Wed, 21 Mar 2018 19:03:04 +0000</pubDate>
 	<author>noreply@blogger.com (Fabio Zadrozny)</author>
-</item>
-<item>
-	<title>Holger Voormann: Eclipse Oxygen.3 IDE Improvements: Java, Gradle and PHP</title>
-	<guid isPermaLink="false">http://eclipsehowl.wordpress.com/?p=1390</guid>
-	<link>https://eclipsehowl.wordpress.com/2018/03/21/eclipse-oxygen-3-ide-improvements-java-gradle-and-php/</link>
-	<description>&lt;p&gt;Eclipse Oxygen.3 is the last quarterly update of &lt;a href=&quot;http://www.eclipse.org/oxygen/&quot;&gt;Oxygen&lt;/a&gt;. Thanks to everyone who has contributed in any way! Even if the main focus is already on Photon, which will be released on June 27, it is worth updating your Eclipse IDE (unless you want to test a &lt;a href=&quot;https://www.eclipse.org/downloads/index-developer.php?photon&quot;&gt;pre-version of Photon&lt;/a&gt; instead).&lt;/p&gt;
-&lt;p&gt;As usual, I have made a short video that shows the IDE improvements that I find most noteworthy in action:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;aligncenter size-full wp-image-1391&quot; height=&quot;253&quot; src=&quot;https://eclipsehowl.files.wordpress.com/2018/03/eclipse_oxygen_3_ide_improvements.png?w=450&amp;amp;h=253&quot; width=&quot;450&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=24s&quot; rel=&quot;noopener&quot;&gt;Java:&lt;/a&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=28s&quot; rel=&quot;noopener&quot;&gt;Pasting of “module-info.java” snippets into source folder&lt;/a&gt; (&lt;a href=&quot;https://bugs.eclipse.org/522022&quot; rel=&quot;noopener&quot;&gt;bug 522022&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=42s&quot; rel=&quot;noopener&quot;&gt;JUnit tests now also work in a module project&lt;/a&gt; (&lt;a href=&quot;https://bugs.eclipse.org/525948&quot; rel=&quot;noopener&quot;&gt;bug 525948&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=51s&quot; rel=&quot;noopener&quot;&gt;Minor improvements, e. g. deprecate warning messages with “since” and “forRemoval”&lt;/a&gt; (&lt;a href=&quot;https://bugs.eclipse.org/526335&quot; rel=&quot;noopener&quot;&gt;bug 526335&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=1m06s&quot; rel=&quot;noopener&quot;&gt;Performance improvements, e. g. when compiling code that contains a lot of generic types&lt;/a&gt; (&lt;a href=&quot;https://bugs.eclipse.org/521438&quot; rel=&quot;noopener&quot;&gt;bug 521438&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=1m42s&quot; rel=&quot;noopener&quot;&gt;Java 10 support not built-in, but available via Eclipse Marketplace: http://marketplace.eclipse.org/content/java-10-support-oxygen&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=2m&quot; rel=&quot;noopener&quot;&gt;Gradle&lt;/a&gt; (see also &lt;a href=&quot;http://projects.eclipse.org/projects/tools.buildship/reviews/2.2.0-release-review&quot; rel=&quot;noopener&quot;&gt;Buildship 2.2&lt;/a&gt;):&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=2m10s&quot; rel=&quot;noopener&quot;&gt;Support of Java 9&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=2m16s&quot; rel=&quot;noopener&quot;&gt;Gradle editor with basic syntax highlighting&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=2m28s&quot; rel=&quot;noopener&quot;&gt;Automatic project synchronization (disabled by default)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=2m45s&quot; rel=&quot;noopener&quot;&gt;PHP&lt;/a&gt; (see also &lt;a href=&quot;https://wiki.eclipse.org/PDT/NewIn53&quot; rel=&quot;noopener&quot;&gt;PDT 5.3&lt;/a&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=2m45s&quot; rel=&quot;noopener&quot;&gt;):&lt;/a&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=2m51s&quot; rel=&quot;noopener&quot;&gt;PHP 7.2 and PHPUnit 7 support&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=3m18s&quot; rel=&quot;noopener&quot;&gt;Configurable problem severities on project and workspace level&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=3m28s&quot; rel=&quot;noopener&quot;&gt;Formatter improvements, e. g. exclude unknown tags in comments from being formatted&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=3m51s&quot; rel=&quot;noopener&quot;&gt;Content assist appears much quicker, especially in large files.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div&gt;&lt;a href=&quot;https://youtu.be/Y0-cO9wZj6w&quot;&gt;&lt;img alt=&quot;Eclipse Oxygen IDE Improvements: General, Java and Git&quot; class=&quot;alignnone&quot; height=&quot;82&quot; src=&quot;https://eclipsehowl.files.wordpress.com/2017/06/eclipse_oxygen_0_ide_improvements2.png?w=144&amp;amp;h=82&quot; width=&quot;144&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://youtu.be/wI3VC1lhbK8&quot;&gt;&lt;img alt=&quot;Eclipse Oxygen.1a IDE Improvements: Java 9, JUnit 5, General, Gradle and PHP&quot; class=&quot;alignnone&quot; height=&quot;82&quot; src=&quot;https://eclipsehowl.files.wordpress.com/2017/11/eclipse_oxygen_1_ide_improvements.png?w=144&amp;amp;h=82&quot; width=&quot;144&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://youtu.be/_EY1eeQtY_U&quot;&gt;&lt;img alt=&quot;Eclipse Oxygen.2 IDE Improvements: Java IDE, Git, C/C++&quot; class=&quot;alignnone&quot; height=&quot;82&quot; src=&quot;https://eclipsehowl.files.wordpress.com/2017/12/eclipse_oxygen_2_ide_improvements.png?w=144&amp;amp;h=82&quot; width=&quot;144&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;p&gt;Together with the previous Oxygen videos, you can view 72 improvements in action, in total about half an hour. Here are the direct chapter links (number of improvements in brackets):&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;General IDE (14)&lt;/strong&gt;: &lt;a href=&quot;https://youtu.be/Y0-cO9wZj6w?t=11s&quot;&gt;Oxygen.0 (11)&lt;/a&gt;, &lt;a href=&quot;https://youtu.be/wI3VC1lhbK8?t=6m26s&quot;&gt;Oxygen.1a (3)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Java and JUnit (33)&lt;/strong&gt;: &lt;a href=&quot;https://youtu.be/Y0-cO9wZj6w?t=4m4s&quot;&gt;Oxygen.0 (10)&lt;/a&gt;, &lt;a href=&quot;https://youtu.be/wI3VC1lhbK8?t=37s&quot;&gt;Oxygen.1a (13)&lt;/a&gt;, &lt;a href=&quot;https://youtu.be/_EY1eeQtY_U?t=26s&quot;&gt;Oxygen.2 (5)&lt;/a&gt;, &lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=24s&quot;&gt;Oxygen.3 (5)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Git (9)&lt;/strong&gt;: &lt;a href=&quot;https://youtu.be/Y0-cO9wZj6w?t=8m22s&quot;&gt;Oxygen.0 (5)&lt;/a&gt;, &lt;a href=&quot;https://youtu.be/_EY1eeQtY_U?t=1m36s&quot;&gt;Oxygen.2 (4)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Gradle (5)&lt;/strong&gt;: &lt;a href=&quot;https://youtu.be/wI3VC1lhbK8?t=7m54s&quot;&gt;Oxygen.1a (2)&lt;/a&gt;, &lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=2m&quot;&gt;Oxygen.3 (3)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;C/C++ (4)&lt;/strong&gt;: &lt;a href=&quot;https://youtu.be/_EY1eeQtY_U?t=2m40s&quot;&gt;Oxygen.2 (4)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;PHP (7)&lt;/strong&gt;: &lt;a href=&quot;https://youtu.be/wI3VC1lhbK8?t=7m54s&quot;&gt;Oxygen.1a (3)&lt;/a&gt;, &lt;a href=&quot;https://youtu.be/uJNzMGrbXbI?t=2m45s&quot;&gt;Oxygen.3 (4)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Thank you for watching and happy coding!&lt;/p&gt;</description>
-	<pubDate>Wed, 21 Mar 2018 14:00:02 +0000</pubDate>
 </item>
 
 </channel>

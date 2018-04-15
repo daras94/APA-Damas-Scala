@@ -65,17 +65,23 @@ object Tablero {
                               if (col == dim) {
                                    String.format("┣━ %s%-4s%s", Console.CYAN + Console.BOLD,  CAR_ROW_COLUMN.substring(row, row + 1), Console.RESET);
                               } else {
-                                   String.format("%s", "");
+                                   String.format("%s", "\uFEFF");
                               }
                     }).concat(if (((row + col) % 2 == 0)) Console.BLUE_B else Console.BLACK_B); // Dibujamos el tablero de damas.
                     if (col == dim ) {
                          out + Console.RESET
                     } else {
-                         val foreground = (Console.INVISIBLE, Console.RED, Console.WHITE, Console.CYAN, Console.GREEN, Console.YELLOW, Console.MAGENTA, Console.BLINK + Console.BLUE);
-                         val ficha = String.format(" %s ", if (bloque != POS_TAB_EMPTY) (if ((bloque - (bloque % 10)) > POS_TAB_EMPTY * 2) "■" else "●") else "‌ ");
+                         val foreground = (Console.INVISIBLE, Console.RED, Console.WHITE, Console.CYAN, Console.GREEN, Console.YELLOW, Console.MAGENTA, "\u001b[38;5;208m", "\u001b[38;5;216m");
+                         val ficha = String.format("\u2007%s\u2007", if (bloque != POS_TAB_EMPTY) {
+                              if ((bloque - (bloque % 10)) > POS_TAB_EMPTY * 2){
+                                   if ((bloque % 10) == 8) "\uD83D\uDF91" else "\u25FC"; // Reina Jug 2 = □ , Damas Jug 2 = ■
+                              } else {
+                                   if ((bloque % 10) == 8) "\uD83D\uDF88" else "\u25CF"; // Reina Jug 1 = ○ , Damas Jug 1 = ●
+                              }
+                         } else "‌\u2B07");
                          out + Console.BOLD + foreground.productElement(bloque % 10) + ficha + Console.RESET
                     }
-               } else "") + imprimirTablero(tablero, (row + (if (col == dim) 1 else 0)), (if (col < dim) (col + 1) else 0));
+               } else "\uFEFF") + imprimirTablero(tablero, (row + (if (col == dim) 1 else 0)), (if (col < dim) (col + 1) else 0));
           } else {
                return String.format("┣━ %s%-4s%s", Console.CYAN + Console.BOLD,  CAR_ROW_COLUMN.substring(row - 1, row), Console.RESET);;
           }
@@ -113,9 +119,9 @@ object Tablero {
                if (cont < 4 ) {
                     (if (cont == 2) {
                          this.imprimirTablero(tablero, 0, 0);
-                    } else "") + this.echoTablero(tablero, 1, cont + 1) 
+                    } else "\uFEFF") + this.echoTablero(tablero, 1, cont + 1) 
                } else {
-                    return ""    
+                    return "\uFEFF"    
                }
           }
      }
@@ -123,58 +129,74 @@ object Tablero {
      /**
       * 
       */
-     def damasPlayBom(tablero:List[Int], mov:(Int, Int, Int), turno:Int): (Boolean, Boolean, List[Int]) = {
+     def damasPlayBom(tablero:List[Int], mov:(Int, Int, Int), turno:Int): (Boolean, Boolean, List[Int], String) = {
           val dama:Int = tablero((mov._1 * Math.sqrt(tablero.length).toInt) + mov._2);
           if ((dama != POS_TAB_EMPTY) && (if (turno == 0) 30 else 20).equals(dama - (dama % 10))) {
                val movH    = Array(-1, 1).apply((mov._3 % 10));					        // Determinamos el movimiento horizontal en funcion de la direcion.
 			val movV    = Array(-1, 1).apply(((mov._3 - (mov._3 % 10)) / 10) - 1);        // Determinamos el movimiento vertical en funcion de la direcion.
-               if (!isCamarada(tablero, movV, movH, mov._1, mov._2, 0)) {
-                    val tab = this.setMovGamen(tablero, movV, movH, mov._1, mov._2, (if ((dama % 10) <= 2) 1 else (dama % 10)), 0, false);
-                    return new Tuple3(false, false, tab);
+               if (isValido(tablero, movV, movH, mov._1, mov._2, 0)) {
+                    val event = new StringBuilder
+                    val tab   = this.setMovGamen(tablero, movV, movH, mov._1, mov._2, (if ((dama % 10) <= 2) 1 else (dama % 10)), 0, event, false);
+                    return new Tuple4(false, false, tab, event.toString());
                } else {
-                    println(" ❈ " + Console.RED + "ERROR" + Console.RESET + ": La jugada realizada nos se puede cosidera una jugada valida !!!");
-                    return new Tuple3(false, true, tablero);
+                    return new Tuple4(false, true, tablero, " ❈ " + Console.RED + "ERROR" + Console.RESET + ": La jugada realizada nos se puede cosidera una jugada valida !!!");
                }
           } else {
-               println(" ❈ " + Console.RED + "ERROR" + Console.RESET + ": NO pudee mover la ficha selecionada, las fichas que usted pude tocar son '" + (if (turno == 0) "■" else "●") + "' !!!");
-               return new Tuple3(false, true, tablero);    
+               return new Tuple4(false, true, tablero, " ❈ " + Console.RED + "ERROR" + Console.RESET + ": NO pudee mover la ficha selecionada, las fichas que usted pude tocar son '" + (if (turno == 0) "■" else "●") + "' !!!");    
           }
      }
      
      /**
-      * 
+      * Determina si el movimiento de la jugada introducida en funcion del tipo
+      * de ficha es valido teniendo en cuenta las reinas y las damas y que los
+      * peones puedan realizar un salto.
       */
-     private def isCamarada(tablero:List[Int], movV:Int, movH:Int, row:Int, col:Int, pos:Int): Boolean = {
+     private def isValido(tablero:List[Int], movV:Int, movH:Int, row:Int, col:Int, pos:Int): Boolean = {
           val isMovValido = ((col + ((pos + 1) * movH) > -1) && (col + ((pos + 1) * movH) < Math.sqrt(tablero.length).toInt)) &&
                             ((row + ((pos + 1) * movV) > -1) && (row + ((pos + 1) * movV) < Math.sqrt(tablero.length).toInt));
           if (isMovValido) {
-               val fichInMov = tablero((row + (pos * movV)) * (Math.sqrt(tablero.length).toInt) + (col + (pos * movH)));
-               val victima   = tablero((row + ((pos + 1) * movV)) * (Math.sqrt(tablero.length).toInt) + (col + ((pos + 1) * movH)));
+               val fichInMov   = tablero((row + (pos * movV)) * (Math.sqrt(tablero.length).toInt) + (col + (pos * movH)));
+               val victima     = tablero((row + ((pos + 1) * movV)) * (Math.sqrt(tablero.length).toInt) + (col + ((pos + 1) * movH)));
+               val isJmpValido = ((col + ((pos + 2) * movH) > -1) && (col + ((pos + 2) * movH) < Math.sqrt(tablero.length).toInt)) &&
+                                 ((row + ((pos + 2) * movV) > -1) && (row + ((pos + 2) * movV) < Math.sqrt(tablero.length).toInt));
                val isDriValido:Boolean = (fichInMov % 10) match {
-                    case 9 ⇒ true;
+                    case 8 ⇒ true;
                     case _ ⇒ 
+                         val salto = if (isJmpValido) tablero((row + ((pos + 2) * movV)) * (Math.sqrt(tablero.length).toInt) + (col + ((pos + 2) * movH))) else POS_TAB_EMPTY;
                          (fichInMov - (fichInMov % 10)) match {
-                              case 30 ⇒ (movV == -1)
-                              case 20 ⇒ (movV ==  1)
+                              case 30 ⇒ (movV == -1) && (((victima % 10) == 0) || ((salto == POS_TAB_EMPTY) && isJmpValido));
+                              case 20 ⇒ (movV ==  1) && (((victima % 10) == 0) || ((salto == POS_TAB_EMPTY) && isJmpValido));
                          }
-                         
                }
-               return isMovValido && isDriValido && (victima - ((victima % 10)) == (fichInMov - (fichInMov % 10)));
+               return isMovValido && isDriValido && ((victima - (victima % 10)) != (fichInMov - (fichInMov % 10)));
           }
-          return !isMovValido;
+          return isMovValido;
      }
 
      /**
       * 
       */
-     private def setMovGamen(tablero:List[Int], movV:Int, movH:Int, row:Int, col:Int, type_bom:Int, cont: Int, isPacMan:Boolean): List[Int] = {
+     private def setMovGamen(tablero:List[Int], movV:Int, movH:Int, row:Int, col:Int, type_bom:Int, cont:Int, event:StringBuilder, isPacMan:Boolean): List[Int] = {
           if(cont < type_bom){
-               if (!isCamarada(tablero, movV, movH, row, col, cont) && !isPacMan) {
-                    val posVictima  = (row + ((cont + 1) * movV))* Math.sqrt(tablero.length).toInt + (col + ((cont + 1) * movH));
-                    val posActual   = (row + (cont * movV))* Math.sqrt(tablero.length).toInt + (col + (cont * movH));
-                    val isSetPacMan = tablero(posVictima) != POS_TAB_EMPTY;				 
-                    val tab = this.insertMovimiento(tablero, posActual, posVictima, tablero(posActual), 0);
-                    this.setMovGamen(tab, movV, movH, row, col, type_bom, cont + 1, isSetPacMan);
+               if (!isPacMan && isValido(tablero, movV, movH, row, col, cont)) {
+                    val posVictima  = (row + ((cont + 1) * movV)) * Math.sqrt(tablero.length).toInt + (col + ((cont + 1) * movH));
+                    val posSalto    = (row + ((cont + 2) * movV)) * Math.sqrt(tablero.length).toInt + (col + ((cont + 2) * movH));
+                    val posActual   = (row + (cont * movV)) * Math.sqrt(tablero.length).toInt + (col + (cont * movH));
+                    val isSetPacMan = (tablero(posVictima) != POS_TAB_EMPTY);	
+                    val fichaInsert = (tablero(posActual) - (tablero(posActual) % 10)) match {     // Determina si la ficha se pude coronar en el movimiento en curso.
+                         case 20 | 30 ⇒ 
+                              if (((tablero(posActual) % 10) != 8) && (((row + ((cont + 1) * movV)) == 0) || ((row + ((cont + 1) * movV)) == (Math.sqrt(tablero.length).toInt)))) {
+                                   event.append(" ❈ " + Console.GREEN + "Evento " + Console.RESET + ": El peon se " + Console.RED + "CORONO" + Console.RESET + " Larga vida a la REINA !!!");
+                                   if (Setting.sound) {
+                                        UtilDamas.clipSoundEfect("get_king.wav").start();  
+                                   }
+                                   (tablero(posActual) - (tablero(posActual) % 10)) + 8;           // Convertimos al peon en reina.
+                              } else {
+                                   tablero(posActual);
+                              }
+                    }
+                    val tab = this.insertMovimiento(tablero, posActual, posVictima, (if (isSetPacMan && ((tablero(posActual) % 10) != 8)) posSalto else -1), fichaInsert, 0);
+                    this.setMovGamen(tab, movV, movH, row, col, type_bom, cont + 1, event, isSetPacMan);
                } else {
                     if (isPacMan) {
                          val tab_bom = cont match {
@@ -185,10 +207,12 @@ object Tablero {
                               case 7 => Nil;     // BOM BUILD
                               case _ => tablero; // BOM BUILD
                          }
-                         println(" ❈ " + Console.GREEN + "Evento " + Console.RESET + ":La dama se trasmuto en PacMan y " + Console.RED + "MATO" + Console.RESET + " WAKKA WAKKA !!!");
-                         UtilDamas.clipSoundEfect("super-pacman_wakka.wav").start();
+                         event.append(" ❈ " + Console.GREEN + "Evento " + Console.RESET + ":El peon se trasmuto en PacMan y " + Console.RED + "MATO" + Console.RESET + " WAKKA WAKKA !!!");
+                         if (Setting.sound) {
+                              UtilDamas.clipSoundEfect("captura_wakka.wav").start();  
+                         }
                     }
-                    this.setMovGamen(tablero, movV, movH, row, col, type_bom, type_bom + 1, isPacMan);
+                    this.setMovGamen(tablero, movV, movH, row, col, type_bom, type_bom, event, isPacMan);
                }
           } else {
                return tablero;
@@ -196,16 +220,17 @@ object Tablero {
      }
      
      /**
-      * Metodo el cual se encarga de insertar los movimentos de cada jugador 
+      * Metodo el cual se encarga de insertar los movimentos de cada jugador y
+      * deejectuar los saltos de los peones si esto se dieran.
       */
-     private def insertMovimiento(tablero: List[Int], actual:Int, victima:Int, value:Int, cont:Int): List[Int] = {
+     private def insertMovimiento(tablero: List[Int], actual:Int, victima:Int, salto:Int, value:Int, cont:Int): List[Int] = {
           if (cont < tablero.length) {
-               val value_aux = (if (cont == actual) POS_TAB_EMPTY else value);
-               if ((actual == cont) || (victima == cont)) {
-                    val (act, vic) = ((if (cont == actual) 0 else actual), (if (cont == victima) 0 else victima));
-                    value_aux :: insertMovimiento(tablero, act, vic, value, (cont + 1));
+               val value_aux = (if (cont == actual || ((salto != -1) && cont == victima)) POS_TAB_EMPTY else value);
+               if ((actual == cont) || (victima == cont) || (salto == cont)) {
+                    val (act, vic, jmp) = ((if (cont == actual) 0 else actual), (if (cont == victima) 0 else victima), (if (cont == salto) 0 else salto));
+                    value_aux :: insertMovimiento(tablero, act, vic, jmp, value, (cont + 1));
                } else {
-                    tablero(cont) :: insertMovimiento(tablero, actual, victima, value, (cont + 1));    
+                    tablero(cont) :: insertMovimiento(tablero, actual, victima, salto, value, (cont + 1));    
                }
           } else {
                return Nil;
@@ -237,11 +262,11 @@ object Tablero {
           }
      }
      
-     /*def checkGamen(numFich:(Int, Int)): Boolean = {
+     def checkGamen(numFich:(Int, Int)): Boolean = {
           val aux_numfichas = (numFich._1 - numFich._2);
           aux_numfichas match {
                case 0 | 1 ⇒ true;
           }
-     }*/
+     }
      
 }

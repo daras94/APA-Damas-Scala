@@ -53,7 +53,7 @@ object UtilDamas {
           val image = new BufferedImage(textART.length()*10, textART.length()*10, BufferedImage.TYPE_INT_RGB);
           try { 
                val graphics2D = image.createGraphics();
-               image.getGraphics.setFont(new Font("Dialog", Font.PLAIN, 8));
+               image.getGraphics.setFont(new Font("Sans", Font.PLAIN, 8));
                graphics2D.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
                graphics2D.drawString(textART, 6, 12);
                this.generateTextArt(image, textART.length()*9, textART.length()*7, textART.length()*7, new StringBuilder, 31, subText);
@@ -68,7 +68,7 @@ object UtilDamas {
      private def generateTextArt(art:BufferedImage, height:Int, width:Int, x:Int, sb:StringBuilder, cont:Int, sms:String): Unit = {
           if (width != 0) {
                if (height != 0) {
-                    sb.append(if (art.getRGB(height, width) == -16777216) " " else if (art.getRGB(height, width) == -1) "▢" else "▮");
+                    sb.append(if (art.getRGB(height, width) == -16777216) "\u0020" else if (art.getRGB(height, width) == -1) "\u25A2" else "\u25AE");
                } else {
                     if (!sb.toString().trim().isEmpty) {
                          sb.append("\n").reverse;     // Coreciones para evitar que muestre el text art espejado.
