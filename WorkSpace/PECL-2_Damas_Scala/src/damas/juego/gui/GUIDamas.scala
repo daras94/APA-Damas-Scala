@@ -6,6 +6,7 @@ import scala.swing._
 import scala.swing.event._
 import javax.swing.JOptionPane
 import javax.swing.WindowConstants
+import javax.swing.SwingConstants._
 import java.awt.{ Graphics2D, Color }
 import java.awt.{ Color, Graphics2D, BasicStroke }
 import java.awt.geom._
@@ -14,7 +15,6 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage
 import java.io._
 import damas.juego._
-import damas.util.UtilDamas
 
 /**
  * @author Daniel
@@ -35,7 +35,11 @@ class TableroGUI(grid: List[Int]) {
 //clase para dibujar el tablero
 class dibujarTablero(val tablero: TableroGUI, val tamaño: Int) extends Component {
 
-  preferredSize = new Dimension(520, 520)
+  tamaño match {
+    case 8  => preferredSize = new Dimension(300, ) //tamaño de la ventana
+    case 16 => preferredSize = new Dimension(500, 400)
+    case 32 => preferredSize = new Dimension(500, 400)
+  }
   var direccion = 0
 
   listenTo(mouse.clicks)
@@ -43,7 +47,6 @@ class dibujarTablero(val tablero: TableroGUI, val tamaño: Int) extends Componen
     case MouseClicked(_, p, _, _, _) => mouseClick(p.x, p.y)
   }
 
-  // returns squareSide, x0, y0, wid
   def squareGeometry: (Int, Int, Int, Int) = {
     val d = size
     val squareSide = d.height min d.width
@@ -85,19 +88,25 @@ class dibujarTablero(val tablero: TableroGUI, val tamaño: Int) extends Componen
       for (y <- 0 until tamaño) {
         var damas = tablero(x, y, tamaño)
         damas match {
-          case 32 =>
-          //  val photo = ImageIO.read(getClass().getResource("/Images/" + "pacman.png"))
-          //  val canvas = new BufferedImage(photo.getWidth, photo.getHeight, BufferedImage.TYPE_INT_RGB)
-          //  val ng = canvas.createGraphics()
-          // val coordenadaX = x0 + x * wid + 10
-          //  val coordenadaY = y0 + y * wid + 10
-          //  ng.drawRenderedImage(photo, java.awt.geom.AffineTransform.getTranslateInstance(coordenadaX, coordenadaY))
-          //g.drawImage(photo, x0 + x * wid + 10, y0 + y * wid + 10, photo.getWidth-20, photo.getWidth-20 , null)
+          case 32 => //ficha J1
+            // val photo = ImageIO.read(getClass().getResource("/Images/" + "pacman.png"))
+            // val canvas = new BufferedImage(photo.getWidth, photo.getHeight, BufferedImage.TYPE_INT_RGB)
+            // val ng = canvas.createGraphics()
+            // val coordenadaX = x0 + x * wid + 10
+            // val coordenadaY = y0 + y * wid + 10
+            // ng.drawRenderedImage(photo, java.awt.geom.AffineTransform.getTranslateInstance(coordenadaX, coordenadaY))
+            //g.drawImage(photo, x0 + x * wid + 10, y0 + y * wid + 10, photo.getWidth-20, photo.getWidth-20 , null)
             g.setColor(colores(0))
             g.fill(new Rectangle2D.Double(x0 + x * wid + 10, y0 + y * wid + 10, wid - 20, wid - 20))
-          case 21 =>
+          case 21 => //ficha J2
             g.setColor(colores(1))
             g.fill(new Ellipse2D.Double(x0 + x * wid + 10, y0 + y * wid + 10, wid - 20, wid - 20))
+          case 30 => //dama J1
+            g.setColor(Color.ORANGE)
+            g.draw(new Rectangle2D.Double(x0 + x * wid + 10, y0 + y * wid + 10, wid - 20, wid - 20))
+          case 28 => //dama J2
+            g.setColor(Color.ORANGE)
+            g.draw(new Ellipse2D.Double(x0 + x * wid + 10, y0 + y * wid + 10, wid - 20, wid - 20))
           case _ => //Bombas
             if (damas % 10 >= 2 && damas != 10) {
               g.setColor(colores(damas % 10))
@@ -137,16 +146,21 @@ case class dibujarTableroEvento(x: Int, y: Int) extends Event
 class mostrarTablero(var turno: String, val tablero: TableroGUI, val tamaño: Int) extends Frame {
 
   title = "Damas BOM for Scala" //titulo de la ventana
-  preferredSize = new Dimension(700, 700) //tamaño de la ventana
+  this.resizable_=(true)
+  tamaño match {
+    case 8  => preferredSize = new Dimension(600, 300) //tamaño de la ventana
+    case 16 => Color.cyan
+    case 32 => Color.green
+  }
   val labelTurno = new Label
   val numfichasJ1 = new Label
   val numfichasJ2 = new Label
+  var evento = new Label
   val numfichas = Tablero.numFichasXjugadorInCurse(tablero.getTablero, 0, (0, 0))
-  labelTurno.text = "Turno del %s".format(turno)
-  numfichasJ1.text = "Fichas restantes del jugador 1: " + numfichas._1.toString()
-  numfichasJ2.text = "Fichas restantes del jugador 2: " + numfichas._2.toString()
-  val caracteristicas = new Label
-  caracteristicas.text = labelTurno.text+numfichasJ1.text+numfichasJ2.text
+  labelTurno.text = " ❈❈❈❈❈ Turno del %s".format(turno) +" ❈❈❈❈❈"
+  numfichasJ1.text= " ❈❈❈❈❈ Fichas Jugador 1: " + numfichas._1.toString() +" ❈❈❈❈❈"
+  numfichasJ2.text= " ❈❈❈❈❈ Fichas Jugador 2: " + numfichas._2.toString() +" ❈❈❈❈❈"
+  evento.text= " ❈ Evento: "
   val canvas = new dibujarTablero(tablero, tamaño)
   var x0, y0 = 0
   var direccion = 0
@@ -155,10 +169,12 @@ class mostrarTablero(var turno: String, val tablero: TableroGUI, val tamaño: In
    */
   contents = new BoxPanel(Orientation.Horizontal) {
     contents += canvas
-    contents += labelTurno
-    contents += numfichasJ1
-    contents += numfichasJ2
-    
+    contents += new BoxPanel(Orientation.Vertical) {
+      labelTurno.verticalTextPosition_=(Alignment.Center)
+      contents += labelTurno
+      contents += numfichasJ1
+      contents += numfichasJ2
+    }
     contents += Swing.VStrut(10)
     border = Swing.EmptyBorder(10, 10, 10, 10)
   }
@@ -182,13 +198,13 @@ class mostrarTablero(var turno: String, val tablero: TableroGUI, val tamaño: In
         } else {
           if (x > x0 && y > y0) {
             direccion = 21
-            println("dibujarTableroEvento en " + x + " " + y + "" + direccion)
+            println("dibujarTableroEvento en " + x + " " + y + " " + direccion)
           } else if (x > x0 && y < y0) {
             direccion = 11
-            println("dibujarTableroEvento en " + x + " " + y + "" + direccion)
+            println("dibujarTableroEvento en " + x + " " + y + " " + direccion)
           } else if (x < x0 && y < y0) {
             direccion = 10
-            println("dibujarTableroEvento en " + x + " " + y + "" + direccion)
+            println("dibujarTableroEvento en " + x + " " + y + " " + direccion)
           } else if (x > x0 && y > y0) {
             direccion = 20
             println("dibujarTableroEvento en " + x + " " + y + "" + direccion)
@@ -198,6 +214,7 @@ class mostrarTablero(var turno: String, val tablero: TableroGUI, val tamaño: In
             case "Jugador 2" | "Maquina" => 1
           }
           var nuevoTablero = Tablero.damasPlayBom(tablero.getTablero, (y0, x0, direccion), t)
+          evento.text = "Evento: " + nuevoTablero._4
           actualizarTablero(nuevoTablero._3)
         }
       }
@@ -360,7 +377,7 @@ object GUIDamas extends Frame {
     text = "Estadísticas"
   }
 
-  var tablero = Array[String]() //para guardar la partida
+  //var tablero = Array[String]() //para guardar la partida
 
   //configuracion del contenido de la ventana
   contents = new BoxPanel(Orientation.Vertical) {
