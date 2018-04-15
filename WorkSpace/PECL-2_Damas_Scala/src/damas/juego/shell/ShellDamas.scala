@@ -193,9 +193,9 @@ object ShellDamas {
           str.append("\n ").append(String.format("┃ ❈ %s Configuracion del tablero de juego                          %-47s ┃", Console.CYAN, Console.RESET));
           str.append("\n ").append(String.format("┃   %s-----------------------------------------------------------  %-47s ┃", Console.CYAN, Console.RESET));
           str.append("\n ").append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛").append("\n");
-          str.append("\n ").append(String.format(" %-10s 1 %s) - %s (%s%s%s).", Console.MAGENTA, Console.RESET, "8x8",   Console.GREEN, "64 celdas 24 fichas en total",   Console.RESET));
-          str.append("\n ").append(String.format(" %-10s 2 %s) - %s (%s%s%s).", Console.MAGENTA, Console.RESET, "16x16", Console.GREEN, "256 celdas 224 fichas en total", Console.RESET));
-          str.append("\n ").append(String.format(" %-10s 3 %s) - %s (%s%s%s).", Console.MAGENTA, Console.RESET, "32x32", Console.GREEN, "1024 celdas ? fichas en total",  Console.RESET)).append("\n");
+          str.append("\n ").append(String.format(" %-10s 1 %s) - %s (%s%s%s).", Console.MAGENTA, Console.RESET, "8x8  ", Console.GREEN, "64 celdas 24 fichas en total",    Console.RESET));
+          str.append("\n ").append(String.format(" %-10s 2 %s) - %s (%s%s%s).", Console.MAGENTA, Console.RESET, "16x16", Console.GREEN, "256 celdas 96 fichas en total",   Console.RESET));
+          str.append("\n ").append(String.format(" %-10s 3 %s) - %s (%s%s%s).", Console.MAGENTA, Console.RESET, "32x32", Console.GREEN, "1024 celdas 224 fichas en total", Console.RESET)).append("\n");
           str.append("\n ").append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
           str.append("\n ").append(String.format("┃ ❈ %s NOTA %s: %-96s ┃", Console.RED, Console.RESET, "Pulsa 0 para volver al menu de configuracion sin guardar cambios."));
           str.append("\n ").append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"); 

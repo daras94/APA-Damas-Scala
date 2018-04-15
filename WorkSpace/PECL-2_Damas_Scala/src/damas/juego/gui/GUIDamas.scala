@@ -36,7 +36,7 @@ class TableroGUI(grid: List[Int]) {
 class dibujarTablero(val tablero: TableroGUI, val tamaño: Int) extends Component {
 
   tamaño match {
-    case 8  => preferredSize = new Dimension(300, ) //tamaño de la ventana
+    case 8  => preferredSize = new Dimension(300, 400) //tamaño de la ventana
     case 16 => preferredSize = new Dimension(500, 400)
     case 32 => preferredSize = new Dimension(500, 400)
   }
