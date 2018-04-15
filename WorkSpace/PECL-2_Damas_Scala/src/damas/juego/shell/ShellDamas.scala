@@ -99,10 +99,11 @@ object ShellDamas {
                               UtilDamas.printtextArt("Nivel " + nivel, "")
                               val dim: Int = Math.sqrt(TabD._3.length).toInt * 2;                      // Dimension del nuevo tablero.
                               val fichXJug = Tab.numFichasXjugadorInit(dim);                           // Determinamos el numero def fichas a colocar.
-                              if (Cfg.getSound()) {                                                         // Segun configuracion ejecuta o no los efectos de sonido.
+                              val dificult = dificultad + (if(dificultad < 4) 2 else 0);               // Calaculamos el nivel de dificultada de forma creciente. 
+                              if (Cfg.getSound()) {                                                    // Segun configuracion ejecuta o no los efectos de sonido.
                                    UtilDamas.clipSoundEfect("level_up.wav").start();                   // Efecto de sonido leven UP.
                               }
-                              this.playDamasBom(Tab.generarTablero(dim, dim, dim, dificultad), turno, (nivel + 1), dificultad, false, (fichXJug, fichXJug), new String, modo_game);
+                              this.playDamasBom(Tab.generarTablero(dim, dim, dim, dificult), turno, (nivel + 1), dificult, false, (fichXJug, fichXJug), new String, modo_game);
                          } 
                     } 
                case None    ⇒
