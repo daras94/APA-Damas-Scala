@@ -204,14 +204,16 @@ object Tablero {
                               case 7 => tablero; // BOM BUILD
                               case _ => tablero; // BOM BUILD
                          }
-                         event.append(" ❈ " + Console.GREEN + "Evento " + Console.RESET + ":El peon se trasmuto en PacMan y " + Console.RED + "MATO" + Console.RESET + " WAKKA WAKKA !!!");
-                         if (Setting.getSound()) {
-                              UtilDamas.clipSoundEfect("captura_wakka.wav").start();  
-                         }
                     }
                     this.setMovGamen(tablero, movV, movH, row, col, type_bom, type_bom, event, isPacMan);
                }
           } else {
+               if (isPacMan) {
+                    event.append(" ❈ " + Console.GREEN + "Evento " + Console.RESET + ":El peon se trasmuto en PacMan y " + Console.RED + "MATO" + Console.RESET + " WAKKA WAKKA !!!");
+                    if (Setting.getSound()) {
+                         UtilDamas.clipSoundEfect("captura_wakka.wav").start();  
+                    }
+               }
                return (tablero, event.toString());
           } 
      }
