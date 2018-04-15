@@ -1,5 +1,7 @@
 package damas
 
+import damas.util.Setting
+
 //import java.awt._;
 
 /**
@@ -32,10 +34,14 @@ object TestMainDamas {
           val opc:String = Console.in.readLine();
           opc match {
                case "1" ⇒ 
-                    Util.clipSoundEfect("arcade_echo.wav").start();   // Efecto de sonido del Inicio.
+                    if (Setting.getSound()) {
+                         Util.clipSoundEfect("arcade_echo.wav").start();   // Efecto de sonido del Inicio.
+                    }
                     Gui.InitGUI();                                    // Inicializa la interfaces Grafica.
                case "2" ⇒ 
-                    Util.clipSoundEfect("arcade_echo.wav").start();   // Efecto de sonido del Inicio.
+                    if (Setting.getSound()) {
+                         Util.clipSoundEfect("arcade_echo.wav").start();   // Efecto de sonido del Inicio.
+                    }
                     Cmd.initShell();                                  // Inicializa la interfaces Shell.
                case _ ⇒
                     if (opc != "0") {

@@ -8,5 +8,5 @@ import damas.util.Setting
 package object shell {
 
      val Tab = Tablero;               // Inicializacion del Tablero.
-     val Cfg = Setting;          // Inicializacion de las  configuraciones del juego.
+     val Cfg = Setting;               // Inicializacion de las  configuraciones del juego.
 }

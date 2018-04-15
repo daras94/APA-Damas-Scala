@@ -27,7 +27,7 @@ object UtilDamas {
           val clip = AudioSystem.getClip;
           clip.open(audioIn);
           return clip;
-     }
+     }     
 
      /**
        * Fucion que borra el contenido del pront en funcion de S.O en el que se
@@ -63,7 +63,7 @@ object UtilDamas {
      }
           
      /**
-      * 
+      * Metodo que se encarga de gegerar y pintar el text Art.
       */
      private def generateTextArt(art:BufferedImage, height:Int, width:Int, x:Int, sb:StringBuilder, cont:Int, sms:String): Unit = {
           if (width != 0) {

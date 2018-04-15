@@ -1,8 +1,6 @@
 package damas.juego
 import scala.util.Random;
 import damas.util._;
-import scala.collection.immutable;
-
 /**
   * @author david
   */
@@ -65,7 +63,7 @@ object Tablero {
                               if (col == dim) {
                                    String.format("┣━ %s%-4s%s", Console.CYAN + Console.BOLD,  CAR_ROW_COLUMN.substring(row, row + 1), Console.RESET);
                               } else {
-                                   String.format("%s", "\uFEFF");
+                                   String.format("%s", "");
                               }
                     }).concat(if (((row + col) % 2 == 0)) Console.BLUE_B else Console.BLACK_B); // Dibujamos el tablero de damas.
                     if (col == dim ) {
@@ -78,10 +76,10 @@ object Tablero {
                               } else {
                                    if ((bloque % 10) == 8) "\uD83D\uDF88" else "\u25CF"; // Reina Jug 1 = ○ , Damas Jug 1 = ●
                               }
-                         } else "‌\u2B07");
+                         } else "‌ ");
                          out + Console.BOLD + foreground.productElement(bloque % 10) + ficha + Console.RESET
                     }
-               } else "\uFEFF") + imprimirTablero(tablero, (row + (if (col == dim) 1 else 0)), (if (col < dim) (col + 1) else 0));
+               } else "") + imprimirTablero(tablero, (row + (if (col == dim) 1 else 0)), (if (col < dim) (col + 1) else 0));
           } else {
                return String.format("┣━ %s%-4s%s", Console.CYAN + Console.BOLD,  CAR_ROW_COLUMN.substring(row - 1, row), Console.RESET);;
           }
@@ -119,9 +117,9 @@ object Tablero {
                if (cont < 4 ) {
                     (if (cont == 2) {
                          this.imprimirTablero(tablero, 0, 0);
-                    } else "\uFEFF") + this.echoTablero(tablero, 1, cont + 1) 
+                    } else "") + this.echoTablero(tablero, 1, cont + 1) 
                } else {
-                    return "\uFEFF"    
+                    return ""    
                }
           }
      }
@@ -135,9 +133,8 @@ object Tablero {
                val movH    = Array(-1, 1).apply((mov._3 % 10));					        // Determinamos el movimiento horizontal en funcion de la direcion.
 			val movV    = Array(-1, 1).apply(((mov._3 - (mov._3 % 10)) / 10) - 1);        // Determinamos el movimiento vertical en funcion de la direcion.
                if (isValido(tablero, movV, movH, mov._1, mov._2, 0)) {
-                    val event = new StringBuilder
-                    val tab   = this.setMovGamen(tablero, movV, movH, mov._1, mov._2, (if ((dama % 10) <= 2) 1 else (dama % 10)), 0, event, false);
-                    return new Tuple4(false, false, tab, event.toString());
+                    val (tab, event)  = this.setMovGamen(tablero, movV, movH, mov._1, mov._2, (if ((dama % 10) <= 2) 1 else (dama % 10)), 0, new StringBuilder, false);
+                    return new Tuple4(false, false, tab, event);
                } else {
                     return new Tuple4(false, true, tablero, " ❈ " + Console.RED + "ERROR" + Console.RESET + ": La jugada realizada nos se puede cosidera una jugada valida !!!");
                }
@@ -176,7 +173,7 @@ object Tablero {
      /**
       * 
       */
-     private def setMovGamen(tablero:List[Int], movV:Int, movH:Int, row:Int, col:Int, type_bom:Int, cont:Int, event:StringBuilder, isPacMan:Boolean): List[Int] = {
+     private def setMovGamen(tablero:List[Int], movV:Int, movH:Int, row:Int, col:Int, type_bom:Int, cont:Int, event:StringBuilder, isPacMan:Boolean): (List[Int], String) = {
           if(cont < type_bom){
                if (!isPacMan && isValido(tablero, movV, movH, row, col, cont)) {
                     val posVictima  = (row + ((cont + 1) * movV)) * Math.sqrt(tablero.length).toInt + (col + ((cont + 1) * movH));
@@ -187,7 +184,7 @@ object Tablero {
                          case 20 | 30 ⇒ 
                               if (((tablero(posActual) % 10) != 8) && (((row + ((cont + 1) * movV)) == 0) || ((row + ((cont + 1) * movV)) == (Math.sqrt(tablero.length).toInt)))) {
                                    event.append(" ❈ " + Console.GREEN + "Evento " + Console.RESET + ": El peon se " + Console.RED + "CORONO" + Console.RESET + " Larga vida a la REINA !!!");
-                                   if (Setting.sound) {
+                                   if (Setting.getSound()) {
                                         UtilDamas.clipSoundEfect("get_king.wav").start();  
                                    }
                                    (tablero(posActual) - (tablero(posActual) % 10)) + 8;           // Convertimos al peon en reina.
@@ -200,22 +197,22 @@ object Tablero {
                } else {
                     if (isPacMan) {
                          val tab_bom = cont match {
-                              case 3 => Nil;     // BOM BUILD
-                              case 4 => Nil;     // BOM BUILD
-                              case 5 => Nil;     // BOM BUILD
-                              case 6 => Nil;     // BOM BUILD
-                              case 7 => Nil;     // BOM BUILD
+                              case 3 => tablero; // BOM BUILD
+                              case 4 => tablero; // BOM BUILD
+                              case 5 => tablero; // BOM BUILD
+                              case 6 => tablero; // BOM BUILD
+                              case 7 => tablero; // BOM BUILD
                               case _ => tablero; // BOM BUILD
                          }
                          event.append(" ❈ " + Console.GREEN + "Evento " + Console.RESET + ":El peon se trasmuto en PacMan y " + Console.RED + "MATO" + Console.RESET + " WAKKA WAKKA !!!");
-                         if (Setting.sound) {
+                         if (Setting.getSound()) {
                               UtilDamas.clipSoundEfect("captura_wakka.wav").start();  
                          }
                     }
                     this.setMovGamen(tablero, movV, movH, row, col, type_bom, type_bom, event, isPacMan);
                }
           } else {
-               return tablero;
+               return (tablero, event.toString());
           } 
      }
      
