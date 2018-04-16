@@ -37,12 +37,12 @@ object TestMainDamas {
                     if (Setting.getSound()) {
                          Util.clipSoundEfect("arcade_echo.wav").start();   // Efecto de sonido del Inicio.
                     }
-                    Gui.InitGUI();                                    // Inicializa la interfaces Grafica.
+                    Gui.InitGUI();                                         // Inicializa la interfaces Grafica.
                case "2" ⇒ 
                     if (Setting.getSound()) {
                          Util.clipSoundEfect("arcade_echo.wav").start();   // Efecto de sonido del Inicio.
                     }
-                    Cmd.initShell();                                  // Inicializa la interfaces Shell.
+                    Cmd.initShell();                                       // Inicializa la interfaces Shell.
                case _ ⇒
                     if (opc != "0") {
                          println("\n - " + Console.RED + "ERROR: " + Console.RESET + "La opcion de juego seleccionda no es valida.");
@@ -50,7 +50,7 @@ object TestMainDamas {
                     }
           }
           if (opc != "0") this.main(args);   // Nos llamamos de nuevo de forma recursiba.
-          println(Console.GREEN + "\n - Has salido del juego amigo espero que te guste Scala ya que este juego lo patrocinan Linux OS y Mac OS \n   orgullosos OS de desarrollo !!" + Console.RESET);
+          println(Console.GREEN + "\n - Has salido del juego amigo espero que te guste Scala ya que este juego lo patrocinan Linux OS y Mac OS \n   orgullosos desarrollo !!" + Console.RESET);
           Thread.sleep(1000);
           System.exit(0);
      }

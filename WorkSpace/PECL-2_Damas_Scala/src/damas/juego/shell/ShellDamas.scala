@@ -35,21 +35,20 @@ object ShellDamas {
           val opcion: String = Console.in.readLine().toUpperCase();
           opcion match {
                case "1" | "2" | "3" ⇒
-                    var SetPlay:(List[Int], Int, Int, Int, (Int, Int), String, Boolean) = (Nil, 0, 0, 0, (0, 0), new String, false);
-                    if (opcion != "3") {
+                    val SetPlay:(List[Int], Int, Int, Int, (Int, Int), String, Boolean) = (if (opcion != "3") {
                          val dim      = Cfg.getDimTablero()
                          val tablero  = Tab.generarTablero(dim, dim, dim, Cfg.getDificultad());                 // Generamos el tablero de juego segun las configuraciones.
                          val fichXJug = Tab.numFichasXjugadorInit(Math.sqrt(tablero.length).toInt);             // Determinamos el numero def fichas a colocar.
-                         SetPlay = opcion match {
-                              case "1" => (tablero, 0, 0, Cfg.getDificultad(), (fichXJug, fichXJug), new String, (opcion.equals("2")));
-                              case "2" => (tablero, 0, 0, Cfg.getDificultad(), (fichXJug, fichXJug), new String, (opcion.equals("2")));
-                         };
                          if (Cfg.getSound()) {                                                                  // Segun configuracion se abilita odesabilita los efectos de sonido.
                               UtilDamas.clipSoundEfect("start_up.wav").start();                                 // Efecto de Audio de Start UP. 
                          }
+                         opcion match {
+                              case "1" => (tablero, 0, 0, Cfg.getDificultad(), (fichXJug, fichXJug), new String, false);
+                              case "2" => (tablero, 0, 0, Cfg.getDificultad(), (fichXJug, fichXJug), new String, true);
+                         };
                     } else {
-                         
-                    }
+                         (Nil, 0, 0, 0, (0, 0), new String, false);
+                    });
                     if (SetPlay._1 != Nil) {                                                                     // Inciamos paratida dos jugadores o cargamos una partida guardada.
                          playDamasBom(SetPlay._1, SetPlay._2, SetPlay._3, SetPlay._4, false, SetPlay._5, SetPlay._6, SetPlay._7);                 
                     }
@@ -87,11 +86,11 @@ object ShellDamas {
           } else {
                str.clear();                                                                            // Limpiamos el String Builder     
           };
-          str.append("\n").append(if (!event.isEmpty()) "\n" + TabD._4 else "");
-          val imput: String = this.imputMovGamen(TabD._3, turno, modo_game);                                    // Entrda de los jugadores y movimientos de la IA.
+          str.append(if (!event.isEmpty()) "\n" + TabD._4 else "");
+          val imput: String = this.imputMovGamen(TabD._3, turno, modo_game);                           // Entrda de los jugadores y movimientos de la IA.
           ((("([A-Z1-6]{1}):([A-Z1-6]{1}):((1|2){1}(0|1){1})").r).findFirstMatchIn(imput)) match {     // Expresion regular que define el formato de la jugadas.
                case Some(_) ⇒ 
-                    val jugada:(Int, Int, Int) = this.getJugada(imput);  
+                    val jugada:(Int, Int, Int) = this.getJugada(imput, 0, 0, 0);  
                     TabD = Tab.damasPlayBom(tablero, jugada, turno);                                   // Validamos la ficha selecionada y realizamos los movimentos y
                     if (!TabD._2) {
                          FicN = Tab.numFichasXjugadorInCurse(TabD._3, 0, (0, 0));                      // Recalculamos el numero de fichas de cada jugador.
@@ -105,7 +104,7 @@ object ShellDamas {
                               }
                               this.playDamasBom(Tab.generarTablero(dim, dim, dim, dificult), turno, (nivel + 1), dificult, false, (fichXJug, fichXJug), new String, modo_game);
                          } 
-                    } 
+                    }
                case None    ⇒
                     imput match {
                          case "S" ⇒ Nil
@@ -124,15 +123,19 @@ object ShellDamas {
       * retorna como una tupla de 3 ele mento la cual presenta el siguiente
       * formato (filas, columnas direcion).
       */
-     private def getJugada(imput:String): (Int, Int, Int) = {
-          var Jug:(Int, Int, Int) = (0, 0, 0)
-          try {
-               val jugada = imput.split(":");
-               Jug = (Tab.CAR_ROW_COLUMN.indexOf(jugada.apply(0)), Tab.CAR_ROW_COLUMN.indexOf(jugada.apply(1)), jugada.apply(2).toInt);
-          } catch {
-               case t: NullPointerException => t.getMessage(); // TODO: handle error
+     private def getJugada(imput:String, row:Int, col:Int, dir:Int): (Int, Int, Int) = {
+          if ((row, col, dir) == (0, 0, 0)) {
+               try {
+                    val jugada = imput.split(":");
+                    this.getJugada(imput, Tab.CAR_ROW_COLUMN.indexOf(jugada.apply(0)), Tab.CAR_ROW_COLUMN.indexOf(jugada.apply(1)), jugada.apply(2).toInt);
+               } catch {
+                    case t: NullPointerException => 
+                         t.getMessage(); // TODO: handle error
+                         return (row, col, dir);
+               } 
+          } else {
+               return new Tuple3(row, col, dir);    
           }
-          return Jug;
      }
      
      /**
@@ -175,8 +178,8 @@ object ShellDamas {
           str.append("\n ").append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"); 
           str.append("\n ").append("  ❈ Seleccione el nivel de dificultad de la partida: ")
           print(str);
-          val nivel: String = Console.in.readLine();
-          if (!((nivel >= "0") && (nivel <= "5"))) {
+          val nivel: String = Console.in.readLine().toUpperCase();
+          if (!((nivel >= "0") && (nivel <= "5")) && nivel != "X") {
                println("\n - " + Console.RED + "ERROR: " + Console.RESET + "El nivel de dificultad del juego no es valida.");;  
                Thread.sleep(500);
                this.setDificultad();
@@ -202,15 +205,19 @@ object ShellDamas {
           str.append("\n ").append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"); 
           str.append("\n ").append("  ❈ Seleccione un tamaño de tablero: ")
           print(str);
-          val dimension: String = Console.in.readLine();
-          if (!((dimension >= "1") && (dimension <= "3"))) {
+          val dim_conf: String = Console.in.readLine();
+          if (!((dim_conf >= "1") && (dim_conf <= "3")) && dim_conf != "0") {
                println("\n - " + Console.RED + "ERROR: " + Console.RESET + "Configuracion de tablero no es valida.");;  
                Thread.sleep(500);
                this.setDimension();
           }
-          return (if (dimension != "0") Array(8, 16, 32).apply(dimension.toInt - 1) else 0);
+          return (if (dim_conf != "0") Array(8, 16, 32).apply(dim_conf.toInt - 1) else 0);
      };
      
+     /**
+      * Metodos que establece la configuracion y modifica o rectifica la
+      * configuracion de fabrica del arcade.
+      */
      def menuConfigShell(): Unit = {
           UtilDamas.clear(); str.clear(); str.append("\n");                             // Limpiamos el prompt. y Vaciamos el StringBuilder.  
           str.append("\n ").append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
