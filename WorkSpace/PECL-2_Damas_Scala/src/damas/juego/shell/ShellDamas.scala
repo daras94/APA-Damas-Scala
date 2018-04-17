@@ -1,6 +1,7 @@
 package damas.juego.shell;
 
 import scala.util.matching._;
+import java.io.File;
 import damas.util._;
 
 /**
@@ -47,7 +48,12 @@ object ShellDamas {
                               case "2" => (tablero, 0, 0, Cfg.getDificultad(), (fichXJug, fichXJug), new String, true);
                          };
                     } else {
-                         Persistencia.changePlay("18-abr-2018 0:53:37.xml");
+                         val f_play = this.setChangePlay(Persistencia.getListOfFiles());
+                         if (f_play != null) {
+                              Persistencia.changePlay(f_play.getName()); 
+                         } else {
+                              new Tuple7(Nil, 0, 0, 0, (0, 0), new String, false);
+                         }
                     });
                     if (SetPlay._1 != Nil) {                                                                     // Inciamos paratida dos jugadores o cargamos una partida guardada.
                          this.playDamasBom(SetPlay._1, SetPlay._2, SetPlay._3, SetPlay._4, false, SetPlay._5, SetPlay._6, SetPlay._7);                 
@@ -107,7 +113,7 @@ object ShellDamas {
                     }
                case None    ⇒
                     imput match {
-                         case "S" ⇒ Persistencia.savePlayDamas(TabD._3, modo_game, nivel, turno, dificultad, numfichas);
+                         case "S" ⇒ TabD = Persistencia.savePlayDamas(TabD._3, modo_game, nivel, turno, dificultad, numfichas);
                          case "H" ⇒ Nil
                          case  _  ⇒
                               if (imput != "0") {                                                       // Mostramos los posibles errores de introducion de teclado.
@@ -211,14 +217,14 @@ object ShellDamas {
                Thread.sleep(500);
                this.setDimension();
           }
-          return (if (dim_conf != "0") Array(8, 16, 32).apply(dim_conf.toInt - 1) else 0);
+          return (if (dim_conf != "0") List(8, 16, 32).apply(dim_conf.toInt - 1) else 0);
      };
      
      /**
       * Metodos que establece la configuracion y modifica o rectifica la
       * configuracion de fabrica del arcade.
       */
-     def menuConfigShell(): Unit = {
+     private def menuConfigShell(): Unit = {
           UtilDamas.clear(); str.clear(); str.append("\n");                             // Limpiamos el prompt. y Vaciamos el StringBuilder.  
           str.append("\n ").append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
           str.append("\n ").append(String.format("┃   %s                                                             %-47s ┃", Console.CYAN, Console.RESET));
@@ -258,5 +264,31 @@ object ShellDamas {
           
           if (config != "0") this.menuConfigShell();
      }
+     
+     private def setChangePlay(f_list:List[File]): File = {
+          UtilDamas.clear(); str.clear(); str.append("\n");                             // Limpiamos el prompt. y Vaciamos el StringBuilder.  
+          str.append("\n ").append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+          str.append("\n ").append(String.format("┃   %s                                                             %-47s ┃", Console.CYAN, Console.RESET));
+          str.append("\n ").append(String.format("┃ ❈ %s Cargar partida Guarda                                       %-47s ┃", Console.CYAN, Console.RESET));
+          str.append("\n ").append(String.format("┃   %s-----------------------------------------------------------  %-47s ┃", Console.CYAN, Console.RESET));
+          str.append("\n ").append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛").append("\n");
+          if (!f_list.isEmpty) {
+               str.append("\n ").append(Persistencia.echoGetFileSave(f_list, 0)); 
+          } else {
+               str.append("\n ").append(String.format(" %50s%7s%4s ", Console.GREEN, "No Hay partidas Guardadas !!", Console.RESET)).append("\n"); 
+          }
+          str.append("\n ").append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+          str.append("\n ").append(String.format("┃ ❈ %s NOTA %s: %-96s ┃", Console.RED, Console.RESET, "Pulsa 0 para volver al menu principal del juego."));
+          str.append("\n ").append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"); 
+          str.append("\n ").append("  ❈ Seleccione la partida que dese cargar: ")
+          print(str);
+          val select_file: String = Console.in.readLine();
+          if (!((select_file >= "1") && (select_file <= f_list.length.toString())) && select_file != "0") {
+               println("\n - " + Console.RED + "ERROR: " + Console.RESET + "La opcion selecionada no es valida.");;  
+               Thread.sleep(500);
+               this.setChangePlay(Persistencia.getListOfFiles());
+          }
+          return (if (select_file != "0") f_list.apply(select_file.toInt - 1) else null);
+     };
      
 }
