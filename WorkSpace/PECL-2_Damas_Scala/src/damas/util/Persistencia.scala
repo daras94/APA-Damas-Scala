@@ -1,13 +1,18 @@
 package damas.util;
 
 // Imports
+import damas.util._;
 import scala.xml._;
 import java.util.Calendar;
 import scala.xml.dtd.{DocType, PublicID};
 import java.io.File;
 import java.io.OutputStreamWriter;
 import java.io.FileOutputStream;
-import damas.util._;
+import java.io.InputStream;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.BufferedReader;
 
 /**
  * @author david
@@ -78,5 +83,43 @@ object Persistencia {
                case t: Exception => t.printStackTrace() // TODO: handle error
           }
      }
+     
+     def changePlay(path:String): (List[Int], Int, Int, Int, (Int, Int), String, Boolean) = {
+          val xml = this.loadFilePlay(path, null);
+          val GetPlay:(List[Int], Int, Int, Int, (Int, Int), String, Boolean) = (if (xml != null) {
+               val (ia, dificultad)       = ((xml \\ "damas" \\ "play" \ "@ia").text,                           (xml \\ "damas" \\ "play" \ "@dificultad").text);
+               val (nivel, turno)         = ((xml \\ "damas" \\ "play" \ "nivel").text,                         (xml \\ "damas" \\ "play" \ "turno").text);
+               val (numFichJ1, numFichJ2) = ((xml \\ "damas" \\ "play" \ "fichasXJugadol" \ "@jugador-1").text, (xml \\ "damas" \\ "play" \ "fichasXJugadol" \ "@jugador-1").text);
+              
+               /*xml match {
+                    case  => 
+               }*/
+               new Tuple7(List(1, 1), turno.toInt, nivel.toInt, dificultad.toInt, (numFichJ1.toInt, numFichJ2.toInt), new String, ia.toBoolean);
+          } else {
+               println(" - " + Console.RED + "ERROR" + Console.RESET + ": La partida que intenta cargar no existe.");
+               new Tuple7(Nil, 0, 0, 0, (0, 0), new String, false);
+          });
+          return GetPlay;
+     }
+     
+     
+     private def loadFilePlay(path:String, xml:Elem): Elem = {
+          try {
+               if (xml == null) {
+                    val file = new File(Setting.getSavePath());
+                    if (file.exists()) {
+                         val is:Reader = new BufferedReader(new InputStreamReader(new FileInputStream(file.getPath() + "/" + path), "UTF-8"));
+                         this.loadFilePlay(path, XML.load(is));
+                    } 
+               }
+          } catch {
+                 case t: Exception => t.printStackTrace() // TODO: handle error
+          }
+          return xml;      
+     }
+     
+     /*private  def loadTablero(): List[Int] = {
+       
+     }*/
   
 }

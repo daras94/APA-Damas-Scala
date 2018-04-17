@@ -47,12 +47,12 @@ object ShellDamas {
                               case "2" => (tablero, 0, 0, Cfg.getDificultad(), (fichXJug, fichXJug), new String, true);
                          };
                     } else {
-                         (Nil, 0, 0, 0, (0, 0), new String, false);
+                         Persistencia.changePlay("17-abr-2018 17:04:38.xml");
                     });
                     if (SetPlay._1 != Nil) {                                                                     // Inciamos paratida dos jugadores o cargamos una partida guardada.
-                         playDamasBom(SetPlay._1, SetPlay._2, SetPlay._3, SetPlay._4, false, SetPlay._5, SetPlay._6, SetPlay._7);                 
+                         this.playDamasBom(SetPlay._1, SetPlay._2, SetPlay._3, SetPlay._4, false, SetPlay._5, SetPlay._6, SetPlay._7);                 
                     }
-               case "4" ⇒ this.menuConfigShell()
+               case "4" ⇒ this.menuConfigShell();
                case "X" ⇒ System.exit(0);
                case _ ⇒ 
                     if (opcion != "0") {
@@ -110,7 +110,7 @@ object ShellDamas {
                          case "S" ⇒ Persistencia.savePlayDamas(TabD._3, modo_game, nivel, turno, dificultad, numfichas);
                          case "H" ⇒ Nil
                          case  _  ⇒
-                              if (imput != "0") {                                             // Mostramos los posibles errores de introducion de teclado.
+                              if (imput != "0") {                                                       // Mostramos los posibles errores de introducion de teclado.
                                    TabD = (false, true, tablero, " - " + Console.RED + "ERROR: " + Console.RESET + "Caracter o movimiento introducido no valido."); // Habilitamos la bandera de eerores
                               }
                     }
