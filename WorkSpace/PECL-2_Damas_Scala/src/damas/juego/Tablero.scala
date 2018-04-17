@@ -148,7 +148,7 @@ object Tablero {
       * de ficha es valido teniendo en cuenta las reinas y las damas y que los
       * peones puedan realizar un salto.
       */
-     private def isValido(tablero:List[Int], movV:Int, movH:Int, row:Int, col:Int, pos:Int): Boolean = {
+     def isValido(tablero:List[Int], movV:Int, movH:Int, row:Int, col:Int, pos:Int): Boolean = {
           val isMovValido = ((col + ((pos + 1) * movH) > -1) && (col + ((pos + 1) * movH) < Math.sqrt(tablero.length).toInt)) &&
                             ((row + ((pos + 1) * movV) > -1) && (row + ((pos + 1) * movV) < Math.sqrt(tablero.length).toInt));
           if (isMovValido) {
