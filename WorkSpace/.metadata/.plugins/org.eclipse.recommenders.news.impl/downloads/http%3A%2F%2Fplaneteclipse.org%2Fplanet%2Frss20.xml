@@ -8,6 +8,96 @@
 	<description>Planet Eclipse - http://planeteclipse.org/planet/</description>
 
 <item>
+	<title>Eclipse Announcements: IoT Developer Survey 2018 | Results are in!</title>
+	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/1COMKF1x4u8/key-trends-iot-developer-survey-2018</guid>
+	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/1COMKF1x4u8/key-trends-iot-developer-survey-2018</link>
+	<description>Results from the IoT Developer Survey are in! Read about the key findings about IoT cloud platforms, databases, security, and more.&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/1COMKF1x4u8&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Tue, 17 Apr 2018 14:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>Benjamin Cabe: Key Trends from the IoT Developer Survey 2018</title>
+	<guid isPermaLink="false">https://blog.benjamin-cabe.com/?p=3150</guid>
+	<link>http://feedproxy.google.com/~r/benjamin-cabe-planet-eclipse/~3/1COMKF1x4u8/key-trends-iot-developer-survey-2018</link>
+	<description>&lt;h1&gt;Executive Summary&lt;/h1&gt;
+&lt;p&gt;The IoT Developer Survey 2018 collected feedback from 502 individuals between January and March 2018.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;key findings&lt;/strong&gt; in this year’s edition of the survey include the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li style=&quot;font-weight: 400;&quot;&gt;Amazon AWS and Microsoft Azure are the top 2 cloud services for IoT. Google Cloud Platform is failing to get traction.&lt;/li&gt;
+&lt;li style=&quot;font-weight: 400;&quot;&gt;MQTT remains the standard of choice for IoT messaging, while AMQP is becoming more and more popular as companies scale their IoT deployments and backend systems.&lt;/li&gt;
+&lt;li style=&quot;font-weight: 400;&quot;&gt;93% of the databases and data stores used for IoT are open source software. Data collected and used in IoT applications is incredibly diverse, from time series sensor data to device information to logs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;For the past four years, the &lt;strong&gt;IoT Developer Survey&lt;/strong&gt; has been a great way to look at the IoT landscape, from understanding the key challenges for people building IoT solutions, to identifying relevant open source technology or standards.&lt;/p&gt;
+&lt;p&gt;Just like in previous years (see results from &lt;a href=&quot;https://www.slideshare.net/IanSkerrett/iot-developer-survey-2017&quot;&gt;2017&lt;/a&gt;, &lt;a href=&quot;https://www.slideshare.net/IanSkerrett/iot-developer-survey-2016&quot;&gt;2016&lt;/a&gt; and &lt;a href=&quot;https://www.slideshare.net/IanSkerrett/iot-developer-survey-2015&quot;&gt;2015&lt;/a&gt; survey), the &lt;a href=&quot;https://iot.eclipse.org/&quot;&gt;Eclipse IoT Working Group&lt;/a&gt; has collaborated with a number of organizations to promote the survey to different IoT developer communities: &lt;a href=&quot;http://agile-iot.eu/&quot;&gt;Agile-IoT&lt;/a&gt; H2020 Project, &lt;a href=&quot;https://ieee.org/&quot;&gt;IEEE&lt;/a&gt;, and the &lt;a href=&quot;https://www.omaspecworks.org/&quot;&gt;Open Mobile Alliance&lt;/a&gt; (now OMA SpecWorks).&lt;/p&gt;
+&lt;p&gt;We had a total of 502 individual responses. You will find a link to the complete report at the end of this blog post, as well as pointers to download the raw survey data.&lt;/p&gt;
+&lt;p&gt;Here are the key trends that we identified this year:&lt;/p&gt;
+
+&lt;h1&gt;Amazon and Azure get traction, Google slips behind&lt;/h1&gt;
+&lt;p&gt;For the past few years, we’ve asked people what cloud platform they use or plan on using for building their IoT solution.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-cloud-top3-e1523368283588.png&quot;&gt;&lt;img alt=&quot;IoT Developer Survey 2018: IoT Cloud Platforms Adoption – Amazon vs. Microsoft vs. Google&quot; class=&quot;aligncenter wp-image-3173 size-large&quot; height=&quot;198&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-cloud-top3-e1523368283588-1024x428.png&quot; width=&quot;474&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Since 2016, Amazon AWS has always come up as the platform of choice for the respondents&lt;/b&gt;, followed by Microsoft Azure and Google Cloud Platform.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;img alt=&quot;📎&quot; class=&quot;wp-smiley&quot; src=&quot;https://s.w.org/images/core/emoji/2.4/72x72/1f4ce.png&quot; style=&quot;height: 1em;&quot; /&gt; &lt;strong&gt;The use of AWS for building IoT solutions increased by 21% since 2017.  &lt;a href=&quot;https://twitter.com/intent/tweet?url=https%3A%2F%2Fwp.me%2Fp6qsqk-OO&amp;amp;via=kartben&amp;amp;text=The%20use%20of%20@awscloud%20for%20building%20%23IoT%20solutions%20increased%20by%2021%25%20since%202017%20according%20to%20%23IoT%20Developer%20Survey.&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;alignnone size-full wp-image-3195&quot; height=&quot;20&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/birdy_button.png&quot; width=&quot;20&quot; /&gt;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Looking at this year’s results, there is a clear upward trend in terms of adoption for Amazon AWS (51.8%, a 21% increase from last year) and Microsoft Azure (31.21%, a 17% increase from 2017). In the meantime, &lt;b&gt;Google Cloud Platform is struggling to get adoption from IoT developers&lt;/b&gt; (18.8%, an 8% year-to-year decrease).&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;img alt=&quot;📎&quot; class=&quot;wp-smiley&quot; src=&quot;https://s.w.org/images/core/emoji/2.4/72x72/1f4ce.png&quot; style=&quot;height: 1em;&quot; /&gt; &lt;strong&gt;Google Cloud Platform struggles, with an 8% decrease in market share for IoT deployments since 2017.  &lt;a href=&quot;https://twitter.com/intent/tweet?url=https%3A%2F%2Fwp.me%2Fp6qsqk-OO&amp;amp;via=kartben&amp;amp;text=Google%20Cloud%20Platform%20struggles%20in%20%23IoT%2C%20with%20an%208%25%20decrease%20in%20market%20share%20for%20IoT%20deployments%20since%202017%20according%20to%20%23IoT%20Developer%20Survey.&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;alignnone size-full wp-image-3195&quot; height=&quot;20&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/birdy_button.png&quot; width=&quot;20&quot; /&gt;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Seeing AWS ahead of the pack is no surprise. It seems to be the public cloud platform of choice for developers, &lt;a href=&quot;https://insights.stackoverflow.com/survey/2018/#technology-platforms&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;according to the recent Stack Overflow Developer Survey&lt;/a&gt;, and one of the &lt;a href=&quot;https://insights.stackoverflow.com/survey/2018/#technology-most-loved-dreaded-and-wanted-platforms&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;most loved platforms&lt;/a&gt; for development in general. And looking at the same survey, it seems Google is not really doing great with their Cloud Platform (it is used by 8.0% of the respondents vs. 24.1% for AWS).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-cloud-trends-e1523368417779.png&quot;&gt;&lt;img alt=&quot;IoT Developer Survey 2018: IoT Cloud Platforms Adoption – Trends&quot; class=&quot;aligncenter wp-image-3175 size-large&quot; height=&quot;226&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-cloud-trends-e1523368417779-1024x489.png&quot; width=&quot;474&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It will be interesting to see how, and if, Google catches up in the IoT cloud race, and whether we will see more acquisitions similar to &lt;a href=&quot;https://www.blog.google/topics/google-cloud/google-cloud-announces-intent-to-acquire-xively/&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;Xively’s in February&lt;/a&gt; to help beef up their IoT offering in 2018. Since Microsoft is planning to&lt;a href=&quot;https://blogs.microsoft.com/iot/2018/04/04/microsoft-will-invest-5-billion-in-iot-heres-why/&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt; invest $5 billion in IoT over the next four years&lt;/a&gt;, the IoT cloud competition will definitely be interesting to follow…&lt;/p&gt;
+&lt;h1&gt;IoT Data is finally getting attention&lt;/h1&gt;
+&lt;p&gt;While IoT has been around for a while now, it looks like developers are starting to realize that beyond the “cool” factor of building connected devices, the real motivation and business opportunity for IoT is in collecting data and making sense out of it.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;img alt=&quot;📎&quot; class=&quot;wp-smiley&quot; src=&quot;https://s.w.org/images/core/emoji/2.4/72x72/1f4ce.png&quot; style=&quot;height: 1em;&quot; /&gt; &lt;strong&gt;Collecting and analyzing data becomes #2 concern for #IoT developers.  &lt;a href=&quot;https://twitter.com/intent/tweet?url=https%3A%2F%2Fwp.me%2Fp6qsqk-OO&amp;amp;via=kartben&amp;amp;text=Collecting%20and%20analyzing%20data%20becomes%20%232%20concern%20for%20%23IoT%20developers%20according%20to%20%23IoT%20Developer%20Survey.&amp;amp;hashtags=bigdata%2Canalytics%2Cai&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;alignnone wp-image-3195 size-full&quot; height=&quot;20&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/birdy_button.png&quot; width=&quot;20&quot; /&gt;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;This year, &lt;b&gt;18% of the respondents identified &lt;/b&gt;&lt;b&gt;&lt;i&gt;Data Collection &amp;amp; Analytics&lt;/i&gt;&lt;/b&gt;&lt;b&gt; as one of their top concerns for developing IoT solutions&lt;/b&gt;. This is a 50% increase from last year, and puts this topic as #2 concern—&lt;i&gt;Security&lt;/i&gt; remains #1, and &lt;i&gt;Connectivity&lt;/i&gt; is sharing the third place with &lt;i&gt;Integration with Hardware&lt;/i&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-key-concerns.png&quot;&gt;&lt;img alt=&quot;IoT Developer Survey 2018: Key IoT Concerns&quot; class=&quot;aligncenter wp-image-3170 size-large&quot; height=&quot;267&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-key-concerns-1024x576.png&quot; width=&quot;474&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Unsurprisingly, industries such as &lt;i&gt;Industrial Automation&lt;/i&gt; or &lt;i&gt;Smart Cities&lt;/i&gt; tend to care about IoT data collection and analytics even more—23% of the respondents working in those industries consider data collection &amp;amp; analytics to be a key concern.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-concerns-trend.png&quot;&gt;&lt;img alt=&quot;IoT Developer Survey 2018: Key IoT Concerns - Trends&quot; class=&quot;aligncenter wp-image-3172 size-large&quot; height=&quot;225&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-concerns-trend-e1523368192756-1024x486.png&quot; width=&quot;474&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;On a side note, it is great to get the confirmation of a trend we identified last year, with &lt;i&gt;Interoperability&lt;/i&gt; clearing becoming less of a concern for IoT developers. It’s been ranking #2 since we started doing the survey in 2015, and is now relegated to the 5th place.&lt;/p&gt;
+&lt;p&gt;As someone working with IoT open source communities on a day-to-day basis, I can’t help but think about the crucial role open standards and open source IoT platforms have had in making IoT interoperability a reality.&lt;/p&gt;
+&lt;h1&gt;Consolidation in IoT messaging protocols&lt;/h1&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;img alt=&quot;📎&quot; class=&quot;wp-smiley&quot; src=&quot;https://s.w.org/images/core/emoji/2.4/72x72/1f4ce.png&quot; style=&quot;height: 1em;&quot; /&gt; &lt;strong&gt;MQTT is used in 62% of IoT solutions and remains the IoT messaging protocol of choice.  &lt;a href=&quot;https://twitter.com/intent/tweet?url=https%3A%2F%2Fwp.me%2Fp6qsqk-OO&amp;amp;via=kartben&amp;amp;text=%23MQTT%20is%20used%20in%2062%25%20of%20%23IoT%20solutions%20and%20remains%20the%20IoT%20messaging%20protocol%20of%20choice%20according%20to%20%23IoT%20Developer%20Survey&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;alignnone size-full wp-image-3195&quot; height=&quot;20&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/birdy_button.png&quot; width=&quot;20&quot; /&gt;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;An area I particularly like to observe year-over-year is the evolution of IoT messaging protocols. For many years now, &lt;b&gt;MQTT has established itself as a protocol of choice for IoT&lt;/b&gt;, and this year’s survey is just confirming this: MQTT is used by over 62% of our respondents, followed by HTTP (54.1%).&lt;/p&gt;
+&lt;p&gt;Six years after IBM and Eurotech open sourced their implementations of the MQTT protocol (see the&lt;a href=&quot;https://www.eclipse.org/paho/&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt; Eclipse Paho&lt;/a&gt; project), and with the ever-increasing popularity of the&lt;a href=&quot;http://mosquitto.org/&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt; Eclipse Mosquitto&lt;/a&gt; project (and many other open MQTT-based projects out there of course), this is once again a demonstration that open wins. With&lt;a href=&quot;http://modelbasedtesting.co.uk/2018/04/09/a-story-of-mqtt-5-0/&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt; MQTT 5 around the corner&lt;/a&gt; and several of the identified “limitations” of the protocol gone, MQTT will possibly become even more clearly &lt;em&gt;THE&lt;/em&gt; IoT messaging standard in the future.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-consolidation-messaging-protocols.png&quot;&gt;&lt;img alt=&quot;IoT Developer Survey 2018: Consolidation in IoT Messaging Protocols&quot; class=&quot;aligncenter wp-image-3169 size-large&quot; height=&quot;267&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-consolidation-messaging-protocols-1024x576.png&quot; width=&quot;474&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It would appear that the use of&lt;b&gt; HTTP is declining&lt;/b&gt; (54.1%), perhaps to the benefit of the more lightweight and versatile &lt;b&gt;HTTP/2&lt;/b&gt; (24.9% vs. 16.8% last year). &lt;b&gt;XMPP&lt;/b&gt; (4.3%) is one of the protocols that seems to be losing the protocol consolidation battle, with a continued decline since 2016.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;img alt=&quot;📎&quot; class=&quot;wp-smiley&quot; src=&quot;https://s.w.org/images/core/emoji/2.4/72x72/1f4ce.png&quot; style=&quot;height: 1em;&quot; /&gt; &lt;strong&gt;Adoption of AMQP increased by over 30% since 2017 as people scale their IoT deployments.  &lt;a href=&quot;https://twitter.com/intent/tweet?url=https%3A%2F%2Fwp.me%2Fp6qsqk-OO&amp;amp;via=kartben&amp;amp;text=Adoption%20of%20%23AMQP%20increased%20by%20over%2030%25%20since%20last%20year%20as%20people%20scale%20their%20IoT%20deployments%20according%20to%20%23IoT%20Developer%20Survey.&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;alignnone size-full wp-image-3195&quot; height=&quot;20&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/birdy_button.png&quot; width=&quot;20&quot; /&gt;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Since more and more people start scaling their IoT deployments, it is likely a reason for the significant increase in &lt;b&gt;AMQP&lt;/b&gt;’s adoption (18.2%, from 13.9% last year), which is a core element of many IoT backends.&lt;/p&gt;
+&lt;p&gt;The &lt;b&gt;use of proprietary vendor protocols and in-house protocols is steadily decreasing&lt;/b&gt;, confirming that the industry at large tends to favor open standards over closed solutions.&lt;/p&gt;
+&lt;p&gt;It will be interesting to watch how the adoption of &lt;b&gt;DDS&lt;/b&gt; (4.9%) evolves over time. It already seems to be getting some traction in domains such as Automotive, where 10% of the respondents said they are using it.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-messaging-protocols.png&quot;&gt;&lt;img alt=&quot;IoT Developer Survey 2018: IoT Messaging Protocols – Trends&quot; class=&quot;aligncenter wp-image-3168 size-large&quot; height=&quot;228&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-messaging-protocols-e1523368219286-1024x492.png&quot; width=&quot;474&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Focus on security increases&lt;/h1&gt;
+&lt;p&gt;It is always interesting to watch how developers approach security in the context of IoT, and it has always been mentioned as the #1 concern for IoT developers since we started doing the survey in 2015.&lt;/p&gt;
+&lt;p&gt;However, it is no secret that security is hard, and there is unfortunately still only a limited set of security-related practices that are on the front burner of IoT developers. &lt;strong&gt;Communication-layer security&lt;/strong&gt; (e.g the use of TLS or DTLS) &lt;strong&gt;and data encryption remain the two most popular practices&lt;/strong&gt;, used by respectively 57.3% and 45.1% of the respondents.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-security.png&quot;&gt;&lt;img alt=&quot;IoT Developer Survey 2018: IoT Security Technologies&quot; class=&quot;aligncenter wp-image-3167 size-large&quot; height=&quot;267&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-security-1024x576.png&quot; width=&quot;474&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For the first time in the history of this survey, we explicitly asked respondents if they were using &lt;b&gt;blockchain or distributed ledger technology (DLT)&lt;/b&gt; in their IoT solutions. I was frankly surprised to see that it would appear to be the case for 11% of the respondents. As the technology matures, and as some of the barriers making it sometimes impractical for constrained/embedded devices slowly disappear, I am expecting blockchain &amp;amp; DLT to be used more and more for securing IoT solutions (and probably in combination with &lt;a href=&quot;https://blog.benjamin-cabe.com/2017/12/21/monetizing-iot-data-using-iota&quot;&gt;data monetization&lt;/a&gt; use cases).&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;img alt=&quot;📎&quot; class=&quot;wp-smiley&quot; src=&quot;https://s.w.org/images/core/emoji/2.4/72x72/1f4ce.png&quot; style=&quot;height: 1em;&quot; /&gt; &lt;strong&gt;Adoption of over-the-air updates to keep IoT applications up-to-date and secure increased by almost 50% since last year.  &lt;a href=&quot;https://twitter.com/intent/tweet?url=https%3A%2F%2Fwp.me%2Fp6qsqk-OO&amp;amp;via=kartben&amp;amp;text=Adoption%20of%20%23OTA%20updates%20to%20keep%20%23IoT%20applications%20up-to-date%20and%20secured%20increased%20by%20almost%2050%25%20since%20last%20year%2C%20according%20to%20%23IoT%20Developer%20Survey.&amp;amp;hashtags=security&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;alignnone size-full wp-image-3195&quot; height=&quot;20&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/birdy_button.png&quot; width=&quot;20&quot; /&gt;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;To end on a positive note, it is pretty clear that developers are starting to bake security into their IoT products, as an increasing number of developers indicated they implement security techniques compared to 2017. &lt;strong&gt;Over-the-air updates appear to be used more and more&lt;/strong&gt; (27.3%, a 47% increase from 2017). Open device management standards such as &lt;a href=&quot;https://www.omaspecworks.org/what-is-oma-specworks/iot/lightweight-m2m-lwm2m/&quot;&gt;LWM2M&lt;/a&gt;, together with open source implementations such as &lt;a href=&quot;https://www.eclipse.org/wakaama/&quot;&gt;Eclipse Wakaama&lt;/a&gt; and &lt;a href=&quot;https://www.eclipse.org/leshan/&quot;&gt;Eclipse Leshan&lt;/a&gt;, are certainly making it easier for developers to implement OTA in their solutions.&lt;/p&gt;
+&lt;h1&gt;IoT Data is multifaceted and open source databases dominate the market&lt;/h1&gt;
+&lt;p&gt;This year we added a few questions to the survey aimed at understanding better the kind of IoT data being collected, and how it is being stored.&lt;/p&gt;
+&lt;p&gt;It is interesting to see that across all industries, IoT data is equally multifaceted, and a wide variety of data is being collected by today’s IoT applications.&lt;b&gt; 61.9% of the data collected is time series data &lt;/b&gt;(e.g sensor data), but almost equally important are device information (60.4%) and log data (54.1%). This is not really surprising as collecting sensor data is only half of the IoT operational equation: one also needs to be able to track and manage their fleet of devices.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-data.png&quot;&gt;&lt;img alt=&quot;IoT Developer Survey 2018: Types of IoT Data&quot; class=&quot;aligncenter wp-image-3164 size-large&quot; height=&quot;267&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-data-1024x576.png&quot; width=&quot;474&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Keeping that in mind, it is interesting to look at the landscape of databases and data stores used for IoT applications. While time series data is the most common form of data that IoT applications collect, &lt;b&gt;traditional relational databases&lt;/b&gt; (namely, MySQL, with a clear leading position at 44.6%) &lt;b&gt;are still widely used&lt;/b&gt;. It is likely reflecting the importance of storing all kinds of device metadata or legacy enterprise data in addition to sensor data.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-databases.png&quot;&gt;&lt;img alt=&quot;IoT Developer Survey 2018: IoT Databases&quot; class=&quot;aligncenter wp-image-3163 size-large&quot; height=&quot;267&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-databases-1024x576.png&quot; width=&quot;474&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;With regards to time series databases, &lt;b&gt;MongoDB&lt;/b&gt; (29.8%) &lt;b&gt;and InfluxDB&lt;/b&gt; (15.7%) &lt;b&gt;seem to be the two platforms of choice for storing IoT time series data&lt;/b&gt;.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;img alt=&quot;📎&quot; class=&quot;wp-smiley&quot; src=&quot;https://s.w.org/images/core/emoji/2.4/72x72/1f4ce.png&quot; style=&quot;height: 1em;&quot; /&gt; &lt;strong&gt;93% of databases used in IoT are open source.  &lt;a href=&quot;https://twitter.com/intent/tweet?url=https%3A%2F%2Fwp.me%2Fp6qsqk-OO&amp;amp;via=kartben&amp;amp;text=93%25%20of%20databases%20used%20in%20%23IoT%20are%20%23opensource%20according%20to%20%23IoT%20Developer%20Survey.&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;alignnone size-full wp-image-3195&quot; height=&quot;20&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/birdy_button.png&quot; width=&quot;20&quot; /&gt;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;It is worth highlighting that&lt;b&gt; an astounding majority (93%) of the databases used for IoT are open source&lt;/b&gt;, with Amazon DynamoDB (6.9%) being the only notable exception. With something as critical and sensitive as IoT data, it seems that solution developers tend to favor technology that is not only easy and free to access, but more importantly that allows them to really “own” their data.&lt;/p&gt;
+&lt;h1&gt;Linux remains the undisputed IoT operating system&lt;/h1&gt;
+&lt;p&gt;Once again, Linux (71.8%) remains the leading operating system across IoT devices, gateways, and cloud backends.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-top-os.png&quot;&gt;&lt;img alt=&quot;IoT Developer Survey 2018: Top IoT Operating Systems &amp;amp; Distros&quot; class=&quot;aligncenter wp-image-3161 size-large&quot; height=&quot;267&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-top-os-1024x576.png&quot; width=&quot;474&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Although Amazon’s acquisition of &lt;b&gt;FreeRTOS&lt;/b&gt; occurred just a few months before the survey opened, it might partially explain the significant increase in its reported adoption. Going from 13% in 2016 to 20% this year, it becomes the leading embedded IoT operating system, followed by &lt;b&gt;Arm Mbed&lt;/b&gt; (9%) and &lt;b&gt;Contiki&lt;/b&gt; (7%).&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;img alt=&quot;📎&quot; class=&quot;wp-smiley&quot; src=&quot;https://s.w.org/images/core/emoji/2.4/72x72/1f4ce.png&quot; style=&quot;height: 1em;&quot; /&gt; &lt;strong&gt;FreeRTOS becomes the leading embedded #IoT operating system, followed by Arm Mbed and Contiki OS.  &lt;a href=&quot;https://twitter.com/intent/tweet?url=https%3A%2F%2Fwp.me%2Fp6qsqk-OO&amp;amp;via=kartben&amp;amp;text=.@real_FreeRTOS%20becomes%20the%20leading%20%23embedded%20%23IoT%20operating%20system%2C%20followed%20by%20@ArmMbed%20and%20@contiki_ng%20according%20to%20%23IoT%20Developer%20Survey.&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;alignnone size-full wp-image-3195&quot; height=&quot;20&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/birdy_button.png&quot; width=&quot;20&quot; /&gt;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;In terms of Linux distributions, and as Raspberry Pi stays a very popular platform for IoT prototyping, Raspbian (43.3%) remains the top Linux distribution followed by Ubuntu (40.2%).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-os-and-distros.png&quot;&gt;&lt;img alt=&quot;IoT Developer Survey 2018: IoT Linux Distributions – Trends&quot; class=&quot;aligncenter wp-image-3162 size-large&quot; height=&quot;267&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-os-and-distros-1024x576.png&quot; width=&quot;474&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;You can find the &lt;a href=&quot;https://www.slideshare.net/kartben/iot-developer-survey-2018&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;complete report on Slideshare&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;  &lt;/p&gt;
+&lt;div style=&quot;margin-bottom: 5px;&quot;&gt; &lt;strong&gt; &lt;a href=&quot;https://www.slideshare.net/kartben/iot-developer-survey-2018&quot; target=&quot;_blank&quot; title=&quot;IoT Developer Survey 2018&quot;&gt;IoT Developer Survey 2018&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&quot;https://www.slideshare.net/kartben&quot; target=&quot;_blank&quot;&gt;Benjamin Cabé&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;p&gt;Should you want to play with the raw data yourself, we made it available as a Google Spreadsheet &lt;a href=&quot;https://docs.google.com/spreadsheets/d/1qxMy-K15wfXlbanBC6yv3gWtoTmo6ivo9xP1USTs9Wg/edit?usp=sharing&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt; – feel free to export it as whatever format suits you best.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://mmilinkov.wordpress.com&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;Mike Milinkovich&lt;/a&gt; and I will be doing a &lt;a href=&quot;https://www.meetup.com/fr-FR/Virtual-IoT/events/249679807/&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;webinar on Thursday, April 19&lt;/a&gt;, to go through the results and discuss our findings. Don’t forget to RSVP!&lt;/p&gt;
+&lt;p&gt;Thanks to everyone who took the time to fill out this survey, and thanks again to IEEE, OMA SpecWorks and the Agile-IoT project for their help with the promotion.&lt;/p&gt;
+&lt;p&gt;I am very interested in hearing your thoughts and feedback about this year’s findings in the comments of this post. And, of course, we are always open to suggestions on how to improve the survey in the future!&lt;/p&gt;
+&lt;p&gt;L’article &lt;a href=&quot;https://blog.benjamin-cabe.com/2018/04/17/key-trends-iot-developer-survey-2018&quot; rel=&quot;nofollow&quot;&gt;Key Trends from the IoT Developer Survey 2018&lt;/a&gt; est apparu en premier sur &lt;a href=&quot;https://blog.benjamin-cabe.com&quot; rel=&quot;nofollow&quot;&gt;Benjamin Cabé&lt;/a&gt;.&lt;/p&gt;
+&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/benjamin-cabe-planet-eclipse/~4/1COMKF1x4u8&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Tue, 17 Apr 2018 12:44:43 +0000</pubDate>
+</item>
+<item>
 	<title>Scott Lewis: ECF Photon supports OSGI R7</title>
 	<guid isPermaLink="false">tag:blogger.com,1999:blog-20358640.post-6458388910243300068</guid>
 	<link>http://eclipseecf.blogspot.com/2018/04/ecf-photon-supports-osgi-r7.html</link>
@@ -740,111 +830,6 @@ vertx.setPeriodic(&lt;span class=&quot;hljs-number&quot;&gt;1000&lt;/span&gt;, l
 	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/Nw4e_8orxX0/jakartaec</link>
 	<description>One week left to share your insights on Java EE and help shape the future of Jakarta EE.&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/Nw4e_8orxX0&quot; width=&quot;1&quot; /&gt;</description>
 	<pubDate>Tue, 27 Mar 2018 12:10:00 +0000</pubDate>
-</item>
-<item>
-	<title>Leo Ufimtsev: Eclipse + Flatpak Quick-start guide</title>
-	<guid isPermaLink="false">http://coffeeorientedprogramming.wordpress.com/?p=538</guid>
-	<link>https://coffeeorientedprogramming.wordpress.com/2018/03/26/eclipse-flatpak-quick-start-guide/</link>
-	<description>&lt;p&gt;Today I’m experimenting with the Eclipse to Flatpak port that our team has been working on.&lt;/p&gt;
-&lt;p&gt;To do so, I had to learn Flatpak.  It only took 10 minutes to learn the basics needed to survive. I.e adding/listing Flapack repos, installing &amp;amp; removing packages.&lt;/p&gt;
-&lt;h3&gt;Flatpack basics:&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Flatpak is basically a package management system like yum/dnf/apk-get + version defined container for running gui apps.&lt;/li&gt;
-&lt;li&gt;Flatpak word does not contain a ‘c’. &lt;em&gt;(I was wondering why flatpack could not be found on my system).&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;(Most?) of flatpak can be used via Software Center GUI, but I prefer the command line version as I need to manage repos.&lt;/li&gt;
-&lt;li&gt;The command line has very good &lt;strong&gt;tab-completion &lt;/strong&gt;I’ve litereley figured things out by pressing tab when ever I wonder what argument to type next.&lt;/li&gt;
-&lt;li&gt;Flatpak is already installed on recent Fedora builds, but by default it has no repositories to feed from. You can add the flathub by opening it from here:&lt;br /&gt;
-&lt;a href=&quot;https://flatpak.org/setup/Fedora/&quot;&gt;https://flatpak.org/setup/Fedora/&lt;/a&gt;&lt;br /&gt;
-To verify that you’ve added the repo, you can list repos via:&lt;p&gt;&lt;/p&gt;
-&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;flatpak remote-list
-&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;To list available packages:
-&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;flatpak remote-ls
-&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;To install these: (e.g I tested with Zotero)
-&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;flatpak install org.zotero.Zotero
-flatpak install flathub org.zotero.Zotero  #if you want to specify which repo to install from
-&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;To remove a package:
-&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;flatpak uninstall org.zotero.Zotero
-&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt; &lt;/p&gt;
-&lt;h3&gt;Eclipse in flatpak&lt;/h3&gt;
-&lt;p&gt;Now I went a head and fidlded around with using Eclipse from Flatpak.&lt;br /&gt;
-Eclipse comes in it’s own repository, &lt;a href=&quot;https://fedorapeople.org/~mbooth/flatpak/index.html&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;as document by Mat Booth&lt;/a&gt;.&lt;br /&gt;
-To set things up:&lt;/p&gt;
-&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;# Add the 'eclipse' repo. 
-flatpak remote-add --if-not-exists eclipse https://fedorapeople.org/~mbooth/flatpak/eclipse.flatpakrepo
-
-# Btw, if you want to delete a repo in the future, it's easy:
-flatpak remote-delete eclipse     #again, tab completion is your friend.
-
-# To see what's in Mat's eclipse repo, you can list it's content:
-flatpak remote-ls eclipse
-  org.eclipse.Committers   # I'm a committer, so I'm gonna go with this version.
-  org.eclipse.Cpp 
-  org.eclipse.Java 
-
-flatpak install eclipse org.eclipse.Committers  #this asks if you want to install gnome 3.24 run time. Say yes.
-
-&lt;/pre&gt;
-&lt;p&gt;Now you can run eclipse either via overviews or via command:&lt;/p&gt;
-&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;flatpak run org.eclipse.Committers
-
-# or with environment variable:
-YOUR_ENV_VAR=VALUE flatpak run org.eclipse.Committers
-&lt;/pre&gt;
-&lt;p&gt;And voila, Eclipse is up and running:&lt;br /&gt;
-&lt;img alt=&quot;Eclipse in a flatpak&quot; class=&quot;alignnone size-full wp-image-539&quot; src=&quot;https://coffeeorientedprogramming.files.wordpress.com/2018/03/eclipse-in-a-flatpak.png?w=680&quot; /&gt;&lt;/p&gt;
-&lt;h3&gt;Also useful:&lt;/h3&gt;
-&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;# look for stuff in your flatpak
-flatpak search vlc
-
-# Update packages in the future:
-flatpack update
-
-# list what's installed
-flatpak list
-flatpak list --app #only list apps.
-
-&lt;/pre&gt;
-&lt;p&gt; &lt;/p&gt;
-&lt;h2&gt;References:&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Good quick start: &lt;a href=&quot;http://docs.flatpak.org/en/latest/using-flatpak.html&quot;&gt;http://docs.flatpak.org/en/latest/using-flatpak.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Fedora mag:&lt;br /&gt;
-&lt;a href=&quot;https://fedoramagazine.org/getting-started-flatpak/&quot;&gt;https://fedoramagazine.org/getting-started-flatpak/&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;https://fedoramagazine.org/install-flathub-apps-fedora/&quot;&gt;https://fedoramagazine.org/install-flathub-apps-fedora/&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;https://fedoramagazine.org/explore-flatpak-fedora-24/&quot; rel=&quot;nofollow&quot;&gt;https://fedoramagazine.org/explore-flatpak-fedora-24/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-	<pubDate>Mon, 26 Mar 2018 19:22:56 +0000</pubDate>
-</item>
-<item>
-	<title>Mike Milinkovich: On Complexity and Good Intentions</title>
-	<guid isPermaLink="false">http://mmilinkov.wordpress.com/?p=1444</guid>
-	<link>https://mmilinkov.wordpress.com/2018/03/23/on-complexity-and-good-intentions/</link>
-	<description>&lt;p&gt;We are now about six months into the process of migrating Java EE to the Eclipse Foundation, and I think we’re all learning a lot as we go. I wanted to take a moment and take stock of the scale of this project, its complexity, and where we are.&lt;/p&gt;
-&lt;p&gt;Java EE is a (roughly) twenty year old technology that is one of the world’s most successful software platforms. It powers the business critical applications that run our modern world. Millions of developers work with Java EE technologies every day. Billions of users use these systems every day. Throughout Java EE’s twenty year history it has been developed and marketed in a pretty particular way.&lt;/p&gt;
-&lt;p&gt;At the core of Java EE’s success has been an approach that enabled a multi-vendor ecosystem where enterprises had a choice of compatible implementations from a number of companies.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Java EE specifications were developed at the Java Community Process, using that JCP process where all intellectual property flowed to the Spec Lead, which was usually Sun (later Oracle). All participants in the specification process are signatories of the Java Specification Participation Agreement, which is a fairly complex legal document.&lt;/li&gt;
-&lt;li&gt;Progress and innovation in Java EE was largely governed by and driven within the constraints of this specification process.&lt;/li&gt;
-&lt;li&gt;Java EE reference implementations were, for the most part, developed by Oracle as part of the Glassfish (and related) project and made available under the CDDL and GPLv2+Classpath Exception licenses. Most of the developers were from Oracle, and the architectural vision and project management roles were performed by them. Contributors to the projects signed the Oracle Contributor Agreement that gave Oracle joint ownership of all contributions.&lt;/li&gt;
-&lt;li&gt;TCKs were developed entirely by Oracle and were highly confidential and tightly controlled. You had to sign an NDA just to get a copy of the TCK agreement if you were interested in getting access to the TCKs. The agreements were pretty dense and complex legal documents.&lt;/li&gt;
-&lt;li&gt;It was called Java EE. It had a logo that looked like a coffee cup. These trademarks were owned by Oracle and tightly controlled.&lt;/li&gt;
-&lt;li&gt;Generally speaking the big enterprises that used the technology were not involved in its evolution. For the most part, the contributors to the specs and implementations were from the Java EE platform vendors.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Together we are changing every single one of those items above. All at once. While retaining the core value of enabling compatible independent implementations in a multi-vendor ecosystem.&lt;/p&gt;
-&lt;p&gt;This is big and it is complicated.&lt;/p&gt;
-&lt;p&gt;I honestly believe that no institution other than the Eclipse Foundation could handle this task. We have the people, the skills, the history, and the knowledge of how the Java ecosystem works. The staff at the Eclipse Foundation are highly skilled and community minded professionals. Similarly, the team at Oracle, along with the folks from IBM, Payara, Red Hat, Tomitribe and the EE4J PMC are working hard to move this along. Collectively they are working their butts off to support this transition and to make Jakarta EE the platform and community of choice for the next twenty years.&lt;/p&gt;
-&lt;p&gt;Overall, I believe we’ve been pretty successful at managing the complexity, and working hard to communicate our progress and plans. We haven’t always been perfect, as case in point this past week where we had a bit of a kerfuffle on our Jakarta community mailing list. Without going into the details, I would say that the root cause of that was poor communication on my part. I didn’t do a good enough job in communicating the plans and dates for selecting the new logo. My bad.&lt;/p&gt;
-&lt;p&gt;Chris Anisczcyk, a good friend and open source community colleague of mine tweeted some months back that “Open source would be a lot more fun if everyone assumed good intentions.” With his wise words in mind, I want to say is this: what we are collectively undertaking here is a massive and complex task. Mistakes and miscommunications are going to happen. But let’s all assume good intentions, and build a community based on trust, honesty, and respect.&lt;/p&gt;</description>
-	<pubDate>Fri, 23 Mar 2018 14:18:36 +0000</pubDate>
 </item>
 
 </channel>

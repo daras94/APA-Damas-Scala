@@ -4,6 +4,7 @@ package damas.util;
 import damas.util._;
 import scala.xml._;
 import java.util.Calendar;
+import java.net.URL;
 import scala.xml.dtd.{DocType, PublicID};
 import java.io.File;
 import java.io.OutputStreamWriter;
@@ -11,9 +12,8 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.BufferedReader;
-
+import java.io.FileReader;
+import java.io.FileNotFoundException;
 /**
  * @author david
  */
@@ -23,7 +23,7 @@ object Persistencia {
       * Declaracion de variables GLobales.
       */
      val id_root = Text(Calendar.getInstance().getTime().toLocaleString());
-     val doctype = DocType("html", PublicID("-//W3C//DTD XHTML 1.0 Strict//EN", "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"), Nil);
+     //val doctype = DocType("html", PublicID("-//W3C//DTD XHTML 1.0 Strict//EN", "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"), Nil);
      
      /**
       * Almacenamos la partida en curso generando un Xml para su proxima
@@ -33,7 +33,7 @@ object Persistencia {
           val dimension = Math.sqrt(tablero.length).toInt;
           val atb_tab_n = new UnprefixedAttribute("dim-Y", Text(Math.sqrt(tablero.length).toInt.toString()), new UnprefixedAttribute("dim-X", Text(Math.sqrt(tablero.length).toInt.toString()), Null));
           val node_tab  = this.generateChild(Elem(null, "tablero", atb_tab_n, TopScope), tablero, 0, 0);
-          val num_fich  = Elem(null, "fichasXJugado", new UnprefixedAttribute("jugador-2", Text(num_fichas._2.toString()), new UnprefixedAttribute("jugador-1", Text(num_fichas._1.toString()), Null)), TopScope, node_tab);
+          val num_fich  = Elem(null, "fichasXJugador", new UnprefixedAttribute("jugador-2", Text(num_fichas._2.toString()), new UnprefixedAttribute("jugador-1", Text(num_fichas._1.toString()), Null)), TopScope, node_tab);
           val turne     = Elem(null, "turno", Null, TopScope, Text(turno.toString()));
           val level     = Elem(null, "nivel", Null, TopScope, Text(nivel.toString()));
           val play      = Elem(null, "play", new UnprefixedAttribute("dificultad", Text(dificultad.toString()), new UnprefixedAttribute("ia", Text(mode_game.toString()), Null)), TopScope, level, turne, num_fich);
@@ -70,7 +70,7 @@ object Persistencia {
           try {
                if (folder.exists()) {
                     val out:OutputStreamWriter = new OutputStreamWriter(new FileOutputStream(new File(folder.getPath() + "/" + id_root + ".xml")));
-                    XML.write(out, XML.loadString(new PrettyPrinter(512, 4).format(node, TopScope)),"UTF-8", true, doctype, MinimizeMode.Always);
+                    XML.write(out, XML.loadString(new PrettyPrinter(512, 4).format(node, TopScope)),"UTF-8", true, null, MinimizeMode.Always);
                     out.close();
                } else {
                     if(folder.mkdir()) {
@@ -84,36 +84,43 @@ object Persistencia {
           }
      }
      
+     /*
+      * Se encarga de guarda la partida savada para poder continuar el juego.
+      */
      def changePlay(path:String): (List[Int], Int, Int, Int, (Int, Int), String, Boolean) = {
           val xml = this.loadFilePlay(path, null);
-          val GetPlay:(List[Int], Int, Int, Int, (Int, Int), String, Boolean) = (if (xml != null) {
-               val (ia, dificultad)       = ((xml \\ "damas" \\ "play" \ "@ia").text,                           (xml \\ "damas" \\ "play" \ "@dificultad").text);
-               val (nivel, turno)         = ((xml \\ "damas" \\ "play" \ "nivel").text,                         (xml \\ "damas" \\ "play" \ "turno").text);
-               val (numFichJ1, numFichJ2) = ((xml \\ "damas" \\ "play" \ "fichasXJugadol" \ "@jugador-1").text, (xml \\ "damas" \\ "play" \ "fichasXJugadol" \ "@jugador-1").text);
-              
-               /*xml match {
-                    case  => 
-               }*/
-               new Tuple7(List(1, 1), turno.toInt, nivel.toInt, dificultad.toInt, (numFichJ1.toInt, numFichJ2.toInt), new String, ia.toBoolean);
+          val GetPlay:(List[Int], Int, Int, Int, (Int, Int), String, Boolean) = if (xml != null) {
+               /**
+                * Estraemos la informacion de la partida desde el XML con XPATH.
+                */
+               val (ia, dificultad)       = ((xml \\ "damas" \\ "play" \ "@ia").text,                                     (xml \\ "damas" \\ "play" \ "@dificultad").text);
+               val (nivel, turno)         = ((xml \\ "damas" \\ "play" \ "nivel").text,                                   (xml \\ "damas" \\ "play" \ "turno").text);
+               val (numFichJ1, numFichJ2) = ((xml \\ "damas" \\ "play" \\ "fichasXJugador" \ "@jugador-1").text,          (xml \\ "damas" \\ "play" \\ "fichasXJugador" \ "@jugador-1").text);
+               val (dim_X, dim_Y)         = ((xml \\ "damas" \\ "play" \\ "fichasXJugador" \\ "tablero" \ "@dim-X").text, (xml \\ "damas" \\ "play" \\ "fichasXJugador" \\ "tablero" \ "@dim-Y").text);
+               def generateRowTab(col:Int, row:Int): List[Int] = (xml \\ "play" \\ "fichasXJugador" \\ "tablero" \\ ("row-" + row) \ ("@col-" + col)) match {
+                    case e:Node ⇒ e.text.toInt :: generateRowTab(col + 1, row)
+                    case _ ⇒ (if (row < dim_Y.toInt) generateRowTab(0, (row + 1)) else Nil);
+               };
+               
+               new Tuple7(generateRowTab(0, 0), turno.toInt, nivel.toInt, dificultad.toInt, (numFichJ1.toInt, numFichJ2.toInt), new String, ia.toBoolean);
           } else {
-               println(" - " + Console.RED + "ERROR" + Console.RESET + ": La partida que intenta cargar no existe.");
                new Tuple7(Nil, 0, 0, 0, (0, 0), new String, false);
-          });
-          return GetPlay;
+          }
+          return GetPlay
      }
-     
-     
+         
      private def loadFilePlay(path:String, xml:Elem): Elem = {
           try {
                if (xml == null) {
-                    val file = new File(Setting.getSavePath());
+                    val file = new File(Setting.getSavePath().toString());
                     if (file.exists()) {
-                         val is:Reader = new BufferedReader(new InputStreamReader(new FileInputStream(file.getPath() + "/" + path), "UTF-8"));
-                         this.loadFilePlay(path, XML.load(is));
+                         return XML.loadFile(file.getPath() + "/" + path);
                     } 
                }
           } catch {
-                 case t: Exception => t.printStackTrace() // TODO: handle error
+                 case t: FileNotFoundException => 
+                      println(" - " + Console.RED + "ERROR" + Console.RESET + ": La partida que intenta cargar no existe.");
+                      t.printStackTrace() // TODO: handle error
           }
           return xml;      
      }

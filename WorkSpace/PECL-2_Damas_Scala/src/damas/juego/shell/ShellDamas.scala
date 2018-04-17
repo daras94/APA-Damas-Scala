@@ -47,7 +47,7 @@ object ShellDamas {
                               case "2" => (tablero, 0, 0, Cfg.getDificultad(), (fichXJug, fichXJug), new String, true);
                          };
                     } else {
-                         Persistencia.changePlay("17-abr-2018 17:04:38.xml");
+                         Persistencia.changePlay("18-abr-2018 0:53:37.xml");
                     });
                     if (SetPlay._1 != Nil) {                                                                     // Inciamos paratida dos jugadores o cargamos una partida guardada.
                          this.playDamasBom(SetPlay._1, SetPlay._2, SetPlay._3, SetPlay._4, false, SetPlay._5, SetPlay._6, SetPlay._7);                 
