@@ -107,7 +107,7 @@ object ShellDamas {
                     }
                case None    ⇒
                     imput match {
-                         case "S" ⇒ Nil
+                         case "S" ⇒ Persistencia.savePlayDamas(TabD._3, modo_game, nivel, turno, dificultad, numfichas);
                          case "H" ⇒ Nil
                          case  _  ⇒
                               if (imput != "0") {                                             // Mostramos los posibles errores de introducion de teclado.

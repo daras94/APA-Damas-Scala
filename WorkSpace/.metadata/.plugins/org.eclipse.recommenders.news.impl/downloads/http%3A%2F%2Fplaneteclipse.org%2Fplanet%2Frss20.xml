@@ -8,6 +8,25 @@
 	<description>Planet Eclipse - http://planeteclipse.org/planet/</description>
 
 <item>
+	<title>Scott Lewis: ECF Photon supports OSGI R7</title>
+	<guid isPermaLink="false">tag:blogger.com,1999:blog-20358640.post-6458388910243300068</guid>
+	<link>http://eclipseecf.blogspot.com/2018/04/ecf-photon-supports-osgi-r7.html</link>
+	<description>&lt;a href=&quot;https://wiki.eclipse.org/Eclipse_Communication_Framework_Project&quot;&gt;ECF&lt;/a&gt; Photon has several major enhancements.   I'll blog about these enhancements individually over the coming weeks, starting with&lt;br /&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Support for OSGI R7 Remote Services&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;In the R7 final draft specification (&lt;a href=&quot;https://osgi.org/specification/osgi.cmpn/7.0.0/service.remoteservices.html&quot;&gt;chapter 100&lt;/a&gt;) detail was added about the use of &lt;a href=&quot;https://osgi.org/specification/osgi.cmpn/7.0.0/service.remoteservices.html#i1693415&quot;&gt;Remote Service Intents&lt;/a&gt;.   RS Intents describe a distribution provider's abstract capabilities.    By way of example, several new standard intents have been defined, including &lt;b&gt;osgi.basic&lt;/b&gt; and &lt;b&gt;osgi.async.   &lt;/b&gt;&lt;br /&gt;&lt;br /&gt;The &lt;a href=&quot;https://osgi.org/specification/osgi.cmpn/7.0.0/service.remoteservices.html#service.remoteservices-osgi.basic&quot; style=&quot;font-weight: bold;&quot;&gt;osgi.basic&lt;/a&gt; intent requires that a distribution provider support a remote service-specific timeout, as well as serialization of remote service arguments and return values include DTOs (&lt;a href=&quot;https://osgi.org/specification/osgi.core/7.0.0/framework.dto.html&quot;&gt;Data Type Objects&lt;/a&gt;), java primitives, maps, collections, lists, OSGI Version, etc.   &lt;br /&gt;&lt;br /&gt;The &lt;b&gt;&lt;a href=&quot;https://osgi.org/specification/osgi.cmpn/7.0.0/service.remoteservices.html#d0e1402&quot;&gt;osgi.async&lt;/a&gt;&lt;/b&gt; intent requires that remote service method signatures using CompletableFuture, Future, and OSGI's &lt;a href=&quot;https://osgi.org/specification/osgi.cmpn/7.0.0/util.promise.html&quot;&gt;Promise&lt;/a&gt; be supported directly by the distribution provider.   This allows non-blocking asynchronous remote services to be easily declared in the service interface, and implemented by the distribution provider.  &lt;a href=&quot;https://github.com/ECF/enrouteEvalExampleRemoteService/blob/master/bundles/com.acme.prime.eval.api.v2/src/com/acme/prime/eval/api/Eval.java&quot;&gt;Here is an example remote service&lt;/a&gt; declaration that demonstrates how the osgi.async intent can be used.   In a forthcoming tutorial, I'll show how such a small service can be easily defined, implemented, and remoted using ECF Remote Services.&lt;br /&gt;&lt;br /&gt;ECF's remote services impl has &lt;a href=&quot;https://wiki.eclipse.org/Distribution_Providers&quot;&gt;multiple distribution providers&lt;/a&gt;, and open APIs for creating custom or extension providers.   Most of the existing ECF distribution providers already available have been updated to implement the R7-standardized intents.   Others will be updated prior to and after Photon release.&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/div&gt;</description>
+	<pubDate>Mon, 16 Apr 2018 17:09:05 +0000</pubDate>
+	<author>noreply@blogger.com (Scott Lewis)</author>
+</item>
+<item>
+	<title>Webtools News: WTP 3.9.5 Released!</title>
+	<guid isPermaLink="false">http://www.eclipse.org/webtools/news.php#permalink183</guid>
+	<link>http://eclipse.org/webtools/releases/3.9.5</link>
+	<description>&lt;div&gt;
+      Web Tools Platform 3.9.5 has been released!  &lt;a href=&quot;https://wiki.eclipse.org/WTP_FAQ#How_do_I_install_WTP.3F&quot;&gt;Installation&lt;/a&gt; and update can be performed using the 
+      &lt;a href=&quot;http://download.eclipse.org/releases/oxygen/&quot;&gt;Oxygen Update Site&lt;/a&gt; or through the &lt;a href=&quot;https://marketplace.eclipse.org/user/nitind/listings&quot;&gt;Eclipse Marketplace&lt;/a&gt;.
+      Release 3.9.5 &lt;a href=&quot;https://www.eclipse.org/webtools/releases/3.9.5/&quot;&gt;fixes&lt;/a&gt; issues that occur in prior releases or have been reported since 3.9's release. WTP 3.9.5 is NOT included in Oxygen.3a
+          &lt;a href=&quot;https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/oxygen3a&quot;&gt;Eclipse IDE for Java EE Developers&lt;/a&gt;, with selected portions also included in &lt;a href=&quot;http://www.eclipse.org/downloads/compare.php&quot;&gt;other packages&lt;/a&gt;.  Adopters can download &lt;a href=&quot;http://download.eclipse.org/webtools/downloads/&quot;&gt;the R3.9.5 build itself&lt;/a&gt; directly.&lt;/div&gt;&lt;p&gt;&lt;a href=&quot;http://www.eclipse.org/webtools/news.php#permalink183&quot;&gt;More news&lt;/a&gt;&lt;/p&gt;</description>
+	<pubDate>Sun, 15 Apr 2018 10:00:00 +0000</pubDate>
+</item>
+<item>
 	<title>vert.x project: New community channels</title>
 	<guid isPermaLink="true">https://vertx.io/blog/new-community-channels</guid>
 	<link>https://vertx.io/blog/new-community-channels</link>
@@ -65,6 +84,17 @@ We hope you will be the next one!&lt;/p&gt;
 &lt;p&gt;For Java and other developers, several &lt;a href=&quot;http://www.eclipse.org/downloads/eclipse-packages/&quot;&gt;Eclipse Oxygen.3a IDE packages are available for download&lt;/a&gt;. Older versions of Oxygen will prompt you to upgrade to Oxygen.3a unless the built-in automatic update is disabled. Oxygen.3a is the last update for Eclipse Oxygen. Numerous major changes are currently being finalized for the next major release, Eclipse Photon, on June 27. If you want you can already test a &lt;a href=&quot;https://www.eclipse.org/downloads/index-developer.php?photon&quot;&gt;pre-release of Eclipse Photon&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Happy coding!&lt;/p&gt;</description>
 	<pubDate>Thu, 12 Apr 2018 10:15:13 +0000</pubDate>
+</item>
+<item>
+	<title>Webtools News: WTP 3.9.4 Released!</title>
+	<guid isPermaLink="false">http://www.eclipse.org/webtools/news.php#permalink182</guid>
+	<link>http://eclipse.org/webtools/releases/3.9.4</link>
+	<description>&lt;div&gt;
+      Web Tools Platform 3.9.4 has been released!  &lt;a href=&quot;https://wiki.eclipse.org/WTP_FAQ#How_do_I_install_WTP.3F&quot;&gt;Installation&lt;/a&gt; and update can be performed using the 
+      &lt;a href=&quot;http://download.eclipse.org/releases/oxygen/&quot;&gt;Oxygen Update Site&lt;/a&gt; or through the &lt;a href=&quot;https://marketplace.eclipse.org/user/nitind/listings&quot;&gt;Eclipse Marketplace&lt;/a&gt;.
+      Release 3.9.4 &lt;a href=&quot;https://www.eclipse.org/webtools/releases/3.9.4/&quot;&gt;fixes&lt;/a&gt; issues that occur in prior releases or have been reported since 3.9's release. WTP 3.9.4 is included in Oxygen.3a
+          &lt;a href=&quot;https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/oxygen3a&quot;&gt;Eclipse IDE for Java EE Developers&lt;/a&gt;, with selected portions also included in &lt;a href=&quot;http://www.eclipse.org/downloads/compare.php&quot;&gt;other packages&lt;/a&gt;.  Adopters can download &lt;a href=&quot;http://download.eclipse.org/webtools/downloads/&quot;&gt;the R3.9.4 build itself&lt;/a&gt; directly.&lt;/div&gt;&lt;p&gt;&lt;a href=&quot;http://www.eclipse.org/webtools/news.php#permalink182&quot;&gt;More news&lt;/a&gt;&lt;/p&gt;</description>
+	<pubDate>Wed, 11 Apr 2018 10:00:00 +0000</pubDate>
 </item>
 <item>
 	<title>Mike Milinkovich: A New Logo for the Eclipse Foundation</title>
@@ -815,33 +845,6 @@ flatpak list --app #only list apps.
 &lt;p&gt;Overall, I believe we’ve been pretty successful at managing the complexity, and working hard to communicate our progress and plans. We haven’t always been perfect, as case in point this past week where we had a bit of a kerfuffle on our Jakarta community mailing list. Without going into the details, I would say that the root cause of that was poor communication on my part. I didn’t do a good enough job in communicating the plans and dates for selecting the new logo. My bad.&lt;/p&gt;
 &lt;p&gt;Chris Anisczcyk, a good friend and open source community colleague of mine tweeted some months back that “Open source would be a lot more fun if everyone assumed good intentions.” With his wise words in mind, I want to say is this: what we are collectively undertaking here is a massive and complex task. Mistakes and miscommunications are going to happen. But let’s all assume good intentions, and build a community based on trust, honesty, and respect.&lt;/p&gt;</description>
 	<pubDate>Fri, 23 Mar 2018 14:18:36 +0000</pubDate>
-</item>
-<item>
-	<title>Webtools News: WTP 3.9.3 Released!</title>
-	<guid isPermaLink="false">http://www.eclipse.org/webtools/news.php#permalink180</guid>
-	<link>http://eclipse.org/webtools/releases/3.9.3</link>
-	<description>&lt;div&gt;
-      Web Tools Platform 3.9.3 has been released!  &lt;a href=&quot;https://wiki.eclipse.org/WTP_FAQ#How_do_I_install_WTP.3F&quot;&gt;Installation&lt;/a&gt; and update can be performed using the 
-      &lt;a href=&quot;http://download.eclipse.org/releases/oxygen/&quot;&gt;Oxygen Update Site&lt;/a&gt; or through the &lt;a href=&quot;https://marketplace.eclipse.org/user/nitind/listings&quot;&gt;Eclipse Marketplace&lt;/a&gt;.
-      Release 3.9.3 &lt;a href=&quot;https://www.eclipse.org/webtools/releases/3.9.3/&quot;&gt;fixes&lt;/a&gt; issues that occur in prior releases or have been reported since 3.9's release. WTP 3.9.3 is featured in the Oxygen.3
-          &lt;a href=&quot;https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/oxygen3&quot;&gt;Eclipse IDE for Java EE Developers&lt;/a&gt;, with selected portions also included in &lt;a href=&quot;http://www.eclipse.org/downloads/compare.php&quot;&gt;other packages&lt;/a&gt;.  Adopters can download &lt;a href=&quot;http://download.eclipse.org/webtools/downloads/&quot;&gt;the R3.9.3 build itself&lt;/a&gt; directly.
-       WTP 3.9.3a is planned for mid-April, as part of Oxygen.3a and its support for this week's GA release of Java 10.&lt;/div&gt;&lt;p&gt;&lt;a href=&quot;http://www.eclipse.org/webtools/news.php#permalink180&quot;&gt;More news&lt;/a&gt;&lt;/p&gt;</description>
-	<pubDate>Thu, 22 Mar 2018 23:27:00 +0000</pubDate>
-</item>
-<item>
-	<title>Eclipse Announcements: Eclipse Newsletter | Code in Different Languages</title>
-	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/MghcIiwTBdY/</guid>
-	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/MghcIiwTBdY/</link>
-	<description>Read what's new in the Eclipse JDT Language Server and Eclipse PDT (PHP), then learn about Eclipse Xtext and Eclipse Mita (IoT).&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/MghcIiwTBdY&quot; width=&quot;1&quot; /&gt;</description>
-	<pubDate>Thu, 22 Mar 2018 09:13:00 +0000</pubDate>
-</item>
-<item>
-	<title>Fabio Zadrozny: LiClipse 4.5.2 released</title>
-	<guid isPermaLink="false">tag:blogger.com,1999:blog-7855001383687474475.post-621765860818079846</guid>
-	<link>http://liclipse.blogspot.com/2018/03/liclipse-452-released.html</link>
-	<description>&lt;a href=&quot;http://www.liclipse.com/&quot;&gt;LiClipse&lt;/a&gt; 4.5.2 is now out.&lt;br /&gt;&lt;br /&gt;The major updates are related  to the upgrade of dependencies (such as &lt;a href=&quot;http://www.pydev.org/&quot;&gt;PyDev&lt;/a&gt; and &lt;a href=&quot;https://www.eclipse.org/egit/&quot;&gt;EGit&lt;/a&gt;).&lt;br /&gt;&lt;br /&gt;On the PyDev front, the major change is initial support for getting type information from .pyi files and a critical fix for the creation of the preferences page.&lt;br /&gt;&lt;br /&gt;For EGit, &lt;a href=&quot;https://wiki.eclipse.org/EGit/New_and_Noteworthy/4.11&quot;&gt;https://wiki.eclipse.org/EGit/New_and_Noteworthy/4.11&lt;/a&gt; has more details!&lt;br /&gt;&lt;br /&gt;Enjoy!</description>
-	<pubDate>Wed, 21 Mar 2018 19:03:04 +0000</pubDate>
-	<author>noreply@blogger.com (Fabio Zadrozny)</author>
 </item>
 
 </channel>

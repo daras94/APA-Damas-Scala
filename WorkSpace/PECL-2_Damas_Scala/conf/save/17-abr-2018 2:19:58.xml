@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<damas>
+    <fecha>17-abr-2018 2:19:58</fecha>
+    <play ia="false" dificultad="4">
+        <nivel>0</nivel>
+        <turno>0</turno>
+        <fichasXJugado jugador-1="12" jugador-2="12">
+            <tablero dim-X="8" dim-Y="8">
+                <row-0 col-7="23" col-6="10" col-5="24" col-4="10" col-3="24" col-2="10" col-1="23" col-0="10"/>
+                <row-1 col-7="10" col-6="26" col-5="10" col-4="25" col-3="10" col-2="22" col-1="10" col-0="21"/>
+                <row-2 col-7="24" col-6="10" col-5="26" col-4="10" col-3="22" col-2="10" col-1="23" col-0="10"/>
+                <row-3 col-7="10" col-6="10" col-5="10" col-4="10" col-3="10" col-2="10" col-1="10" col-0="10"/>
+                <row-4 col-7="10" col-6="10" col-5="10" col-4="10" col-3="10" col-2="10" col-1="10" col-0="10"/>
+                <row-5 col-7="10" col-6="37" col-5="10" col-4="37" col-3="10" col-2="35" col-1="10" col-0="33"/>
+                <row-6 col-7="37" col-6="10" col-5="36" col-4="10" col-3="36" col-2="10" col-1="32" col-0="10"/>
+                <row-7 col-7="10" col-6="35" col-5="10" col-4="36" col-3="10" col-2="37" col-1="10" col-0="37"/>
+            </tablero>
+        </fichasXJugado>
+    </play>
+</damas>
