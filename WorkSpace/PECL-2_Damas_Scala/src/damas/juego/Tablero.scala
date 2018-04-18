@@ -63,7 +63,7 @@ object Tablero {
                               if (col == dim) {
                                    String.format("┣━ %s%-4s%s", Console.CYAN + Console.BOLD,  CAR_ROW_COLUMN.substring(row, row + 1), Console.RESET);
                               } else {
-                                   String.format("%s", new String);
+                                   String.format("%s", "");
                               }
                     }).concat(if (((row + col) % 2 == 0)) Console.BLUE_B else Console.BLACK_B); // Dibujamos el tablero de damas.
                     if (col == dim ) {
@@ -76,10 +76,10 @@ object Tablero {
                               } else {
                                    if ((bloque % 10) == 8) "\uD83D\uDF88" else "\u25CF"; // Reina Jug 1 = ○ , Damas Jug 1 = ●
                               }
-                         } else "‌ ");
+                         } else "‌ ");
                          out + Console.BOLD + foreground.productElement(bloque % 10) + ficha + Console.RESET
                     }
-               } else new String) + imprimirTablero(tablero, (row + (if (col == dim) 1 else 0)), (if (col < dim) (col + 1) else 0));
+               } else "") + imprimirTablero(tablero, (row + (if (col == dim) 1 else 0)), (if (col < dim) (col + 1) else 0));
           } else {
                return String.format("┣━ %s%-4s%s", Console.CYAN + Console.BOLD,  CAR_ROW_COLUMN.substring(row - 1, row), Console.RESET);;
           }
@@ -130,13 +130,13 @@ object Tablero {
      def damasPlayBom(tablero:List[Int], mov:(Int, Int, Int), turno:Int, score:(Int, Int), modo_juego:Boolean): (Boolean, Boolean, Boolean, List[Int], String, (Int, Int)) = {
           val dama:Int = tablero((mov._1 * Math.sqrt(tablero.length).toInt) + mov._2);
           if ((dama != POS_TAB_EMPTY) && (if (turno == 0) 30 else 20).equals(dama - (dama % 10))) {
-               val movH    = Array(-1, 1).apply((mov._3 % 10));					        // Determinamos el movimiento horizontal en funcion de la direcion.
-			val movV    = Array(-1, 1).apply(((mov._3 - (mov._3 % 10)) / 10) - 1);        // Determinamos el movimiento vertical en funcion de la direcion.
+               val movH    = List(-1, 1).apply((mov._3 % 10));					        // Determinamos el movimiento horizontal en funcion de la direcion.
+			val movV    = List(-1, 1).apply(((mov._3 - (mov._3 % 10)) / 10) - 1);         // Determinamos el movimiento vertical en funcion de la direcion.
                if (isValido(tablero, movV, movH, mov._1, mov._2, 0)) {
                     val (tab, event, puntuacion)    = this.setMovGamen(tablero, movV, movH, mov._1, mov._2, (if ((dama % 10) <= 2) 1 else (dama % 10)), 0, new StringBuilder, false, 0);
                     val (score_1, score_2)          = ((score._1 + (if (turno == 0) puntuacion else 0)), (score._2 + (if (turno == 1) puntuacion else 0)));
                     val (isTable, isWinner, event2) = this.checkGamen(this.numFichasXjugadorInCurse(tab, 0, (0, 0)), (score_1, score_2), modo_juego)
-                    return new Tuple6(isTable, isWinner, false, tab, (if(isWinner || isWinner) event2 else event), (score_1, score_2));
+                    return new Tuple6(isTable, isWinner, false, tab, (if(isWinner || isTable) event2 else event), (score_1, score_2));
                } else {
                     val evento = " ❈ " + Console.RED + "ERROR" + Console.RESET + ": La jugada realizada nos se puede cosidera una jugada valida !!!";
                     return new Tuple6(false, false, true, tablero, evento, score);
@@ -146,7 +146,7 @@ object Tablero {
                return new Tuple6(false, false, true, tablero, evento, score);    
           }
      }
-     
+    
      /**
       * Determina si el movimiento de la jugada introducida en funcion del tipo
       * de ficha es valido teniendo en cuenta las reinas y las damas y que los
@@ -200,16 +200,17 @@ object Tablero {
                     val tab    = this.insertMovimiento(tablero, posActual, posVictima, (if (isSetPacMan && ((tablero(posActual) % 10) != 8)) posSalto else -1), fichaInsert, 0);
                     this.setMovGamen(tab, movV, movH, row, col, type_bom, cont + 1, event, isSetPacMan, (puntos + points));
                } else {
-                    val bom_status:(List[Int], Int) = (if (isPacMan) {
-                         cont match {
-                              case 3 => (tablero, puntos); // BOM BUILD
-                              case 4 => (tablero, puntos); // BOM BUILD
-                              case 5 => (tablero, puntos); // BOM BUILD
-                              case 6 => (tablero, puntos); // BOM BUILD
-                              case 7 => (tablero, puntos); // BOM BUILD
-                              case _ => (tablero, puntos); // BOM BUILD
+                    val (new_row, new_col) = ((row + ((cont + 1) * movV)), (col + ((cont + 1) * movH)));
+                    val bom_status:(List[Int], Int, StringBuilder) = (if (isPacMan) {
+                         type_bom match {
+                              case 3 => (this.BOM(tablero, puntos, new_row, new_col, 0, type_bom, 0, event));  // BOM CIAN BUILD
+                              case 4 => (this.BOM(tablero, puntos, new_row, new_col, 0, type_bom, 0, event));  // BOM VERDE BUILD
+                              case 5 => (this.BOM(tablero, puntos, new_row, new_col, 0, type_bom, 0, event));  // BOM AMARILLO BUILD
+                              case 6 => (this.BOM(tablero, puntos, new_row, new_col, 0, type_bom, 0, event));  // BOM MAGENTA BUILD
+                              case 7 => (this.BOM(tablero, puntos, new_row, new_col, 0, type_bom, 0, event));  // BOM NARANJA BUILD
+                              case _ => (tablero, puntos, event);                                              // NOT BOM.
                          }
-                    } else (tablero, puntos));
+                    } else (tablero, puntos, event));
                     this.setMovGamen(bom_status._1, movV, movH, row, col, type_bom, type_bom, event, isPacMan, bom_status._2);
                }
           } else {
@@ -222,7 +223,7 @@ object Tablero {
                return (tablero, event.toString(), puntos);
           } 
      }
-     
+    
      /**
       * Metodo el cual se encarga de insertar los movimentos de cada jugador y
       * deejectuar los saltos de los peones si esto se dieran.
@@ -273,62 +274,66 @@ object Tablero {
       * tiene en cuenta la puntuacion de cada jugador. El formato de la tupla
       * que devuelve seria el siguiente: (isTablas, isWinner Evento);
       */
-     def checkGamen(numFich:(Int, Int), score:(Int, Int), modo_juego:Boolean): (Boolean, Boolean, String) = {
-          val status:(Boolean, Boolean, String) = ((numFich._1 - numFich._2) match {
-               case 0 ⇒
-                    if(numFich._1 == numFich._2){
-                         if (score._1 > score._2) {
-                              new Tuple3(true, true, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Gana el Jugador 1 !!");
-                         } else {
-                              if (score._1 < score._2) {
-                                   new Tuple3(true, true, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Gana " + (if (!modo_juego) " el Jugador 2" else "la Maquina") + " !!");
-                              } else {
-                                   if (score._1 == score._2) {
-                                        new Tuple3(true, false, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Empate ningun Jugador Gana !!"); 
-                                   } else {
-                                        new Tuple3(false, false, new String); // Tengo que ver como meteri el daemo de tiempo aqui ???.    
-                                   }
-                              }
-                         }
-                    } else {
-                         new Tuple3(false, false, new String); // Tengo que ver como meteri el daemo de tiempo aqui ???.
+     private def checkGamen(numFich:(Int, Int), score:(Int, Int), modo_juego:Boolean): (Boolean, Boolean, String) = {
+          if ((numFich._1 > numFich._2) && ((score._1 > score._2) || (score._1 == score._2))) {
+               if ((numFich._1 == 3) && (numFich._2 == 1)) {
+                    return (true, false,  " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Son Tablas, gana el Jugador por FICHAS !!");  // Tablas a favor Jugador 1.
+               } else if ((numFich._1 == 1) && (numFich._2 == 0)) { 
+                    return (false, true,  " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Gana el Jugador 1 por FICHAS !!");            // Victoria Jugador 1.
+               } else {
+                    return (false, false, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": No Gana Nadie AUN!!");                        // No hay victoria para nigun Jugador AUN.
+               }  
+          } else if ((numFich._1 < numFich._2) && ((score._1 < score._2) || (score._1 == score._2))) {
+               if ((numFich._1 == 1) && (numFich._2 == 3)) {                                                                                  // Tablas a favor Jugador 2
+                    return (true, false,  " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Son Tablas, gana " + (if (!modo_juego) " el Jugador 2" else "la Maquina") + " por FICHAS !!");
+               } else if ((numFich._1 == 0) && (numFich._2 == 1)) {                                                                           // Victoria Jugaor 2 o IA.
+                    return (false, true,  " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Gana " + (if (!modo_juego) " el Jugador 2" else "la Maquina") + " por FICHAS !!");
+               } else {
+                    return (false, false, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": No Gana Nadie AUN !!");                       // No hay victoria para nigun Jugador AUN.
+               }  
+          } else if ((numFich._1 == numFich._2) && ((numFich._1 == 1) && (numFich._2 == 1))) {
+               if (score._1 > score._2) {
+                    return (true, false,  " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Son Tablas gana el Jugador 1 por SCORE !!");  // Tablas a favor Jugador 1.
+               } else if (score._1 < score._2) {                                                                                              // Tablas a favor Jugador 2 o IA.
+                    return (true, false,  " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Son Tablas gana " + (if (!modo_juego) " el Jugador 2" else "la Maquina") + " por SCORE !!");
+               } else {
+                    return (false, false, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Tablas no gana nadie la partida FIN !!");     // No hay victoria para nigun Jugador Tablas Absolutas.
+               }
+          } else {
+               return (false, false, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": No Gana Nadie AUN !!");                            // No hay victoria para nigun Jugador AUN.
+          }
+     }
+     
+     /**
+      * LA bomba detecta el patro pero debido a escazed de tiepo no soy capaz de
+      * actualizar correctamente la lista que constitulle el tablero ta que se
+      * generan dos entradas de forma simultanea las cuales no siiempre son
+      * ejecutadas x lo cual no se llega a retornar el tablero actualizado de
+      * forma corriente.
+      */
+     private def BOM(tablero:List[Int], puntos:Int, row:Int, col:Int, cont:Int, type_bom:Int, pos:Int, event:StringBuilder): (List[Int], Int, StringBuilder) = {
+          val width  = (Math.sqrt(tablero.length).toInt);
+          if ((cont < 4) && (pos < width)) {
+               val (movH, movV) = (List(-1, 1, 1, -1).apply(cont), List(1, -1, -1, 1).apply(cont));
+               val (ficha_patron, ficha_actual) = (tablero((row + movV) * width + (col + movH)), tablero(row * width + col));
+               if ((((ficha_patron - (ficha_patron % 10)) / 10) != ((ficha_actual - (ficha_actual % 10)) / 10))) { 
+                    val tab = tablero;
+                    if ((((row + pos * (-1))) > -1 ) && ((col + pos * (-1)) > -1)) {
+                         event.append("\n ").append(Console.GREEN + "1 - " + tablero((row + pos * (-1)) * width + (col + pos * (-1))) + " - BOM!!" + Console.RESET);
+                         //tablero.updated(((row + pos * (-1)) * width + (col + pos * (-1))), POS_TAB_EMPTY);
                     }
-               case _ ⇒
-                    if (numFich._1 > numFich._2) {
-                         if (score._1 > score._2) {
-                              new Tuple3(false, true, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Gana el Jugador 1 !!");
-                         } else {
-                              if (score._1 < score._2) {
-                                   new Tuple3(false, true, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Gana " + (if (!modo_juego) " el Jugador 2" else "la Maquina") + " !!");  
-                              } else {
-                                   if (score._1 == score._2) {
-                                        new Tuple3(false, true, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Gana el Jugador 1 !!");
-                                   } else {
-                                        new Tuple3(false, false, new String); // Tengo que ver como meteri el daemo de tiempo aqui ???
-                                   }
-                              }
-                         }
-                    } else {
-                         if (numFich._1 < numFich._2) {
-                              if (score._2 > score._1) {
-                                   new Tuple3(false, true, " ❈ " + Console.GREEN + "Evento" + Console.RESET + " Gana " + (if (!modo_juego) " el Jugador 2" else "la Maquina") + " !!");
-                              } else {
-                                   if (score._2 < score._1) {
-                                        new Tuple3(false, true, " ❈ " + Console.GREEN + "Evento " + Console.RESET + ": Gana el Jugador 1 !!"); 
-                                   } else {
-                                        if (score._2 == score._1) {
-                                             new Tuple3(false, true, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Gana " + (if (!modo_juego) " el Jugador 2" else "la Maquina") + " !!");
-                                        } else {
-                                             new Tuple3(false, false, new String); // Tengo que ver como meteri el daemo de tiempo aqui ???
-                                        }    
-                                   }
-                              }
-                         } else {
-                              new Tuple3(false, false, new String); // Tengo que ver como meteri el daemo de tiempo aqui ???.
-                         }
-                    }
-          });
-          return status;
+				if (((row + pos) < width) && ((col + pos) < width)) {
+				     event.append("\n ").append(Console.GREEN + "2 - " + tablero((row + pos) * width + (col + pos)) + " - BOM!!" + Console.RESET);
+				     //tablero.updated((row + pos) * width + (col + pos), POS_TAB_EMPTY).;
+				}
+				this.BOM(tab, puntos, row, col, cont, type_bom, (pos + 1), event);
+               } else {
+                    this.BOM(tablero, puntos, row, col, (cont + 1), type_bom, pos, event);
+               }
+          } else {
+               return (tablero, puntos, event);
+          }
+          
      }
      
 }

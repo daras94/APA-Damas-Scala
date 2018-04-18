@@ -8,6 +8,23 @@
 	<description>Planet Eclipse - http://planeteclipse.org/planet/</description>
 
 <item>
+	<title>PapyrusUML: EclipseCon France 2018 – Sessions</title>
+	<guid isPermaLink="false">http://papyrusuml.wordpress.com/?p=1088</guid>
+	<link>https://papyrusuml.wordpress.com/2018/04/18/eclipsecon-france-2018-sessions/</link>
+	<description>&lt;p&gt;The sessions lineup for EclipseCon France 2018 have been published! If you plan on attending, I have a couple of suggestions for you!&lt;/p&gt;
+&lt;p&gt;First, a session about me (of course) and more love for my toolsmiths:&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://www.eclipsecon.org/france2018/session/papyrus-platform&quot;&gt;Papyrus as a Platform&lt;/a&gt;&lt;/h2&gt;
+&lt;p style=&quot;padding-left: 30px;&quot;&gt;&lt;em&gt;by Philip Langer (EclipseSource Services GmbH).&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Model-based engineering tools are most successful, if they are as domain-specific as possible, reflecting the specific needs of the domain and its users. Thus, not only a domain-specific modeling language, but also a specialized modeling environment is required that takes the domain users’ background, their roles, and currently used infrastructure into account. Often, the domain-specific modeling languages have a considerable overlap with UML though.&lt;/p&gt;
+&lt;p&gt;The second session is not directly focused on me, but it is very relevant to using me as a platform for domain-specific tools (and again, more love for my toolsmiths):&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://www.eclipsecon.org/france2018/session/comparison-and-merge-use-cases-practice-emf-compare&quot;&gt;Comparison and merge use-cases from practice with EMF Compare&lt;/a&gt;&lt;/h2&gt;
+&lt;p style=&quot;padding-left: 30px;&quot;&gt;&lt;em&gt;by Laurent Delaigue (Obeo) and Philip Langer (EclipseSource Services GmbH)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Have you ever needed to compare and merge heterogeneous domain-specific models (with both textual and graphical syntaxes)? Or maybe you needed to review changes on graphical models? We did.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;Did I miss a presentation? If so, &lt;a href=&quot;https://papyrusuml.wordpress.com/contact-us/&quot;&gt;let me know&lt;/a&gt;!&lt;/p&gt;</description>
+	<pubDate>Wed, 18 Apr 2018 15:05:58 +0000</pubDate>
+</item>
+<item>
 	<title>Eclipse Announcements: IoT Developer Survey 2018 | Results are in!</title>
 	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/1COMKF1x4u8/key-trends-iot-developer-survey-2018</guid>
 	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/1COMKF1x4u8/key-trends-iot-developer-survey-2018</link>
@@ -75,7 +92,7 @@
 &lt;p&gt;&lt;a href=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-data.png&quot;&gt;&lt;img alt=&quot;IoT Developer Survey 2018: Types of IoT Data&quot; class=&quot;aligncenter wp-image-3164 size-large&quot; height=&quot;267&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-data-1024x576.png&quot; width=&quot;474&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Keeping that in mind, it is interesting to look at the landscape of databases and data stores used for IoT applications. While time series data is the most common form of data that IoT applications collect, &lt;b&gt;traditional relational databases&lt;/b&gt; (namely, MySQL, with a clear leading position at 44.6%) &lt;b&gt;are still widely used&lt;/b&gt;. It is likely reflecting the importance of storing all kinds of device metadata or legacy enterprise data in addition to sensor data.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-databases.png&quot;&gt;&lt;img alt=&quot;IoT Developer Survey 2018: IoT Databases&quot; class=&quot;aligncenter wp-image-3163 size-large&quot; height=&quot;267&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/IoT-developer-survey-2018-databases-1024x576.png&quot; width=&quot;474&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;With regards to time series databases, &lt;b&gt;MongoDB&lt;/b&gt; (29.8%) &lt;b&gt;and InfluxDB&lt;/b&gt; (15.7%) &lt;b&gt;seem to be the two platforms of choice for storing IoT time series data&lt;/b&gt;.&lt;/p&gt;
+&lt;p&gt;With regards to NoSQL and time series databases, &lt;b&gt;MongoDB&lt;/b&gt; (29.8%) &lt;b&gt;and InfluxDB&lt;/b&gt; (15.7%) &lt;b&gt;seem to be the two platforms of choice for storing non-relational IoT data (e.g time series)&lt;/b&gt;.&lt;/p&gt;
 &lt;blockquote&gt;&lt;p&gt;&lt;img alt=&quot;📎&quot; class=&quot;wp-smiley&quot; src=&quot;https://s.w.org/images/core/emoji/2.4/72x72/1f4ce.png&quot; style=&quot;height: 1em;&quot; /&gt; &lt;strong&gt;93% of databases used in IoT are open source.  &lt;a href=&quot;https://twitter.com/intent/tweet?url=https%3A%2F%2Fwp.me%2Fp6qsqk-OO&amp;amp;via=kartben&amp;amp;text=93%25%20of%20databases%20used%20in%20%23IoT%20are%20%23opensource%20according%20to%20%23IoT%20Developer%20Survey.&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;alignnone size-full wp-image-3195&quot; height=&quot;20&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/04/birdy_button.png&quot; width=&quot;20&quot; /&gt;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;It is worth highlighting that&lt;b&gt; an astounding majority (93%) of the databases used for IoT are open source&lt;/b&gt;, with Amazon DynamoDB (6.9%) being the only notable exception. With something as critical and sensitive as IoT data, it seems that solution developers tend to favor technology that is not only easy and free to access, but more importantly that allows them to really “own” their data.&lt;/p&gt;
 &lt;h1&gt;Linux remains the undisputed IoT operating system&lt;/h1&gt;
@@ -823,13 +840,6 @@ vertx.setPeriodic(&lt;span class=&quot;hljs-number&quot;&gt;1000&lt;/span&gt;, l
       &lt;/div&gt;
       &lt;/div&gt;&lt;/div&gt;</description>
 	<pubDate>Wed, 28 Mar 2018 15:15:31 +0000</pubDate>
-</item>
-<item>
-	<title>Eclipse Announcements: Three days left to complete the Jakarta EE Survey!</title>
-	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/Nw4e_8orxX0/jakartaec</guid>
-	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/Nw4e_8orxX0/jakartaec</link>
-	<description>One week left to share your insights on Java EE and help shape the future of Jakarta EE.&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/Nw4e_8orxX0&quot; width=&quot;1&quot; /&gt;</description>
-	<pubDate>Tue, 27 Mar 2018 12:10:00 +0000</pubDate>
 </item>
 
 </channel>

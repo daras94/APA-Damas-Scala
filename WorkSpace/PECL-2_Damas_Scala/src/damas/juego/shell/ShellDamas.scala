@@ -105,7 +105,7 @@ object ShellDamas {
                     if (!jugada_ret._3) {
                          FicN = Tab.numFichasXjugadorInCurse(jugada_ret._4, 0, (0, 0));                          // Recalculamos el numero de fichas de cada jugador.
                          if (jugada_ret._2 && nivel < 3) {                                                       // Si el nivel es inferior a 3 y la partida a sido ganda se incrementa el nivel.
-                              UtilDamas.printtextArt("Nivel " + nivel, "")
+                              UtilDamas.printtextArt("Nivel " + nivel + 1, "")
                               val dim: Int = Math.sqrt(jugada_ret._4.length).toInt * 2;                          // Dimension del nuevo tablero.
                               val fichXJug = Tab.numFichasXjugadorInit(dim);                                     // Determinamos el numero def fichas a colocar.
                               val dificult = dificultad + (if(dificultad < 4) 2 else 0);                         // Calaculamos el nivel de dificultada de forma creciente. 
@@ -128,7 +128,7 @@ object ShellDamas {
                               }
                     }
           });
-          if ((!TabD._2 || ! TabD._1) && (imput != "0")) this.playDamasBom(TabD._4, turno + (if (TabD._3) 0 else if (turno == 0) 1 else -1) , nivel, dificultad, TabD._3, FicN, TabD._5, modo_game, TabD._6); 
+          if ((!TabD._1 && !TabD._2) && (imput != "0")) this.playDamasBom(TabD._4, turno + (if (TabD._3) 0 else if (turno == 0) 1 else -1) , nivel, dificultad, TabD._3, FicN, TabD._5, modo_game, TabD._6); 
      }
      
      /**
@@ -268,7 +268,6 @@ object ShellDamas {
                          Thread.sleep(500);
                     }
           }
-          
           if (config != "0") this.menuConfigShell();
      }
      
