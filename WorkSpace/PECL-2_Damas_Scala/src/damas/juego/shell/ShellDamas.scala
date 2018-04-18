@@ -74,7 +74,6 @@ object ShellDamas {
       * Ejecucion del modo de juego de la partida.
       */
      def playDamasBom(tablero: List[Int], turno: Int, nivel: Int, dificultad: Int, isError: Boolean, numfichas:(Int, Int), event:String, modo_game:Boolean, score:(Int, Int)): Unit = { 
-          var TabD:(Boolean, Boolean, List[Int], String, (Int, Int)) = (false, false, tablero, event, score);     // Formato tupla (isWinner, isError, tablero, event) para datos de jugada.
           var FicN:(Int, Int) = numfichas;                                                                        // Formato tupla (NumFichJug1, NumFichJug2) ppara el conteo del numero .
           if (!isError) {                                                                                         // Si se a producido un error en la jugada nanterior no se vuelve a imprimir el tablero.
                UtilDamas.clear(); str.clear(); str.append("\n");                                                  // Borramos el pront limpiamos el strmenbuilder.o
@@ -84,7 +83,7 @@ object ShellDamas {
                str.append("\n ").append(String.format("┃ ❈ %s Tablero de Juego                                 %-8s ┃ %s%7s%8s ┃ Nº fichas ●  : %-12s ┃ Dificult : %-10s ┃", Console.CYAN, info._2, Console.GREEN, info._9, info._2, (info._1 + FicN._2 + info._2), (info._1 + info._4 + info._2)));
                str.append("\n ").append(String.format("┃   %s------------------------------------------------  %-8s ┃ %s%6s%9s ┃ Temporizador : %-12s ┃ Nivel    : %-10s ┃", Console.CYAN, info._2, Console.GREEN, info._8, info._2, (info._1 + info._6 + info._2), (info._1 + info._3 + info._2)));
                str.append("\n ").append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛");
-               str.append("\n ").append(Tab.echoTablero(TabD._3, 1, 0)).append("\n")
+               str.append("\n ").append(Tab.echoTablero(tablero, 1, 0)).append("\n")
                str.append("\n ").append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
                str.append("\n ").append(String.format("┃ ❈ %sADVERTENCIA %s: %-90s ┃", Console.RED, info._2, "La jugadas se deven de ser introducir con el siguiente formato 'X:Y:D' para poder realizar"));
                str.append("\n ").append(String.format("┃   %-104s ┃", "una jugada siendo (X = row, Y = column y D = (10 = sup-izq, 20 = inf-izq, 11 = sup-dech, 21 = inf-dech)."));
@@ -92,17 +91,22 @@ object ShellDamas {
           } else {
                str.clear();                                                                                      // Limpiamos el String Builder     
           };
-          str.append(if (!event.isEmpty()) "\n" + TabD._4 else "");
-          val imput: String = this.imputMovGamen(TabD._3, turno, modo_game);                                     // Entrda de los jugadores y movimientos de la IA.
-          ((("([A-Z1-6]{1}):([A-Z1-6]{1}):((1|2){1}(0|1){1})").r).findFirstMatchIn(imput)) match {               // Expresion regular que define el formato de la jugadas.
+          str.append(if (!event.isEmpty()) "\n" + event else "");
+          val imput: String = this.imputMovGamen(tablero, turno, modo_game);                                     // Entrda de los jugadores y movimientos de la IA.
+          /**
+           * Expresion regular que define el formato de la jugadas el formato
+           * de la tupla que se devuelve seria el que sigueo el formato tupla 
+           * (isWinner, isError, tablero, event) para datos de jugada.
+           */
+          val TabD:(Boolean, Boolean, List[Int], String, (Int, Int)) = ((("([A-Z1-6]{1}):([A-Z1-6]{1}):((1|2){1}(0|1){1})").r).findFirstMatchIn(imput)) match {               
                case Some(_) ⇒ 
                     val jugada:(Int, Int, Int) = this.getJugada(imput, 0, 0, 0);  
-                    TabD = Tab.damasPlayBom(tablero, jugada, turno, score);                                      // Validamos la ficha selecionada y realizamos los movimentos y
-                    if (!TabD._2) {
-                         FicN = Tab.numFichasXjugadorInCurse(TabD._3, 0, (0, 0));                                // Recalculamos el numero de fichas de cada jugador.
-                         if (TabD._1 && nivel < 3) {                                                             // Si el nivel es inferior a 3 y la partida a sido ganda se incrementa el nivel.
+                    val jugada_ret = Tab.damasPlayBom(tablero, jugada, turno, score);                            // Validamos la ficha selecionada y realizamos los movimentos y
+                    if (!jugada_ret._2) {
+                         FicN = Tab.numFichasXjugadorInCurse(jugada_ret._3, 0, (0, 0));                          // Recalculamos el numero de fichas de cada jugador.
+                         if (jugada_ret._1 && nivel < 3) {                                                       // Si el nivel es inferior a 3 y la partida a sido ganda se incrementa el nivel.
                               UtilDamas.printtextArt("Nivel " + nivel, "")
-                              val dim: Int = Math.sqrt(TabD._3.length).toInt * 2;                                // Dimension del nuevo tablero.
+                              val dim: Int = Math.sqrt(jugada_ret._3.length).toInt * 2;                          // Dimension del nuevo tablero.
                               val fichXJug = Tab.numFichasXjugadorInit(dim);                                     // Determinamos el numero def fichas a colocar.
                               val dificult = dificultad + (if(dificultad < 4) 2 else 0);                         // Calaculamos el nivel de dificultada de forma creciente. 
                               if (Cfg.getSound()) {                                                              // Segun configuracion ejecuta o no los efectos de sonido.
@@ -111,13 +115,16 @@ object ShellDamas {
                               this.playDamasBom(Tab.generarTablero(dim, dim, dim, dificult), turno, (nivel + 1), dificult, false, (fichXJug, fichXJug), new String, modo_game, score);
                          } 
                     }
+                    jugada_ret;
                case None    ⇒
                     imput match {
-                         case "S" ⇒ TabD = Persistencia.savePlayDamas(TabD._3, modo_game, nivel, turno, dificultad, numfichas, score);
-                         case "H" ⇒ Nil
+                         case "S" ⇒ Persistencia.savePlayDamas(tablero, modo_game, nivel, turno, dificultad, numfichas, score);
+                         case "H" ⇒ (false, false, tablero, new String, score);
                          case  _  ⇒
-                              if (imput != "0") {                                                       // Mostramos los posibles errores de introducion de teclado.
-                                   TabD = (false, true, tablero, " - " + Console.RED + "ERROR: " + Console.RESET + "Caracter o movimiento introducido no valido.", score); // Habilitamos la bandera de eerores
+                              if (imput != "0") {                                                                // Mostramos los posibles errores de introducion de teclado.
+                                   (false, true, tablero, " - " + Console.RED + "ERROR: " + Console.RESET + "Caracter o movimiento introducido no valido.", score); 
+                              } else {
+                                   (false, false, tablero, new String, score);
                               }
                     }
           }

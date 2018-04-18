@@ -134,7 +134,7 @@ object Tablero {
 			val movV    = Array(-1, 1).apply(((mov._3 - (mov._3 % 10)) / 10) - 1);        // Determinamos el movimiento vertical en funcion de la direcion.
                if (isValido(tablero, movV, movH, mov._1, mov._2, 0)) {
                     val (tab, event, puntuacion)  = this.setMovGamen(tablero, movV, movH, mov._1, mov._2, (if ((dama % 10) <= 2) 1 else (dama % 10)), 0, new StringBuilder, false, 0);
-                    return new Tuple5(false, false, tab, event, ((score._1 + (if (turno == 0) puntuacion else 0)), (score._1 + (if (turno == 1) puntuacion else 0))));
+                    return new Tuple5(false, false, tab, event, ((score._1 + (if (turno == 0) puntuacion else 0)), (score._2 + (if (turno == 1) puntuacion else 0))));
                } else {
                     return new Tuple5(false, true, tablero, " ❈ " + Console.RED + "ERROR" + Console.RESET + ": La jugada realizada nos se puede cosidera una jugada valida !!!", score);
                }
@@ -192,7 +192,7 @@ object Tablero {
                                    tablero(posActual);
                               }
                     }
-                    val points = (if (isSetPacMan) tablero(posVictima) % 10 else 0) 
+                    val points = (if (isSetPacMan) (if (tablero(posVictima) % 10 < 3) 1 else tablero(posVictima) % 10) else 0) 
                     val tab    = this.insertMovimiento(tablero, posActual, posVictima, (if (isSetPacMan && ((tablero(posActual) % 10) != 8)) posSalto else -1), fichaInsert, 0);
                     this.setMovGamen(tab, movV, movH, row, col, type_bom, cont + 1, event, isSetPacMan, (puntos + points));
                } else {
