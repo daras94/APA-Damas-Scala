@@ -1,9 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <damas>
-    <fecha>18-abr-2018 3:44:28</fecha>
+    <fecha>18-abr-2018 6:10:45</fecha>
     <play ia="false" dificultad="-1">
         <nivel>0</nivel>
         <turno>0</turno>
+        <score>
+            <jugador-1>0</jugador-1>
+            <jugador-2>0</jugador-2>
+        </score>
         <fichasXJugador jugador-1="12" jugador-2="12">
             <tablero dim-X="8" dim-Y="8">
                 <row-0 col-7="21" col-6="10" col-5="21" col-4="10" col-3="21" col-2="10" col-1="21" col-0="10"/>
