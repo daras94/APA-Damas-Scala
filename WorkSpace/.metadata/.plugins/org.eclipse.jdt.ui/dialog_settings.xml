@@ -78,7 +78,7 @@
 		<item value="false" key="create_package_info_java"/>
 	</section>
 	<section name="BuildPathsPropertyPage">
-		<item value="3" key="pageIndex"/>
+		<item value="0" key="pageIndex"/>
 	</section>
 	<section name="JavadocWizardDialog">
 		<item value="606" key="DIALOG_WIDTH"/>

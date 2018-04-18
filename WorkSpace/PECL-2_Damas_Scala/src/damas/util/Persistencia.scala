@@ -26,7 +26,7 @@ object Persistencia {
       * Almacenamos la partida en curso generando un Xml para su proxima
       * apertura y continuacion de la partida.
       */
-     def savePlayDamas(tablero:List[Int], mode_game:Boolean, nivel:Int, turno:Int, dificultad:Int, num_fichas:(Int, Int), puntuacion:(Int, Int)): (Boolean, Boolean, List[Int], String, (Int, Int)) = {    
+     def savePlayDamas(tablero:List[Int], mode_game:Boolean, nivel:Int, turno:Int, dificultad:Int, num_fichas:(Int, Int), puntuacion:(Int, Int)): (Boolean, Boolean, Boolean, List[Int], String, (Int, Int)) = {    
           val dimension = Math.sqrt(tablero.length).toInt;
           val atb_tab_n = new UnprefixedAttribute("dim-Y", Text(Math.sqrt(tablero.length).toInt.toString()), new UnprefixedAttribute("dim-X", Text(Math.sqrt(tablero.length).toInt.toString()), Null));
           val node_tab  = this.generateChild(Elem(null, "tablero", atb_tab_n, TopScope), tablero, 0, 0);
@@ -36,7 +36,7 @@ object Persistencia {
           val level     = Elem(null, "nivel", Null, TopScope, Text(nivel.toString()));
           val play      = Elem(null, "play", new UnprefixedAttribute("dificultad", Text(dificultad.toString()), new UnprefixedAttribute("ia", Text(mode_game.toString()), Null)), TopScope, level, turne, score, num_fich);
           val fecha     = Elem(null, "fecha", Null, TopScope, id_root)
-          return (false, true, tablero, this.writeXml(Elem(null, "damas", Null, TopScope, fecha, play)), puntuacion);
+          return (false, false, true, tablero, this.writeXml(Elem(null, "damas", Null, TopScope, fecha, play)), puntuacion);
      }
      
      

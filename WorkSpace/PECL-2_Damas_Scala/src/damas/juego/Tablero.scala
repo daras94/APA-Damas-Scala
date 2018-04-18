@@ -127,19 +127,23 @@ object Tablero {
      /**
       * 
       */
-     def damasPlayBom(tablero:List[Int], mov:(Int, Int, Int), turno:Int, score:(Int, Int)): (Boolean, Boolean, List[Int], String, (Int, Int)) = {
+     def damasPlayBom(tablero:List[Int], mov:(Int, Int, Int), turno:Int, score:(Int, Int), modo_juego:Boolean): (Boolean, Boolean, Boolean, List[Int], String, (Int, Int)) = {
           val dama:Int = tablero((mov._1 * Math.sqrt(tablero.length).toInt) + mov._2);
           if ((dama != POS_TAB_EMPTY) && (if (turno == 0) 30 else 20).equals(dama - (dama % 10))) {
                val movH    = Array(-1, 1).apply((mov._3 % 10));					        // Determinamos el movimiento horizontal en funcion de la direcion.
 			val movV    = Array(-1, 1).apply(((mov._3 - (mov._3 % 10)) / 10) - 1);        // Determinamos el movimiento vertical en funcion de la direcion.
                if (isValido(tablero, movV, movH, mov._1, mov._2, 0)) {
-                    val (tab, event, puntuacion)  = this.setMovGamen(tablero, movV, movH, mov._1, mov._2, (if ((dama % 10) <= 2) 1 else (dama % 10)), 0, new StringBuilder, false, 0);
-                    return new Tuple5(false, false, tab, event, ((score._1 + (if (turno == 0) puntuacion else 0)), (score._2 + (if (turno == 1) puntuacion else 0))));
+                    val (tab, event, puntuacion)    = this.setMovGamen(tablero, movV, movH, mov._1, mov._2, (if ((dama % 10) <= 2) 1 else (dama % 10)), 0, new StringBuilder, false, 0);
+                    val (score_1, score_2)          = ((score._1 + (if (turno == 0) puntuacion else 0)), (score._2 + (if (turno == 1) puntuacion else 0)));
+                    val (isTable, isWinner, event2) = this.checkGamen(this.numFichasXjugadorInCurse(tab, 0, (0, 0)), (score_1, score_2), modo_juego)
+                    return new Tuple6(isTable, isWinner, false, tab, (if(isWinner || isWinner) event2 else event), (score_1, score_2));
                } else {
-                    return new Tuple5(false, true, tablero, " ❈ " + Console.RED + "ERROR" + Console.RESET + ": La jugada realizada nos se puede cosidera una jugada valida !!!", score);
+                    val evento = " ❈ " + Console.RED + "ERROR" + Console.RESET + ": La jugada realizada nos se puede cosidera una jugada valida !!!";
+                    return new Tuple6(false, false, true, tablero, evento, score);
                }
           } else {
-               return new Tuple5(false, true, tablero, " ❈ " + Console.RED + "ERROR" + Console.RESET + ": NO pudee mover la ficha selecionada, las fichas que usted pude tocar son '" + (if (turno == 0) "■" else "●") + "' !!!", score);    
+               val evento = " ❈ " + Console.RED + "ERROR" + Console.RESET + ": NO pudee mover la ficha selecionada, las fichas que usted pude tocar son '" + (if (turno == 0) "■" else "●") + "' !!!";
+               return new Tuple6(false, false, true, tablero, evento, score);    
           }
      }
      
@@ -274,13 +278,13 @@ object Tablero {
                case 0 ⇒
                     if(numFich._1 == numFich._2){
                          if (score._1 > score._2) {
-                              new Tuple3(true, true, "Gana el Jugador 1 !!");
+                              new Tuple3(true, true, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Gana el Jugador 1 !!");
                          } else {
                               if (score._1 < score._2) {
-                                   new Tuple3(true, true, "Gana " + (if (modo_juego) " el Jugador 2" else "la Maquina") + " !!");
+                                   new Tuple3(true, true, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Gana " + (if (!modo_juego) " el Jugador 2" else "la Maquina") + " !!");
                               } else {
                                    if (score._1 == score._2) {
-                                        new Tuple3(true, false, "Empate ningun Jugador Gana !!"); 
+                                        new Tuple3(true, false, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Empate ningun Jugador Gana !!"); 
                                    } else {
                                         new Tuple3(false, false, new String); // Tengo que ver como meteri el daemo de tiempo aqui ???.    
                                    }
@@ -292,13 +296,13 @@ object Tablero {
                case _ ⇒
                     if (numFich._1 > numFich._2) {
                          if (score._1 > score._2) {
-                              new Tuple3(false, true, "Gana el Jugador 1 !!");
+                              new Tuple3(false, true, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Gana el Jugador 1 !!");
                          } else {
                               if (score._1 < score._2) {
-                                   new Tuple3(false, true, "Gana " + (if (modo_juego) " el Jugador 2" else "la Maquina") + " !!");  
+                                   new Tuple3(false, true, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Gana " + (if (!modo_juego) " el Jugador 2" else "la Maquina") + " !!");  
                               } else {
                                    if (score._1 == score._2) {
-                                        new Tuple3(false, true, "Gana el Jugador 1 !!");
+                                        new Tuple3(false, true, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Gana el Jugador 1 !!");
                                    } else {
                                         new Tuple3(false, false, new String); // Tengo que ver como meteri el daemo de tiempo aqui ???
                                    }
@@ -307,13 +311,13 @@ object Tablero {
                     } else {
                          if (numFich._1 < numFich._2) {
                               if (score._2 > score._1) {
-                                   new Tuple3(false, true, "Gana " + (if (modo_juego) " el Jugador 2" else "la Maquina") + " !!");
+                                   new Tuple3(false, true, " ❈ " + Console.GREEN + "Evento" + Console.RESET + " Gana " + (if (!modo_juego) " el Jugador 2" else "la Maquina") + " !!");
                               } else {
                                    if (score._2 < score._1) {
-                                        new Tuple3(false, true, "Gana el Jugador 1 !!"); 
+                                        new Tuple3(false, true, " ❈ " + Console.GREEN + "Evento " + Console.RESET + ": Gana el Jugador 1 !!"); 
                                    } else {
                                         if (score._2 == score._1) {
-                                             new Tuple3(false, true, "Gana " + (if (modo_juego) " el Jugador 2" else "la Maquina") + " !!");
+                                             new Tuple3(false, true, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Gana " + (if (!modo_juego) " el Jugador 2" else "la Maquina") + " !!");
                                         } else {
                                              new Tuple3(false, false, new String); // Tengo que ver como meteri el daemo de tiempo aqui ???
                                         }    

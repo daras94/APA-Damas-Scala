@@ -96,39 +96,39 @@ object ShellDamas {
           /**
            * Expresion regular que define el formato de la jugadas el formato
            * de la tupla que se devuelve seria el que sigueo el formato tupla 
-           * (isWinner, isError, tablero, event) para datos de jugada.
+           * (isTablas, isWinner, isError, tablero, event) para datos de jugada.
            */
-          val TabD:(Boolean, Boolean, List[Int], String, (Int, Int)) = ((("([A-Z1-6]{1}):([A-Z1-6]{1}):((1|2){1}(0|1){1})").r).findFirstMatchIn(imput)) match {               
+          val TabD:(Boolean, Boolean, Boolean, List[Int], String, (Int, Int)) = (((("([A-Z1-6]{1}):([A-Z1-6]{1}):((1|2){1}(0|1){1})").r).findFirstMatchIn(imput)) match {               
                case Some(_) ⇒ 
                     val jugada:(Int, Int, Int) = this.getJugada(imput, 0, 0, 0);  
-                    val jugada_ret = Tab.damasPlayBom(tablero, jugada, turno, score);                            // Validamos la ficha selecionada y realizamos los movimentos y
-                    if (!jugada_ret._2) {
-                         FicN = Tab.numFichasXjugadorInCurse(jugada_ret._3, 0, (0, 0));                          // Recalculamos el numero de fichas de cada jugador.
-                         if (jugada_ret._1 && nivel < 3) {                                                       // Si el nivel es inferior a 3 y la partida a sido ganda se incrementa el nivel.
+                    val jugada_ret = Tab.damasPlayBom(tablero, jugada, turno, score, modo_game);                 // Validamos la ficha selecionada y realizamos los movimentos y
+                    if (!jugada_ret._3) {
+                         FicN = Tab.numFichasXjugadorInCurse(jugada_ret._4, 0, (0, 0));                          // Recalculamos el numero de fichas de cada jugador.
+                         if (jugada_ret._2 && nivel < 3) {                                                       // Si el nivel es inferior a 3 y la partida a sido ganda se incrementa el nivel.
                               UtilDamas.printtextArt("Nivel " + nivel, "")
-                              val dim: Int = Math.sqrt(jugada_ret._3.length).toInt * 2;                          // Dimension del nuevo tablero.
+                              val dim: Int = Math.sqrt(jugada_ret._4.length).toInt * 2;                          // Dimension del nuevo tablero.
                               val fichXJug = Tab.numFichasXjugadorInit(dim);                                     // Determinamos el numero def fichas a colocar.
                               val dificult = dificultad + (if(dificultad < 4) 2 else 0);                         // Calaculamos el nivel de dificultada de forma creciente. 
                               if (Cfg.getSound()) {                                                              // Segun configuracion ejecuta o no los efectos de sonido.
                                    UtilDamas.clipSoundEfect("level_up.wav").start();                             // Efecto de sonido leven UP.
                               }
-                              this.playDamasBom(Tab.generarTablero(dim, dim, dim, dificult), turno, (nivel + 1), dificult, false, (fichXJug, fichXJug), new String, modo_game, score);
+                              return this.playDamasBom(Tab.generarTablero(dim, dim, dim, dificult), turno, (nivel + 1), dificult, false, (fichXJug, fichXJug), new String, modo_game, score);
                          } 
                     }
                     jugada_ret;
                case None    ⇒
                     imput match {
                          case "S" ⇒ Persistencia.savePlayDamas(tablero, modo_game, nivel, turno, dificultad, numfichas, score);
-                         case "H" ⇒ (false, false, tablero, new String, score);
+                         case "H" ⇒ (false, false, false, tablero, new String, score);
                          case  _  ⇒
                               if (imput != "0") {                                                                // Mostramos los posibles errores de introducion de teclado.
-                                   (false, true, tablero, " - " + Console.RED + "ERROR: " + Console.RESET + "Caracter o movimiento introducido no valido.", score); 
+                                   (false, false, true, tablero, " - " + Console.RED + "ERROR: " + Console.RESET + "Caracter o movimiento introducido no valido.", score); 
                               } else {
-                                   (false, false, tablero, new String, score);
+                                   (false, false, false, tablero, new String, score);
                               }
                     }
-          }
-          if (!TabD._1 && (imput != "0")) this.playDamasBom(TabD._3, turno + (if (TabD._2) 0 else if (turno == 0) 1 else -1) , nivel, dificultad, TabD._2, FicN, TabD._4, modo_game, TabD._5); 
+          });
+          if ((!TabD._2 || ! TabD._1) && (imput != "0")) this.playDamasBom(TabD._4, turno + (if (TabD._3) 0 else if (turno == 0) 1 else -1) , nivel, dificultad, TabD._3, FicN, TabD._5, modo_game, TabD._6); 
      }
      
      /**
