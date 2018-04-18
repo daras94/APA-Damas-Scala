@@ -68,7 +68,7 @@ object Persistencia {
           try {
                if (folder.exists()) {
                     val out:OutputStreamWriter = new OutputStreamWriter(new FileOutputStream(new File(folder.getPath() + "/" + id_root + ".xml")));
-                    XML.write(out, XML.loadString(new PrettyPrinter(512, 4).format(node, TopScope)),"UTF-8", true, null, MinimizeMode.Always);
+                    XML.write(out, XML.loadString(new PrettyPrinter(512, 4).format(node, TopScope)),"UTF-8", true, null, MinimizeMode.Default);
                     out.close();
                     return (" - " + Console.GREEN + "INFORMACION" + Console.RESET + ": La partida Fue guardada Correctamente.");
                } else {
