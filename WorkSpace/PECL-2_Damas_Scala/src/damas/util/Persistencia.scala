@@ -26,16 +26,17 @@ object Persistencia {
       * Almacenamos la partida en curso generando un Xml para su proxima
       * apertura y continuacion de la partida.
       */
-     def savePlayDamas(tablero:List[Int], mode_game:Boolean, nivel:Int, turno:Int, dificultad:Int, num_fichas:(Int, Int)): (Boolean, Boolean, List[Int], String) = {    
+     def savePlayDamas(tablero:List[Int], mode_game:Boolean, nivel:Int, turno:Int, dificultad:Int, num_fichas:(Int, Int), puntuacion:(Int, Int)): (Boolean, Boolean, List[Int], String, (Int, Int)) = {    
           val dimension = Math.sqrt(tablero.length).toInt;
           val atb_tab_n = new UnprefixedAttribute("dim-Y", Text(Math.sqrt(tablero.length).toInt.toString()), new UnprefixedAttribute("dim-X", Text(Math.sqrt(tablero.length).toInt.toString()), Null));
           val node_tab  = this.generateChild(Elem(null, "tablero", atb_tab_n, TopScope), tablero, 0, 0);
           val num_fich  = Elem(null, "fichasXJugador", new UnprefixedAttribute("jugador-2", Text(num_fichas._2.toString()), new UnprefixedAttribute("jugador-1", Text(num_fichas._1.toString()), Null)), TopScope, node_tab);
+          val score     = Elem(null, "score", Null, TopScope, Elem(null, "jugador-1", Null, TopScope, Text(puntuacion._1.toString())), Elem(null, "jugador-2", Null, TopScope, Text(puntuacion._2.toString())));
           val turne     = Elem(null, "turno", Null, TopScope, Text(turno.toString()));
           val level     = Elem(null, "nivel", Null, TopScope, Text(nivel.toString()));
-          val play      = Elem(null, "play", new UnprefixedAttribute("dificultad", Text(dificultad.toString()), new UnprefixedAttribute("ia", Text(mode_game.toString()), Null)), TopScope, level, turne, num_fich);
+          val play      = Elem(null, "play", new UnprefixedAttribute("dificultad", Text(dificultad.toString()), new UnprefixedAttribute("ia", Text(mode_game.toString()), Null)), TopScope, level, turne, score, num_fich);
           val fecha     = Elem(null, "fecha", Null, TopScope, id_root)
-          return (false, true, tablero, this.writeXml(Elem(null, "damas", Null, TopScope, fecha, play)));
+          return (false, true, tablero, this.writeXml(Elem(null, "damas", Null, TopScope, fecha, play)), puntuacion);
      }
      
      
@@ -87,20 +88,21 @@ object Persistencia {
       * informacion de la partida guarada asi como del tablero se estrae del
       * fichero xml de carga con XPATH.
       */
-     def changePlay(path:String): (List[Int], Int, Int, Int, (Int, Int), String, Boolean) = {
+     def changePlay(path:String): (List[Int], Int, Int, Int, (Int, Int), String, Boolean, (Int, Int)) = {
           val xml = this.loadFilePlay(path, null);
-          val GetPlay:(List[Int], Int, Int, Int, (Int, Int), String, Boolean) = if (xml != null) {
+          val GetPlay:(List[Int], Int, Int, Int, (Int, Int), String, Boolean, (Int, Int)) = if (xml != null) {
                val (ia, dificultad)       = ((xml \\ "damas" \\ "play" \ "@ia").text,                                     (xml \\ "damas" \\ "play" \ "@dificultad").text);
                val (nivel, turno)         = ((xml \\ "damas" \\ "play" \ "nivel").text,                                   (xml \\ "damas" \\ "play" \ "turno").text);
                val (numFichJ1, numFichJ2) = ((xml \\ "damas" \\ "play" \\ "fichasXJugador" \ "@jugador-1").text,          (xml \\ "damas" \\ "play" \\ "fichasXJugador" \ "@jugador-1").text);
                val (dim_X, dim_Y)         = ((xml \\ "damas" \\ "play" \\ "fichasXJugador" \\ "tablero" \ "@dim-X").text, (xml \\ "damas" \\ "play" \\ "fichasXJugador" \\ "tablero" \ "@dim-Y").text);
+               val (score_1, score_2)     = ((xml \\ "damas" \\ "play" \\ "score" \ "jugador-1").text,                    (xml \\ "damas" \\ "play" \\ "score" \ "jugador-2").text);
                def generateRowTab(col:Int, row:Int): List[Int] = (xml \\ "play" \\ "fichasXJugador" \\ "tablero" \\ ("row-" + row) \ ("@col-" + col)) match {
                     case e:Node ⇒ e.text.toInt :: generateRowTab(col + 1, row)
                     case _      ⇒ (if (row < dim_Y.toInt) generateRowTab(0, (row + 1)) else Nil);
                };
-               new Tuple7(generateRowTab(0, 0), turno.toInt, nivel.toInt, dificultad.toInt, (numFichJ1.toInt, numFichJ2.toInt), new String, ia.toBoolean);
+               new Tuple8(generateRowTab(0, 0), turno.toInt, nivel.toInt, dificultad.toInt, (numFichJ1.toInt, numFichJ2.toInt), new String, ia.toBoolean, (score_1.toInt, score_2.toInt));
           } else {
-               new Tuple7(Nil, 0, 0, 0, (0, 0), new String, false);
+               new Tuple8(Nil, 0, 0, 0, (0, 0), new String, false, (0, 0));
           }
           return GetPlay
      }

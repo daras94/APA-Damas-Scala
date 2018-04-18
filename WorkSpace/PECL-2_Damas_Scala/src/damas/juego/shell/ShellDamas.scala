@@ -36,7 +36,7 @@ object ShellDamas {
           val opcion: String = Console.in.readLine().toUpperCase();
           opcion match {
                case "1" | "2" | "3" ⇒
-                    val SetPlay:(List[Int], Int, Int, Int, (Int, Int), String, Boolean) = (if (opcion != "3") {
+                    val SetPlay:(List[Int], Int, Int, Int, (Int, Int), String, Boolean, (Int, Int)) = (if (opcion != "3") {
                          val dim      = Cfg.getDimTablero()
                          val tablero  = Tab.generarTablero(dim, dim, dim, Cfg.getDificultad());                 // Generamos el tablero de juego segun las configuraciones.
                          val fichXJug = Tab.numFichasXjugadorInit(Math.sqrt(tablero.length).toInt);             // Determinamos el numero def fichas a colocar.
@@ -44,19 +44,19 @@ object ShellDamas {
                               UtilDamas.clipSoundEfect("start_up.wav").start();                                 // Efecto de Audio de Start UP. 
                          }
                          opcion match {
-                              case "1" => (tablero, 0, 0, Cfg.getDificultad(), (fichXJug, fichXJug), new String, false);
-                              case "2" => (tablero, 0, 0, Cfg.getDificultad(), (fichXJug, fichXJug), new String, true);
+                              case "1" => (tablero, 0, 0, Cfg.getDificultad(), (fichXJug, fichXJug), new String, false, (0, 0));
+                              case "2" => (tablero, 0, 0, Cfg.getDificultad(), (fichXJug, fichXJug), new String, true, (0, 0));
                          };
                     } else {
                          val f_play = this.setChangePlay(Persistencia.getListOfFiles());
                          if (f_play != null) {
                               Persistencia.changePlay(f_play.getName()); 
                          } else {
-                              new Tuple7(Nil, 0, 0, 0, (0, 0), new String, false);
+                              new Tuple8(Nil, 0, 0, 0, (0, 0), new String, false, (0, 0));
                          }
                     });
                     if (SetPlay._1 != Nil) {                                                                     // Inciamos paratida dos jugadores o cargamos una partida guardada.
-                         this.playDamasBom(SetPlay._1, SetPlay._2, SetPlay._3, SetPlay._4, false, SetPlay._5, SetPlay._6, SetPlay._7);                 
+                         this.playDamasBom(SetPlay._1, SetPlay._2, SetPlay._3, SetPlay._4, false, SetPlay._5, SetPlay._6, SetPlay._7, SetPlay._8);                 
                     }
                case "4" ⇒ this.menuConfigShell();
                case "X" ⇒ System.exit(0);
@@ -73,55 +73,55 @@ object ShellDamas {
      /**
       * Ejecucion del modo de juego de la partida.
       */
-     def playDamasBom(tablero: List[Int], turno: Int, nivel: Int, dificultad: Int, isError: Boolean, numfichas:(Int, Int), event:String, modo_game:Boolean): Unit = { 
-          var TabD:(Boolean, Boolean, List[Int], String) = (false, false, tablero, event);             // Formato tupla (isWinner, isError, tablero, event) para datos de jugada.
-          var FicN:(Int, Int) = numfichas;                                                             // Formato tupla (NumFichJug1, NumFichJug2) ppara el conteo del numero .
-          if (!isError) {                                                                              // Si se a producido un error en la jugada nanterior no se vuelve a imprimir el tablero.
-               UtilDamas.clear(); str.clear(); str.append("\n");                                       // Borramos el pront limpiamos el strmenbuilder.o
-               val info = (Console.GREEN, Console.RESET, (nivel + 1).toString(), (dificultad + 1).toString(), (if (turno == 0) "■" else "●"), 0);
-               str.append("\n ").append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓");
-               str.append("\n ").append(String.format("┃   %s                                                             %-11s ┃ Nº fichas ■  : %-12s ┃ Turno de : %-10s ┃", Console.CYAN, info._2, (info._1 + FicN._1 + info._2), (info._1 + info._5 + info._2)));
-               str.append("\n ").append(String.format("┃ ❈ %s Tablero de Juego                                            %-11s ┃ Nº fichas ●  : %-12s ┃ Dificult : %-10s ┃", Console.CYAN, info._2, (info._1 + FicN._2 + info._2), (info._1 + info._4 + info._2)));
-               str.append("\n ").append(String.format("┃   %s-----------------------------------------------------------  %-11s ┃ Temporizador : %-12s ┃ Nivel    : %-10s ┃", Console.CYAN, info._2, (info._1 + info._6 + info._2), (info._1 + info._3 + info._2)));
-               str.append("\n ").append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛");
+     def playDamasBom(tablero: List[Int], turno: Int, nivel: Int, dificultad: Int, isError: Boolean, numfichas:(Int, Int), event:String, modo_game:Boolean, score:(Int, Int)): Unit = { 
+          var TabD:(Boolean, Boolean, List[Int], String, (Int, Int)) = (false, false, tablero, event, score);     // Formato tupla (isWinner, isError, tablero, event) para datos de jugada.
+          var FicN:(Int, Int) = numfichas;                                                                        // Formato tupla (NumFichJug1, NumFichJug2) ppara el conteo del numero .
+          if (!isError) {                                                                                         // Si se a producido un error en la jugada nanterior no se vuelve a imprimir el tablero.
+               UtilDamas.clear(); str.clear(); str.append("\n");                                                  // Borramos el pront limpiamos el strmenbuilder.o
+               val info = (Console.GREEN, Console.RESET, (nivel + 1).toString(), (dificultad + 1).toString(), (if (turno == 0) "■" else "●"), 0, "Puntuacion:", score.productElement(turno).toString(), new String);
+               str.append("\n ").append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓");
+               str.append("\n ").append(String.format("┃   %s                                                  %-8s ┃ %s%9s%3s ┃ Nº fichas ■  : %-12s ┃ Turno de : %-10s ┃", Console.CYAN, info._2, Console.BOLD,  info._7, info._2, (info._1 + FicN._1 + info._2), (info._1 + info._5 + info._2)));
+               str.append("\n ").append(String.format("┃ ❈ %s Tablero de Juego                                 %-8s ┃ %s%7s%8s ┃ Nº fichas ●  : %-12s ┃ Dificult : %-10s ┃", Console.CYAN, info._2, Console.GREEN, info._9, info._2, (info._1 + FicN._2 + info._2), (info._1 + info._4 + info._2)));
+               str.append("\n ").append(String.format("┃   %s------------------------------------------------  %-8s ┃ %s%6s%9s ┃ Temporizador : %-12s ┃ Nivel    : %-10s ┃", Console.CYAN, info._2, Console.GREEN, info._8, info._2, (info._1 + info._6 + info._2), (info._1 + info._3 + info._2)));
+               str.append("\n ").append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛");
                str.append("\n ").append(Tab.echoTablero(TabD._3, 1, 0)).append("\n")
                str.append("\n ").append("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
                str.append("\n ").append(String.format("┃ ❈ %sADVERTENCIA %s: %-90s ┃", Console.RED, info._2, "La jugadas se deven de ser introducir con el siguiente formato 'X:Y:D' para poder realizar"));
                str.append("\n ").append(String.format("┃   %-104s ┃", "una jugada siendo (X = row, Y = column y D = (10 = sup-izq, 20 = inf-izq, 11 = sup-dech, 21 = inf-dech)."));
                str.append("\n ").append("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"); 
           } else {
-               str.clear();                                                                            // Limpiamos el String Builder     
+               str.clear();                                                                                      // Limpiamos el String Builder     
           };
           str.append(if (!event.isEmpty()) "\n" + TabD._4 else "");
-          val imput: String = this.imputMovGamen(TabD._3, turno, modo_game);                           // Entrda de los jugadores y movimientos de la IA.
-          ((("([A-Z1-6]{1}):([A-Z1-6]{1}):((1|2){1}(0|1){1})").r).findFirstMatchIn(imput)) match {     // Expresion regular que define el formato de la jugadas.
+          val imput: String = this.imputMovGamen(TabD._3, turno, modo_game);                                     // Entrda de los jugadores y movimientos de la IA.
+          ((("([A-Z1-6]{1}):([A-Z1-6]{1}):((1|2){1}(0|1){1})").r).findFirstMatchIn(imput)) match {               // Expresion regular que define el formato de la jugadas.
                case Some(_) ⇒ 
                     val jugada:(Int, Int, Int) = this.getJugada(imput, 0, 0, 0);  
-                    TabD = Tab.damasPlayBom(tablero, jugada, turno);                                   // Validamos la ficha selecionada y realizamos los movimentos y
+                    TabD = Tab.damasPlayBom(tablero, jugada, turno, score);                                      // Validamos la ficha selecionada y realizamos los movimentos y
                     if (!TabD._2) {
-                         FicN = Tab.numFichasXjugadorInCurse(TabD._3, 0, (0, 0));                      // Recalculamos el numero de fichas de cada jugador.
-                         if (TabD._1 && nivel < 3) {                                                   // Si el nivel es inferior a 3 y la partida a sido ganda se incrementa el nivel.
+                         FicN = Tab.numFichasXjugadorInCurse(TabD._3, 0, (0, 0));                                // Recalculamos el numero de fichas de cada jugador.
+                         if (TabD._1 && nivel < 3) {                                                             // Si el nivel es inferior a 3 y la partida a sido ganda se incrementa el nivel.
                               UtilDamas.printtextArt("Nivel " + nivel, "")
-                              val dim: Int = Math.sqrt(TabD._3.length).toInt * 2;                      // Dimension del nuevo tablero.
-                              val fichXJug = Tab.numFichasXjugadorInit(dim);                           // Determinamos el numero def fichas a colocar.
-                              val dificult = dificultad + (if(dificultad < 4) 2 else 0);               // Calaculamos el nivel de dificultada de forma creciente. 
-                              if (Cfg.getSound()) {                                                    // Segun configuracion ejecuta o no los efectos de sonido.
-                                   UtilDamas.clipSoundEfect("level_up.wav").start();                   // Efecto de sonido leven UP.
+                              val dim: Int = Math.sqrt(TabD._3.length).toInt * 2;                                // Dimension del nuevo tablero.
+                              val fichXJug = Tab.numFichasXjugadorInit(dim);                                     // Determinamos el numero def fichas a colocar.
+                              val dificult = dificultad + (if(dificultad < 4) 2 else 0);                         // Calaculamos el nivel de dificultada de forma creciente. 
+                              if (Cfg.getSound()) {                                                              // Segun configuracion ejecuta o no los efectos de sonido.
+                                   UtilDamas.clipSoundEfect("level_up.wav").start();                             // Efecto de sonido leven UP.
                               }
-                              this.playDamasBom(Tab.generarTablero(dim, dim, dim, dificult), turno, (nivel + 1), dificult, false, (fichXJug, fichXJug), new String, modo_game);
+                              this.playDamasBom(Tab.generarTablero(dim, dim, dim, dificult), turno, (nivel + 1), dificult, false, (fichXJug, fichXJug), new String, modo_game, score);
                          } 
                     }
                case None    ⇒
                     imput match {
-                         case "S" ⇒ TabD = Persistencia.savePlayDamas(TabD._3, modo_game, nivel, turno, dificultad, numfichas);
+                         case "S" ⇒ TabD = Persistencia.savePlayDamas(TabD._3, modo_game, nivel, turno, dificultad, numfichas, score);
                          case "H" ⇒ Nil
                          case  _  ⇒
                               if (imput != "0") {                                                       // Mostramos los posibles errores de introducion de teclado.
-                                   TabD = (false, true, tablero, " - " + Console.RED + "ERROR: " + Console.RESET + "Caracter o movimiento introducido no valido."); // Habilitamos la bandera de eerores
+                                   TabD = (false, true, tablero, " - " + Console.RED + "ERROR: " + Console.RESET + "Caracter o movimiento introducido no valido.", score); // Habilitamos la bandera de eerores
                               }
                     }
           }
-          if (!TabD._1 && (imput != "0")) this.playDamasBom(TabD._3, turno + (if (TabD._2) 0 else if (turno == 0) 1 else -1) , nivel, dificultad, TabD._2, FicN, TabD._4, modo_game); 
+          if (!TabD._1 && (imput != "0")) this.playDamasBom(TabD._3, turno + (if (TabD._2) 0 else if (turno == 0) 1 else -1) , nivel, dificultad, TabD._2, FicN, TabD._4, modo_game, TabD._5); 
      }
      
      /**

@@ -213,7 +213,7 @@ class mostrarTablero(var turno: String, val tablero: TableroGUI, val tamaño: In
             case "Jugador" | "Jugador 1" => 0
             case "Jugador 2" | "Maquina" => 1
           }
-          var nuevoTablero = Tablero.damasPlayBom(tablero.getTablero, (y0, x0, direccion), t)
+          var nuevoTablero = Tablero.damasPlayBom(tablero.getTablero, (y0, x0, direccion), t, (0, 0))
           evento.text = "Evento: " + nuevoTablero._4
           actualizarTablero(nuevoTablero._3)
         }
