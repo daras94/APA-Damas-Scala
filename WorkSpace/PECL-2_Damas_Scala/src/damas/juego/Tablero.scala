@@ -274,7 +274,7 @@ object Tablero {
       * tiene en cuenta la puntuacion de cada jugador. El formato de la tupla
       * que devuelve seria el siguiente: (isTablas, isWinner Evento);
       */
-     private def checkGamen(numFich:(Int, Int), score:(Int, Int), modo_juego:Boolean): (Boolean, Boolean, String) = {
+     def checkGamen(numFich:(Int, Int), score:(Int, Int), modo_juego:Boolean): (Boolean, Boolean, String) = {
           if ((numFich._1 > numFich._2) && ((score._1 > score._2) || (score._1 == score._2))) {
                if ((numFich._1 == 3) && (numFich._2 == 1)) {
                     return (true, false,  " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Son Tablas, gana el Jugador por FICHAS !!");  // Tablas a favor Jugador 1.
