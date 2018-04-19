@@ -21,6 +21,9 @@ import damas.util.UtilDamas._
 import damas.util.UtilDamas
 import damas.util.Setting
 import damas.util.Setting._
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 /**
  * @author Daniel
  */
@@ -154,6 +157,7 @@ class mostrarTablero(var turno: String, val tablero: TableroGUI, val tamaño: In
   val numfichasJ1 = new Label
   val numfichasJ2 = new Label
   var evento = new Label
+  var score = new Label
   val numfichas = Tablero.numFichasXjugadorInCurse(tablero.getTablero, 0, (0, 0))
   labelTurno.text = " ❈❈❈❈❈ Turno del %s".format(turno) + " ❈❈❈❈❈"
   numfichasJ1.text = " ❈❈❈❈❈ Fichas Jugador 1: " + numfichas._1.toString() + " ❈❈❈❈❈"
@@ -172,6 +176,8 @@ class mostrarTablero(var turno: String, val tablero: TableroGUI, val tamaño: In
       contents += labelTurno
       contents += numfichasJ1
       contents += numfichasJ2
+      contents += evento
+      contents += score
     }
     contents += Swing.VStrut(10)
     border = Swing.EmptyBorder(10, 10, 10, 10)
@@ -215,10 +221,11 @@ class mostrarTablero(var turno: String, val tablero: TableroGUI, val tamaño: In
           var nuevoTablero = Tablero.damasPlayBom(tablero.getTablero, (y0, x0, direccion), t, (0, 0), false)
           evento.text = "Evento: " + nuevoTablero._5
           val tuple = Tablero.checkGamen((numfichas._1, numfichas._2), nuevoTablero._6, false)
-          if (tuple._1) {
+          if (tuple._2) {
             actualizarTablero(nuevoTablero._4, true)
             evento.text = "Evento: " + tuple._3
-          } else if (tuple._2) {
+            score.text = "❈ J1: "+ nuevoTablero._6._1 + "J2: "+ nuevoTablero._6._2
+          } else if (tuple._1) {
             stats.NUM_EMPATES = stats.NUM_EMPATES + 1
             val opcion = JOptionPane.showMessageDialog(null,"HAS EMPATADO","Comprobar Partdida",JOptionPane.INFORMATION_MESSAGE)
             val tableroNuevo = new TableroGUI(tablero.getTablero)
@@ -399,24 +406,47 @@ class estadisticasJuego extends Frame {
 }
 class partidasGuardadas(partidas: List[File]) extends Frame {
   title = "Partidas guardadas"; //titulo de la ventana
-  preferredSize = new Dimension(240, 160); //tamaño de la ventana
+  preferredSize = new Dimension(400, 200); //tamaño de la ventana
   val label = new Label()
-  label.text = Persistencia.echoGetFileSave(partidas, 2)
+  val text = new TextArea(5,6)
+  label.text = echoGetFileSaveGUI(partidas, 0)
+  val boton = new Button {
+    text = "Cargar"
+  }
+    
+   //Persistencia.changePlay(partidas.apply(n))//Persistencia.changePlay(partidas.apply(0).getName)
 
   contents = new BoxPanel(Orientation.Vertical) {
     contents += label
+    contents += Swing.VStrut(10)
+    contents += text
+    contents += boton
     border = Swing.EmptyBorder(30, 30, 10, 30)
   }
 
   peer.setLocationRelativeTo(null) //centrar la ventana
   peer.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE) //seleccionar la operación de cierre de ventana
-
+  
+  listenTo(boton)
   //reacciones a esos eventos
   reactions += {
+    case ButtonClicked(`boton`) =>{
+      // val tablero = Persistencia.changePlay(partidas.apply(text.text.toInt)//Persistencia.changePlay(partidas.apply(0).getName)
+    }
     case WindowClosing(_) => {
     }
   }
 
+  def echoGetFileSaveGUI(listSave:List[File], cont:Int): String = {
+          if (cont < listSave.length) {
+               val f_file  = listSave.apply(cont);
+               val f_name  = f_file.getName().substring(0, f_file.getName().indexOf(".xml")); 
+               val f_modif = new SimpleDateFormat("yyyy-MM-dd HH:mm",Locale.getDefault).format(new Date(f_file.lastModified()));
+               val f_atb   = (if (f_file.canExecute()) "x" else "-") + (if (f_file.canRead()) "r" else "-") + (if (f_file.canWrite()) "w" else "-");
+               return String.format(" Partida [%s] \t\t Modificado: %s \t Permisos: %s \n ", (cont + 1).toString(), f_name, f_modif, f_atb).concat(this.echoGetFileSaveGUI(listSave, cont + 1)); 
+          } 
+          return new String;
+     }
 }
 //Ventana principal
 object GUIDamas extends Frame {
