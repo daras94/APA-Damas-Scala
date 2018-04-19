@@ -143,7 +143,7 @@ object Persistencia {
      }
      
      /**
-      * Recupera una Lista de file con  todos lo fichero que exiten en el directorio 
+      * Recupera una Lista de file con todos lo fichero que exiten en el directorio 
       * de paratidas guaradadas.
       */
      def getListOfFiles():List[File] = {
