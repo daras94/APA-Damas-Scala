@@ -52,9 +52,9 @@ object Tablero {
        * posiciones que estan ocupan.
        */
      private def imprimirTablero(tablero: List[ Int ], row: Int, col: Int): String = {
-          val dim = (Math.sqrt(tablero.length)).toInt;                                    // Calculamos el tamño de las filas y columnass sera el mismo ya que es una matriz cudrada.
+          val dim = (Math.sqrt(tablero.length)).toInt;                                                // Calculamos el tamño de las filas y columnass sera el mismo ya que es una matriz cudrada.
           if (row < dim) {
-               val pos: Int = (row * dim + col);                                           // Calaculamos la posicion del tablero
+               val pos: Int = (row * dim + col);                                                      // Calaculamos la posicion del tablero
                (if (pos < tablero.length) {
                     val bloque: Int = tablero(pos);  
                     val (out: String) = (col match {
@@ -136,7 +136,7 @@ object Tablero {
                     val (tab, event, puntuacion)    = this.setMovGamen(tablero, movV, movH, mov._1, mov._2, (if ((dama % 10) <= 2) 1 else (dama % 10)), 0, new StringBuilder, false, 0);
                     val (score_1, score_2)          = ((score._1 + (if (turno == 0) puntuacion else 0)), (score._2 + (if (turno == 1) puntuacion else 0)));
                     val (isTable, isWinner, event2) = this.checkGamen(this.numFichasXjugadorInCurse(tab, 0, (0, 0)), (score_1, score_2), modo_juego)
-                    return new Tuple6(isTable, isWinner, false, tab, (if(isWinner || isTable) event2 else event), (score_1, score_2));
+                    return new Tuple6(isTable, isWinner, false, tab, (if(isWinner || isTable) event2 else event2 + event), (score_1, score_2));
                } else {
                     val evento = " ❈ " + Console.RED + "ERROR" + Console.RESET + ": La jugada realizada nos se puede cosidera una jugada valida !!!";
                     return new Tuple6(false, false, true, tablero, evento, score);
@@ -152,7 +152,7 @@ object Tablero {
       * de ficha es valido teniendo en cuenta las reinas y las damas y que los
       * peones puedan realizar un salto.
       */
-     def isValido(tablero:List[Int], movV:Int, movH:Int, row:Int, col:Int, pos:Int): Boolean = {
+     private def isValido(tablero:List[Int], movV:Int, movH:Int, row:Int, col:Int, pos:Int): Boolean = {
           val isMovValido = ((col + ((pos + 1) * movH) > -1) && (col + ((pos + 1) * movH) < Math.sqrt(tablero.length).toInt)) &&
                             ((row + ((pos + 1) * movV) > -1) && (row + ((pos + 1) * movV) < Math.sqrt(tablero.length).toInt));
           if (isMovValido) {
@@ -203,12 +203,12 @@ object Tablero {
                     val (new_row, new_col) = ((row + ((cont + 1) * movV)), (col + ((cont + 1) * movH)));
                     val bom_status:(List[Int], Int, StringBuilder) = (if (isPacMan) {
                          type_bom match {
-                              case 3 => (this.BOM(tablero, puntos, new_row, new_col, 0, type_bom, 0, event));  // BOM CIAN BUILD
-                              case 4 => (this.BOM(tablero, puntos, new_row, new_col, 0, type_bom, 0, event));  // BOM VERDE BUILD
-                              case 5 => (this.BOM(tablero, puntos, new_row, new_col, 0, type_bom, 0, event));  // BOM AMARILLO BUILD
-                              case 6 => (this.BOM(tablero, puntos, new_row, new_col, 0, type_bom, 0, event));  // BOM MAGENTA BUILD
-                              case 7 => (this.BOM(tablero, puntos, new_row, new_col, 0, type_bom, 0, event));  // BOM NARANJA BUILD
-                              case _ => (tablero, puntos, event);                                              // NOT BOM.
+                              case 3 => (this.BOM(tablero, puntos, new_row, new_col, 0, event));  // BOM CIAN BUILD
+                              case 4 => (this.BOM(tablero, puntos, new_row, new_col, 0, event));  // BOM VERDE BUILD
+                              case 5 => (this.BOM(tablero, puntos, new_row, new_col, 0, event));  // BOM AMARILLO BUILD
+                              case 6 => (this.BOM(tablero, puntos, new_row, new_col, 0, event));  // BOM MAGENTA BUILD
+                              case 7 => (this.BOM(tablero, puntos, new_row, new_col, 0, event));  // BOM NARANJA BUILD
+                              case _ => (tablero, puntos, event);                                 // NOT BOM.
                          }
                     } else (tablero, puntos, event));
                     this.setMovGamen(bom_status._1, movV, movH, row, col, type_bom, type_bom, event, isPacMan, bom_status._2);
@@ -311,29 +311,42 @@ object Tablero {
       * ejecutadas x lo cual no se llega a retornar el tablero actualizado de
       * forma corriente.
       */
-     private def BOM(tablero:List[Int], puntos:Int, row:Int, col:Int, cont:Int, type_bom:Int, pos:Int, event:StringBuilder): (List[Int], Int, StringBuilder) = {
+     private def BOM(tablero:List[Int], puntos:Int, row:Int, col:Int, pos:Int, event:StringBuilder): (List[Int], Int, StringBuilder) = {
           val width  = (Math.sqrt(tablero.length).toInt);
-          if ((cont < 4) && (pos < width)) {
-               val (movH, movV) = (List(-1, 1, 1, -1).apply(cont), List(1, -1, -1, 1).apply(cont));
-               val (ficha_patron, ficha_actual) = (tablero((row + movV) * width + (col + movH)), tablero(row * width + col));
-               if ((((ficha_patron - (ficha_patron % 10)) / 10) != ((ficha_actual - (ficha_actual % 10)) / 10))) { 
-                    val tab = tablero;
-                    if ((((row + pos * (-1))) > -1 ) && ((col + pos * (-1)) > -1)) {
-                         event.append("\n ").append(Console.GREEN + "1 - " + tablero((row + pos * (-1)) * width + (col + pos * (-1))) + " - BOM!!" + Console.RESET);
-                         //tablero.updated(((row + pos * (-1)) * width + (col + pos * (-1))), POS_TAB_EMPTY);
-                    }
-				if (((row + pos) < width) && ((col + pos) < width)) {
-				     event.append("\n ").append(Console.GREEN + "2 - " + tablero((row + pos) * width + (col + pos)) + " - BOM!!" + Console.RESET);
-				     //tablero.updated((row + pos) * width + (col + pos), POS_TAB_EMPTY).;
-				}
-				this.BOM(tab, puntos, row, col, cont, type_bom, (pos + 1), event);
-               } else {
-                    this.BOM(tablero, puntos, row, col, (cont + 1), type_bom, pos, event);
-               }
+          if (pos < width) {
+               val post_2       = (if ((((row + pos * (-1))) > -1 ) && ((col + pos * (-1)) > -1)) ((row + pos * (-1)) * width + (col + pos * (-1))) else 0);
+               val typo_ficha_2 = ((post_2 != 0) && ((tablero(row * width + col) - (tablero(row * width + col) % 10)) / 10) != ((tablero(post_2) - (tablero(post_2) % 10)) / 10))
+               val score_2      = (if (post_2 != 0) {
+                    (tablero((row + pos * (-1)) * width + (col + pos * (-1))) % 10);
+               } else 0);
+               val post_1       = (if (((row + pos) < width) && ((col + pos) < width)) (row + pos) * width + (col + pos) else 0);
+               val typo_ficha_1 = ((post_1 != 0) && ((tablero(row * width + col) - (tablero(row * width + col) % 10)) / 10) != ((tablero(post_1) - (tablero(post_1) % 10)) / 10))
+               val score_1      = (if (post_1 != 0) {
+                    (tablero((row + pos) * width + (col + pos)) % 10);
+               } else 0);
+			val tab = this.dropBom(tablero, (if (typo_ficha_1) post_1 else 0), (if (typo_ficha_2) post_2 else 0), 0);
+			this.BOM(tab, (puntos + score_1 + score_2), row, col, (pos + 1), event);
           } else {
+               event.append("\n ").append(" ❈ " + Console.GREEN + "Evento" + Console.RESET + ": BOM Diagonal !!").append("\n")
                return (tablero, puntos, event);
           }
           
+     }
+     
+     /**
+      * Metod de borrado para la bomba.
+      */
+     private def dropBom(tablero:List[Int], post_1:Int, post_2:Int, cont:Int): List[Int] = {
+          if (cont < tablero.length) {
+               if ((post_1 == cont) || (post_2 == cont)) {
+                    val (act, vic) = ((if (cont == post_1) 0 else post_1), (if (cont == post_2) 0 else post_2));
+                    POS_TAB_EMPTY :: dropBom(tablero, post_1, post_2, (cont + 1));
+               } else {
+                    tablero(cont) :: dropBom(tablero, post_1, post_2, (cont + 1));   
+               }
+          } else {
+               return Nil;
+          }    
      }
      
 }

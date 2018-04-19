@@ -92,7 +92,7 @@ object ShellDamas {
                str.clear();                                                                                      // Limpiamos el String Builder     
           };
           str.append(if (!event.isEmpty()) "\n" + event else "");
-          val imput: String = this.imputMovGamen(tablero, turno, modo_game);                                     // Entrda de los jugadores y movimientos de la IA.
+          val imput: String = this.imputMovGamen(tablero, turno, modo_game, (if(turno !=0 ) score._2 else score._2));                                     // Entrda de los jugadores y movimientos de la IA.
           /**
            * Expresion regular que define el formato de la jugadas el formato
            * de la tupla que se devuelve seria el que sigueo el formato tupla 
@@ -159,9 +159,10 @@ object ShellDamas {
       * 	- modo_juego 	= Recibe un booleano cone modo de juego siendo true
       * 				  Jugador VS IA y false jugador vs jugador. 
       */
-     private def imputMovGamen(tablero:List[Int], turno:Int, modo_juego:Boolean): String = {
+     private def imputMovGamen(tablero:List[Int], turno:Int, modo_juego:Boolean, puntuacion:Int): String = {
           if ((turno != 0) && modo_juego) {                          // Turno de la IA que Relice su jugada en el modo Jugador VS IA.
-               return "";
+               val ia = Ia.jugadaOptima(tablero, 0, 0, 0, 0, 0, 0, Math.sqrt(tablero.length).toInt, Math.sqrt(tablero.length).toInt, puntuacion);
+               return (Tab.CAR_ROW_COLUMN.indexOf(ia._1) + ":" + Tab.CAR_ROW_COLUMN.indexOf(ia._2) + ":" + ia._3);
           } else {                                                   // Turno del Resto de Jugadores en el modo Jugador VS Jugador.
                str.append("\n").append(" ❈ Realice su jugada (" + Console.GREEN + "0 para salir de la partida, S para guardar la partida y H ayuda." + Console.RESET + "): ");
                print(str.toString());
