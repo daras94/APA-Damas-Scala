@@ -1,5 +1,8 @@
 package damas.util
 
+/**
+ * @author daniel
+ */
 object Ia {
 
      def devuelveBloque(tablero: List[ Int ], pos: Int): Int = {
