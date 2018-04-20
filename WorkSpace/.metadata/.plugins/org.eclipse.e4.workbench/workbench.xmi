@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_Um_A4ER4EeiXp-TAwnG4-A" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_Um_A4UR4EeiXp-TAwnG4-A" bindingContexts="_Um_qzER4EeiXp-TAwnG4-A">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;scala.tools.eclipse.ScalaSourceFileEditor&quot; name=&quot;UtilDamas.scala&quot; tooltip=&quot;PECL-2_Damas_Scala/src/damas/util/UtilDamas.scala&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/src/damas/util/UtilDamas.scala&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;scala.tools.eclipse.ScalaSourceFileEditor&quot; name=&quot;GUIDamas.scala&quot; tooltip=&quot;PECL-2_Damas_Scala/src/damas/juego/gui/GUIDamas.scala&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/src/damas/juego/gui/GUIDamas.scala&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;scala.tools.eclipse.ScalaSourceFileEditor&quot; name=&quot;Tablero.scala&quot; tooltip=&quot;PECL-2_Damas_Scala/src/damas/juego/Tablero.scala&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/src/damas/juego/Tablero.scala&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;19-abr-2018 10:04:35.xml&quot; tooltip=&quot;PECL-2_Damas_Scala/conf/save/19-abr-2018 10:04:35.xml&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/conf/save/19-abr-2018 10:04:35.xml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;19-abr-2018 9:59:34.xml&quot; tooltip=&quot;PECL-2_Damas_Scala/conf/save/19-abr-2018 9:59:34.xml&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/conf/save/19-abr-2018 9:59:34.xml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;scala.tools.eclipse.ScalaSourceFileEditor&quot; name=&quot;TestMainDamas.scala&quot; tooltip=&quot;PECL-2_Damas_Scala/src/damas/TestMainDamas.scala&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/src/damas/TestMainDamas.scala&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;scala.tools.eclipse.ScalaSourceFileEditor&quot; name=&quot;package.scala&quot; tooltip=&quot;PECL-2_Damas_Scala/src/damas/package.scala&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/src/damas/package.scala&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;scala.tools.eclipse.ScalaSourceFileEditor&quot; name=&quot;Setting.scala&quot; tooltip=&quot;PECL-2_Damas_Scala/src/damas/util/Setting.scala&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/src/damas/util/Setting.scala&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;20-abr-2018 0:23:15.xml&quot; tooltip=&quot;PECL-2_Damas_Scala/conf/save/20-abr-2018 0:23:15.xml&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/conf/save/20-abr-2018 0:23:15.xml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;20-abr-2018 1:06:28.xml&quot; tooltip=&quot;PECL-2_Damas_Scala/conf/save/20-abr-2018 1:06:28.xml&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/conf/save/20-abr-2018 1:06:28.xml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.PropertiesFileEditor&quot; name=&quot;config.properties&quot; tooltip=&quot;PECL-2_Damas_Scala/resources/config.properties&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/resources/config.properties&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;scala.tools.eclipse.ScalaSourceFileEditor&quot; name=&quot;Persistencia.scala&quot; tooltip=&quot;PECL-2_Damas_Scala/src/damas/util/Persistencia.scala&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/src/damas/util/Persistencia.scala&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.PropertiesFileEditor&quot; name=&quot;config.properties&quot; tooltip=&quot;PECL-2_Damas_Scala/conf/config.properties&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/conf/config.properties&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.jdt.ui.ClassFileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.ClassFileEditor&quot; name=&quot;EventQueue.class&quot; tooltip=&quot;java.awt.EventQueue&quot;>&#xA;&lt;persistable org.eclipse.jdt.ui.ClassFileIdentifier=&quot;=PECL-2_Damas_Scala/\/usr\/lib\/jvm\/jdk1.8.0_162\/jre\/lib\/rt.jar&amp;lt;java.awt(EventQueue.class&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;scala.tools.eclipse.ScalaSourceFileEditor&quot; name=&quot;Ia.scala&quot; tooltip=&quot;PECL-2_Damas_Scala/src/damas/util/Ia.scala&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/src/damas/util/Ia.scala&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;scala.tools.eclipse.ScalaSourceFileEditor&quot; name=&quot;TestMainDamas.scala&quot; tooltip=&quot;PECL-2_Damas_Scala/src/damas/TestMainDamas.scala&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/src/damas/TestMainDamas.scala&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;scala.tools.eclipse.ScalaSourceFileEditor&quot; name=&quot;UtilDamas.scala&quot; tooltip=&quot;PECL-2_Damas_Scala/src/damas/util/UtilDamas.scala&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/src/damas/util/UtilDamas.scala&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;scala.tools.eclipse.ScalaSourceFileEditor&quot; name=&quot;GUIDamas.scala&quot; tooltip=&quot;PECL-2_Damas_Scala/src/damas/juego/gui/GUIDamas.scala&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/src/damas/juego/gui/GUIDamas.scala&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;scala.tools.eclipse.ScalaSourceFileEditor&quot; name=&quot;Tablero.scala&quot; tooltip=&quot;PECL-2_Damas_Scala/src/damas/juego/Tablero.scala&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/src/damas/juego/Tablero.scala&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;19-abr-2018 10:04:35.xml&quot; tooltip=&quot;PECL-2_Damas_Scala/conf/save/19-abr-2018 10:04:35.xml&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/conf/save/19-abr-2018 10:04:35.xml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;19-abr-2018 9:59:34.xml&quot; tooltip=&quot;PECL-2_Damas_Scala/conf/save/19-abr-2018 9:59:34.xml&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/conf/save/19-abr-2018 9:59:34.xml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;scala.tools.eclipse.ScalaSourceFileEditor&quot; name=&quot;package.scala&quot; tooltip=&quot;PECL-2_Damas_Scala/src/damas/package.scala&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/src/damas/package.scala&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;scala.tools.eclipse.ScalaSourceFileEditor&quot; name=&quot;Setting.scala&quot; tooltip=&quot;PECL-2_Damas_Scala/src/damas/util/Setting.scala&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/src/damas/util/Setting.scala&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;20-abr-2018 0:23:15.xml&quot; tooltip=&quot;PECL-2_Damas_Scala/conf/save/20-abr-2018 0:23:15.xml&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/conf/save/20-abr-2018 0:23:15.xml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;20-abr-2018 1:06:28.xml&quot; tooltip=&quot;PECL-2_Damas_Scala/conf/save/20-abr-2018 1:06:28.xml&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/conf/save/20-abr-2018 1:06:28.xml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.PropertiesFileEditor&quot; name=&quot;config.properties&quot; tooltip=&quot;PECL-2_Damas_Scala/resources/config.properties&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/resources/config.properties&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;scala.tools.eclipse.ScalaSourceFileEditor&quot; name=&quot;Persistencia.scala&quot; tooltip=&quot;PECL-2_Damas_Scala/src/damas/util/Persistencia.scala&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/src/damas/util/Persistencia.scala&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.PropertiesFileEditor&quot; name=&quot;config.properties&quot; tooltip=&quot;PECL-2_Damas_Scala/conf/config.properties&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/conf/config.properties&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.jdt.ui.ClassFileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.ClassFileEditor&quot; name=&quot;EventQueue.class&quot; tooltip=&quot;java.awt.EventQueue&quot;>&#xA;&lt;persistable org.eclipse.jdt.ui.ClassFileIdentifier=&quot;=PECL-2_Damas_Scala/\/usr\/lib\/jvm\/jdk1.8.0_162\/jre\/lib\/rt.jar&amp;lt;java.awt(EventQueue.class&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;scala.tools.eclipse.ScalaSourceFileEditor&quot; name=&quot;Ia.scala&quot; tooltip=&quot;PECL-2_Damas_Scala/src/damas/util/Ia.scala&quot;>&#xA;&lt;persistable path=&quot;/PECL-2_Damas_Scala/src/damas/util/Ia.scala&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
   <children xsi:type="basic:TrimmedWindow" xmi:id="_Um_A4UR4EeiXp-TAwnG4-A" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_Um_A4kR4EeiXp-TAwnG4-A" label="%trimmedwindow.label.eclipseSDK" x="0" y="28" width="1024" height="768">
@@ -150,9 +150,11 @@
           <tags>persp.newWizSC:org.scalaide.worksheet.wizards.newWorksheet</tags>
           <tags>persp.newWizSC:org.scala-ide.play2.wizards.newTemplate</tags>
           <tags>persp.actionSet:org.eclipse.debug.ui.debugActionSet</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_Um_BAkR4EeiXp-TAwnG4-A" selectedElement="_Um_BCER4EeiXp-TAwnG4-A" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_Um_BAkR4EeiXp-TAwnG4-A" selectedElement="_Um_BA0R4EeiXp-TAwnG4-A" horizontal="true">
             <children xsi:type="basic:PartSashContainer" xmi:id="_Um_BA0R4EeiXp-TAwnG4-A" containerData="2271" selectedElement="_Um_BBER4EeiXp-TAwnG4-A">
               <children xsi:type="basic:PartStack" xmi:id="_Um_BBER4EeiXp-TAwnG4-A" elementId="explorer" containerData="7508" selectedElement="_Um_BBUR4EeiXp-TAwnG4-A">
+                <tags>active</tags>
+                <tags>noFocus</tags>
                 <children xsi:type="advanced:Placeholder" xmi:id="_Um_BBUR4EeiXp-TAwnG4-A" elementId="org.eclipse.jdt.ui.PackageExplorer" ref="_Um_C3kR4EeiXp-TAwnG4-A"/>
               </children>
               <children xsi:type="basic:PartStack" xmi:id="_Um_BBkR4EeiXp-TAwnG4-A" elementId="right" containerData="2492" selectedElement="_Um_BB0R4EeiXp-TAwnG4-A">
@@ -333,12 +335,11 @@
       <tags>categoryTag:Help</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_Um_CjkR4EeiXp-TAwnG4-A" elementId="org.eclipse.ui.editorss" selectedElement="_Um_Cj0R4EeiXp-TAwnG4-A">
-      <children xsi:type="basic:PartStack" xmi:id="_Um_Cj0R4EeiXp-TAwnG4-A" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_Um_ClUR4EeiXp-TAwnG4-A">
+      <children xsi:type="basic:PartStack" xmi:id="_Um_Cj0R4EeiXp-TAwnG4-A" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_Um_CkER4EeiXp-TAwnG4-A">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
-        <tags>active</tags>
         <children xsi:type="basic:Part" xmi:id="_Um_CkER4EeiXp-TAwnG4-A" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="ShellDamas.scala" iconURI="platform:/plugin/org.scala-ide.sdt.core/icons/full/obj16/scu_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;scala.tools.eclipse.ScalaSourceFileEditor&quot; name=&quot;ShellDamas.scala&quot; partName=&quot;ShellDamas.scala&quot; title=&quot;ShellDamas.scala&quot; tooltip=&quot;PECL-2_Damas_Scala/src/damas/juego/shell/ShellDamas.scala&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/PECL-2_Damas_Scala/src/damas/juego/shell/ShellDamas.scala&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;7128&quot; selectionTopPixel=&quot;924&quot;/>&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;scala.tools.eclipse.ScalaSourceFileEditor&quot; name=&quot;ShellDamas.scala&quot; partName=&quot;ShellDamas.scala&quot; title=&quot;ShellDamas.scala&quot; tooltip=&quot;PECL-2_Damas_Scala/src/damas/juego/shell/ShellDamas.scala&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/PECL-2_Damas_Scala/src/damas/juego/shell/ShellDamas.scala&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;7576&quot; selectionTopPixel=&quot;924&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>scala.tools.eclipse.ScalaSourceFileEditor</tags>
           <tags>removeOnHide</tags>
@@ -366,11 +367,10 @@
           <tags>removeOnHide</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_Um_ClUR4EeiXp-TAwnG4-A" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="GUIDamas.scala" iconURI="platform:/plugin/org.scala-ide.sdt.core/icons/full/obj16/scu_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;scala.tools.eclipse.ScalaSourceFileEditor&quot; name=&quot;GUIDamas.scala&quot; partName=&quot;GUIDamas.scala&quot; title=&quot;GUIDamas.scala&quot; tooltip=&quot;PECL-2_Damas_Scala/src/damas/juego/gui/GUIDamas.scala&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/PECL-2_Damas_Scala/src/damas/juego/gui/GUIDamas.scala&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;30147&quot; selectionTopPixel=&quot;11329&quot;/>&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;scala.tools.eclipse.ScalaSourceFileEditor&quot; name=&quot;GUIDamas.scala&quot; partName=&quot;GUIDamas.scala&quot; title=&quot;GUIDamas.scala&quot; tooltip=&quot;PECL-2_Damas_Scala/src/damas/juego/gui/GUIDamas.scala&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/PECL-2_Damas_Scala/src/damas/juego/gui/GUIDamas.scala&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;30147&quot; selectionTopPixel=&quot;11490&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>scala.tools.eclipse.ScalaSourceFileEditor</tags>
           <tags>removeOnHide</tags>
-          <tags>active</tags>
           <menus xsi:type="menu:PopupMenu" xmi:id="_Um_ClkR4EeiXp-TAwnG4-A" elementId="#CompilationUnitEditorContext">
             <tags>menuContribution:popup</tags>
             <tags>popup:#CompilationUnitEditorContext</tags>
@@ -394,28 +394,6 @@
           <tags>scala.tools.eclipse.ScalaSourceFileEditor</tags>
           <tags>removeOnHide</tags>
         </children>
-        <children xsi:type="basic:Part" xmi:id="_Um_C2kR4EeiXp-TAwnG4-A" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="TestMainDamas.scala" iconURI="platform:/plugin/org.scala-ide.sdt.core/icons/full/obj16/scu_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;scala.tools.eclipse.ScalaSourceFileEditor&quot; name=&quot;TestMainDamas.scala&quot; partName=&quot;TestMainDamas.scala&quot; title=&quot;TestMainDamas.scala&quot; tooltip=&quot;PECL-2_Damas_Scala/src/damas/TestMainDamas.scala&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/PECL-2_Damas_Scala/src/damas/TestMainDamas.scala&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;516&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>scala.tools.eclipse.ScalaSourceFileEditor</tags>
-          <tags>removeOnHide</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Um_C20R4EeiXp-TAwnG4-A" elementId="#CompilationUnitEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#CompilationUnitEditorContext</tags>
-            <tags>popup:scala.tools.eclipse.ScalaSourceFileEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Um_C3ER4EeiXp-TAwnG4-A" elementId="#CompilationUnitRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#CompilationUnitRulerContext</tags>
-            <tags>popup:scala.tools.eclipse.ScalaSourceFileEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Um_C3UR4EeiXp-TAwnG4-A" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-        </children>
       </children>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_Um_C3kR4EeiXp-TAwnG4-A" elementId="org.eclipse.jdt.ui.PackageExplorer" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Package Explorer" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/package.png" tooltip="" closeable="true">
@@ -424,6 +402,8 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view group_libraries=&quot;1&quot; layout=&quot;2&quot; linkWithEditor=&quot;1&quot; rootMode=&quot;1&quot; workingSetName=&quot;Aggregate for window 1521813989352&quot;>&#xA;&lt;customFilters userDefinedPatternsEnabled=&quot;false&quot;>&#xA;&lt;xmlDefinedFilters>&#xA;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.StaticsFilter&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.buildship.ui.packageexplorer.filter.gradle.buildfolder&quot; isEnabled=&quot;true&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.mylyn.java.ui.MembersFilter&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.m2e.MavenModuleFilter&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter&quot; isEnabled=&quot;true&quot;/>&#xA;&lt;child filterId=&quot;scala.tools.eclipse.javaelements.ScalaElementFilter&quot; isEnabled=&quot;true&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.buildship.ui.packageexplorer.filter.gradle.subProject&quot; isEnabled=&quot;true&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter&quot; isEnabled=&quot;true&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter&quot; isEnabled=&quot;true&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.pde.ui.BinaryProjectFilter1&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.pde.ui.ExternalPluginLibrariesFilter1&quot; isEnabled=&quot;true&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.FieldsFilter&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*&quot; isEnabled=&quot;true&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter&quot; isEnabled=&quot;true&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ContainedLibraryFilter&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter&quot; isEnabled=&quot;true&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.DeprecatedMembersFilter&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter&quot; isEnabled=&quot;true&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.LibraryFilter&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;/xmlDefinedFilters>&#xA;&lt;/customFilters>&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:Java</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_Um_C30R4EeiXp-TAwnG4-A" elementId="org.eclipse.jdt.ui.PackageExplorer">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -884,43 +864,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Um_oVER4EeiXp-TAwnG4-A" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_oVUR4EeiXp-TAwnG4-A" elementId="new.group">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_oVkR4EeiXp-TAwnG4-A" elementId="newWizardDropDown">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_oV0R4EeiXp-TAwnG4-A" elementId="new.ext" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_oWER4EeiXp-TAwnG4-A" elementId="save.group" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_oWUR4EeiXp-TAwnG4-A" elementId="save">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_oWkR4EeiXp-TAwnG4-A" elementId="saveAll">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_oW0R4EeiXp-TAwnG4-A" elementId="save.ext" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_Um_oXER4EeiXp-TAwnG4-A" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_UnCFSkR4EeiXp-TAwnG4-A"/>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_oXUR4EeiXp-TAwnG4-A" elementId="print.ext" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_oXkR4EeiXp-TAwnG4-A" elementId="build.group">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_oX0R4EeiXp-TAwnG4-A" elementId="build">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_oYER4EeiXp-TAwnG4-A" elementId="build.ext" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_oYUR4EeiXp-TAwnG4-A" elementId="additions">
-          <tags>Opaque</tags>
-        </children>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_nNwHsER4Eeihu6DARBA9xQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_UnCFSkR4EeiXp-TAwnG4-A"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Um_oYkR4EeiXp-TAwnG4-A" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -934,39 +878,12 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Um_ookR4EeiXp-TAwnG4-A" elementId="org.eclipse.debug.ui.launchActionSet">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_oo0R4EeiXp-TAwnG4-A" elementId="debug">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_opER4EeiXp-TAwnG4-A" elementId="org.eclipse.debug.internal.ui.actions.DebugDropDownAction">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_opUR4EeiXp-TAwnG4-A" elementId="org.eclipse.debug.internal.ui.actions.RunDropDownAction">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_opkR4EeiXp-TAwnG4-A" elementId="org.eclipse.eclemma.ui.actions.CoverageDropDownAction">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_op0R4EeiXp-TAwnG4-A" elementId="org.eclipse.ui.externaltools.ExternalToolMenuDelegateToolbar">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Um_oqER4EeiXp-TAwnG4-A" elementId="org.eclipse.jdt.ui.JavaElementCreationActionSet" visible="false">
         <tags>Draggable</tags>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Um_oqUR4EeiXp-TAwnG4-A" elementId="org.eclipse.search.searchActionSet">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_oqkR4EeiXp-TAwnG4-A" elementId="Search">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_oq0R4EeiXp-TAwnG4-A" elementId="openType">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_orER4EeiXp-TAwnG4-A" elementId="org.eclipse.mylyn.tasks.ui.openTask">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_orUR4EeiXp-TAwnG4-A" elementId="org.eclipse.search.OpenSearchDialogPage">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Um_orkR4EeiXp-TAwnG4-A" elementId="group.nav" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -974,36 +891,9 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Um_osER4EeiXp-TAwnG4-A" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_osUR4EeiXp-TAwnG4-A" elementId="history.group">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_oskR4EeiXp-TAwnG4-A" elementId="group.application" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_os0R4EeiXp-TAwnG4-A" elementId="backardHistory">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_otER4EeiXp-TAwnG4-A" elementId="forwardHistory">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_otUR4EeiXp-TAwnG4-A" elementId="pin.group">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_Um_otkR4EeiXp-TAwnG4-A" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_UnCE8ER4EeiXp-TAwnG4-A"/>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_ot0R4EeiXp-TAwnG4-A" elementId="org.eclipse.ui.edit.text.gotoNextAnnotation">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_ouER4EeiXp-TAwnG4-A" elementId="org.eclipse.ui.edit.text.gotoPreviousAnnotation">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_ouUR4EeiXp-TAwnG4-A" elementId="org.eclipse.ui.edit.text.gotoLastEditPosition">
-          <tags>Opaque</tags>
-        </children>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_nNyj8ER4Eeihu6DARBA9xQ" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_UnCE8ER4EeiXp-TAwnG4-A"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Um_oukR4EeiXp-TAwnG4-A" elementId="org.eclipse.jdt.ui.ClassFileEditor" visible="false">
-        <tags>Draggable</tags>
-      </children>
-      <children xsi:type="menu:ToolBar" xmi:id="_Um_ou0R4EeiXp-TAwnG4-A" elementId="scala.tools.eclipse.ScalaSourceFileEditor" visible="false">
         <tags>Draggable</tags>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Um_ovER4EeiXp-TAwnG4-A" elementId="group.editor" toBeRendered="false">
@@ -1016,12 +906,6 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Um_owER4EeiXp-TAwnG4-A" elementId="org.eclipse.ui.workbench.help" visible="false">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_owUR4EeiXp-TAwnG4-A" elementId="group.help">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Um_owkR4EeiXp-TAwnG4-A" elementId="group.application" visible="false">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolControl" xmi:id="_Um_ow0R4EeiXp-TAwnG4-A" elementId="PerspectiveSpacer" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
         <tags>stretch</tags>
@@ -2317,6 +2201,26 @@
     <tags>View</tags>
     <tags>categoryTag:Wicked Shell</tags>
   </descriptors>
+  <trimContributions xmi:id="_VJSd4NrlEeWx1NC92N4qRw" elementId="org.eclipse.recommenders.news.rcp.trimConstribution.news" contributorURI="platform:/plugin/org.eclipse.recommenders.news.rcp" parentId="org.eclipse.ui.trim.status">
+    <children xsi:type="menu:ToolControl" xmi:id="_ckfB0OFAEeWdb5xZgv0Dbw" elementId="org.eclipse.recommenders.news.rcp.toolControl.news" contributorURI="platform:/plugin/org.eclipse.recommenders.news.rcp" contributionURI="bundleclass://org.eclipse.recommenders.news.rcp/org.eclipse.recommenders.internal.news.rcp.toolbar.NewsToolControl"/>
+  </trimContributions>
+  <trimContributions xmi:id="_2r10UF9tEeO-yojH_y4TJA" elementId="org.eclipse.ui.ide.application.trimcontribution.QuickAccess" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" toBeRendered="false" parentId="org.eclipse.ui.main.toolbar" positionInParent="last">
+    <children xsi:type="menu:ToolControl" xmi:id="_76uUAF9tEeO-yojH_y4TJA" elementId="Spacer Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
+      <tags>glue</tags>
+      <tags>move_after:PerspectiveSpacer</tags>
+      <tags>SHOW_RESTORE_MENU</tags>
+    </children>
+    <children xsi:type="menu:ToolControl" xmi:id="_8tJPcF9tEeO-yojH_y4TJA" elementId="SearchField" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.quickaccess.SearchField">
+      <tags>move_after:Spacer Glue</tags>
+      <tags>HIDEABLE</tags>
+      <tags>SHOW_RESTORE_MENU</tags>
+    </children>
+    <children xsi:type="menu:ToolControl" xmi:id="_9LgmcF9tEeO-yojH_y4TJA" elementId="Search-PS Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
+      <tags>glue</tags>
+      <tags>move_after:SearchField</tags>
+      <tags>SHOW_RESTORE_MENU</tags>
+    </children>
+  </trimContributions>
   <commands xmi:id="_UnA5dUR4EeiXp-TAwnG4-A" elementId="org.eclipse.ui.window.customizePerspective" contributorURI="platform:/plugin/org.eclipse.platform"/>
   <commands xmi:id="_UnA5dkR4EeiXp-TAwnG4-A" elementId="org.eclipse.jdt.ui.correction.inlineLocal.assist" commandName="Quick Assist - Inline local variable" description="Invokes quick assist and selects 'Inline local variable'" category="_UnEgsUR4EeiXp-TAwnG4-A"/>
   <commands xmi:id="_UnA5d0R4EeiXp-TAwnG4-A" elementId="org.eclipse.ui.edit.text.select.pageUp" commandName="Select Page Up" description="Select to the top of the page" category="_UnEghkR4EeiXp-TAwnG4-A"/>
