@@ -20,7 +20,7 @@ import java.util.Locale;
  * @author Daniel
  */
 
-object Tab{
+/*object Tab{
  
   def getTab(grid: (List[Int],Int,Int,Int,(Int, Int),String,Boolean,(Int,Int))) = grid
 
@@ -127,114 +127,6 @@ class dibujarTablero(tablero: List[Int], val tamaño: Int) extends Component {
       case _ => Color.white
     }
   }
-=======
-  * @author Daniel
-  */
-//clase para generar el tablero segun dificultad y tamaño
-object TableroGUI {
-
-     def getTablero(grid: List[ Int ]) = grid
-     def apply(x: Int, y: Int, tamaño: Int, tablero: List[ Int ]) = tablero(tamaño * y + x)
-
-}
-//clase para dibujar el tablero
-/*class dibujarTablero(tablero: List[ Int ], val tamaño: Int) extends Component {
-
-     tamaño match {
-          case 8  => preferredSize = new Dimension(300, 400) //tamaño de la ventana
-          case 16 => preferredSize = new Dimension(700, 500)
-          case 32 => preferredSize = new Dimension(900, 700)
-     }
-
-     listenTo(mouse.clicks)
-     reactions += {
-          case MouseClicked(_, p, _, _, _) => mouseClick(p.x, p.y)
-     }
-
-     def squareGeometry: (Int, Int, Int, Int) = {
-          val d = size
-          val squareSide = d.height min d.width
-          val x0 = (d.width - squareSide) / tamaño - 1
-          val y0 = (d.height - squareSide) / tamaño - 1
-          (squareSide, x0, y0, squareSide / tamaño)
-     }
-
-     def mouseClick(x: Int, y: Int) {
-          val (squareSide, x0, y0, wid) = squareGeometry
-          if (x0 <= x && x < x0 + squareSide && y0 <= y && y < y0 + squareSide) {
-               val col = (x - x0) / wid
-               val row = (y - y0) / wid
-               publish(dibujarTableroEvento(col, row))
-          }
-     }
-
-     override def paintComponent(g: Graphics2D, tablero: List[ Int ]) {
-          val d = size
-          g.setRenderingHint(java.awt.RenderingHints.KEY_ANTIALIASING, java.awt.RenderingHints.VALUE_ANTIALIAS_ON)
-          g.setColor(Color.BLACK);
-          g.fillRect(0, 0, d.width, d.height);
-          val squareSide = d.height min d.width
-          val wid = squareSide / tamaño
-          val x0 = (d.width - squareSide) / tamaño - 1
-          val y0 = (d.height - squareSide) / tamaño - 1
-          //líneas verticales
-          for (x <- 1 to tamaño - 1) {
-               g.setColor(Color.WHITE)
-               g.draw(new Line2D.Double(x0 + x * wid, y0, x0 + x * wid, y0 + squareSide))
-          }
-          //líneas horizontales
-          for (y <- 1 to tamaño - 1) {
-               g.setColor(Color.WHITE)
-               g.draw(new Line2D.Double(x0, y0 + y * wid, x0 + squareSide, y0 + y * wid))
-               g.setStroke(new BasicStroke(3f))
-          }
-          for (x <- 0 until tamaño) {
-               for (y <- 0 until tamaño) {
-                    var damas = TableroGUI.apply(x, y, tamaño, tablero)
-                    damas match {
-                         case 32 => //ficha J1
-                              g.setColor(colores(0))
-                              g.fill(new Rectangle2D.Double(x0 + x * wid + 10, y0 + y * wid + 10, wid - 20, wid - 20))
-                         case 21 => //ficha J2
-                              g.setColor(colores(1))
-                              g.fill(new Ellipse2D.Double(x0 + x * wid + 10, y0 + y * wid + 10, wid - 20, wid - 20))
-                         case 30 => //dama J1
-                              g.setColor(Color.ORANGE)
-                              g.draw(new Rectangle2D.Double(x0 + x * wid + 10, y0 + y * wid + 10, wid - 20, wid - 20))
-                         case 28 => //dama J2
-                              g.setColor(Color.ORANGE)
-                              g.draw(new Ellipse2D.Double(x0 + x * wid + 10, y0 + y * wid + 10, wid - 20, wid - 20))
-                         case _ => //Bombas
-                              if (damas % 10 >= 2 && damas != 10) {
-                                   g.setColor(colores(damas % 10))
-                                   if ((damas - (damas % 10)) / 10 == 3) {
-                                        g.draw(new Rectangle2D.Double(x0 + x * wid + 10, y0 + y * wid + 10, wid - 20, wid - 20))
-                                   }
-                                   else {
-                                        g.draw(new Ellipse2D.Double(x0 + x * wid + 10, y0 + y * wid + 10, wid - 20, wid - 20))
-                                   }
-                                   val x1 = x0 + x * wid + 10
-                                   val y1 = y0 + y * wid + 10
-                                   g.draw(new Line2D.Double(x1, y1, x1 + wid - 20, y1 + wid - 20))
-                                   g.draw(new Line2D.Double(x1, y1 + wid - 20, x1 + wid - 20, y1))
-                              }
-                    }
-               }
-          }
-     }
-
-     def colores(n: Int): Color = {
-          n match {
-               case 0 => Color.red
-               case 1 => Color.cyan
-               case 2 => Color.green
-               case 3 => Color.yellow
-               case 4 => Color.magenta
-               case 5 => Color.blue
-               case _ => Color.white
-          }
-     }
->>>>>>> c3ffb926a69c0e5f7c8f8071fc499291919471df
 }
 
 /**
@@ -1005,5 +897,4 @@ object GUIDamas extends Frame {
           }
      }
 }*/
->>>>>>> c3ffb926a69c0e5f7c8f8071fc499291919471df
 
