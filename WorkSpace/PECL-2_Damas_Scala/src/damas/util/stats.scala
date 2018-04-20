@@ -21,12 +21,6 @@ object stats {
           this.saveChange(props);
           props.clear();
      }
-     def setDerrotas(derrotas:Int): Unit = {
-          val props:Properties = this.loadPropertis();
-          props.setProperty("damas.derrotas", derrotas.toString());
-          this.saveChange(props);
-          props.clear();
-     }
      def setEmpates(empates:Int): Unit = {
           val props:Properties = this.loadPropertis();
           props.setProperty("damas.empates", empates.toString());
@@ -39,9 +33,6 @@ object stats {
       */
      def getVictorias(): Int = {
           return this.loadPropertis().getProperty("damas.victorias").toInt;
-     }
-     def getDerrotas(): Int = {
-          return this.loadPropertis().getProperty("damas.derrotas").toInt;     
      }
      def getEmpates(): Int = {
           return this.loadPropertis().getProperty("damas.empates").toInt;
@@ -95,7 +86,7 @@ object stats {
                     val out:OutputStream = new FileOutputStream(new File("conf/stats.properties"));
                     props.store(out, "######################################################################################### \n" +
                                      "#                  ---> { Estadisticas del juego } <----                                # \n" +
-                                     "########################################################################################## \n");
+                                     "######################################################################################### \n");
                     out.close();
                } else {
                     if(folder.mkdir()) {

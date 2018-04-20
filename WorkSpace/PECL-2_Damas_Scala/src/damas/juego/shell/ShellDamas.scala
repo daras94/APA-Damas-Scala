@@ -160,7 +160,7 @@ object ShellDamas {
       * 				  Jugador VS IA y false jugador vs jugador. 
       */
      private def imputMovGamen(tablero:List[Int], turno:Int, modo_juego:Boolean, puntuacion:Int): String = {
-          if ((turno != 0) && modo_juego) {                          // Turno de la IA que Relice su jugada en el modo Jugador VS IA.
+          if ((turno != 0) && modo_juego) {  // Turno de la IA que Relice su jugada en el modo Jugador VS IA.
                val ia = Ia.jugadaOptima(tablero, 0, 0, 0, 0, 0, 0, Math.sqrt(tablero.length).toInt, Math.sqrt(tablero.length).toInt, puntuacion);
                return (Tab.CAR_ROW_COLUMN.indexOf(ia._1) + ":" + Tab.CAR_ROW_COLUMN.indexOf(ia._2) + ":" + ia._3);
           } else {                                                   // Turno del Resto de Jugadores en el modo Jugador VS Jugador.
