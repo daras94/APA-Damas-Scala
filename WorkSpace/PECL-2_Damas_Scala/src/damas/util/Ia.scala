@@ -5,88 +5,84 @@ package damas.util
  */
 object Ia {
 
-  def devuelveBloque(tablero: List[Int], pos: Int): Int = {
+  def devuelvePieza(tablero: List[Int], pos: Int): Int = {
     if (pos == 0) tablero.head
-    else devuelveBloque(tablero, pos - 1)
+    else devuelvePieza(tablero, pos - 1)
   }
 
-  def poner(pos: Int, n: Int, l: List[Int], laux: List[Int]): List[Int] = {
+  def colocarFicha(pos: Int, n: Int, l: List[Int], laux: List[Int]): List[Int] = {
     if (pos == 0) laux ::: List[Int](n) ::: l.tail
-    else poner(pos - 1, n, l.tail, laux ::: List[Int](l.head))
+    else colocarFicha(pos - 1, n, l.tail, laux ::: List[Int](l.head))
   }
 
   //Metodo que comprueba si la ficha de encima de la comprobada es igual
-  def compruebaArriba(anterior: Int, tablero: List[Int], fila: Int, columna: Int, columnas: Int, filas: Int): List[Int] = {
-    if (anterior == devuelveBloque(tablero, (fila - 1) * columnas + columna)) {
-      compruebaPiezas(poner(((fila - 1) * columnas + columna), 0, poner((fila * columnas) + columna, 0, tablero, Nil), Nil), columna, (fila - 1), filas, columnas, anterior, 0)
+  def compruebaFichaArriba(anterior: Int, tablero: List[Int], fila: Int, columna: Int, columnas: Int, filas: Int): List[Int] = {
+    if (anterior == devuelvePieza(tablero, (fila - 1) * columnas + columna)) {
+      compruebaPiezas(colocarFicha(((fila - 1) * columnas + columna), 0, colocarFicha((fila * columnas) + columna, 0, tablero, Nil), Nil), columna, (fila - 1), filas, columnas, anterior, 0)
     } else {
       tablero
     }
   }
 
   //En el resto de casos la comprobación se realiza como en el método anterior, solo que comprobando debajo, derecha e izquierda respectivamente
-  def compruebaAbajo(anterior: Int, tablero: List[Int], fila: Int, columna: Int, columnas: Int, filas: Int): List[Int] = {
-    if (anterior == devuelveBloque(tablero, (fila + 1) * columnas + columna)) {
-      compruebaPiezas(poner((fila + 1) * columnas + columna, 0, poner((fila * columnas) + columna, 0, tablero, Nil), Nil), columna, (fila + 1), filas, columnas, anterior, 0)
+  def compruebaFichaAbajo(anterior: Int, tablero: List[Int], fila: Int, columna: Int, columnas: Int, filas: Int): List[Int] = {
+    if (anterior == devuelvePieza(tablero, (fila + 1) * columnas + columna)) {
+      compruebaPiezas(colocarFicha((fila + 1) * columnas + columna, 0, colocarFicha((fila * columnas) + columna, 0, tablero, Nil), Nil), columna, (fila + 1), filas, columnas, anterior, 0)
     } else {
       tablero
     }
   }
 
-  def compruebaDerecha(anterior: Int, tablero: List[Int], fila: Int, columna: Int, columnas: Int, filas: Int): List[Int] = {
-    if (anterior == devuelveBloque(tablero, fila * columnas + (columna + 1))) {
-      compruebaPiezas(poner(fila * columnas + (columna + 1), 0, poner((fila * columnas) + columna, 0, tablero, Nil), Nil), (columna + 1), fila, filas, columnas, anterior, 0)
+  def compruebaFichaDerecha(anterior: Int, tablero: List[Int], fila: Int, columna: Int, columnas: Int, filas: Int): List[Int] = {
+    if (anterior == devuelvePieza(tablero, fila * columnas + (columna + 1))) {
+      compruebaPiezas(colocarFicha(fila * columnas + (columna + 1), 0, colocarFicha((fila * columnas) + columna, 0, tablero, Nil), Nil), (columna + 1), fila, filas, columnas, anterior, 0)
     } else {
       tablero
     }
   }
 
-  def compruebaIzquierda(anterior: Int, tablero: List[Int], fila: Int, columna: Int, columnas: Int, filas: Int): List[Int] = {
-    if (anterior == devuelveBloque(tablero, fila * columnas + (columna - 1))) {
-      compruebaPiezas(poner(fila * columnas + (columna - 1), 0, poner((fila * columnas) + columna, 0, tablero, Nil), Nil), (columna - 1), fila, filas, columnas, anterior, 0)
+  def compruebaFichaIzquierda(anterior: Int, tablero: List[Int], fila: Int, columna: Int, columnas: Int, filas: Int): List[Int] = {
+    if (anterior == devuelvePieza(tablero, fila * columnas + (columna - 1))) {
+      compruebaPiezas(colocarFicha(fila * columnas + (columna - 1), 0, colocarFicha((fila * columnas) + columna, 0, tablero, Nil), Nil), (columna - 1), fila, filas, columnas, anterior, 0)
     } else {
       tablero
     }
   }
 
   def compruebaPiezas(tablero: List[Int], columna: Int, fila: Int, direccion: Int, filas: Int, columnas: Int, anterior: Int): List[Int] = {
-    //bombas
-    //if (anterior == 35) {
-    //bombaVerde(tablero,columnas,fila,0) //llamada a la bomba
-    //Superior izquierda
     if (fila == 10 && columna == 10 && direccion == 10) {
-      compruebaAbajo(anterior, compruebaDerecha(anterior, tablero, fila, columna, columnas, filas), fila, columna, columnas, filas)
-    } //Superior derecha
+      compruebaFichaAbajo(anterior, compruebaFichaDerecha(anterior, tablero, fila, columna, columnas, filas), fila, columna, columnas, filas)
+    } 
     else if (fila == 10 && columna == (columnas - 1) && direccion == 11) {
-      compruebaAbajo(anterior, compruebaIzquierda(anterior, tablero, fila, columna, columnas, filas), fila, columna, columnas, filas)
+      compruebaFichaAbajo(anterior, compruebaFichaIzquierda(anterior, tablero, fila, columna, columnas, filas), fila, columna, columnas, filas)
     } //Inferior izquierda
     else if (fila == (filas - 1) && columna == 10 && direccion == 20) {
-      compruebaArriba(anterior, compruebaDerecha(anterior, tablero, fila, columna, columnas, filas), fila, columna, columnas, filas)
+      compruebaFichaArriba(anterior, compruebaFichaDerecha(anterior, tablero, fila, columna, columnas, filas), fila, columna, columnas, filas)
     } //Inferior derecha
     else if (fila == (filas - 1) && columna == (columnas - 1) && direccion == 21) {
-      compruebaArriba(anterior, compruebaIzquierda(anterior, tablero, fila, columna, columnas, filas), fila, columna, columnas, filas)
+      compruebaFichaArriba(anterior, compruebaFichaIzquierda(anterior, tablero, fila, columna, columnas, filas), fila, columna, columnas, filas)
     } else if (fila == 10) {
-      compruebaAbajo(anterior, compruebaIzquierda(anterior, compruebaDerecha(anterior, tablero, fila, columna, columnas, filas), fila, columna, columnas, filas), fila, columna, columnas, filas)
+      compruebaFichaAbajo(anterior, compruebaFichaIzquierda(anterior, compruebaFichaDerecha(anterior, tablero, fila, columna, columnas, filas), fila, columna, columnas, filas), fila, columna, columnas, filas)
     } else if (fila == (filas - 1)) {
-      compruebaArriba(anterior, compruebaIzquierda(anterior, compruebaDerecha(anterior, tablero, fila, columna, columnas, filas), fila, columna, columnas, filas), fila, columna, columnas, filas)
+      compruebaFichaArriba(anterior, compruebaFichaIzquierda(anterior, compruebaFichaDerecha(anterior, tablero, fila, columna, columnas, filas), fila, columna, columnas, filas), fila, columna, columnas, filas)
     } else if (columna == 10) {
-      compruebaAbajo(anterior, compruebaArriba(anterior, compruebaDerecha(anterior, tablero, fila, columna, columnas, filas), fila, columna, columnas, filas), fila, columna, columnas, filas)
+      compruebaFichaAbajo(anterior, compruebaFichaArriba(anterior, compruebaFichaDerecha(anterior, tablero, fila, columna, columnas, filas), fila, columna, columnas, filas), fila, columna, columnas, filas)
     } else if (columna == (columnas - 1)) {
-      compruebaAbajo(anterior, compruebaArriba(anterior, compruebaIzquierda(anterior, tablero, fila, columna, columnas, filas), fila, columna, columnas, filas), fila, columna, columnas, filas)
+      compruebaFichaAbajo(anterior, compruebaFichaArriba(anterior, compruebaFichaIzquierda(anterior, tablero, fila, columna, columnas, filas), fila, columna, columnas, filas), fila, columna, columnas, filas)
     } else {
-      compruebaDerecha(anterior, compruebaAbajo(anterior, compruebaArriba(anterior, compruebaIzquierda(anterior, tablero, fila, columna,
+      compruebaFichaDerecha(anterior, compruebaFichaAbajo(anterior, compruebaFichaArriba(anterior, compruebaFichaIzquierda(anterior, tablero, fila, columna,
         columnas, filas), fila, columna, columnas, filas), fila, columna, columnas, filas),
         fila, columna, columnas, filas)
     }
   }
 
-  def compruebaPuntuacion(tablero: List[Int]): Int = {
+  def compruebarPuntuacion(tablero: List[Int]): Int = {
 
     tablero.head match {
-      case 28 => return 8 + compruebaPuntuacion(tablero.tail) //dama
-      case 21 => return 1 + compruebaPuntuacion(tablero.tail) //ficha normal
+      case 28 => return 8 + compruebarPuntuacion(tablero.tail) //dama
+      case 21 => return 1 + compruebarPuntuacion(tablero.tail) //ficha normal
       case 10 => return 0 //vacio
-      case _  => return (tablero.head % 10) + compruebaPuntuacion(tablero.tail) //bomba
+      case _  => return (tablero.head % 10) + compruebarPuntuacion(tablero.tail) //bomba
     }
 
   }
@@ -95,14 +91,14 @@ object Ia {
     if (fila == (filas - 1) && columna == (columnas - 1)) {
       return (filaoptima + 1, columnaoptima + 1, direccionOptima + 1)
     } else if (columna == (columnas - 1)) {
-      if (puntuacion < compruebaPuntuacion(compruebaPiezas(tablero, columna, fila, direccion, filas, columnas, devuelveBloque(tablero, ((fila * columnas) + columna))))) {
-        jugadaOptima(tablero, fila + 1, 0, direccion, fila, columna, direccionOptima, filas, columnas, compruebaPuntuacion(compruebaPiezas(tablero, columna, fila, direccion, filas, columnas, devuelveBloque(tablero, ((fila * columnas) + columna)))))
+      if (puntuacion < compruebarPuntuacion(compruebaPiezas(tablero, columna, fila, direccion, filas, columnas, devuelvePieza(tablero, ((fila * columnas) + columna))))) {
+        jugadaOptima(tablero, fila + 1, 0, direccion, fila, columna, direccionOptima, filas, columnas, compruebarPuntuacion(compruebaPiezas(tablero, columna, fila, direccion, filas, columnas, devuelvePieza(tablero, ((fila * columnas) + columna)))))
       } else {
         jugadaOptima(tablero, fila + 1, 0, direccion, filaoptima, columnaoptima, direccionOptima, filas, columnas, puntuacion)
       }
     } else {
-      if (puntuacion < compruebaPuntuacion(compruebaPiezas(tablero, columna, fila, direccion, filas, columnas, devuelveBloque(tablero, ((fila * columnas) + columna))))) {
-        jugadaOptima(tablero, fila, columna + 1, direccion, fila, columna, direccionOptima, filas, columnas, compruebaPuntuacion(compruebaPiezas(tablero, columna, fila, direccion, filas, columnas, devuelveBloque(tablero, ((fila * columnas) + columna)))))
+      if (puntuacion < compruebarPuntuacion(compruebaPiezas(tablero, columna, fila, direccion, filas, columnas, devuelvePieza(tablero, ((fila * columnas) + columna))))) {
+        jugadaOptima(tablero, fila, columna + 1, direccion, fila, columna, direccionOptima, filas, columnas, compruebarPuntuacion(compruebaPiezas(tablero, columna, fila, direccion, filas, columnas, devuelvePieza(tablero, ((fila * columnas) + columna)))))
       } else {
         jugadaOptima(tablero, fila, columna + 1, direccion, filaoptima, columnaoptima, direccionOptima, filas, columnas, puntuacion)
       }

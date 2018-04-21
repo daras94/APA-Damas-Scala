@@ -12,14 +12,13 @@ import java.awt.geom._
 import java.io._
 import damas.juego._
 import damas.util._
+import damas.util.Stats
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 /**
-  * <<<<<<< HEAD
   * @author Daniel
   */
-
 object Tab {
 
      def getTab(grid: (List[ Int ], Int, Int, Int, (Int, Int), String, Boolean, (Int, Int))) = grid
@@ -33,7 +32,7 @@ object TableroGUI {
 }
 //clase para dibujar el tablero
 class dibujarTablero(tablero: List[ Int ], val tamaño: Int) extends Component {
-
+     println(tamaño)
      tamaño match {
           case 8  => preferredSize = new Dimension(300, 400) //tamaño de la ventana
           case 16 => preferredSize = new Dimension(700, 500)
@@ -44,6 +43,8 @@ class dibujarTablero(tablero: List[ Int ], val tamaño: Int) extends Component {
      reactions += {
           case MouseClicked(_, p, _, _, _) => mouseClick(p.x, p.y)
      }
+
+     def apply(x: Int, y: Int): Int = tablero(tamaño * y + x)
 
      def squareGeometry: (Int, Int, Int, Int) = {
           val d = size
@@ -71,6 +72,7 @@ class dibujarTablero(tablero: List[ Int ], val tamaño: Int) extends Component {
           val wid = squareSide / tamaño
           val x0 = (d.width - squareSide) / tamaño - 1
           val y0 = (d.height - squareSide) / tamaño - 1
+
           //líneas verticales
           for (x <- 1 to tamaño - 1) {
                g.setColor(Color.WHITE)
@@ -84,7 +86,8 @@ class dibujarTablero(tablero: List[ Int ], val tamaño: Int) extends Component {
           }
           for (x <- 0 until tamaño) {
                for (y <- 0 until tamaño) {
-                    var damas = TableroGUI.apply(x, y, tamaño, tablero)
+                    val damas = apply(x, y)
+                    println(damas)
                     damas match {
                          case 32 => //ficha J1
                               g.setColor(colores(0))
@@ -135,7 +138,8 @@ class dibujarTablero(tablero: List[ Int ], val tamaño: Int) extends Component {
   */
 case class dibujarTableroEvento(x: Int, y: Int) extends Event
 //Ventana para mostrar el tablero de juego
-class mostrarTablero(var turno: Int, val tablero: List[ Int ], val tamaño: Int) extends Frame {
+class mostrarTablero(val tablero: List[ Int ], val turno: Int, val nivel: Int, val dificultad: Int,
+     val fichas: (Int, Int), val evento: String, val modo: Boolean, val score: (Int, Int), val tamaño: Int) extends Frame {
 
      title = "Damas BOM for Scala" //titulo de la ventana
      this.resizable_=(true)
@@ -144,32 +148,42 @@ class mostrarTablero(var turno: Int, val tablero: List[ Int ], val tamaño: Int)
           case 16 => preferredSize = new Dimension(1200, 600)
           case 32 => preferredSize = new Dimension(1400, 800)
      }
+     val tab = new Tuple8(tablero, turno, nivel, dificultad, fichas, evento, modo, score)
+     val canvas = new dibujarTablero(tablero, 8)
      val labelTurno = new Label
      val numfichasJ1 = new Label
      val numfichasJ2 = new Label
-     val evento = new Label
-     val score = new Label
-     val numfichas = Tablero.numFichasXjugadorInCurse(tablero, 0, (0, 0))
-     labelTurno.text = " ❈❈❈❈❈ Turno del %s".format(turno) + " ❈❈❈❈❈"
-     numfichasJ1.text = " ❈❈❈❈❈ Fichas Jugador 1: " + numfichas._1.toString() + " ❈❈❈❈❈"
-     numfichasJ2.text = " ❈❈❈❈❈ Fichas Jugador 2: " + numfichas._2.toString() + " ❈❈❈❈❈"
-     evento.text = " ❈ Evento: "
-     val canvas = new dibujarTablero(tablero, tamaño)
+     val eventos = new Label
+     val scores = new Label
+     val dif = new Label
+     val nivl = new Label
+     if (turno == 0) labelTurno.text = " ❈❈❈❈❈ Turno de ■" + " ❈❈❈❈❈" else labelTurno.text = " ❈❈❈❈❈ Turno de ●" + " ❈❈❈❈❈"
+     numfichasJ1.text = " ❈❈❈❈❈ Fichas Jugador 1: " + fichas._1.toString() + " ❈❈❈❈❈"
+     numfichasJ2.text = " ❈❈❈❈❈ Fichas Jugador 2: " + fichas._2.toString() + " ❈❈❈❈❈"
+     dif.text = " ❈❈❈❈❈ Dificultad: " + dificultad + " ❈❈❈❈❈"
+     nivl.text = " ❈❈❈❈❈ Nivel: " + nivel + " ❈❈❈❈❈"
+     val boton = new Button {
+          text = "Guardar y salir" //botón de comienzo de partida
+     }
      var x0, y0 = 0
      var direccion = 0
+     var turnoNuevo = turno
      /**
        * configuración del contenido de la ventana
        */
      contents = new BoxPanel(Orientation.Horizontal) {
           contents += canvas
           contents += new BoxPanel(Orientation.Vertical) {
-               labelTurno.verticalTextPosition_=(Alignment.Center)
                contents += labelTurno
                contents += numfichasJ1
                contents += numfichasJ2
-               contents += evento
-               contents += score
+               contents += eventos
+               contents += scores
+               contents += dif
+               contents += nivl
+               contents += Swing.VStrut(10)
           }
+          contents += boton
           contents += Swing.VStrut(10)
           border = Swing.EmptyBorder(10, 10, 10, 10)
      }
@@ -179,9 +193,22 @@ class mostrarTablero(var turno: Int, val tablero: List[ Int ], val tamaño: Int)
 
      //escuchar eventos
      listenTo(canvas)
+     listenTo(boton)
+
      reactions += {
+          case WindowClosing(_) => {
+               this.close()
+               GUIDamas.open()
+          }
+          case ButtonClicked(`boton`) => {
+               val tab = new Tuple8(tablero, turno, nivel, dificultad, fichas, evento, modo, score)
+               Persistencia.savePlayDamas(tab._1, tab._7, tab._3, tab._2, tab._4, tab._5, tab._8);
+               this.close
+               GUIDamas.open()
+          }
           case dibujarTableroEvento(x, y) =>
                println("dibujarTableroEvento en " + x + " " + y)
+               //gestionarEvento(x,y,x0,y0,direccion)
                if (x == x0 && y == y0) {
                     x0 = 0
                     y0 = 0
@@ -209,85 +236,64 @@ class mostrarTablero(var turno: Int, val tablero: List[ Int ], val tamaño: Int)
                               direccion = 20
                               println("dibujarTableroEvento en " + x + " " + y + "" + direccion)
                          }
-                         /*var t = turno match {
-                              case "Jugador"   | "Jugador 1" => 0
-                              case "Jugador 2" | "Maquina"   => 1
-                         }*/
-
-                         var nuevoTablero = Tablero.damasPlayBom(tablero, (y0, x0, direccion), turno, (0, 0), false)
-                         evento.text = "Evento: " + nuevoTablero._5
-                         /*if (nuevoTablero._2) {
-                              actualizarTablero(nuevoTablero._4, true)
-                              evento.text = "Evento: " + tuple._3
-                              score.text = "❈ J1: " + nuevoTablero._6._1 + "J2: " + nuevoTablero._6._2
-                         } else if (tuple._1) {
-                         	stats.NUM_EMPATES = stats.NUM_EMPATES + 1
-                         	val opcion = JOptionPane.showMessageDialog(null, "HAS EMPATADO", "Comprobar Partida", JOptionPane.INFORMATION_MESSAGE)
-                         	val tableroNuevo = Tablero.generarTablero(column, row, tamaño, dificultad)
-                         	val newVentana = new mostrarTablero(turno, tableroNuevo, tamaño)
-                         	this.close
-                         	newVentana.visible = true
-                         } else {
-                         	actualizarTablero(nuevoTablero._4, false)
-                         }*/
                     }
                }
 
-          case WindowClosing(_) => {
-               this.close()
-               //  GUIDamas.getTablero(tablero)
-               GUIDamas.open()
-          }
-     }
+               var nuevoTablero = Tablero.damasPlayBom(tablero, (y0, x0, direccion), turnoNuevo, (0, 0), false)
+               eventos.text = "❈ Evento: " + nuevoTablero._3
+               scores.text = "❈ Score: J1: " + nuevoTablero._6._1 + "J2: " + nuevoTablero._6._2
 
-     def actualizarTablero(tablero: List[ Int ], ganado: Boolean, dificultad: Int) {
-          /*turno match {
-               case "Jugador" =>
-                    turno = "Máquina"
-                    labelTurno.text = "Turno de la %s".format(turno)
-               case "Jugador 1" =>
-                    turno = "Jugador 2"
-                    labelTurno.text = "Turno del %s".format(turno)
-               case "Jugador 2" =>
-                    turno = "Jugador 1"
-                    labelTurno.text = "Turno del %s".format(turno)
-               case "Máquina" =>
-                    turno = "Jugador"
-                    labelTurno.text = "Turno del %s".format(turno)
-          }*/
-          if (ganado) {
-               //stats.NUM_VICTORIAS = stats.NUM_VICTORIAS + 1
-               if (tamaño == 32) {
-                    val opcion = JOptionPane.showMessageDialog(null, "ENHORABUENA: HAS COMPLETADO EL JUEGO", "Comprobar Partdida", JOptionPane.INFORMATION_MESSAGE)
-                    GUIDamas.open()
-                    this.close
+               if (turnoNuevo == 0) {
+                    turnoNuevo = 1
+               } else {
+                    turnoNuevo = 0
                }
-               else {
+               if (nuevoTablero._2) {
+                    Stats.setVictorias(Stats.getVictorias() + 1)
+                    if (tamaño == 32) {
+                         val opcion = JOptionPane.showMessageDialog(null, "ENHORABUENA: HAS COMPLETADO EL JUEGO: " + nuevoTablero._5, "Comprobar Partdida", JOptionPane.INFORMATION_MESSAGE)
+                         GUIDamas.open()
+                         this.close
+                    }
+                    else {
+                         val dimension = (Math.sqrt(tablero.length).toInt) * 2
+                         val opcion = JOptionPane.showMessageDialog(null, "HAS COMPLETADO EL NIVEL", "Comprobar Partida", JOptionPane.INFORMATION_MESSAGE)
+                         eventos.text = "❈ Evento: " + nuevoTablero._5
+                         val tableroNuevo = Tablero.generarTablero(dimension, dimension, dimension, dificultad * 2)
+                         val fichXJug = Tablero.numFichasXjugadorInit(Math.sqrt(tableroNuevo.length).toInt);
+                         val newVentana = new mostrarTablero(tableroNuevo, turno, 0, dificultad * 2, (fichXJug, fichXJug), new String, modo, (0, 0), tamaño * 2)
+                         this.close
+                         newVentana.visible = true
+                    }
+               }
+               else if (nuevoTablero._1) {
+                    Stats.setEmpates(Stats.getEmpates() + 1)
                     val dimension = (Math.sqrt(tablero.length).toInt) * 2
-                    val opcion = JOptionPane.showMessageDialog(null, "HAS COMPLETADO EL NIVEL", "Comprobar Partida", JOptionPane.INFORMATION_MESSAGE)
+                    val opcion = JOptionPane.showMessageDialog(null, "HAS EMPATADO", "Comprobar Partida", JOptionPane.INFORMATION_MESSAGE)
+                    eventos.text = "❈ Evento: " + nuevoTablero._5
                     val tableroNuevo = Tablero.generarTablero(dimension, dimension, dimension, dificultad * 2)
-                    val newVentana = new mostrarTablero(turno, tableroNuevo, dimension)
+                    val fichXJug = Tablero.numFichasXjugadorInit(Math.sqrt(tableroNuevo.length).toInt);
+                    val newVentana = new mostrarTablero(tableroNuevo, turno, 0, dificultad, (fichXJug, fichXJug), new String, modo, (0, 0), tamaño)
                     this.close
                     newVentana.visible = true
                }
-          }
-          else {
-               val opcion = JOptionPane.showMessageDialog(null, "HAS PERDIDO", "Comprobar Partida", JOptionPane.INFORMATION_MESSAGE)
-               //stats.setDerrotas(stats.getDerrotas() + 1)
-               //val tableroNuevo = new TableroGUI(tablero)
-               //val newVentana = new mostrarTablero(turno, tableroNuevo, tamaño)
-               //this.close
-               //newVentana.visible = true
-          }
      }
+
+     /*def gestionarEvento(x: Int, y: Int, x0: Int, y0: Int, direccion: Int): (Int,Int,Int) = {
+    if (x == x0 && y == y0) {
+        return(0,0,0)
+    }else if (x0 == 0 && y0 == 0) {
+       gestionarEvento(x,y,x,y,direccion)
+     }
+    }*/
 }
 //Ventana para realizar la configuracion de juego dhadjd
 class configuracionJuego(val turno: Int, val modo: Boolean) extends Frame {
+
      title = "Configuración de la partida"; //título de la ventana
      preferredSize = new Dimension(300, 200); //tamaño de la ventana
-     val dificultad = new ComboBox(List("Nivel 1", "Nivel 2", "Nivel 3", "Nivel 4", "Nivel 5")) //comboBox para la dificultad
+     val dificultad = new ComboBox(List("Basico", "Facil", "Medio", "Experto", "Avanzado", "Legendario")) //comboBox para la dificultad
      val label1 = new Label("Dificultad del juego"); //label para la dificultad
-     val rboton = new RadioButton("Sonido")
 
      //pueda seleccionarse uno
      val boton = new Button {
@@ -299,7 +305,6 @@ class configuracionJuego(val turno: Int, val modo: Boolean) extends Frame {
           contents += label1
           contents += dificultad
           contents += Swing.VStrut(5)
-          contents += rboton
           contents += Swing.VStrut(5)
           contents += boton
           contents += Swing.VStrut(5)
@@ -307,36 +312,28 @@ class configuracionJuego(val turno: Int, val modo: Boolean) extends Frame {
      }
 
      peer.setLocationRelativeTo(null) //centrar la ventana
-     peer.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE); //seleccionar la operación de cierre de ventana
-     val dif = Setting.getDificultad(); //por defecto el nivel de dificultad será 1
-     val filas = 8 //por defecto el número de filas será 8
-     val columnas = 8 //por defecto el número de columnas será 8
+     peer.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE) //seleccionar la operación de cierre de ventana
+     val dif = Setting.getDificultad()
+     val tamaño = Setting.getDimTablero()
+     val filas = 8
+     val columnas = 8
 
      //escuchar eventos
      listenTo(dificultad)
-     listenTo(rboton)
      listenTo(boton)
-
-     //obtener valores
-     val dificultadSelected = dificultad.selection.item
 
      //reacciones a esos eventos
      reactions += {
           case ButtonClicked(`boton`) => {
-               val grid = Tablero.generarTablero(filas, columnas, filas, dif)
-               val mostrarTablero = new mostrarTablero(turno, grid, filas)
-               UtilDamas.clipSoundEfect("arcade_echo.wav").start();
+               val grid = Tablero.generarTablero(filas, columnas, tamaño, dif)
+               val fichXJug = Tablero.numFichasXjugadorInit(Math.sqrt(grid.length).toInt);
+               val mostrarTablero = new mostrarTablero(grid, turno, 0, dif, (fichXJug, fichXJug), new String, modo, (0, 0), tamaño)
+               UtilDamas.clipSoundEfect("start_up.wav").start();
                mostrarTablero.visible = true
                this.visible = false
           }
-          case ButtonClicked(`rboton`) => {
-               if (Setting.getSound())
-                    Setting.setSound(false)
-               else
-                    Setting.setSound(true)
-          }
           case SelectionChanged(`dificultad`) => {
-               val d = dificultad.selection.item match {
+               dificultad.selection.item match {
                     case "Basico"     => Setting.setDificultad(-1)
                     case "Facil"      => Setting.setDificultad(0)
                     case "Medio"      => Setting.setDificultad(1)
@@ -353,6 +350,7 @@ class configuracionJuego(val turno: Int, val modo: Boolean) extends Frame {
 }
 //Ventana para mostrar las estadísticas del jugador (victorias, derrotas y empates). Opción para reseterarlas
 class estadisticasJuego extends Frame {
+
      title = "Estadísticas del jugador"; //Titulo de la ventana
      preferredSize = new Dimension(220, 180); //Tamaño de la ventana
      val labelV = new Label
@@ -362,9 +360,8 @@ class estadisticasJuego extends Frame {
           text = "Reiniciar estadísticas"
      }
 
-     /*labelV.text = "Número de victorias: %d".format(stats.getVictorias())
-     labelD.text = "Número de derrotas: %d".format(stats.getDerrotas())
-     labelE.text = "Número de empates: %d".format(stats.getEmpates())*/
+     labelV.text = "Número de victorias: %d".format(Stats.getVictorias())
+     labelE.text = "Número de empates: %d".format(Stats.getEmpates())
 
      contents = new BoxPanel(Orientation.Vertical) {
           contents += labelV
@@ -381,13 +378,10 @@ class estadisticasJuego extends Frame {
 
      reactions += {
           case ButtonClicked(`boton`) =>
-               /*stats.setVictorias(0)
-               stats.setDerrotas(0)
-               stats.setEmpates(0)
-               labelV.text = "Número de victorias: %d".format(stats.getVictorias())
-               labelD.text = "Número de derrotas: %d".format(stats.getDerrotas())
-               labelE.text = "Número de empates:
-               %d".format(stats.getEmpates())*/
+               Stats.setVictorias(0)
+               Stats.setEmpates(0)
+               labelV.text = "Número de victorias: %d".format(Stats.getVictorias())
+               labelE.text = "Número de empates: %d".format(Stats.getEmpates())
                contents = new BoxPanel(Orientation.Vertical) {
                     contents += labelV
                     contents += labelD
@@ -402,12 +396,14 @@ class estadisticasJuego extends Frame {
           }
      }
 }
+//Ventana para cargar la partida
 class partidasGuardadas(partidas: List[ File ]) extends Frame {
+
      title = "Partidas guardadas"; //titulo de la ventana
      preferredSize = new Dimension(400, 200); //tamaño de la ventana
      val label = new Label()
-     val texto = new TextArea(1, 1)
-     label.text = echoGetFileSaveGUI(partidas, 0)
+     val texto = new TextArea
+     label.text = echoGetFileSaveGUI(partidas, 0, "")
      val boton = new Button {
           text = "Cargar"
      }
@@ -424,26 +420,30 @@ class partidasGuardadas(partidas: List[ File ]) extends Frame {
      peer.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE) //seleccionar la operación de cierre de ventana
 
      listenTo(boton)
+
      //reacciones a esos eventos
      reactions += {
           case ButtonClicked(`boton`) => {
                val tablero = Persistencia.changePlay(partidas.apply(texto.text.toInt).getName)
-               //val mostrarTablero = new mostrarTablero(turno, tablero._1, filas)
+               val mostrarTablero = new mostrarTablero(tablero._1, tablero._2, tablero._3, tablero._4, tablero._5, tablero._6, tablero._7, tablero._8, Setting.getDimTablero())
+               mostrarTablero.visible = true
+               this.close()
           }
-          case WindowClosing(_) => {
+          case WindowClosing(_) =>
                this.close()
                GUIDamas.open()
-          }
      }
 
-     def echoGetFileSaveGUI(listSave: List[ File ], cont: Int): String = {
+     def echoGetFileSaveGUI(listSave: List[ File ], cont: Int, salida: String): String = {
           if (cont < listSave.length) {
                val f_file = listSave.apply(cont);
                val f_name = f_file.getName().substring(0, f_file.getName().indexOf(".xml"));
-               val f_modif = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault).format(new Date(f_file.lastModified()));
-               return String.format(" Partida [%s] \t\t Modificado: %s \t\n ", (cont + 1).toString(), f_name, f_modif).concat(this.echoGetFileSaveGUI(listSave, cont + 1));
+               val salida = String.format("Partida [%s] ", (cont + 1).toString(), f_name);
+               echoGetFileSaveGUI(listSave, cont + 1, salida)
           }
-          return new String;
+          else {
+               return salida
+          }
      }
 }
 //Ventana principal
