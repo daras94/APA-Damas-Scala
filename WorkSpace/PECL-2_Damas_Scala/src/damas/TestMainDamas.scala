@@ -37,7 +37,7 @@ object TestMainDamas {
                     if (Setting.getSound()) {
                          Util.clipSoundEfect("arcade_echo.wav").start();   // Efecto de sonido del Inicio.
                     }
-                    //Gui.InitGUI();                                         // Inicializa la interfaces Grafica.
+                    Gui.InitGUI();             111                            // Inicializa la interfaces Grafica.
                case "2" ⇒ 
                     if (Setting.getSound()) {
                          Util.clipSoundEfect("arcade_echo.wav").start();   // Efecto de sonido del Inicio.
