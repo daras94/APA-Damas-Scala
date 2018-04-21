@@ -2,50 +2,50 @@ package damas.juego
 import scala.util.Random;
 import damas.util._;
 /**
-  * @author david
-  */
+ * @author david
+ */
 object Tablero {
 
-     /**
-      * Declaracion de variables globales.
-      */
-     private val POS_TAB_EMPTY  = 10;
-     val CAR_ROW_COLUMN = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+  /**
+   * Declaracion de variables globales.
+   */
+  private val POS_TAB_EMPTY = 10;
+  val CAR_ROW_COLUMN = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
 
-     /**
-       * Funcion que se encarga de generar el tablero de juego en funcion de las dimensiones y la dificul-
-       * tad de juego seleccionada por el usuario.
-       */
-     def generarTablero(column: Int, row: Int, cont: Int, dificultad: Int): List[ Int ] = column match {
-          case 0 =>
-               row match {
-                    case 1 => Nil;
-                    case _ => generarTablero(cont, row - 1, cont, dificultad);
-               };
-          case _ => generarFicha(column, row, cont, dificultad) :: generarTablero(column - 1, row, cont, dificultad);
-     }
+  /**
+   * Funcion que se encarga de generar el tablero de juego en funcion de las dimensiones y la dificul-
+   * tad de juego seleccionada por el usuario.
+   */
+  def generarTablero(column: Int, row: Int, cont: Int, dificultad: Int): List[Int] = column match {
+    case 0 =>
+      row match {
+        case 1 => Nil;
+        case _ => generarTablero(cont, row - 1, cont, dificultad);
+      };
+    case _ => generarFicha(column, row, cont, dificultad) :: generarTablero(column - 1, row, cont, dificultad);
+  }
 
-     /**
-       * Funcion que se encaraga de generar las fichas que se van colocando en el tablero durante su crecion
-       * En funcion del las dimensiones del tablero ademas genera bombas y damas especiales en funcion de la
-       * dificultada seleciconada.
-       *
-       *    - column      = Entero con las columnas.
-       *    - row         = Entero con las filas.
-       *    - cont        = Contado de almacena el numero de filas del tablero que se an construido.
-       *    - dificultad  = Entero con la dificultad del juego selecionada de 1 al 5 siendo esto los niveles
-       *                    disponibles.
-       */
-     private def generarFicha(column: Int, row: Int, cont: Int, dificultad: Int): Int = {
-          val numRowFicha = (Math.log10(cont) / Math.log10(2)).toInt + (if (cont > 8) 2 else 0);      // Determinamos el numero def fichas a colocar.
-          val bom = Random.nextInt(dificultad + 2);                                                   // Generamos bombas y fichas especiales en funcion de la dificultad selecionada.
-          /**
-            * Calculamos el pociconamiento de piezas y bombas y piezas especiales en el tablero en
-            * funcion de las dimenciones del tablero lo multiplicamos por el doble para cuando nos
-            * salimos de las dimensiones conbecionales de un tablero de damas.
-            */
-          return (if ((column + (if ((row) % 2 == 0) 1 else 0)) % 2 == 0) (if (row > (cont - numRowFicha)) 21 + bom else if (row <= numRowFicha) 32 + bom else POS_TAB_EMPTY) else POS_TAB_EMPTY);
-     }
+  /**
+   * Funcion que se encaraga de generar las fichas que se van colocando en el tablero durante su crecion
+   * En funcion del las dimensiones del tablero ademas genera bombas y damas especiales en funcion de la
+   * dificultada seleciconada.
+   *
+   *    - column      = Entero con las columnas.
+   *    - row         = Entero con las filas.
+   *    - cont        = Contado de almacena el numero de filas del tablero que se an construido.
+   *    - dificultad  = Entero con la dificultad del juego selecionada de 1 al 5 siendo esto los niveles
+   *                    disponibles.
+   */
+  private def generarFicha(column: Int, row: Int, cont: Int, dificultad: Int): Int = {
+    val numRowFicha = (Math.log10(cont) / Math.log10(2)).toInt + (if (cont > 8) 2 else 0); // Determinamos el numero def fichas a colocar.
+    val bom = Random.nextInt(dificultad + 2); // Generamos bombas y fichas especiales en funcion de la dificultad selecionada.
+    /**
+     * Calculamos el pociconamiento de piezas y bombas y piezas especiales en el tablero en
+     * funcion de las dimenciones del tablero lo multiplicamos por el doble para cuando nos
+     * salimos de las dimensiones conbecionales de un tablero de damas.
+     */
+    return (if ((column + (if ((row) % 2 == 0) 1 else 0)) % 2 == 0) (if (row > (cont - numRowFicha)) 21 + bom else if (row <= numRowFicha) 32 + bom else POS_TAB_EMPTY) else POS_TAB_EMPTY);
+  }
 
      /**
        * Medo Privado Que se encarga de Imprimir la fichas del Tablero en la
@@ -135,7 +135,8 @@ object Tablero {
                if (isValido(tablero, movV, movH, mov._1, mov._2, 0)) {
                     val (tab, event, puntuacion)    = this.setMovGamen(tablero, movV, movH, mov._1, mov._2, (if ((dama % 10) <= 2) 1 else (dama % 10)), 0, new StringBuilder, false, 0);
                     val (score_1, score_2)          = ((score._1 + (if (turno == 0) puntuacion else 0)), (score._2 + (if (turno == 1) puntuacion else 0)));
-                    val (isTable, isWinner, event2) = this.checkGamen(this.numFichasXjugadorInCurse(tab, 0, (0, 0)), (score_1, score_2), modo_juego)
+                    val (numFich_1, numFich_2)      = this.numFichasXjugadorInCurse(tab, 0, (0, 0));
+                    val (isTable, isWinner, event2) = this.checkGamen(numFich_1, numFich_2, score_1, score_2, modo_juego);
                     return new Tuple6(isTable, isWinner, false, tab, (if(isWinner || isTable) event2 else event2 + event), (score_1, score_2));
                } else {
                     val evento = " ❈ " + Console.RED + "ERROR" + Console.RESET + ": La jugada realizada nos se puede cosidera una jugada valida !!!";
@@ -274,34 +275,29 @@ object Tablero {
       * tiene en cuenta la puntuacion de cada jugador. El formato de la tupla
       * que devuelve seria el siguiente: (isTablas, isWinner Evento);
       */
-     private def checkGamen(numFich:(Int, Int), score:(Int, Int), modo_juego:Boolean): (Boolean, Boolean, String) = {
-          if ((numFich._1 > numFich._2) && ((score._1 > score._2) || (score._1 == score._2))) {
-               if ((numFich._1 == 3) && (numFich._2 == 1)) {
+     private def checkGamen(numFich_1:Int, numFich_2:Int, score_1:Int, score_2:Int, modo_juego:Boolean): (Boolean, Boolean, String) = {
+          if ((numFich_1 > numFich_2) && ((score_1 > score_2) || (score_1 == score_2))) {
+               if ((numFich_1 == 3) && (numFich_2 == 1)) {
                     return (true, false,  " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Son Tablas, gana el Jugador por FICHAS !!");  // Tablas a favor Jugador 1.
-               } else if ((numFich._1 == 1) && (numFich._2 == 0)) { 
+               } else if (((numFich_1 == 1) || (numFich_1 != 0)) && (numFich_2 == 0)) { 
                     return (false, true,  " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Gana el Jugador 1 por FICHAS !!");            // Victoria Jugador 1.
-               } else {
-                    return (false, false, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": No Gana Nadie AUN!!");                        // No hay victoria para nigun Jugador AUN.
-               }  
-          } else if ((numFich._1 < numFich._2) && ((score._1 < score._2) || (score._1 == score._2))) {
-               if ((numFich._1 == 1) && (numFich._2 == 3)) {                                                                                  // Tablas a favor Jugador 2
+               } 
+          } else if ((numFich_1 < numFich_2) && ((score_1 < score_2) || (score_1 == score_2))) {
+               if ((numFich_1 == 1) && (numFich_2 == 3)) {                                                                                  // Tablas a favor Jugador 2
                     return (true, false,  " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Son Tablas, gana " + (if (!modo_juego) " el Jugador 2" else "la Maquina") + " por FICHAS !!");
-               } else if ((numFich._1 == 0) && (numFich._2 == 1)) {                                                                           // Victoria Jugaor 2 o IA.
+               } else if ((numFich_1 == 0) && ((numFich_2 == 1) || (numFich_2 != 0))) {                                                                           // Victoria Jugaor 2 o IA.
                     return (false, true,  " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Gana " + (if (!modo_juego) " el Jugador 2" else "la Maquina") + " por FICHAS !!");
-               } else {
-                    return (false, false, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": No Gana Nadie AUN !!");                       // No hay victoria para nigun Jugador AUN.
-               }  
-          } else if ((numFich._1 == numFich._2) && ((numFich._1 == 1) && (numFich._2 == 1))) {
-               if (score._1 > score._2) {
+               } 
+          } else if ((numFich_1 == numFich_2) && ((numFich_1 == 1) && (numFich_2 == 1))) {
+               if (score_1 > score_2) {
                     return (true, false,  " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Son Tablas gana el Jugador 1 por SCORE !!");  // Tablas a favor Jugador 1.
-               } else if (score._1 < score._2) {                                                                                              // Tablas a favor Jugador 2 o IA.
+               } else if (score_1 < score_2) {                                                                                              // Tablas a favor Jugador 2 o IA.
                     return (true, false,  " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Son Tablas gana " + (if (!modo_juego) " el Jugador 2" else "la Maquina") + " por SCORE !!");
                } else {
                     return (false, false, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": Tablas no gana nadie la partida FIN !!");     // No hay victoria para nigun Jugador Tablas Absolutas.
                }
-          } else {
-               return (false, false, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": No Gana Nadie AUN !!");                            // No hay victoria para nigun Jugador AUN.
           }
+          return (false, false, " ❈ " + Console.GREEN + "Evento" + Console.RESET + ": No Gana Nadie AUN !!");                            // No hay victoria para nigun Jugador AUN.   
      }
      
      /**
@@ -348,5 +344,5 @@ object Tablero {
                return Nil;
           }    
      }
-     
+    
 }

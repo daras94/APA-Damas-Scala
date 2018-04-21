@@ -526,4 +526,3 @@ object GUIDamas extends Frame {
           }
      }
 }
-

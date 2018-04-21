@@ -51,7 +51,7 @@ object TestMainDamas /*extends App*/ {
           }
           if (opc != "0") this.main(args);   // Nos llamamos de nuevo de forma recursiba.
           println(Console.GREEN + "\n - Has salido del juego amigo espero que te guste Scala ya que este juego lo patrocinan Linux OS y Mac OS \n   orgullosos desarrollo !!" + Console.RESET);
-          Thread.sleep(1000);
+          Thread.sleep(1000); 
           System.exit(0);
      }
 }

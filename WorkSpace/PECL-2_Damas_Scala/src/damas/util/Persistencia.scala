@@ -93,7 +93,7 @@ object Persistencia {
           val GetPlay:(List[Int], Int, Int, Int, (Int, Int), String, Boolean, (Int, Int)) = if (xml != null) {
                val (ia, dificultad)       = ((xml \\ "damas" \\ "play" \ "@ia").text,                                     (xml \\ "damas" \\ "play" \ "@dificultad").text);
                val (nivel, turno)         = ((xml \\ "damas" \\ "play" \ "nivel").text,                                   (xml \\ "damas" \\ "play" \ "turno").text);
-               val (numFichJ1, numFichJ2) = ((xml \\ "damas" \\ "play" \\ "fichasXJugador" \ "@jugador-1").text,          (xml \\ "damas" \\ "play" \\ "fichasXJugador" \ "@jugador-1").text);
+               val (numFichJ1, numFichJ2) = ((xml \\ "damas" \\ "play" \\ "fichasXJugador" \ "@jugador-1").text,          (xml \\ "damas" \\ "play" \\ "fichasXJugador" \ "@jugador-2").text);
                val (dim_X, dim_Y)         = ((xml \\ "damas" \\ "play" \\ "fichasXJugador" \\ "tablero" \ "@dim-X").text, (xml \\ "damas" \\ "play" \\ "fichasXJugador" \\ "tablero" \ "@dim-Y").text);
                val (score_1, score_2)     = ((xml \\ "damas" \\ "play" \\ "score" \ "jugador-1").text,                    (xml \\ "damas" \\ "play" \\ "score" \ "jugador-2").text);
                def generateRowTab(col:Int, row:Int): List[Int] = (xml \\ "play" \\ "fichasXJugador" \\ "tablero" \\ ("row-" + row) \ ("@col-" + col)) match {

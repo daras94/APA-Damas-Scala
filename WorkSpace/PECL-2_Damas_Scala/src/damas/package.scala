@@ -4,7 +4,7 @@ import damas.juego.gui._
 
 /**
  * @author david
- * 
+ *
  * Declaracion de Paquete Damas.
  */
 package object damas {

@@ -12,8 +12,8 @@ import java.io.IOException;
 import javax.sound.sampled._
 import scala.sys.process._
 /**
-  * @author david
-  */
+ * @author david
+ */
 object UtilDamas {
 
      /**
@@ -82,6 +82,5 @@ object UtilDamas {
                println(String.format("%s %110s %s", Console.BOLD + Console.MAGENTA, sms, Console.RESET));
           }
      }     
-     
-     
+
 }
