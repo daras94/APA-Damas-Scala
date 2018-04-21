@@ -186,7 +186,7 @@ object Tablero {
                     val isSetPacMan = (tablero(posVictima) != POS_TAB_EMPTY);	
                     val fichaInsert = (tablero(posActual) - (tablero(posActual) % 10)) match {     // Determina si la ficha se pude coronar en el movimiento en curso.
                          case 20 | 30 ⇒ 
-                              if (((tablero(posActual) % 10) != 8) && (((row + ((cont + 1) * movV)) == 0) || ((row + ((cont + 1) * movV)) == (Math.sqrt(tablero.length).toInt)))) {
+                              if (((tablero(posActual) % 10) != 8) && (((row + ((cont + 1) * movV)) == 0) || ((row + ((cont + 1) * movV)) == (Math.sqrt(tablero.length).toInt - 1)))) {
                                    event.append(" ❈ " + Console.GREEN + "Evento " + Console.RESET + ": El peon se " + Console.RED + "CORONO" + Console.RESET + " Larga vida a la REINA !!!");
                                    if (Setting.getSound()) {
                                         UtilDamas.clipSoundEfect("get_king.wav").start();  
@@ -327,7 +327,7 @@ object Tablero {
 			val tab = this.dropBom(tablero, (if (typo_ficha_1) post_1 else 0), (if (typo_ficha_2) post_2 else 0), 0);
 			this.BOM(tab, (puntos + score_1 + score_2), row, col, (pos + 1), event);
           } else {
-               event.append("\n ").append(" ❈ " + Console.GREEN + "Evento" + Console.RESET + ": BOM Diagonal !!").append("\n")
+               event.append("\n").append(" ❈ " + Console.GREEN + "Evento" + Console.RESET + ": BOM Diagonal !!").append("\n")
                return (tablero, puntos, event);
           }
           

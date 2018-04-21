@@ -9,7 +9,7 @@ import damas.util.Setting
   * 
   * Declaracion de Objeto.
   */
-object TestMainDamas {
+object TestMainDamas /*extends App*/ {
      
      val str = new StringBuilder
      
@@ -37,7 +37,7 @@ object TestMainDamas {
                     if (Setting.getSound()) {
                          Util.clipSoundEfect("arcade_echo.wav").start();   // Efecto de sonido del Inicio.
                     }
-                    //Gui.InitGUI();                                         // Inicializa la interfaces Grafica.
+                    Gui.InitGUI();                                         // Inicializa la interfaces Grafica.
                case "2" ⇒ 
                     if (Setting.getSound()) {
                          Util.clipSoundEfect("arcade_echo.wav").start();   // Efecto de sonido del Inicio.
@@ -55,5 +55,3 @@ object TestMainDamas {
           System.exit(0);
      }
 }
-
-case class TestMainDamas();
