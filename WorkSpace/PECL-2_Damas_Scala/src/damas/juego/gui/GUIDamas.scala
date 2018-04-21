@@ -18,6 +18,21 @@ import java.util.Locale;
 /**
  * @author Daniel
  */
+<<<<<<< HEAD
+=======
+
+/*object Tab{
+ 
+  def getTab(grid: (List[Int],Int,Int,Int,(Int, Int),String,Boolean,(Int,Int))) = grid
+
+}
+object TableroGUI {
+
+ // def getTablero(grid: List[Int]) = grid
+  def apply(x: Int, y: Int, tamaño: Int, tablero: List[Int]) = tablero(tamaño * y + x)
+
+}
+>>>>>>> c1bc20ac947e0aec854f1e95c53398edba61d28a
 //clase para dibujar el tablero
 class dibujarTablero(tablero: List[Int], val tamaño: Int) extends Component {
   println(tamaño)
@@ -501,4 +516,85 @@ object GUIDamas extends Frame {
     ui.visible = true
   }
 }
+<<<<<<< HEAD
+=======
+=======
+     title = "Damas BOM for Scala"; //titulo de la ventana
+     preferredSize = new Dimension(240, 160); //tamaño de la ventana
+     val label = new Label()
+     //UtilDamas.printtextArt("💣 Damas BOM !!!", "© 2017 - 2018")
+
+     //boton opcion1
+     val boton1 = new Button {
+          text = "Jugador VS Jugador"
+     }
+     //boton opcion2
+     val boton2 = new Button {
+          text = "Jugador VS Máquina"
+     }
+     //boton opcion3
+     val boton3 = new Button {
+          text = "Estadísticas"
+     }
+
+     //configuracion del contenido de la ventana
+     contents = new BoxPanel(Orientation.Vertical) {
+          contents += label
+          contents += boton1
+          contents += boton2
+          contents += boton3
+          border = Swing.EmptyBorder(30, 30, 10, 30)
+     }
+
+     peer.setLocationRelativeTo(null) //centrar la ventana
+     peer.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE) //seleccionar la operación de cierre de ventana
+
+     //escuchar eventos
+     listenTo(boton1)
+     listenTo(boton2)
+     listenTo(boton3)
+
+     //reacciones a esos eventos
+     reactions += {
+          case ButtonClicked(`boton1`) =>
+               val turno = "Jugador 1"
+               val configuracion = new configuracionJuego(turno)
+               configuracion.visible = true
+               this.visible = false
+          case ButtonClicked(`boton2`) =>
+               val turno = "Jugador"
+               val configuracion = new configuracionJuego(turno)
+               configuracion.visible = true
+               this.visible = false
+          case ButtonClicked(`boton3`) =>
+               val stats = new estadisticasJuego()
+               stats.visible = true
+               this.visible = false
+          case WindowClosing(`GUIDamas`) => {
+               val opcion = JOptionPane.showConfirmDialog(null, "¿Salir del juego y guardar la partida?")
+               if (opcion == 0) {
+                    //Persistencia.savePlayDamas(tablero, mode_game, nivel, turno, dificultad, num_fichas:(Int, Int), puntuacion:(Int, Int))
+                    this.close()
+               }
+          }
+
+          //def getTablero(tablero:List[Int], mode_game:Boolean, nivel:Int, turno:Int, dificultad:Int, num_fichas:(Int, Int), puntuacion:(Int, Int)):
+     }
+     /**
+       * Metodo que se encarga de inicializar la interface grafica,
+       */
+     def InitGUI(): Unit = {
+          val partidas = Persistencia.getListOfFiles()
+          if (partidas == null) {
+               val ui = this;
+               ui.visible = true
+          }
+          else {
+               val load = new partidasGuardadas(partidas)
+               load.visible = true
+               this.visible = false
+          }
+     }
+}*/
+>>>>>>> c1bc20ac947e0aec854f1e95c53398edba61d28a
 
