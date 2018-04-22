@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<damas>
+    <fecha>22-abr-2018 21:21:10</fecha>
+    <play ia="false" dificultad="4">
+        <nivel>0</nivel>
+        <turno>0</turno>
+        <score>
+            <jugador-1>0</jugador-1>
+            <jugador-2>0</jugador-2>
+        </score>
+        <fichasXJugador jugador-1="48" jugador-2="48">
+            <tablero dim-X="16" dim-Y="16">
+                <row-0 col-15="21" col-14="10" col-13="22" col-12="10" col-11="23" col-10="10" col-9="21" col-8="10" col-7="23" col-6="10" col-5="21" col-4="10" col-3="22" col-2="10" col-1="24" col-0="10"/>
+                <row-1 col-15="10" col-14="26" col-13="10" col-12="26" col-11="10" col-10="26" col-9="10" col-8="23" col-7="10" col-6="24" col-5="10" col-4="25" col-3="10" col-2="22" col-1="10" col-0="26"/>
+                <row-2 col-15="21" col-14="10" col-13="26" col-12="10" col-11="26" col-10="10" col-9="26" col-8="10" col-7="22" col-6="10" col-5="21" col-4="10" col-3="23" col-2="10" col-1="24" col-0="10"/>
+                <row-3 col-15="10" col-14="22" col-13="10" col-12="24" col-11="10" col-10="23" col-9="10" col-8="26" col-7="10" col-6="24" col-5="10" col-4="23" col-3="10" col-2="21" col-1="10" col-0="25"/>
+                <row-4 col-15="26" col-14="10" col-13="23" col-12="10" col-11="26" col-10="10" col-9="24" col-8="10" col-7="26" col-6="10" col-5="22" col-4="10" col-3="21" col-2="10" col-1="21" col-0="10"/>
+                <row-5 col-15="10" col-14="22" col-13="10" col-12="21" col-11="10" col-10="21" col-9="10" col-8="24" col-7="10" col-6="25" col-5="10" col-4="25" col-3="10" col-2="25" col-1="10" col-0="21"/>
+                <row-6 col-15="10" col-14="10" col-13="10" col-12="10" col-11="10" col-10="10" col-9="10" col-8="10" col-7="10" col-6="10" col-5="10" col-4="10" col-3="10" col-2="10" col-1="10" col-0="10"/>
+                <row-7 col-15="10" col-14="10" col-13="10" col-12="10" col-11="10" col-10="10" col-9="10" col-8="10" col-7="10" col-6="10" col-5="10" col-4="10" col-3="10" col-2="10" col-1="10" col-0="10"/>
+                <row-8 col-15="10" col-14="10" col-13="10" col-12="10" col-11="10" col-10="10" col-9="10" col-8="10" col-7="10" col-6="10" col-5="10" col-4="10" col-3="10" col-2="10" col-1="10" col-0="10"/>
+                <row-9 col-15="10" col-14="10" col-13="10" col-12="10" col-11="10" col-10="10" col-9="10" col-8="10" col-7="10" col-6="10" col-5="10" col-4="10" col-3="10" col-2="10" col-1="10" col-0="10"/>
+                <row-10 col-15="35" col-14="10" col-13="32" col-12="10" col-11="35" col-10="10" col-9="36" col-8="10" col-7="32" col-6="10" col-5="34" col-4="10" col-3="33" col-2="10" col-1="32" col-0="10"/>
+                <row-11 col-15="10" col-14="37" col-13="10" col-12="32" col-11="10" col-10="33" col-9="10" col-8="34" col-7="10" col-6="36" col-5="10" col-4="37" col-3="10" col-2="34" col-1="10" col-0="35"/>
+                <row-12 col-15="33" col-14="10" col-13="36" col-12="10" col-11="36" col-10="10" col-9="33" col-8="10" col-7="32" col-6="10" col-5="35" col-4="10" col-3="33" col-2="10" col-1="32" col-0="10"/>
+                <row-13 col-15="10" col-14="36" col-13="10" col-12="33" col-11="10" col-10="32" col-9="10" col-8="34" col-7="10" col-6="33" col-5="10" col-4="32" col-3="10" col-2="34" col-1="10" col-0="37"/>
+                <row-14 col-15="32" col-14="10" col-13="33" col-12="10" col-11="34" col-10="10" col-9="36" col-8="10" col-7="34" col-6="10" col-5="37" col-4="10" col-3="37" col-2="10" col-1="34" col-0="10"/>
+                <row-15 col-15="10" col-14="33" col-13="10" col-12="36" col-11="10" col-10="35" col-9="10" col-8="34" col-7="10" col-6="37" col-5="10" col-4="32" col-3="10" col-2="36" col-1="10" col-0="35"/>
+            </tablero>
+        </fichasXJugador>
+    </play>
+</damas>
