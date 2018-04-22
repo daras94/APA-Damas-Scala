@@ -8,10 +8,11 @@ import damas.juego.gui._
  * Declaracion de Paquete Damas.
  */
 package object damas {
-  /**
-   * Declaracion de constantes para todo el paquete.
-   */
-  val Cmd = ShellDamas;
-  val Gui = GUIDamas;
-  val Util = UtilDamas;
+     /**
+      * Declaracion de constantes para todo el paquete.
+      */
+     val Cmd   = ShellDamas;
+     val Gui   = GUIDamas;   
+     val Util  = UtilDamas;
+     
 }

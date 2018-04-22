@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<damas>
+    <fecha>22-abr-2018 2:48:22</fecha>
+    <play ia="false" dificultad="4">
+        <nivel>0</nivel>
+        <turno>0</turno>
+        <score>
+            <jugador-1>0</jugador-1>
+            <jugador-2>0</jugador-2>
+        </score>
+        <fichasXJugador jugador-1="12" jugador-2="12">
+            <tablero dim-X="8" dim-Y="8">
+                <row-0 col-7="23" col-6="10" col-5="21" col-4="10" col-3="26" col-2="10" col-1="25" col-0="10"/>
+                <row-1 col-7="10" col-6="24" col-5="10" col-4="26" col-3="10" col-2="22" col-1="10" col-0="23"/>
+                <row-2 col-7="22" col-6="10" col-5="21" col-4="10" col-3="24" col-2="10" col-1="21" col-0="10"/>
+                <row-3 col-7="10" col-6="10" col-5="10" col-4="10" col-3="10" col-2="10" col-1="10" col-0="10"/>
+                <row-4 col-7="10" col-6="10" col-5="10" col-4="10" col-3="10" col-2="10" col-1="10" col-0="10"/>
+                <row-5 col-7="10" col-6="33" col-5="10" col-4="35" col-3="10" col-2="33" col-1="10" col-0="36"/>
+                <row-6 col-7="37" col-6="10" col-5="34" col-4="10" col-3="36" col-2="10" col-1="35" col-0="10"/>
+                <row-7 col-7="10" col-6="37" col-5="10" col-4="37" col-3="10" col-2="37" col-1="10" col-0="34"/>
+            </tablero>
+        </fichasXJugador>
+    </play>
+</damas>

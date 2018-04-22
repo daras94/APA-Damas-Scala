@@ -1,5 +1,6 @@
 anonymizeMessages=true
 anonymizeStackTraces=true
+configured=true
 debugEnabled=false
 disableAutomaticWiringAnalysis=false
 eclipse.preferences.version=1
@@ -7,4 +8,4 @@ reporterEmail=
 reporterName=
 resetSendMode=KEEP
 resetSendModeOn=0
-sendMode=NOTIFY
+sendMode=NEVER

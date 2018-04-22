@@ -1,10 +1,12 @@
 Refactoring.savealleditors=true
+breadcrumb.org.scala-ide.sdt.core.perspective=true
 command=/usr/lib/jvm/jdk1.8.0_162/bin/javadoc
 content_assist_disabled_computers=org.eclipse.jdt.ui.textProposalCategory\u0000org.eclipse.recommenders.calls.rcp.proposalCategory.templates\u0000org.eclipse.jdt.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaTypeProposalCategory\u0000org.eclipse.jdt.ui.javaNoTypeProposalCategory\u0000org.eclipse.recommenders.chain.rcp.proposalCategory.chain\u0000
 content_assist_number_of_computers=24
 content_assist_proposals_background=255,255,255
 content_assist_proposals_foreground=0,0,0
 eclipse.preferences.version=1
+highlightBracketAtCaretLocation=true
 java_bracket=255,85,85
 java_comment_task_tag=85,255,255
 java_default=187,187,187
@@ -19,6 +21,8 @@ java_operator=255,255,85
 java_single_line_comment=85,255,255
 java_string=255,85,255
 org.eclipse.jdt.ui.formatterprofiles.version=13
+org.eclipse.jdt.ui.text.code_templates_migrated=true
+org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
 org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
 org.eclipse.jdt.ui.text.templates_migrated=true
 pf_coloring_argument=85,255,85
