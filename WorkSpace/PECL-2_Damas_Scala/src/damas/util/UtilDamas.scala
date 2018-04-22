@@ -7,10 +7,10 @@ import java.net.URL;
 import java.awt.image.BufferedImage;
 import java.awt._;
 import javax.imageio.ImageIO;
-import java.io.File
+import java.io.File;
 import java.io.IOException;
-import javax.sound.sampled._
-import scala.sys.process._
+import javax.sound.sampled._;
+import scala.sys.process._;
 /**
  * @author david
  */
@@ -21,13 +21,23 @@ object UtilDamas {
        *
        * 	- pathClipAudio = String a la ruta del recuso de audio.
        */
-     def clipSoundEfect(pathClipAudio: String): Clip = {
-          val path: URL = getClass().getResource("/sound/" + pathClipAudio);
-          val audioIn = AudioSystem.getAudioInputStream(path);
-          val clip = AudioSystem.getClip;
-          clip.open(audioIn);
-          return clip;
-     }     
+     def clipSoundEfect(pathClipAudio: String, opcion:Int): Unit = {
+          if (Setting.getSound()) {
+               val clip = AudioSystem.getClip;
+               try {
+                    val audioIn = AudioSystem.getAudioInputStream(getClass().getResource("/sound/" + pathClipAudio));
+                    clip.open(audioIn);
+                    opcion match {
+                         case 0 ⇒ clip.start();
+                    }
+                    audioIn.close();
+               } catch {
+                    case t: Throwable => t.printStackTrace() // TODO: handle error
+               } finally {
+                    //clip.close();
+               }
+          }
+     }
 
      /**
        * Fucion que borra el contenido del pront en funcion de S.O en el que se

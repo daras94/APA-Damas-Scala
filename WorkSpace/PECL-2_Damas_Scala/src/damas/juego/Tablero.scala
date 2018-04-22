@@ -7,45 +7,45 @@ import damas.util._;
 object Tablero {
 
   /**
-   * Declaracion de variables globales.
-   */
-  private val POS_TAB_EMPTY = 10;
-  val CAR_ROW_COLUMN = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+      * Declaracion de variables globales.
+      */
+     private val POS_TAB_EMPTY  = 10;
+     val CAR_ROW_COLUMN = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
 
-  /**
-   * Funcion que se encarga de generar el tablero de juego en funcion de las dimensiones y la dificul-
-   * tad de juego seleccionada por el usuario.
-   */
-  def generarTablero(column: Int, row: Int, cont: Int, dificultad: Int): List[Int] = column match {
-    case 0 =>
-      row match {
-        case 1 => Nil;
-        case _ => generarTablero(cont, row - 1, cont, dificultad);
-      };
-    case _ => generarFicha(column, row, cont, dificultad) :: generarTablero(column - 1, row, cont, dificultad);
-  }
+     /**
+       * Funcion que se encarga de generar el tablero de juego en funcion de las dimensiones y la dificul-
+       * tad de juego seleccionada por el usuario.
+       */
+     def generarTablero(column: Int, row: Int, cont: Int, dificultad: Int): List[ Int ] = column match {
+          case 0 =>
+               row match {
+                    case 1 => Nil;
+                    case _ => generarTablero(cont, row - 1, cont, dificultad);
+               };
+          case _ => generarFicha(column, row, cont, dificultad) :: generarTablero(column - 1, row, cont, dificultad);
+     }
 
-  /**
-   * Funcion que se encaraga de generar las fichas que se van colocando en el tablero durante su crecion
-   * En funcion del las dimensiones del tablero ademas genera bombas y damas especiales en funcion de la
-   * dificultada seleciconada.
-   *
-   *    - column      = Entero con las columnas.
-   *    - row         = Entero con las filas.
-   *    - cont        = Contado de almacena el numero de filas del tablero que se an construido.
-   *    - dificultad  = Entero con la dificultad del juego selecionada de 1 al 5 siendo esto los niveles
-   *                    disponibles.
-   */
-  private def generarFicha(column: Int, row: Int, cont: Int, dificultad: Int): Int = {
-    val numRowFicha = (Math.log10(cont) / Math.log10(2)).toInt + (if (cont > 8) 2 else 0); // Determinamos el numero def fichas a colocar.
-    val bom = Random.nextInt(dificultad + 2); // Generamos bombas y fichas especiales en funcion de la dificultad selecionada.
-    /**
-     * Calculamos el pociconamiento de piezas y bombas y piezas especiales en el tablero en
-     * funcion de las dimenciones del tablero lo multiplicamos por el doble para cuando nos
-     * salimos de las dimensiones conbecionales de un tablero de damas.
-     */
-    return (if ((column + (if ((row) % 2 == 0) 1 else 0)) % 2 == 0) (if (row > (cont - numRowFicha)) 21 + bom else if (row <= numRowFicha) 32 + bom else POS_TAB_EMPTY) else POS_TAB_EMPTY);
-  }
+     /**
+       * Funcion que se encaraga de generar las fichas que se van colocando en el tablero durante su crecion
+       * En funcion del las dimensiones del tablero ademas genera bombas y damas especiales en funcion de la
+       * dificultada seleciconada.
+       *
+       *    - column      = Entero con las columnas.
+       *    - row         = Entero con las filas.
+       *    - cont        = Contado de almacena el numero de filas del tablero que se an construido.
+       *    - dificultad  = Entero con la dificultad del juego selecionada de 1 al 5 siendo esto los niveles
+       *                    disponibles.
+       */
+     private def generarFicha(column: Int, row: Int, cont: Int, dificultad: Int): Int = {
+          val numRowFicha = (Math.log10(cont) / Math.log10(2)).toInt + (if (cont > 8) 2 else 0);      // Determinamos el numero def fichas a colocar.
+          val bom = Random.nextInt(dificultad + 2);                                                   // Generamos bombas y fichas especiales en funcion de la dificultad selecionada.
+          /**
+            * Calculamos el pociconamiento de piezas y bombas y piezas especiales en el tablero en
+            * funcion de las dimenciones del tablero lo multiplicamos por el doble para cuando nos
+            * salimos de las dimensiones conbecionales de un tablero de damas.
+            */
+          return (if ((column + (if ((row) % 2 == 0) 1 else 0)) % 2 == 0) (if (row > (cont - numRowFicha)) 21 + bom else if (row <= numRowFicha) 32 + bom else POS_TAB_EMPTY) else POS_TAB_EMPTY);
+     }
 
      /**
        * Medo Privado Que se encarga de Imprimir la fichas del Tablero en la
@@ -189,9 +189,7 @@ object Tablero {
                          case 20 | 30 ⇒ 
                               if (((tablero(posActual) % 10) != 8) && (((row + ((cont + 1) * movV)) == 0) || ((row + ((cont + 1) * movV)) == (Math.sqrt(tablero.length).toInt - 1)))) {
                                    event.append(" ❈ " + Console.GREEN + "Evento " + Console.RESET + ": El peon se " + Console.RED + "CORONO" + Console.RESET + " Larga vida a la REINA !!!");
-                                   if (Setting.getSound()) {
-                                        UtilDamas.clipSoundEfect("get_king.wav").start();  
-                                   }
+                                   UtilDamas.clipSoundEfect("get_king.wav", 0);  
                                    (tablero(posActual) - (tablero(posActual) % 10)) + 8;           // Convertimos al peon en reina.
                               } else {
                                    tablero(posActual);
@@ -204,12 +202,12 @@ object Tablero {
                     val (new_row, new_col) = ((row + ((cont + 1) * movV)), (col + ((cont + 1) * movH)));
                     val bom_status:(List[Int], Int, StringBuilder) = (if (isPacMan) {
                          type_bom match {
-                              case 3 => (this.BOM(tablero, puntos, new_row, new_col, 0, event));  // BOM CIAN BUILD
-                              case 4 => (this.BOM(tablero, puntos, new_row, new_col, 0, event));  // BOM VERDE BUILD
-                              case 5 => (this.BOM(tablero, puntos, new_row, new_col, 0, event));  // BOM AMARILLO BUILD
-                              case 6 => (this.BOM(tablero, puntos, new_row, new_col, 0, event));  // BOM MAGENTA BUILD
-                              case 7 => (this.BOM(tablero, puntos, new_row, new_col, 0, event));  // BOM NARANJA BUILD
-                              case _ => (tablero, puntos, event);                                 // NOT BOM.
+                              case 3 => (this.BOM(tablero, puntos, new_row, new_col, 0, event, type_bom));  // BOM CIAN BUILD
+                              case 4 => (this.BOM(tablero, puntos, new_row, new_col, 0, event, type_bom));  // BOM VERDE BUILD
+                              case 5 => (this.BOM(tablero, puntos, new_row, new_col, 0, event, type_bom));  // BOM AMARILLO BUILD
+                              case 6 => (this.BOM(tablero, puntos, new_row, new_col, 0, event, type_bom));  // BOM MAGENTA BUILD
+                              case 7 => (this.BOM(tablero, puntos, new_row, new_col, 0, event, type_bom));  // BOM NARANJA BUILD
+                              case _ => (tablero, puntos, event);                                           // NOT BOM.
                          }
                     } else (tablero, puntos, event));
                     this.setMovGamen(bom_status._1, movV, movH, row, col, type_bom, type_bom, event, isPacMan, bom_status._2);
@@ -217,9 +215,7 @@ object Tablero {
           } else {
                if (isPacMan) {
                     event.append(" ❈ " + Console.GREEN + "Evento " + Console.RESET + ":El peon se trasmuto en PacMan y " + Console.RED + "MATO" + Console.RESET + " WAKKA WAKKA !!!");
-                    if (Setting.getSound()) {
-                         UtilDamas.clipSoundEfect("captura_wakka.wav").start();  
-                    }
+                    UtilDamas.clipSoundEfect("captura_wakka.wav", 0);  
                }
                return (tablero, event.toString(), puntos);
           } 
@@ -301,15 +297,11 @@ object Tablero {
      }
      
      /**
-      * LA bomba detecta el patro pero debido a escazed de tiepo no soy capaz de
-      * actualizar correctamente la lista que constitulle el tablero ta que se
-      * generan dos entradas de forma simultanea las cuales no siiempre son
-      * ejecutadas x lo cual no se llega a retornar el tablero actualizado de
-      * forma corriente.
+      * lAs bomabas borran diagonalmente toda fiicha opnente.
       */
-     private def BOM(tablero:List[Int], puntos:Int, row:Int, col:Int, pos:Int, event:StringBuilder): (List[Int], Int, StringBuilder) = {
-          val width  = (Math.sqrt(tablero.length).toInt);
-          if (pos < width) {
+     private def BOM(tablero:List[Int], puntos:Int, row:Int, col:Int, pos:Int, event:StringBuilder, type_bom:Int): (List[Int], Int, StringBuilder) = {
+          if (pos < type_bom) {
+               val width  = (Math.sqrt(tablero.length).toInt);
                val post_2       = (if ((((row + pos * (-1))) > -1 ) && ((col + pos * (-1)) > -1)) ((row + pos * (-1)) * width + (col + pos * (-1))) else 0);
                val typo_ficha_2 = ((post_2 != 0) && ((tablero(row * width + col) - (tablero(row * width + col) % 10)) / 10) != ((tablero(post_2) - (tablero(post_2) % 10)) / 10))
                val score_2      = (if (post_2 != 0) {
@@ -321,7 +313,7 @@ object Tablero {
                     (tablero((row + pos) * width + (col + pos)) % 10);
                } else 0);
 			val tab = this.dropBom(tablero, (if (typo_ficha_1) post_1 else 0), (if (typo_ficha_2) post_2 else 0), 0);
-			this.BOM(tab, (puntos + score_1 + score_2), row, col, (pos + 1), event);
+			this.BOM(tab, (puntos + score_1 + score_2), row, col, (pos + 1), event, type_bom);
           } else {
                event.append("\n").append(" ❈ " + Console.GREEN + "Evento" + Console.RESET + ": BOM Diagonal !!").append("\n")
                return (tablero, puntos, event);

@@ -8,46 +8,42 @@ import javax.swing.JOptionPane
 import javax.swing.WindowConstants
 import java.awt.{ Graphics2D, Color }
 import java.awt.{ Color, Graphics2D, BasicStroke }
-import java.awt.geom._
-import java.io._
+import java.awt.geom._;
 import damas.juego._
 import damas.util._
 import damas.util.Stats
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.io.File;
+
 /**
   * @author Daniel
   */
 object Tab {
-
      def getTab(grid: (List[ Int ], Int, Int, Int, (Int, Int), String, Boolean, (Int, Int))) = grid
-
 }
 object TableroGUI {
-
      // def getTablero(grid: List[Int]) = grid
      def apply(x: Int, y: Int, tamaño: Int, tablero: List[ Int ]) = tablero(tamaño * y + x)
 
 }
 //clase para dibujar el tablero
 class dibujarTablero(tablero: List[ Int ], val tamaño: Int) extends Component {
-     println(tamaño)
-     tamaño match {
-          case 8  => preferredSize = new Dimension(300, 400) //tamaño de la ventana
-          case 16 => preferredSize = new Dimension(700, 500)
-          case 32 => preferredSize = new Dimension(900, 700)
-     }
 
      listenTo(mouse.clicks)
      reactions += {
-          case MouseClicked(_, p, _, _, _) => mouseClick(p.x, p.y)
+          case MouseClicked(_, p, _, _, _) => mouseClick(p.x, p.y);
      }
 
      def apply(x: Int, y: Int): Int = tablero(tamaño * y + x)
 
      def squareGeometry: (Int, Int, Int, Int) = {
-          val d = size
+          val d = tamaño match {
+               case 8  => new Dimension(450, 450) //tamaño de la ventana
+               case 16 => new Dimension(600, 600)
+               case 32 => new Dimension(800, 800)
+          };
           val squareSide = d.height min d.width
           val x0 = (d.width - squareSide) / tamaño - 1
           val y0 = (d.height - squareSide) / tamaño - 1
@@ -64,7 +60,11 @@ class dibujarTablero(tablero: List[ Int ], val tamaño: Int) extends Component {
      }
 
      override def paintComponent(g: Graphics2D) {
-          val d = size
+          val d = tamaño match {
+               case 8  => new Dimension(450, 450) //tamaño de la ventana
+               case 16 => new Dimension(600, 600)
+               case 32 => new Dimension(800, 800)
+          };
           g.setRenderingHint(java.awt.RenderingHints.KEY_ANTIALIASING, java.awt.RenderingHints.VALUE_ANTIALIAS_ON)
           g.setColor(Color.BLACK);
           g.fillRect(0, 0, d.width, d.height);
@@ -87,7 +87,6 @@ class dibujarTablero(tablero: List[ Int ], val tamaño: Int) extends Component {
           for (x <- 0 until tamaño) {
                for (y <- 0 until tamaño) {
                     val damas = apply(x, y)
-                    println(damas)
                     damas match {
                          case 32 => //ficha J1
                               g.setColor(colores(0))
@@ -137,155 +136,131 @@ class dibujarTablero(tablero: List[ Int ], val tamaño: Int) extends Component {
   * creamos un evento para obtener las coordenadas de la jugada a realizar
   */
 case class dibujarTableroEvento(x: Int, y: Int) extends Event
-//Ventana para mostrar el tablero de juego
-class mostrarTablero(val tablero: List[ Int ], val turno: Int, val nivel: Int, val dificultad: Int,
-     val fichas: (Int, Int), val evento: String, val modo: Boolean, val score: (Int, Int), val tamaño: Int) extends Frame {
 
-     title = "Damas BOM for Scala" //titulo de la ventana
-     this.resizable_=(true)
-     tamaño match {
-          case 8  => preferredSize = new Dimension(600, 300) //tamaño de la ventana
-          case 16 => preferredSize = new Dimension(1200, 600)
-          case 32 => preferredSize = new Dimension(1400, 800)
-     }
-     val tab = new Tuple8(tablero, turno, nivel, dificultad, fichas, evento, modo, score)
-     val canvas = new dibujarTablero(tablero, 8)
-     val labelTurno = new Label
-     val numfichasJ1 = new Label
-     val numfichasJ2 = new Label
-     val eventos = new Label
-     val scores = new Label
-     val dif = new Label
-     val nivl = new Label
-     if (turno == 0) labelTurno.text = " ❈❈❈❈❈ Turno de ■" + " ❈❈❈❈❈" else labelTurno.text = " ❈❈❈❈❈ Turno de ●" + " ❈❈❈❈❈"
-     numfichasJ1.text = " ❈❈❈❈❈ Fichas Jugador 1: " + fichas._1.toString() + " ❈❈❈❈❈"
-     numfichasJ2.text = " ❈❈❈❈❈ Fichas Jugador 2: " + fichas._2.toString() + " ❈❈❈❈❈"
-     dif.text = " ❈❈❈❈❈ Dificultad: " + dificultad + " ❈❈❈❈❈"
-     nivl.text = " ❈❈❈❈❈ Nivel: " + nivel + " ❈❈❈❈❈"
-     val boton = new Button {
-          text = "Guardar y salir" //botón de comienzo de partida
-     }
-     var x0, y0 = 0
-     var direccion = 0
-     var turnoNuevo = turno
+/**
+ * Ventana para mostrar el tablero de juego
+ */
+class mostrarTablero(val tablero: List[ Int ], val turno: Int, val nivel: Int, val dificultad: Int, val fichas: (Int, Int), val evento: String, val modo: Boolean, val score: (Int, Int), val tam: Int) extends Frame {
+
+     /**
+      * Declaricones globales del frame.
+      */
+     this.title = "Damas BOM for Scala" //titulo de la ventana
+     this.resizable_=(false);
+     private var (x0, y0) = (0, 0);
+     private var tab      = new Tuple8(tablero, turno, nivel, dificultad, fichas, evento, modo, score);
+     private val turne    = new Label(" - Turno: " + (if (turno == 0) "■" else "●"));
+     private val nFichJ1  = new Label(" - Nº Fichas Jugador 2: " + tab._5._1.toString());
+     private val nFichJ2  = new Label(" - Nº Fichas Jugador 2: " + tab._5._2.toString());
+     private val puntos   = new Label(" - Puntuacion: " + (if (turno == 0) tab._8._1 else tab._8._2).toString());
+     private val event    = new Label
+         
      /**
        * configuración del contenido de la ventana
        */
      contents = new BoxPanel(Orientation.Horizontal) {
-          contents += canvas
           contents += new BoxPanel(Orientation.Vertical) {
-               contents += labelTurno
-               contents += numfichasJ1
-               contents += numfichasJ2
-               contents += eventos
-               contents += scores
-               contents += dif
-               contents += nivl
-               contents += Swing.VStrut(10)
+               contents += new dibujarTablero(tab._1, tam) {
+                    contents += Swing.VStrut(5);
+                    reactions += {
+                         case  dibujarTableroEvento(x, y) => {
+                              if ((x0 == 0) && (y0 == 0)) {
+                                   x0 = x;
+                                   y0 = y;
+                              } else {
+                                   if ((x0 != x) && (y0 != y)) {
+                                        val dir = (if ((x > x0) && (y > y0)) 21 else if (x > x0 && y < y0) 11 else if (x < x0 && y < y0) 10 else 20);
+                                        val tab_new = Tablero.damasPlayBom(tab._1, (y0, x0, dir), (if(tab._2 == 0) 0 else 1), (0, 0), false);
+                                        if (!tab_new._3) {
+                                             val dimension = (Math.sqrt(tab_new._4.length).toInt);
+                                             val fichXJug = Tablero.numFichasXjugadorInCurse(tab_new._4, 0, (0, 0));
+                                             if (tab_new._2) {
+                                                  Stats.setVictorias(Stats.getVictorias() + 1)
+                                                  val sms_game = (if (tam == 32) {
+                                                       GUIDamas.open()
+                                                       "ENHORABUENA: HAS COMPLETADO EL JUEGO: ";
+                                                  } else {                                             
+                                                       val tableroNuevo = Tablero.generarTablero((dimension * 2), (dimension * 2), (dimension * 2), (dificultad * 2));
+                                                       val new_nivel = new mostrarTablero(tableroNuevo, turno, 0, dificultad * 2, fichXJug, new String, modo, (0, 0), tam * 2)
+                                                       new_nivel.visible = true
+                                                       "HAS COMPLETADO EL NIVEL";
+                                                  });
+                                                  JOptionPane.showMessageDialog(null, sms_game + tab_new._5, "Comprobar Partida", JOptionPane.INFORMATION_MESSAGE);
+                                                  this.clone();
+                                             } else if (tab_new._1) {
+                                                  Stats.setEmpates(Stats.getEmpates() + 1)
+                                                  val opcion = JOptionPane.showMessageDialog(null, "HAS EMPATADO", "Comprobar Partida", JOptionPane.INFORMATION_MESSAGE);
+                                                  val tableroNuevo = Tablero.generarTablero((dimension * 2), (dimension * 2), (dimension * 2), (dificultad * 2));
+                                                  val fichXJugInit = Tablero.numFichasXjugadorInit(Math.sqrt(tableroNuevo.length).toInt);
+                                                  val newVentana = new mostrarTablero(tableroNuevo, turno, 0, dificultad, (fichXJugInit, fichXJugInit), new String, modo, (0, 0), tam);
+                                                  newVentana.visible = true;
+                                                  
+                                             };
+                                             tab = new Tuple8(tab_new._4, tab._2 + (if (turno == 0) 1 else -1), nivel, dificultad, fichXJug, tab_new._5, modo, tab_new._6);
+                                             turne.text   = " - Turno: " + (if (tab._2 == 0) "■" else "●");
+                                             nFichJ1.text = " - Nº Fichas Jugador 1: " + (tab._5._1.toString());
+                                             nFichJ2.text = " - Nº Fichas Jugador 2: " + (tab._5._2.toString());
+                                             puntos.text  = " - Puntuacion: " + (if (tab._2 == 0) tab._8._1 else tab._8._2).toString();
+                                             /*contents    += new dibujarTablero(tab_new._4, tam);
+                                             contents.drop(0);*/
+                                        }
+                                        //event.text = (tab_new._5.substring(tab_new._5.indexOf(Console.RESET + "[0m")));
+                                        x0 = 0;
+                                        y0 = 0;
+                                   } 
+                              }   
+                         }
+                    }
+               };
+               border = Swing.EmptyBorder(0, 0, 0, 10);
+               preferredSize = tam match { // Tamaño del Canbas.
+                    case 8  => new Dimension(455, 455);
+                    case 16 => new Dimension(605, 605);
+                    case 32 => new Dimension(805, 805);
+               }
+          };
+          contents += new BoxPanel(Orientation.Vertical) {
+               contents += new BoxPanel(Orientation.Vertical) {
+                    border = Swing.CompoundBorder(Swing.TitledBorder(Swing.EtchedBorder, "Informacion de partida: "), Swing.EmptyBorder(5,5,5,10))
+                    contents +=  turne
+                    contents +=  nFichJ1; 
+                    contents +=  nFichJ2; 
+                    contents += new Label(" - Dificultad: " + (dificultad + 1));
+                    contents += new Label(" - Nivel: " + (nivel + 1));
+                    contents +=  puntos; 
+                    contents += Swing.VStrut(10)
+               }
+               contents += new BoxPanel(Orientation.Vertical) {
+                    border = Swing.CompoundBorder(Swing.TitledBorder(Swing.EtchedBorder, "Eventos: "), Swing.EmptyBorder(5,5,5,10));
+                    contents += Swing.VStrut(10);
+                    contents += event;
+               }
+               contents += new BoxPanel(Orientation.Vertical) {
+                    contents += Swing.VStrut(10);
+                    contents += new Button() {     //botón de comienzo de partida
+                         text = "Guardar y salir";   
+                         action = Action(text) { 
+                              val tab = new Tuple8(tablero, turno, nivel, dificultad, fichas, evento, modo, score)
+                              Persistencia.savePlayDamas(tab._1, tab._7, tab._3, tab._2, tab._4, tab._5, tab._8);
+                              close
+                              GUIDamas.open()
+                         }
+                    }
+               }
           }
-          contents += boton
-          contents += Swing.VStrut(10)
-          border = Swing.EmptyBorder(10, 10, 10, 10)
-     }
-
+          contents += Swing.VStrut(10);
+          border = Swing.EmptyBorder(10, 10, 10, 10);
+     };
      peer.setLocationRelativeTo(null) //centrar la ventana
      peer.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE) //seleccionar la operación de cierre de ventana
-
      //escuchar eventos
-     listenTo(canvas)
-     listenTo(boton)
-
      reactions += {
           case WindowClosing(_) => {
                this.close()
                GUIDamas.open()
-          }
-          case ButtonClicked(`boton`) => {
-               val tab = new Tuple8(tablero, turno, nivel, dificultad, fichas, evento, modo, score)
-               Persistencia.savePlayDamas(tab._1, tab._7, tab._3, tab._2, tab._4, tab._5, tab._8);
-               this.close
-               GUIDamas.open()
-          }
-          case dibujarTableroEvento(x, y) =>
-               println("dibujarTableroEvento en " + x + " " + y)
-               //gestionarEvento(x,y,x0,y0,direccion)
-               if (x == x0 && y == y0) {
-                    x0 = 0
-                    y0 = 0
-                    println("Error: no puede hacerse doble click sobre una ficha")
-               }
-               else {
-                    if (x0 == 0 && y0 == 0) {
-                         x0 = x
-                         y0 = y
-                    }
-                    else {
-                         if (x > x0 && y > y0) {
-                              direccion = 21
-                              println("dibujarTableroEvento en " + x + " " + y + " " + direccion)
-                         }
-                         else if (x > x0 && y < y0) {
-                              direccion = 11
-                              println("dibujarTableroEvento en " + x + " " + y + " " + direccion)
-                         }
-                         else if (x < x0 && y < y0) {
-                              direccion = 10
-                              println("dibujarTableroEvento en " + x + " " + y + " " + direccion)
-                         }
-                         else if (x > x0 && y > y0) {
-                              direccion = 20
-                              println("dibujarTableroEvento en " + x + " " + y + "" + direccion)
-                         }
-                    }
-               }
-
-               var nuevoTablero = Tablero.damasPlayBom(tablero, (y0, x0, direccion), turnoNuevo, (0, 0), false)
-               eventos.text = "❈ Evento: " + nuevoTablero._3
-               scores.text = "❈ Score: J1: " + nuevoTablero._6._1 + "J2: " + nuevoTablero._6._2
-
-               if (turnoNuevo == 0) {
-                    turnoNuevo = 1
-               } else {
-                    turnoNuevo = 0
-               }
-               if (nuevoTablero._2) {
-                    Stats.setVictorias(Stats.getVictorias() + 1)
-                    if (tamaño == 32) {
-                         val opcion = JOptionPane.showMessageDialog(null, "ENHORABUENA: HAS COMPLETADO EL JUEGO: " + nuevoTablero._5, "Comprobar Partdida", JOptionPane.INFORMATION_MESSAGE)
-                         GUIDamas.open()
-                         this.close
-                    }
-                    else {
-                         val dimension = (Math.sqrt(tablero.length).toInt) * 2
-                         val opcion = JOptionPane.showMessageDialog(null, "HAS COMPLETADO EL NIVEL", "Comprobar Partida", JOptionPane.INFORMATION_MESSAGE)
-                         eventos.text = "❈ Evento: " + nuevoTablero._5
-                         val tableroNuevo = Tablero.generarTablero(dimension, dimension, dimension, dificultad * 2)
-                         val fichXJug = Tablero.numFichasXjugadorInit(Math.sqrt(tableroNuevo.length).toInt);
-                         val newVentana = new mostrarTablero(tableroNuevo, turno, 0, dificultad * 2, (fichXJug, fichXJug), new String, modo, (0, 0), tamaño * 2)
-                         this.close
-                         newVentana.visible = true
-                    }
-               }
-               else if (nuevoTablero._1) {
-                    Stats.setEmpates(Stats.getEmpates() + 1)
-                    val dimension = (Math.sqrt(tablero.length).toInt) * 2
-                    val opcion = JOptionPane.showMessageDialog(null, "HAS EMPATADO", "Comprobar Partida", JOptionPane.INFORMATION_MESSAGE)
-                    eventos.text = "❈ Evento: " + nuevoTablero._5
-                    val tableroNuevo = Tablero.generarTablero(dimension, dimension, dimension, dificultad * 2)
-                    val fichXJug = Tablero.numFichasXjugadorInit(Math.sqrt(tableroNuevo.length).toInt);
-                    val newVentana = new mostrarTablero(tableroNuevo, turno, 0, dificultad, (fichXJug, fichXJug), new String, modo, (0, 0), tamaño)
-                    this.close
-                    newVentana.visible = true
-               }
-     }
-
-     /*def gestionarEvento(x: Int, y: Int, x0: Int, y0: Int, direccion: Int): (Int,Int,Int) = {
-    if (x == x0 && y == y0) {
-        return(0,0,0)
-    }else if (x0 == 0 && y0 == 0) {
-       gestionarEvento(x,y,x,y,direccion)
-     }
-    }*/
+          };
+     }    
+     
 }
 //Ventana para realizar la configuracion de juego dhadjd
 class configuracionJuego(val turno: Int, val modo: Boolean) extends Frame {
@@ -328,7 +303,7 @@ class configuracionJuego(val turno: Int, val modo: Boolean) extends Frame {
                val grid = Tablero.generarTablero(filas, columnas, tamaño, dif)
                val fichXJug = Tablero.numFichasXjugadorInit(Math.sqrt(grid.length).toInt);
                val mostrarTablero = new mostrarTablero(grid, turno, 0, dif, (fichXJug, fichXJug), new String, modo, (0, 0), tamaño)
-               UtilDamas.clipSoundEfect("start_up.wav").start();
+               UtilDamas.clipSoundEfect("start_up.wav", 0);
                mostrarTablero.visible = true
                this.visible = false
           }

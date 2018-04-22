@@ -8,6 +8,40 @@
 	<description>Planet Eclipse - http://planeteclipse.org/planet/</description>
 
 <item>
+	<title>Nikhil Nanivadekar: India Java User Group Tour 2018</title>
+	<guid isPermaLink="false">https://medium.com/p/ecdd10e2543d</guid>
+	<link>https://medium.com/@nikhilnanivadekar/india-java-user-group-tour-2018-ecdd10e2543d?source=rss-4285d8a2ca86------2</link>
+	<description>&lt;p&gt;After 27+ hours of travel I just reached Pune, my home town. I am excited for my India Java User Group Tour 2018. I will be presenting on Java 10, Java 9, Eclipse Collections, Spark and more!&lt;/p&gt;&lt;p&gt;It is a quick pit stop in Pune before I head over to Chennai for my first JUG meet-up in #INDJUG tour. Abstracts for all my talks are available at the end of this blog. Join me at one of these cities:&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.meetup.com/MadrasJUG/events/248758532/&quot;&gt;&lt;strong&gt;Chennai JUG&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;:&lt;/strong&gt; Saturday, April 21&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.meetup.com/Delhi-NCR-JUG/events/249660682/&quot;&gt;&lt;strong&gt;Delhi-NCR JUG&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;:&lt;/strong&gt; Sunday, April 22&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.meetup.com/BangaloreOpenJUG/events/248526846/&quot;&gt;&lt;strong&gt;Bengaluru JUG&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;:&lt;/strong&gt; Wednesday, April 25&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.meetup.com/jughyderabad/events/247346390&quot;&gt;&lt;strong&gt;Hyderabad JUG&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;:&lt;/strong&gt; Sunday, April 29&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Kerala JUG (Thiruvananthapuram):&lt;/strong&gt; Saturday, May 5&lt;/p&gt;&lt;p&gt;Thank you to &lt;a href=&quot;https://twitter.com/MadrasJUG&quot;&gt;@MadrasJUG&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/DelhiJUG&quot;&gt;@DelhiJUG&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/bangalorejug&quot;&gt;@bangalorejug&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/JUGHYD&quot;&gt;@JUGHYD&lt;/a&gt;, and &lt;a href=&quot;https://twitter.com/KeralaJUG&quot;&gt;@KeralaJUG&lt;/a&gt; for hosting me in each city.&lt;/p&gt;&lt;p&gt;I’ll be tweeting using the #INDJUG so if you can’t make it, you can still follow my adventures through India.&lt;/p&gt;&lt;p&gt;Hope to see you at one of the stops!&lt;/p&gt;&lt;a href=&quot;https://medium.com/media/1965d4579fd3e295b79002ad7b50a1f5/href&quot;&gt;https://medium.com/media/1965d4579fd3e295b79002ad7b50a1f5/href&lt;/a&gt;&lt;p&gt;&lt;strong&gt;Abstracts&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;How to make your project Java-10 compatible:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Java 10 was recently released and was the first release with the new Java release cadence. However, one can’t simply upgrade their projects from Java 8 to Java 10. It first should be upgraded to Java 9, due to the numerous changes that might potentially break existing applications. This session is a case study of making a third-party Java Collections library (Eclipse Collections) first Java 9 compatible and then with relative ease Java 10 compatible. The audience will see an overview of all the steps taken and the evolution of the final product which is Java 10 compatible. Attending this session will put you in the driver’s seat when you will be required to upgrade your application to use JDK 10.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Getting Started with Spark:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Data analytics and machine learning have become mainstream in recent years. With the amount of data available, distributed computing has become a necessity. Apache Spark is one of the forerunners in distributed computing domain. In this hands-on session, the audience will learn about the background and basic concepts of Apache Spark. The speaker will build a reference implementation live and introduce new concepts along the way.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Collections.compare(JDK, Apache, Eclipse, Guava…):&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Collections are a staple in any programming language: the need to collect, sort, or iterate over values is needed by nearly all developers. The Java language introduced the Collections framework long ago. It has plenty to offer, but many find it lacking: the number of collection libraries as active open source projects demonstrates the need for something else. This session does a holistic comparison of the most-common collections (pun intended!) frameworks, what they have to offer, and what you should consider for your next project. It also shows common programmer use cases; how each library handles them; and the impact on memory, processing power, and ease of use/coding. Come and let us help you choose the right bag for your tricks!&lt;/p&gt;&lt;p&gt;&lt;strong&gt;API Deep Dive: Designing Eclipse Collections&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;When designing an API, its authors have to consider many aspects: style, naming, scope, and implementation details are among these aspects. They have a direct impact on the resulting code, and its implementation can go in many different directions. How do you choose the best route to go? How do you maintain symmetry? How do you guarantee consistency and performance across the framework? Last but not the least, what is the complexity associated with adding a new API? Come take a look behind the curtains of a widely used API that has many years of development and that you can contribute to.&lt;/p&gt;&lt;img height=&quot;1&quot; src=&quot;https://medium.com/_/stat?event=post.clientViewed&amp;amp;referrerSource=full_rss&amp;amp;postId=ecdd10e2543d&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Fri, 20 Apr 2018 00:13:55 +0000</pubDate>
+</item>
+<item>
+	<title>Scott Lewis: ECF Photon supports Bndtools</title>
+	<guid isPermaLink="false">tag:blogger.com,1999:blog-20358640.post-593600413053983449</guid>
+	<link>http://eclipseecf.blogspot.com/2018/04/ecf-photon-supports-bndtools.html</link>
+	<description>A &lt;a href=&quot;http://eclipseecf.blogspot.com/2018/04/ecf-photon-supports-osgi-r7.html&quot;&gt;second&lt;/a&gt; major enhancement for &lt;a href=&quot;https://wiki.eclipse.org/Eclipse_Communication_Framework_Project&quot;&gt;ECF&lt;/a&gt; Photon is adding support for using &lt;a href=&quot;http://bndtools.org/&quot;&gt;Bndtools&lt;/a&gt; to develop and test OSGi Remote Services.   Bndtools is increasingly popular for developing OSGi-based applications and frameworks, and we've added support for Bndtools Workspace, Project, and Run Descriptor templates for developing and testing remote services.&lt;br /&gt;&lt;br /&gt;Initial documentation is available at &lt;a href=&quot;https://wiki.eclipse.org/Bndtools_Support_for_Remote_Services_Development&quot;&gt;Bndtools Support for Remote Services Development&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;Note that these templates and the RSA impl may change slightly before ECF Photon, and new/additional templates will be added to (e.g.) support other &lt;a href=&quot;https://wiki.eclipse.org/Distribution_Providers&quot;&gt;distribution&lt;/a&gt; and &lt;a href=&quot;https://wiki.eclipse.org/Discovery_Providers&quot;&gt;discovery&lt;/a&gt; providers.&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</description>
+	<pubDate>Thu, 19 Apr 2018 21:39:12 +0000</pubDate>
+	<author>noreply@blogger.com (Scott Lewis)</author>
+</item>
+<item>
+	<title>Obeo Team: What’s Coming in Sirius 6.0?</title>
+	<guid isPermaLink="true">https://blog.obeo.fr/what-is-coming-in-sirius-6-0</guid>
+	<link>https://blog.obeo.fr/what-is-coming-in-sirius-6-0</link>
+	<description>The next major version of Sirius , version 6.0, will be released on June 27, 2018 as part of the Eclipse Photon Simultaneous Release, with a corresponding version of Obeo Designer Community Edition soon after. Many of the new features for this release are already available for testing in milestone versions, and now is the right time to test them and give us feedback: there’s still time to make adj...</description>
+	<pubDate>Thu, 19 Apr 2018 12:59:22 +0000</pubDate>
+	<author>pierre-charles.david@obeo.fr (Pierre-Charles David)</author>
+</item>
+<item>
+	<title>EclipseCon France 2018: Who, what, when, where at EclipseCon France?</title>
+	<guid isPermaLink="false">https://www.eclipsecon.org/france2018/news/3878 at https://www.eclipsecon.org/france2018</guid>
+	<link>https://www.eclipsecon.org/france2018/news/who-what-when-where-eclipsecon-france</link>
+	<description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;The schedule is now published, so you can work on your plan for the week! Thank you again for all the great submissions that make up &lt;a href=&quot;https://www.eclipsecon.org/france2018/conference/schedule/session/2018-06-13&quot; target=&quot;_blank&quot;&gt;this fantastic program&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;There are even more choices this year, since Wednesday has five concurrent talks all day with a special focus on Jakarta EE and Eclipse MicroProfile.&lt;/p&gt;
+
+&lt;p&gt;Stay tuned for more about &lt;a href=&quot;https://www.eclipsecon.org/france2018/unconference&quot; target=&quot;_blank&quot;&gt;the Unconference on June 12&lt;/a&gt;. We'll see you soon in Toulouse!&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-field-news-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;https://www.eclipsecon.org/france2018/news/who-what-when-where-eclipsecon-france&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;img-responsive block-center&quot; height=&quot;250&quot; src=&quot;https://www.eclipsecon.org/france2018/sites/default/files/styles/solstice_news_-_default_-_thumbnail/public/news/2session.jpg?itok=d0N8H2E2&quot; width=&quot;250&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+	<pubDate>Thu, 19 Apr 2018 06:19:44 +0000</pubDate>
+</item>
+<item>
 	<title>PapyrusUML: EclipseCon France 2018 – Sessions</title>
 	<guid isPermaLink="false">http://papyrusuml.wordpress.com/?p=1088</guid>
 	<link>https://papyrusuml.wordpress.com/2018/04/18/eclipsecon-france-2018-sessions/</link>
@@ -565,281 +599,6 @@ vertx.setPeriodic(&lt;span class=&quot;hljs-number&quot;&gt;1000&lt;/span&gt;, l
 &lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;https://track.hubspot.com/__ptq.gif?a=761475&amp;amp;k=14&amp;amp;r=https%3A%2F%2Fblogs.itemis.com%2Fen%2Fnew-project-wizard-einfach-mit-xtext-2-14-generieren&amp;amp;bu=https%253A%252F%252Fblogs.itemis.com&amp;amp;bvt=rss&quot; style=&quot;width: 1px!important;&quot; width=&quot;1&quot; /&gt;</description>
 	<pubDate>Wed, 04 Apr 2018 14:20:00 +0000</pubDate>
 	<author>adeutsch@itemis.de (Arne Deutsch)</author>
-</item>
-<item>
-	<title>Eclipse Announcements: Winners of Open IoT Challenge 4.0 Demonstrate How Open Source Accelerates Innovation</title>
-	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/hn6I6OZ6roc/20180404_iotchallenge_winners2018.php</guid>
-	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/hn6I6OZ6roc/20180404_iotchallenge_winners2018.php</link>
-	<description>Eclipse IoT is pleased to announce the winners of the fourth annual Open IoT Challenge!&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/hn6I6OZ6roc&quot; width=&quot;1&quot; /&gt;</description>
-	<pubDate>Wed, 04 Apr 2018 14:00:00 +0000</pubDate>
-</item>
-<item>
-	<title>Eclipse Announcements: EclipseCon France 2018 Program Announced</title>
-	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/MU3P8PQbswc/accepted</guid>
-	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/MU3P8PQbswc/accepted</link>
-	<description>See the list of accepted sessions, and register now for the lowest price. We'll see you June 13 - 14 in Toulouse.&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/MU3P8PQbswc&quot; width=&quot;1&quot; /&gt;</description>
-	<pubDate>Tue, 03 Apr 2018 14:00:00 +0000</pubDate>
-</item>
-<item>
-	<title>Eclipse Announcements: Voting for the Jakarta EE logo is now open!</title>
-	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/c7bkDM79IuE/viewform</guid>
-	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/c7bkDM79IuE/viewform</link>
-	<description>Voting will be conducted using a ranked poll. To vote, simply rank the final shortlist of logos in order of preference.&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/c7bkDM79IuE&quot; width=&quot;1&quot; /&gt;</description>
-	<pubDate>Thu, 29 Mar 2018 22:45:00 +0000</pubDate>
-</item>
-<item>
-	<title>JBoss Tools Team: JBoss Tools 4.5.3.AM3 for Eclipse Oxygen.3</title>
-	<guid isPermaLink="true">https://tools.jboss.org/blog/4.5.3.am3-for-oxygen.3.html</guid>
-	<link>https://tools.jboss.org/blog/4.5.3.am3-for-oxygen.3.html</link>
-	<description>&lt;div&gt;&lt;div id=&quot;preamble&quot;&gt;
-      &lt;div class=&quot;sectionbody&quot;&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Happy to announce 4.5.3.AM3 (Developer Milestone 3) build for Eclipse Oxygen.3.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Downloads available at &lt;a href=&quot;https://tools.jboss.org/downloads/jbosstools/oxygen/4.5.3.AM3.html&quot;&gt;JBoss Tools 4.5.3 AM3&lt;/a&gt;.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sect1&quot;&gt;
-      &lt;h2 id=&quot;what-is-new&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#what-is-new&quot;&gt;&lt;/a&gt;What is New?&lt;/h2&gt;
-      &lt;div class=&quot;sectionbody&quot;&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Full info is at &lt;a href=&quot;https://tools.jboss.org/documentation/whatsnew/jbosstools/4.5.3.AM3.html&quot;&gt;this page&lt;/a&gt;. Some highlights are below.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sect2&quot;&gt;
-      &lt;h3 id=&quot;openshift&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#openshift&quot;&gt;&lt;/a&gt;OpenShift&lt;/h3&gt;
-      &lt;div class=&quot;sect3&quot;&gt;
-      &lt;h4 id=&quot;cdk-and-minishift-server-adapter-runtime-download&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#cdk-and-minishift-server-adapter-runtime-download&quot;&gt;&lt;/a&gt;CDK and Minishift Server Adapter runtime download&lt;/h4&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;When working with both CDK and upstream Minishift, you needed to have previously downloaded the CDK
-      or Minishift binary. It is now possible to download the runtime to a specific folder when you create
-      the server adapter.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Let’s see an example with the CDK server adapter.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;From the &lt;strong&gt;Servers&lt;/strong&gt; view, select the new Server menu item and enter cdk in the filter:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;cdk server adapter wizard&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard.png&quot; width=&quot;600&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Select Red Hat Container Development Kit 3.2+&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;cdk server adapter wizard1&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard1.png&quot; width=&quot;600&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Click the &lt;strong&gt;Next&lt;/strong&gt; button:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;cdk server adapter wizard3&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard3.png&quot; width=&quot;600&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;In order to download the runtime, click the &lt;strong&gt;Download and install runtime…​&lt;/strong&gt; link:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;cdk server adapter wizard4&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard4.png&quot; width=&quot;600&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Select the version of the runtime you want to download&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;cdk server adapter wizard5&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard5.png&quot; width=&quot;600&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Click the &lt;strong&gt;Next&lt;/strong&gt; button:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;cdk server adapter wizard6&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard6.png&quot; width=&quot;600&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;You need an account to download the CDK. If you already had configured credentials, select the one you
-      want to use. If you didn’t, click the &lt;strong&gt;Add&lt;/strong&gt; button to add your credentials.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;cdk server adapter wizard7&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard7.png&quot; width=&quot;600&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Click the &lt;strong&gt;Next&lt;/strong&gt; button. Your credentials will be validated, and upon success, you must accept
-      the license agreement:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;cdk server adapter wizard8&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard8.png&quot; width=&quot;600&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Accept the license agreement and click the &lt;strong&gt;Next&lt;/strong&gt; button:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;cdk server adapter wizard9&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard9.png&quot; width=&quot;600&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;You can choose the folder where you want the runtime to be installed. Once you’ve set it,
-      click the &lt;strong&gt;Finish&lt;/strong&gt; button:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;The download of the runtime will be started and you should see the progression on the server adapter
-      wizard:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;cdk server adapter wizard10&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard10.png&quot; width=&quot;600&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Once the download is completed, you will notice that the &lt;strong&gt;Minishift Binary&lt;/strong&gt; and &lt;strong&gt;Username&lt;/strong&gt; fields have been filled:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;cdk server adapter wizard11&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard11.png&quot; width=&quot;600&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Click the &lt;strong&gt;Finish&lt;/strong&gt; button to create the server adapter.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Please note that if it’s the first time you install CDK, you must perform an initialization. In the &lt;strong&gt;Servers&lt;/strong&gt; view, right click
-      the server and select the &lt;strong&gt;Setup CDK&lt;/strong&gt; menu item:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;cdk server adapter wizard12&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard12.png&quot; width=&quot;600&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;cdk server adapter wizard13&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard13.png&quot; width=&quot;600&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sect2&quot;&gt;
-      &lt;h3 id=&quot;hibernate-tools&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#hibernate-tools&quot;&gt;&lt;/a&gt;Hibernate Tools&lt;/h3&gt;
-      &lt;div class=&quot;sect3&quot;&gt;
-      &lt;h4 id=&quot;hibernate-runtime-provider-updates&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#hibernate-runtime-provider-updates&quot;&gt;&lt;/a&gt;Hibernate Runtime Provider Updates&lt;/h4&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;A number of additions and updates have been performed on the available Hibernate runtime  providers.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sect4&quot;&gt;
-      &lt;h5 id=&quot;new-hibernate-5-3-runtime-provider&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#new-hibernate-5-3-runtime-provider&quot;&gt;&lt;/a&gt;New Hibernate 5.3 Runtime Provider&lt;/h5&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;With beta releases available in the Hibernate 5.3 stream, the time was right to make available a corresponding Hibernate 5.3 runtime provider. This runtime provider incorporates Hibernate Core version 5.3.0.Beta2 and Hibernate Tools version 5.3.0.Beta1.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot; style=&quot;text-align: center;&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;hibernate 5 3&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/hibernate/images/4.5.3.AM3/hibernate_5_3.png&quot; width=&quot;381&quot; /&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;title&quot;&gt;Figure 1. Hibernate 5.3 is available&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sect4&quot;&gt;
-      &lt;h5 id=&quot;other-runtime-provider-updates&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#other-runtime-provider-updates&quot;&gt;&lt;/a&gt;Other Runtime Provider Updates&lt;/h5&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;The Hibernate 5.0 runtime provider now incorporates Hibernate Core version 5.0.12.Final and Hibernate Tools version 5.0.6.Final.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;The Hibernate 5.1 runtime provider now incorporates Hibernate Core version 5.1.12.Final and Hibernate Tools version 5.1.7.Final.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;The Hibernate 5.2 runtime provider now incorporates Hibernate Core version 5.2.15.Final and Hibernate Tools version 5.2.10.Final.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sect2&quot;&gt;
-      &lt;h3 id=&quot;fuse-tooling&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#fuse-tooling&quot;&gt;&lt;/a&gt;Fuse Tooling&lt;/h3&gt;
-      &lt;div class=&quot;sect3&quot;&gt;
-      &lt;h4 id=&quot;fuse-ignite-technical-extension-templates&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#fuse-ignite-technical-extension-templates&quot;&gt;&lt;/a&gt;Fuse Ignite Technical Extension templates&lt;/h4&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;The existing template for &quot;Custom step using a Camel Route&quot; has been updated to work with Fuse 7 Tech Preview 4.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Two new templates have been added:
-      - Custom step using Java Bean
-      - Custom connector&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;New Fuse Ignite wizard with 3 options&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/fusetools/images/igniteExtensionWizard10.3.0.AM3.png&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sect3&quot;&gt;
-      &lt;h4 id=&quot;improvements-of-the-wizard-to-create-a-fuse-integration-project&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#improvements-of-the-wizard-to-create-a-fuse-integration-project&quot;&gt;&lt;/a&gt;Improvements of the wizard to create a Fuse Integration project&lt;/h4&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;The creation wizard provides better guidance for the targeted deployment environment:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;New Fuse Integration Project wizard page to select environment&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/fusetools/images/newFuseIntegrationWizard-environment.png&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;More place is available to choose the templates and they are now filtered based on the targeted environment:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;New Fuse Integration Project wizard page to select templates&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/fusetools/images/newFuseIntegrationWizard-templates.png&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;It also points out to other places to find different examples for advanced users (see the link at the bottom of the previous screenshot).&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sect3&quot;&gt;
-      &lt;h4 id=&quot;camel-rest-dsl-editor-technical-preview&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#camel-rest-dsl-editor-technical-preview&quot;&gt;&lt;/a&gt;Camel Rest DSL editor (Technical preview)&lt;/h4&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Camel is providing a Rest DSL to help the integration through Rest endpoints. Fuse Tooling is now providing a new tab in read-only mode to visualize the Rest endpoints defined.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;imageblock&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-      &lt;img alt=&quot;Rest DSL editor tab in read-only mode&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/fusetools/images/restViewer.png&quot; /&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;It is currently in Tech Preview and needs to be activated in Window → Preferences → Fuse Tooling → Editor → Enable Read Only Tech preview REST DSL tab.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Work is still ongoing and feedback is very welcome on this new feature, you can comment on &lt;a href=&quot;https://issues.jboss.org/browse/FUSETOOLS-1287&quot;&gt;this JIRA epic&lt;/a&gt;.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sect3&quot;&gt;
-      &lt;h4 id=&quot;dozer-upgrade-and-migration&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#dozer-upgrade-and-migration&quot;&gt;&lt;/a&gt;Dozer upgrade and migration&lt;/h4&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;When upgrading from Camel &amp;lt; 2.20 to Camel &amp;gt; 2.20, the Dozer dependency has been upgraded to a version not backward-compatible
-      If you open a Data transformation based on Dozer in Fuse Tooling, it will propose to migrate the file used for the transformation (technically changing the namespace). It allow to continue to use the Data Transformation editor and have - in most cases - the Data Transformation working at runtime with Camel &amp;gt; 2.20.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Enjoy!&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;paragraph&quot;&gt;
-      &lt;p&gt;Jeff Maury&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;&lt;/div&gt;</description>
-	<pubDate>Wed, 28 Mar 2018 15:15:31 +0000</pubDate>
 </item>
 
 </channel>

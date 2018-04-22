@@ -40,9 +40,7 @@ object ShellDamas {
                          val dim      = Cfg.getDimTablero()
                          val tablero  = Tab.generarTablero(dim, dim, dim, Cfg.getDificultad());                 // Generamos el tablero de juego segun las configuraciones.
                          val fichXJug = Tab.numFichasXjugadorInit(Math.sqrt(tablero.length).toInt);             // Determinamos el numero def fichas a colocar.
-                         if (Cfg.getSound()) {                                                                  // Segun configuracion se abilita odesabilita los efectos de sonido.
-                              UtilDamas.clipSoundEfect("start_up.wav").start();                                 // Efecto de Audio de Start UP. 
-                         }
+                         UtilDamas.clipSoundEfect("start_up.wav", 0);                                           // Efecto de Audio de Start UP. 
                          opcion match {
                               case "1" => (tablero, 0, 0, Cfg.getDificultad(), (fichXJug, fichXJug), new String, false, (0, 0));
                               case "2" => (tablero, 0, 0, Cfg.getDificultad(), (fichXJug, fichXJug), new String, true, (0, 0));
@@ -109,9 +107,7 @@ object ShellDamas {
                               val dim: Int = Math.sqrt(jugada_ret._4.length).toInt * 2;                          // Dimension del nuevo tablero.
                               val fichXJug = Tab.numFichasXjugadorInit(dim);                                     // Determinamos el numero def fichas a colocar.
                               val dificult = dificultad + (if(dificultad < 4) 2 else 0);                         // Calaculamos el nivel de dificultada de forma creciente. 
-                              if (Cfg.getSound()) {                                                              // Segun configuracion ejecuta o no los efectos de sonido.
-                                   UtilDamas.clipSoundEfect("level_up.wav").start();                             // Efecto de sonido leven UP.
-                              }
+                              UtilDamas.clipSoundEfect("level_up.wav", 0);                                       // Efecto de sonido leven UP.
                               return this.playDamasBom(Tab.generarTablero(dim, dim, dim, dificult), turno, (nivel + 1), dificult, false, (fichXJug, fichXJug), new String, modo_game, score);
                          } 
                     }

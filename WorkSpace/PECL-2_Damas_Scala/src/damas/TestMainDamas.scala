@@ -34,14 +34,10 @@ object TestMainDamas /*extends App*/ {
           val opc:String = Console.in.readLine();
           opc match {
                case "1" ⇒ 
-                    if (Setting.getSound()) {
-                         Util.clipSoundEfect("arcade_echo.wav").start();   // Efecto de sonido del Inicio.
-                    }
+                    Util.clipSoundEfect("arcade_echo.wav", 0);             // Efecto de sonido del Inicio.
                     Gui.InitGUI();                                         // Inicializa la interfaces Grafica.
                case "2" ⇒ 
-                    if (Setting.getSound()) {
-                         Util.clipSoundEfect("arcade_echo.wav").start();   // Efecto de sonido del Inicio.
-                    }
+                    Util.clipSoundEfect("arcade_echo.wav", 0);             // Efecto de sonido del Inicio.
                     Cmd.initShell();                                       // Inicializa la interfaces Shell.
                case _ ⇒
                     if (opc != "0") {
